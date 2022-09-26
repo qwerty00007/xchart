@@ -883,7 +883,7 @@ questions:
                                   label: Value
                                   schema:
                                     type: string
-  - variable: upload
+        - variable: upload
           label: "App upload Storage"
           description: "Stores the Photos Data."
           schema:
