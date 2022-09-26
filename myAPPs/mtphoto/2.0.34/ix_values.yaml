@@ -1,7 +1,7 @@
 image:
-  repository: dh.tccr.io/truecharts/alist
+  repository: mtphotos/mt-photos
   pullPolicy: IfNotPresent
-  tag: 2.6.4@sha256:a268951c7e96d20f3176650ff974b08db16b9d62fe2c6433d4496a7ece753959
+  tag: latest@sha256:10d187608cb0a7af1102e435c4a864c75bbf1c09895059bd8af0ab5c2175b025
 
 service:
   main:
