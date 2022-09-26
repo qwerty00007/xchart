@@ -1,0 +1,32 @@
+apiVersion: v2
+kubeVersion: ">=1.16.0-0"
+name: alist
+version: 2.0.34
+appVersion: "2.6.4"
+description: Alist program that supports multiple storage, powered by Gin and React
+type: application
+deprecated: false
+home: https://mtmt.tech/
+icon: http://192.168.100.230:10037/hedegang/HD-Icons/raw/branch/main/border-radius/MT-Photos.png
+keywords:
+  - cloud
+  - photos
+  - pictures
+  - sharing
+sources:
+  - https://hub.docker.com/r/mtphotos/mt-photos
+  - https://mtmt.tech/
+dependencies:
+  - name: common
+    repository: https://library-charts.truecharts.org
+    version: 10.5.10
+    # condition:
+maintainers:
+  - email: 1165505953@qq.com
+    name: qwerty
+    url: https://truecharts.org
+annotations:
+  truecharts.org/catagories: |
+    - cloud
+  truecharts.org/SCALE-support: "true"
+  truecharts.org/grade: U
