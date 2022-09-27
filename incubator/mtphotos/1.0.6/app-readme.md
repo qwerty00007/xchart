@@ -1,3 +1,5 @@
-# Photo Prism
+# MT Photos
 
-PhotoPrism is a server-based application for browsing, organizing and sharing your personal photo collection.
+A photo management system for Nas users
+Supports automatic sorting and classification of your photos, such as: time, location, person, photo type.
+You can run it on any system that supports Docker.
