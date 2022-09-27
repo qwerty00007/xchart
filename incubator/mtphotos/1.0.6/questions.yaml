@@ -80,26 +80,6 @@ questions:
       min: 1
       max: 65535
 
-  - variable: password
-    label: "Password"
-    group: "Configuration"
-    schema:
-      type: string
-      private: true
-      required: true
-      empty: false
-      immutable: true
-      default: "admin123"
-      show_if: [["public", "=", false]]
-
-  - variable: public
-    label: "Enable Public Access"
-    description: "Disable password authentication, WebDAV, and the advanced settings page"
-    group: "Configuration"
-    schema:
-      type: boolean
-      default: false
-
   - variable: environmentVariables
     label: "Photo Prism environment"
     group: "Configuration"
@@ -122,7 +102,7 @@ questions:
                   type: string
 
   - variable: appVolumeMounts
-    label: "Photo Prism Storage"
+    label: "MT Photos Config Storage"
     group: "Storage"
     schema:
       type: dict
@@ -205,7 +185,7 @@ questions:
       items:
         - variable: extraAppVolume
           label: "Host Path Volume"
-          description: "Add an extra host path volume for Photo Prism application"
+          description: "Add an extra host path volume for MT Photos application"
           schema:
             type: dict
             attrs:
