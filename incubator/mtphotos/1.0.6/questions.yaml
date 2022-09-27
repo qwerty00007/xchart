@@ -24,7 +24,7 @@ portals:
 
 questions:
   - variable: web_port
-    label: "Web Port for photo prism"
+    label: "Web Port for MT Photo"
     group: Networking
     schema:
       type: int
@@ -81,7 +81,7 @@ questions:
       max: 65535
 
   - variable: environmentVariables
-    label: "Photo Prism environment"
+    label: "MT Photos environment"
     group: "Configuration"
     schema:
       type: list
@@ -131,14 +131,14 @@ questions:
                   editable: true
                   default: "/config"
               - variable: hostPathEnabled
-                label: "Enable Custom Host Path for Photo Prism Original Storage Volume"
+                label: "Enable Custom Host Path for MT Photos config  Storage Volume"
                 schema:
                   type: boolean
                   default: false
                   show_subquestions_if: true
                   subquestions:
                     - variable: hostPath
-                      label: "Host Path for Photo Prism Original Storage Volume"
+                      label: "Host Path for MT Photos config Storage Volume"
                       schema:
                         type: hostpath
                         required: true
@@ -166,14 +166,14 @@ questions:
                   editable: true
                   default: "/upload"
               - variable: hostPathEnabled
-                label: "Enable Custom Host Path for Photo Prism Storage Volume"
+                label: "Enable Custom Host Path for MT Photos upload Storage Volume"
                 schema:
                   type: boolean
                   default: false
                   show_subquestions_if: true
                   subquestions:
                     - variable: hostPath
-                      label: "Host Path for Photo Prism Storage Volume"
+                      label: "Host Path for MT Photos upload Storage Volume"
                       schema:
                         type: hostpath
                         required: true
