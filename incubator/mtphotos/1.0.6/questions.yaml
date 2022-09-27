@@ -142,7 +142,7 @@ questions:
                       schema:
                         type: hostpath
                         required: true
-        - variable: storage
+        - variable: upload
           label: "Storage Volume for upload"
           schema:
             type: dict
