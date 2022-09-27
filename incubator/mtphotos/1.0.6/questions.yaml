@@ -30,7 +30,7 @@ questions:
       type: int
       min: 8000
       max: 65535
-      default: 20800
+      default: 18063
       required: true
 
   - variable: dnsConfig

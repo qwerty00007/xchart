@@ -1,5 +1,5 @@
 apiVersion: v2
-appVersion: "20220121"
+appVersion: "20220927"
 icon: http://192.168.100.230:10037/hedegang/HD-Icons/src/branch/main/border-radius/MT-Photos.png
 description: A photo management system for Nas users
 name: mtphotos
