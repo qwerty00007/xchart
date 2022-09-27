@@ -1,5 +1,5 @@
 apiVersion: v2
-appVersion: 4.4.5
+appVersion: 22.9.27
 dependencies:
 - name: common
   repository: file://../../../library/common/2207.0.0
@@ -10,5 +10,5 @@ icon: http://192.168.100.230:10037/hedegang/HD-Icons/raw/branch/main/border-radi
 keywords:
 - storage
 - cloud
-name: mt
-version: 1.0.8
+name: mtphotos
+version: 1.0.0

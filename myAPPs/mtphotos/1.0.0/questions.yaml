@@ -59,7 +59,7 @@ questions:
                         required: true
 
   - variable: ownerUID
-    label: "Owner User ID"
+    label: "Owner User ID, PUID changed at the same time"
     group: Configuration
     schema:
       type: int
@@ -68,7 +68,7 @@ questions:
       max: 65535
 
   - variable: ownerGID
-    label: "Owner Group ID"
+    label: "Owner Group ID, PGID changed at the same time"
     group: Configuration
     schema:
       type: int
@@ -104,7 +104,7 @@ questions:
       type: dict
       attrs:
         - variable: config
-          label: "Configuration Volume"
+          label: "/config Volume"
           schema:
             type: dict
             attrs:
@@ -139,7 +139,7 @@ questions:
                         type: hostpath
                         required: true
         - variable: upload
-          label: "upload Volume"
+          label: "/upload Volume"
           schema:
             type: dict
             attrs:

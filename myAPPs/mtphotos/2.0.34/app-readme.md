@@ -1,1 +1,0 @@
-A photo management system for Nas users
