@@ -30,6 +30,14 @@ questions:
       max: 65535
       default: 28063
       required: true
+  - variable: targetPort
+    label: "Target Port"
+    group: Networking
+    description: "The internal(!) port on the container the Application runs on"
+    schema:
+      type: int
+      default: 8063
+      required: true
 
   - variable: dnsConfig
     label: "DNS Configuration"
