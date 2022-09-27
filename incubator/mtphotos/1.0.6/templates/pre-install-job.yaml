@@ -27,8 +27,7 @@ spec:
           - "chown"
           - "-R"
           - "{{ .Values.ownerUID }}:{{ .Values.ownerGID }}"
-          - "{{ .Values.appVolumeMounts.storage.mountPath }}"
-          - "{{ .Values.appVolumeMounts.original.mountPath }}"
-          - "{{ .Values.appVolumeMounts.import.mountPath }}"
+          - "{{ .Values.appVolumeMounts.config.mountPath }}"
+          - "{{ .Values.appVolumeMounts.upload.mountPath }}"
         volumeMounts: {{ include "common.storage.configureAppVolumeMountsInContainer" .Values | nindent 12 }}
       volumes: {{ include "common.storage.configureAppVolumes" .Values | nindent 8 }}
