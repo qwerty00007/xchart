@@ -39,13 +39,13 @@ spec:
           {{ end }}
           ports:
             - name: web
-              containerPort: 2342
+              containerPort: 8063
           env:
             {{ $secretName := (include "common.names.fullname" .) }}
             {{ $envList := (default list .Values.environmentVariables) }}
-            {{ $envList = mustAppend $envList (dict "name" "PHOTOPRISM_ADMIN_PASSWORD" "valueFromSecret" true "secretName" $secretName "secretKey" "password") }}
-            {{ if .Values.public }}
-            {{ $envList = mustAppend $envList (dict "name" "PHOTOPRISM_PUBLIC" "value" "true") }}
+#            {{ $envList = mustAppend $envList (dict "name" "PHOTOPRISM_ADMIN_PASSWORD" "valueFromSecret" true "secretName" $secretName "secretKey" "password") }}
+             {{ if .Values.public }}
+#            {{ $envList = mustAppend $envList (dict "name" "PHOTOPRISM_PUBLIC" "value" "true") }}
             {{ end }}
             {{ include "common.containers.environmentVariables" (dict "environmentVariables" $envList) | nindent 12 }}
 {{ include "common.networking.dnsConfiguration" .Values | nindent 6 }}

@@ -30,7 +30,7 @@ questions:
       type: int
       min: 8000
       max: 65535
-      default: 18063
+      default: 8063
       required: true
 
   - variable: dnsConfig
@@ -66,7 +66,7 @@ questions:
     group: Configuration
     schema:
       type: int
-      default: 568
+      default: 1000
       min: 1
       max: 65535
 
@@ -76,7 +76,7 @@ questions:
     group: Configuration
     schema:
       type: int
-      default: 568
+      default: 1000
       min: 1
       max: 65535
 
