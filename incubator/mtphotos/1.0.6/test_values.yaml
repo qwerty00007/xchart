@@ -2,7 +2,6 @@ image:
   pullPolicy: IfNotPresent
   repository: mtphotos/mt-photos
   tag: "latest"
-password: "admin123"
 environmentVariables: []
 extraAppVolumeMounts: []
 web_port: 8063
@@ -13,12 +12,9 @@ appVolumeMounts:
   config:
     emptyDir: true
     mountPath: /config
-    upload:
+  upload:
     emptyDir: true
     mountPath: /upload
-  import:
-    emptyDir: true
-    mountPath: /photoprism/import
-ownerUID: 568
-ownerGID: 568
+ownerUID: 1000
+ownerGID: 1000
 public: false
