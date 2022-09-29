@@ -31,7 +31,8 @@ spec:
       hostAliases:
       {{ range $index, $extraHostsConfiguration := .Values.extraHosts }}
       - ip: {{ $extraHostsConfiguration.ip }}
-        hostnames: {{- $extraHostsConfiguration.hostnames }}
+        hostnames: 
+        {{- $extraHostsConfiguration.hostnames }}
       {{ end }}
       containers:
         - name: {{ .Chart.Name }}
