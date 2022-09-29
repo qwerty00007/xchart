@@ -164,13 +164,13 @@ questions:
                       schema:
                         type: hostpath
                         required: true
-        - variable: media
-          label: "Media Volume"
+        - variable: data
+          label: "Media Data Volume"
           schema:
             type: dict
             attrs:
               - variable: datasetName
-                label: "Media Volume Dataset Name"
+                label: "Media Data Volume Dataset Name"
                 schema:
                   type: string
                   hidden: true
@@ -180,13 +180,13 @@ questions:
                   default: "ix-nastools_data"
                   editable: false
               - variable: mountPath
-                label: "Media Mount Path"
+                label: "Media Data Mount Path"
                 description: "Path where the volume will be mounted inside the pod"
                 schema:
                   type: path
                   hidden: true
                   editable: true
-                  default: "/media"
+                  default: "/data"
               - variable: hostPathEnabled
                 label: "Enable Custom Host Path for NAS-Tools Media Volume"
                 schema:
@@ -195,7 +195,7 @@ questions:
                   show_subquestions_if: true
                   subquestions:
                     - variable: hostPath
-                      label: "Host Path for NAS-Tools Media Volume"
+                      label: "Host Path for NAS-Tools Media Data Volume"
                       schema:
                         type: hostpath
                         required: true

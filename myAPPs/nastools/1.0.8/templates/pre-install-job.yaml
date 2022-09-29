@@ -28,6 +28,6 @@ spec:
           - "-R"
           - "{{ .Values.ownerUID }}:{{ .Values.ownerGID }}"
           - "{{ .Values.appVolumeMounts.config.mountPath }}"
-          - "{{ .Values.appVolumeMounts.media.mountPath }}"
+          - "{{ .Values.appVolumeMounts.data.mountPath }}"
         volumeMounts: {{ include "common.storage.configureAppVolumeMountsInContainer" .Values | nindent 12 }}
       volumes: {{ include "common.storage.configureAppVolumes" .Values | nindent 8 }}
