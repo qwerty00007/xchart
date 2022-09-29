@@ -30,6 +30,26 @@ questions:
       max: 65535
       default: 30000
       required: true
+  - variable: extraHosts
+    label: "NAS-Tools extra hosts"
+    group: "Networking"
+    schema:
+      type: list
+      default: [ ]
+      items:
+        - variable: extrahost
+          label: "extra host"
+          schema:
+            type: dict
+            attrs:
+              - variable: ip
+                label: "ip"
+                schema:
+                  type: string
+              - variable: hostnames
+                label: "hostnames"
+                schema:
+                  type: string
   
   - variable: dnsConfig
     label: "DNS Configuration"
