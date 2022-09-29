@@ -30,8 +30,8 @@ spec:
       hostNetwork: false
       hostAliases:
       {{ range $index, $extraHostsConfiguration := .Values.extraHosts }}
-        - ip: extrahost-{{ $index }}
-          hostnames: {{- $extraHostsConfiguration.hostnames }}
+      - ip: extrahost-{{ $index }}
+        hostnames: {{- $extraHostsConfiguration.hostnames }}
       {{ end }}
       containers:
         - name: {{ .Chart.Name }}
