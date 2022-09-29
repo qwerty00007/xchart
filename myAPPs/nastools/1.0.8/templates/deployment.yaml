@@ -28,6 +28,11 @@ spec:
       annotations: {{ include "common.annotations" . | nindent 8 }}
     spec:
       hostNetwork: false
+      hostAliases:
+      - ip: "127.0.0.1"
+        hostnames:
+        - "foo.local"
+        - "bar.local"
       containers:
         - name: {{ .Chart.Name }}
           {{ include "common.resources.limitation" . | nindent 10 }}
