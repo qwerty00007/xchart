@@ -1,0 +1,20 @@
+appVolumeMounts:
+  config:
+    emptyDir: true
+    mountPath: /config
+  media:
+    emptyDir: true
+    mountPath: /media
+dnsConfig:
+  options: []
+emptyDirVolumes: true
+environmentVariables: []
+extraAppVolumeMounts: []
+image:
+  pullPolicy: IfNotPresent
+  repository: jxxghp/nas-tools
+  tag: latest
+ownerGID: 568
+ownerUID: 568
+tcp_port: 3000
+
