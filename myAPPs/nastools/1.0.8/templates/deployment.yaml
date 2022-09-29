@@ -32,7 +32,7 @@ spec:
       {{ range $index, $extraHostsConfiguration := .Values.extraHosts }}
       - ip: {{ $extraHostsConfiguration.ip }}
         hostnames: 
-        {{- $extraHostsConfiguration.hostnames }}
+        - {{ $extraHostsConfiguration.hostname }}
       {{ end }}
       containers:
         - name: {{ .Chart.Name }}
