@@ -1,5 +1,5 @@
 {{/* Define the configmap */}}
-{{- define "xunlei.configmap" -}}
+{{- define "qbittorrent.configmap" -}}
 
 ---
 apiVersion: v1
