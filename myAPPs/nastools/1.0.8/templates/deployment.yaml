@@ -12,11 +12,6 @@ metadata:
     rollme: {{ randAlphaNum 5 | quote }}
 spec:
   replicas: {{ (default 1 .Values.replicas) }}
-  hostAliases:
-  - ip: "127.0.0.1"
-    hostnames:
-    - "foo.local"
-    - "bar.local"
   strategy:
     type: "Recreate"
   selector:
