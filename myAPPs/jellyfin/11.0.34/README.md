@@ -2,6 +2,10 @@
 
 ![Version: 11.0.34](https://img.shields.io/badge/Version-11.0.34-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 10.8.4](https://img.shields.io/badge/AppVersion-10.8.4-informational?style=flat-square)
 
+这个 truenas scale jellyfin 应用依据社区应用更改，仅将 docker 镜像改为 nyanmisaka/jellyfin
+后续计划利用 hostAliases /etc/hosts 
+
+
 Jellyfin is a Free Software Media System
 
 TrueCharts can be installed as both *normal* Helm Charts or as Apps on TrueNAS SCALE.
