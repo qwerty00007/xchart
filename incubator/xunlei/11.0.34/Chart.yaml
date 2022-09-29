@@ -1,25 +1,23 @@
 apiVersion: v2
-appVersion: "4.4.3.1"
+appVersion: "2.10.1"
 dependencies:
   - name: common
     repository: https://library-charts.truecharts.org
     version: 10.5.10
 deprecated: false
-description: qBittorrent is a cross-platform free and open-source BitTorrent client
-home: https://truecharts.org/docs/charts/stable/qbittorrent
-icon: https://truecharts.org/img/hotlink-ok/chart-icons/qbittorrent.png
+description: 迅雷下载
+home: https://hub.docker.com/r/cnk3x/xunlei
+icon: http://192.168.100.230:10037/hedegang/HD-Icons/raw/branch/main/border-radius/Xunlei.png
 keywords:
-  - qbittorrent
   - torrrent
 kubeVersion: ">=1.16.0-0"
 maintainers:
   - email: info@truecharts.org
     name: TrueCharts
     url: https://truecharts.org
-name: qbittorrent
+name: xunlei
 sources:
-  - https://github.com/truecharts/charts/tree/master/charts/stable/qbittorrent
-  - https://github.com/qbittorrent/qBittorrent
+  - https://github.com/cnk3x/xunlei 
 type: application
 version: 11.0.34
 annotations:
