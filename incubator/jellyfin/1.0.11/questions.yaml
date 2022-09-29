@@ -209,6 +209,50 @@ questions:
                   type: boolean
                   default: false
 
+  - variable: securityContext
+    label: "Security Context"
+    group: "Workload Details"
+    schema:
+      type: dict
+      attrs:
+        - variable: privileged
+          label: "Privileged Mode"
+          description: "Determines if any container in a pod can enable privileged mode. By default a container is not allowed to access any devices on the host, but a 'privileged' container is given access to all devices on the host. This allows the container nearly all the same access as processes running on the host."
+          schema:
+            type: boolean
+            default: false
+        - variable: capabilities
+          label: "Capabilities"
+          description: "With Linux capabilities, you can grant certain privileges to a process without granting all the privileges of the root user."
+          schema:
+            type: list
+            items:
+              - variable: capability
+                description: "Add Capability"
+                label: "Add Capability"
+                schema:
+                  type: string
+        - variable: enableRunAsUser
+          label: "Configure Container User and Group ID"
+          description: "Configure security context runAsUser and runAsGroup variables"
+          schema:
+            type: boolean
+            default: false
+            show_subquestions_if: true
+            subquestions:
+              - variable: runAsUser
+                label: "Run Container As User"
+                description: "Configure user id for container."
+                schema:
+                  type: int
+                  default: 568
+              - variable: runAsGroup
+                label: "Run Container As Group"
+                description: "Configure group id for container."
+                schema:
+                  type: int
+                  default: 568
+
   - variable: enableResourceLimits
     label: "Enable Pod resource limits"
     group: "Resource Limits"
