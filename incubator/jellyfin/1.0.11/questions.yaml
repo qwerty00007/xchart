@@ -33,7 +33,31 @@ questions:
     schema:
       type: boolean
       default: false
-
+      
+  - variable: extraHosts
+    label: "Extra Hosts"
+    group: "Networking"
+    schema:
+      type: list
+      items:
+        - variable: extraHost
+          label: "Extra Host"
+          description: "Add an extra host for NAS-Tools application"
+          schema:
+            type: dict
+            attrs:
+              - variable: ip
+                label: "ip"
+                description: "hostname ip"
+                schema:
+                  type: string
+                  required: true
+              - variable: hostname
+                label: "Host Name"
+                description: "Host Name"
+                schema:
+                  type: string
+                  required: true
   - variable: environmentVariables
     label: "Environment Variables for Jellyfin Server"
     group: "Jellyfin Server Configuration"
