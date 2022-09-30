@@ -2,7 +2,7 @@ appVolumeMounts:
   config:
     emptyDir: true
     mountPath: /config
-embyServerHttp:
+jellyfinServerHttp:
   port: 32496
 emptyDirVolumes: true
 environmentVariables: []

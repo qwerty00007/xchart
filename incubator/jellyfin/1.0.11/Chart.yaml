@@ -12,5 +12,5 @@ keywords:
 - media
 name: jellyfin
 sources:
-- https://hub.docker.com/r/emby/embyserver
+- https://hub.docker.com/r/nyanmisaka/jellyfin
 version: 1.0.11
