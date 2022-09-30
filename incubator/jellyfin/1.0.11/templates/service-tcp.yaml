@@ -1,4 +1,4 @@
-{{ $svc := .Values.jellyfinServerHttp }}
+{{ $svc := .Values.embyServerHttp }}
 {{ $ports := list }}
 {{ $ports = mustAppend $ports (dict "name" "jellyfin" "port" $svc.port "nodePort" $svc.port "targetPort" "jellyfin") }}
 {{ $ports = mustAppend $ports (dict "name" "http" "port" 80 "targetPort" "jellyfin") }}

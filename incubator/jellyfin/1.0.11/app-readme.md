@@ -1,3 +1,3 @@
 # Jellyfin Server
 
-Jellyfin is the volunteer-built media solution that puts you in control of your media. 
+Jellyfin Server is a personal media server with apps on just about every device

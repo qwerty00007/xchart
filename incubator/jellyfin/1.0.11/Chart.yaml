@@ -6,11 +6,11 @@ dependencies:
   version: 2207.0.0
 description: Jellyfin Server
 home: https://jellyfin.org/
-icon: https://raw.githubusercontent.com/xushier/HD-Icons/main/border-radius/Jellyfin_A.png
+icon: https://truecharts.org/img/hotlink-ok/chart-icons/jellyfin.png
 keywords:
 - jellyfin
 - media
 name: jellyfin
 sources:
-- https://hub.docker.com/r/nyanmisaka/jellyfin
+- https://hub.docker.com/r/emby/embyserver
 version: 1.0.11

@@ -24,7 +24,7 @@ portals:
       - "$node_ip"
     ports:
       - "$variable-jellyfinServerHttp.port"
-    path: "/web"
+    path: "/"
 
 questions:
   - variable: hostNetwork
@@ -33,31 +33,7 @@ questions:
     schema:
       type: boolean
       default: false
-      
-  - variable: extraHosts
-    label: "Extra Hosts"
-    group: "Networking"
-    schema:
-      type: list
-      items:
-        - variable: extraHost
-          label: "Extra Host"
-          description: "Add an extra host for NAS-Tools application"
-          schema:
-            type: dict
-            attrs:
-              - variable: ip
-                label: "ip"
-                description: "hostname ip"
-                schema:
-                  type: string
-                  required: true
-              - variable: hostname
-                label: "Host Name"
-                description: "Host Name"
-                schema:
-                  type: string
-                  required: true
+
   - variable: environmentVariables
     label: "Environment Variables for Jellyfin Server"
     group: "Jellyfin Server Configuration"
@@ -95,18 +71,42 @@ questions:
 
   # Port configuration
   - variable: jellyfinServerHttp
-    label: "Configure jellyfin Server HTTP Service"
+    label: "Configure Jellyfin Server HTTP Service"
     group: "Networking"
     schema:
       type: dict
       attrs:
         - variable: port
-          label: "Port to expose for jellyfin Server UI"
+          label: "Port to expose for Jellyfin Server UI"
           schema:
             type: int
             min: 9000
             max: 65535
             default: 9096
+  - variable: extraHosts
+    label: "Extra Hosts"
+    group: "Networking"
+    schema:
+      type: list
+      items:
+        - variable: extraHost
+          label: "Extra Host"
+          description: "Add an extra host for NAS-Tools application"
+          schema:
+            type: dict
+            attrs:
+              - variable: ip
+                label: "ip"
+                description: "hostname ip"
+                schema:
+                  type: string
+                  required: true
+              - variable: hostname
+                label: "Host Name"
+                description: "Host Name"
+                schema:
+                  type: string
+                  required: true
 
   # Specify GPU configuration
   - variable: gpuConfiguration
@@ -119,7 +119,7 @@ questions:
       attrs: []
 
   - variable: appVolumeMounts
-    label: "Jellyfin Server Config Storage"
+    label: "Jellyfin Server Storage"
     group: "Storage"
     schema:
       type: dict
@@ -159,13 +159,6 @@ questions:
                       schema:
                         type: hostpath
                         required: true
-
-  - variable: appVolumeMounts
-    label: "Jellyfin Server Media Storage"
-    group: "Storage"
-    schema:
-      type: dict
-      attrs:
         - variable: media
           label: "Media Volume"
           schema:
@@ -233,6 +226,7 @@ questions:
                   type: boolean
                   default: false
 
+
   - variable: securityContext
     label: "Security Context"
     group: "Workload Details"
@@ -276,6 +270,7 @@ questions:
                 schema:
                   type: int
                   default: 568
+
 
   - variable: enableResourceLimits
     label: "Enable Pod resource limits"

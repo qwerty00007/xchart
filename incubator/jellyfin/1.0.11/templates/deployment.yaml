@@ -8,6 +8,12 @@ spec: {{ include "common.deployment.common_spec" . | nindent 2 }}
       dnsPolicy: ClusterFirstWithHostNet
     {{- end }}
       hostname: {{ template "common.names.fullname" . }}
+      hostAliases:
+      {{ range $index, $extraHostsConfiguration := .Values.extraHosts }}
+      - ip: {{ $extraHostsConfiguration.ip }}
+        hostnames: 
+        - {{ $extraHostsConfiguration.hostname }}
+      {{ end }}
       containers:
         - name: {{ .Chart.Name }}
           {{ include "common.resources.limitation" . | nindent 10 }}
@@ -21,7 +27,7 @@ spec: {{ include "common.deployment.common_spec" . | nindent 2 }}
             {{ if .Values.securityContext.capabilities }}
             capabilities:
               add: {{ toYaml .Values.securityContext.capabilities | nindent 8 }}
-            {{ end }}
+            {{ end }}          
           volumeMounts: {{ include "common.storage.configureAppVolumeMountsInContainer" .Values | nindent 12 }}
             {{ range $index, $hostPathConfiguration := .Values.extraAppVolumeMounts }}
             - name: extrappvolume-{{ $index }}
