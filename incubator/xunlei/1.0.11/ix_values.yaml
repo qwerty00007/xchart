@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: cnk3x/xunlei
+  tag: latest
