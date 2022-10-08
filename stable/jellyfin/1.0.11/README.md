@@ -1,5 +1,4 @@
 # Jellyfin Server helm chart
 
-## Configuration
-
-Please refer to questions.yaml for a detailed overview on supported configurable items.
+**jellyfin** 使用 [nyanmisaka/jellyfin](https://hub.docker.com/r/nyanmisaka/jellyfin) docker镜像
+增加配置 /etc/hosts.

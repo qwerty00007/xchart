@@ -1,5 +1,3 @@
 # xunlei
 
-## Configuration
-
-Please refer to questions.yaml for a detailed overview on supported configurable items.
+迅雷远程下载服务(docker)(非官方) [链接](https://hub.docker.com/r/cnk3x/xunlei)
