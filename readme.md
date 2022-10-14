@@ -6,6 +6,6 @@
 - **nastools** 增加配置 /etc/hosts.
 
 # how to
-![增加第三方应用库](/assets/img/add.png)
+![增加第三方应用库](/assets/add.png)
 
 <https://github.com/qwerty00007/xchart>
