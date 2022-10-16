@@ -85,7 +85,7 @@ questions:
       max: 65535
 
   - variable: environmentVariables
-    label: "Qbittorent environment"
+    label: "MT Photos environment"
     group: "Configuration"
     schema:
       type: list
