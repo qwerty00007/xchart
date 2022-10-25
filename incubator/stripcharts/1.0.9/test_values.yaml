@@ -1,15 +1,6 @@
-appVolumeMounts:
-  config:
-    emptyDir: true
-    mountPath: /config
-  media:
-    emptyDir: true
-    mountPath: /media
-dnsConfig:
-  options: []
-emptyDirVolumes: true
+
 environmentVariables: []
-extraAppVolumeMounts: []
+
 image:
   pullPolicy: IfNotPresent
   repository: tuky/stripcharts
