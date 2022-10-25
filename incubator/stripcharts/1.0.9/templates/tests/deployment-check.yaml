@@ -13,10 +13,4 @@ spec:
       - name: test-curl
         image: alpine/curl
         imagePullPolicy: "IfNotPresent"
-        
     restartPolicy: Never
-    hostAliases:
-    - ip: "127.0.0.1"
-      hostnames:
-      - "foo.local"
-      - "bar.local"
