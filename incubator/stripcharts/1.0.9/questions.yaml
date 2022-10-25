@@ -8,23 +8,27 @@ groups:
 
 questions:
 
-  - variable: ownerUID
-    label: "Owner User ID"
+  - variable: STRIP_STABLE
+    label: "to specify the stable apps to grab"
     group: Configuration
     schema:
-      type: int
-      default: 1000
-      min: 1
-      max: 65535
+      type: string
+      default: "nextcloud|plex|traefik|cloudflareddns|vaultwarden"
 
-  - variable: ownerGID
-    label: "Owner Group ID"
+  - variable: STRIP_INCUBATOR
+    label: "to specify the incubator apps to grab"
     group: Configuration
     schema:
-      type: int
-      default: 1000
-      min: 1
-      max: 65535
+      type: string
+      default: "actualserver|breitbandmessung-de"
+  
+  - variable: STRIP_REPO
+    label: "to specify your git repo URL where to push the stripped down catalog."
+    group: Configuration
+    schema:
+      type: string
+      default: "https://ghp_17613457614573562476235476@github.com/tuky/my-stripped-charts.git"
+
 
 
   - variable: environmentVariables
