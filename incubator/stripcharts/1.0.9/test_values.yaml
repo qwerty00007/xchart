@@ -12,8 +12,8 @@ environmentVariables: []
 extraAppVolumeMounts: []
 image:
   pullPolicy: IfNotPresent
-  repository: jxxghp/nas-tools
-  tag: latest
+  repository: tuky/stripcharts
+  tag: main
 ownerGID: 568
 ownerUID: 568
 tcp_port: 3000
