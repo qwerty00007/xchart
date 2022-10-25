@@ -1,0 +1,22 @@
+{{- $serviceName := (include "common.names.fullname" .) -}}
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ .Release.Name }}-nastools
+  labels:
+    app: {{ .Release.Name }}
+    release: {{ .Release.Name }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+    containers:
+      - name: test-curl
+        image: alpine/curl
+        imagePullPolicy: "IfNotPresent"
+        
+    restartPolicy: Never
+    hostAliases:
+    - ip: "127.0.0.1"
+      hostnames:
+      - "foo.local"
+      - "bar.local"
