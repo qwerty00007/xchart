@@ -23,3 +23,11 @@ spec:
       containers:
       - name: pre-install-job
         image: "alpine:latest"
+        command:
+          - "chown"
+          - "-R"
+          - "{{ .Values.ownerUID }}:{{ .Values.ownerGID }}"
+          - "{{ .Values.appVolumeMounts.config.mountPath }}"
+          - "{{ .Values.appVolumeMounts.data.mountPath }}"
+        volumeMounts: {{ include "common.storage.configureAppVolumeMountsInContainer" .Values | nindent 12 }}
+      volumes: {{ include "common.storage.configureAppVolumes" .Values | nindent 8 }}

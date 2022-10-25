@@ -1,12 +1,13 @@
 apiVersion: v2
-appVersion: 1.0.0
+appVersion: 2.2.3
+dependencies:
 - name: common
   repository: file://../../../library/common/2207.0.0
   version: 2207.0.0
-description: 筛选自己需要的应用, 重新生成catalog
-home: https://github.com/tuky/StripCharts 
+description: 筛选自己需要的应用，重新生成catalog
+home: https://github.com/jxxghp/nas-tools 
 icon: https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/icons/main/stripcharts-icon.jpg
 keywords:
-- tools
+- media
 name: stripcharts
 version: 1.0.9
