@@ -1,6 +1,3 @@
-emptyDirVolumes: true
-environmentVariables: []
-extraAppVolumeMounts: []
 image:
   pullPolicy: IfNotPresent
   repository: tuky/stripcharts
