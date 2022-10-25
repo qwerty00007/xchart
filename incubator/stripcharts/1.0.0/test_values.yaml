@@ -1,0 +1,7 @@
+
+environmentVariables: []
+
+image:
+  pullPolicy: IfNotPresent
+  repository: tuky/stripcharts
+  tag: main

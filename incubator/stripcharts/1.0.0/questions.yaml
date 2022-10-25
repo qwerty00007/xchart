@@ -1,6 +1,6 @@
 groups:
   - name: "Configuration"
-    description: "NAS-Tools application configuration"
+    description: "StripCharts application configuration"
 
   - name: "Resource Limits"
     description: "Set CPU/memory limits for Kubernetes Pod"
@@ -9,14 +9,14 @@ groups:
 questions:
 
   - variable: STRIP_STABLE
-    label: "to specify the stable apps to grab"
+    label: "to specify the stable apps to grab, e.g. app1|app2|app3"
     group: Configuration
     schema:
       type: string
       default: "nextcloud|plex|traefik|cloudflareddns|vaultwarden"
 
   - variable: STRIP_INCUBATOR
-    label: "to specify the incubator apps to grab"
+    label: "to specify the incubator apps to grab, e.g. app1|app2|app3"
     group: Configuration
     schema:
       type: string
@@ -27,12 +27,12 @@ questions:
     group: Configuration
     schema:
       type: string
-      default: "https://ghp_17613457614573562476235476@github.com/tuky/my-stripped-charts.git"
+      default: "https://PersonalAccessTokens@github.com/your/repository.git"
 
 
 
   - variable: environmentVariables
-    label: "NAS-Tools environment"
+    label: "StripCharts environment"
     group: "Configuration"
     schema:
       type: list
