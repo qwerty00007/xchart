@@ -6,7 +6,7 @@ dependencies:
   version: 2207.0.0
 description: 自动化搞定限定条件下中文字幕下载。
 home: https://github.com/allanpk716/ChineseSubFinder 
-icon: https://ghproxy.com/https://raw.githubusercontent.com/allanpk716/ChineseSubFinder/master/frontend/public/icons/favicon.ico
+icon: https://ghproxy.com/https://raw.githubusercontent.com/jxxghp/nas-tools/master/web/static/img/chinesesubfinder.png
 keywords:
 - tools
 name: chinesesubfinder
