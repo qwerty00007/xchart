@@ -22,5 +22,6 @@ APP list
   
 
 # how to
+![增加第三方应用库](/assets/add.png)
 
 <https://github.com/qwerty00007/xchart.git>
