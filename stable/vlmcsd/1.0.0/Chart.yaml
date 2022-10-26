@@ -1,5 +1,5 @@
 apiVersion: v2
-appVersion: 20220116
+appVersion: 2022.01.16
 dependencies:
 - name: common
   repository: file://../../../library/common/2207.0.0
