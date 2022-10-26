@@ -23,4 +23,3 @@ spec:
       containers:
       - name: pre-install-job
         image: "alpine:latest"
-
