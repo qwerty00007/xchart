@@ -1,0 +1,7 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: mogeko/vlmcsd
+  tag: latest
+
+tcp_port: 1688
+
