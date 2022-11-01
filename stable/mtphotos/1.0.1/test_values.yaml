@@ -1,0 +1,19 @@
+appVolumeMounts:
+  config:
+    emptyDir: true
+    mountPath: /config
+  downloads:
+    emptyDir: true
+    mountPath: /downloads
+dnsConfig:
+  options: []
+emptyDirVolumes: true
+environmentVariables: []
+extraAppVolumeMounts: []
+image:
+  pullPolicy: IfNotPresent
+  repository: mtphotos/mt-photos
+  tag: latest
+ownerGID: 568
+ownerUID: 568
+tcp_port: 8063
