@@ -1,0 +1,20 @@
+appVolumeMounts:
+  config:
+    emptyDir: true
+    mountPath: /config
+  media:
+    emptyDir: true
+    mountPath: /media
+dnsConfig:
+  options: []
+emptyDirVolumes: true
+environmentVariables: []
+extraAppVolumeMounts: []
+image:
+  pullPolicy: IfNotPresent
+  repository: allanpk716/chinesesubfinder
+  tag: latest
+ownerGID: 1000
+ownerUID: 1000
+tcp_port: 19035
+
