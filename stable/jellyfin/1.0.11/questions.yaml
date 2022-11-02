@@ -83,6 +83,7 @@ questions:
             min: 9000
             max: 65535
             default: 9096
+  # extra Hosts configuration
   - variable: extraHosts
     label: "Extra Hosts"
     group: "Networking"
@@ -91,7 +92,7 @@ questions:
       items:
         - variable: extraHost
           label: "Extra Host"
-          description: "Add an extra host for NAS-Tools application"
+          description: "Add an extra host for Jellyfin application"
           schema:
             type: dict
             attrs:
