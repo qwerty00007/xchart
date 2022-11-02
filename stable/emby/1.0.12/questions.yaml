@@ -162,6 +162,41 @@ questions:
                       schema:
                         type: hostpath
                         required: true
+        - variable: media
+          label: "Media Volume"
+          schema:
+            type: dict
+            attrs:
+              - variable: datasetName
+                label: "Media Volume Dataset Name"
+                schema:
+                  type: string
+                  hidden: true
+                  $ref:
+                    - "normalize/ixVolume"
+                  show_if: [["hostPathEnabled", "=", false]]
+                  default: "ix-emby_data"
+                  editable: false
+              - variable: mountPath
+                label: "Media Mount Path"
+                description: "Path where the volume will be mounted inside the pod"
+                schema:
+                  type: path
+                  hidden: true
+                  editable: true
+                  default: "/media"
+              - variable: hostPathEnabled
+                label: "Enable Custom Host Path for EMBY Server Media Volume"
+                schema:
+                  type: boolean
+                  default: false
+                  show_subquestions_if: true
+                  subquestions:
+                    - variable: hostPath
+                      label: "Host Path for EMBY Media Volume"
+                      schema:
+                        type: hostpath
+                        required: true
 
   - variable: extraAppVolumeMounts
     label: "Emby Server Extra Host Path Volumes"
