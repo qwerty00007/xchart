@@ -145,14 +145,33 @@ data
 
 ![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_11.jpg)
 
-## 其他应用
+## 拓展应用
 
+- 其他下载器
 如果还有别的下载器，也下载一些影音文件， 比如又部署了一个 [迅雷 docker 版](https://hub.docker.com/r/cnk3x/xunlei)， 可以在 `downloads`文件夹新建`xunlei`，再在该文件夹下新建`movies`和 `TVs`，然后在将`path/to/data/downloads/xunlei`挂载到 xunlei 这个应用的下载目录 `/xunlei/downloads`
 
-> 在 `downloads` 下再新建`xunlei`文件夹是为了方便管理各个下载器的文件。
+> 在 `downloads` 下再新建 `xunlei` 文件夹是为了方便管理各个下载器的文件。
 
 然后在 NAS-TOOLS 的目录同步设置中添加迅雷下载的目录。这样每当迅雷下载好后， NAS-TOOLS 就会将影音文件刮削同步到`media`目录
 
+- 自己copy影音文件
+比如自己有一些影音文件，自己不想整理，可以在 `data` 目录下新建文件夹 `import` ，再在`import`新建`movies`和`TVs`。将相应的影音文件 copy 到对应目录，在 NAS-TOOLS 里面添加同步目录。这样 NAS-TOOLS 会自动整理重命名这些影音文件。
+最后可能目录结构看起来是这样的：
+```
+data
+├── downloads
+│  ├── movies
+│  ├── others
+│  └── TVs
+├── import
+│  ├── movies
+│  ├── others
+│  └── TVs
+└── media
+   ├── movies
+   ├── others
+   └── TVs
+```
 ## 参考
 
 - [Hardlinks and Instant Moves (Atomic-Moves)](https://trash-guides.info/Hardlinks/Hardlinks-and-Instant-Moves/)
