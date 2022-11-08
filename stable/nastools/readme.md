@@ -1,6 +1,6 @@
 # NAS-Tools
 
-NAS媒体库资源归集、整理自动化工具
+NAS 媒体库资源归集、整理自动化工具
 
 # NAS-TOOLS 硬链接详细配置
 
@@ -45,7 +45,7 @@ data
 
 ## TrueNAS SCALE 配置
 
-1. 新建数据集 `data`
+1. 新建数据集`data`
 
 设置权限，给普通用户读写权限，默认这个用户的 id 是 1000。
 
@@ -66,8 +66,8 @@ data
 ![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_12.png)
 
 - 媒体库配置
-  1. 电影目录 `/data/media/movies`
-  2. 电视剧目录 `/data/media/TVs`
+  1. 电影目录`/data/media/movies`
+  2. 电视剧目录`/data/media/TVs`
 
 ![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_4.jpg)
 
@@ -75,22 +75,22 @@ data
   1. 电影
   源目录`/data/downloads/movies` 
   <br>
-  目的目录 `/data/media/movies`
+  目的目录`/data/media/movies`
   2. 电影剧
   源目录`/data/downloads/TVs`
   <br>
-  目的目录 `/data/media/TVs`
+  目的目录`/data/media/TVs`
 
 ![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_3.jpg)
 
 - 下载器配置 qBitterent
   1. 电影
-     保存路径 `/downloads/movies`
-     访问目录 `/data/downloads/movies`
+     保存路径`/downloads/movies`
+     访问目录`/data/downloads/movies`
      分类标签 movies
   2. 电视剧
-     保存路径 `/downloads/TVs`
-     访问目录 `/data/downloads/TVs`
+     保存路径`/downloads/TVs`
+     访问目录`/data/downloads/TVs`
      分类标签 TVs
 
 ![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_5.jpg)
@@ -103,14 +103,14 @@ data
 
 ![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_6.jpg)
 
-- 设置 `PUID`和`PGID`
+- 设置`PUID`和`PGID`
 
 ![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_13.png)
 
 - 设置分类
 
 设置两个分类 movies 和 TVs：
-1. movies 保存到 `/downloads/movies`
+1. movies 保存到`/downloads/movies`
 2. TVs 保存到`/downloads/TVs`
 
 ![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_7.jpg)
@@ -141,21 +141,21 @@ data
 
 - 使用 ls - al
 
-在 `media`里具体到某一个影片文件夹下 执行 `ls -al` ，影片前的数字大于 1 就硬链接成功了，实际上，这个数字是每硬链接一次就+1。
+在`media`里具体到某一个影片文件夹下 执行 `ls -al` ，影片前的数字大于 1 就硬链接成功了，实际上，这个数字是每硬链接一次就+1。
 
 ![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_11.jpg)
 
 ## 拓展应用
 
 - 其他下载器
-如果还有别的下载器，也下载一些影音文件， 比如又部署了一个 [迅雷 docker 版](https://hub.docker.com/r/cnk3x/xunlei)， 可以在 `downloads`文件夹新建`xunlei`，再在该文件夹下新建`movies`和 `TVs`，然后在将`path/to/data/downloads/xunlei`挂载到 xunlei 这个应用的下载目录 `/xunlei/downloads`
+如果还有别的下载器，也下载一些影音文件， 比如又部署了一个 [迅雷 docker 版](https://hub.docker.com/r/cnk3x/xunlei)， 可以在 `downloads`文件夹新建`xunlei`，再在该文件夹下新建`movies`和 `TVs`，然后在将`path/to/data/downloads/xunlei`挂载到 xunlei 这个应用的下载目录`/xunlei/downloads`。
 
-> 在 `downloads` 下再新建 `xunlei` 文件夹是为了方便管理各个下载器的文件。
+> 在`downloads`下再新建`xunlei`文件夹是为了方便管理各个下载器的文件。
 
 然后在 NAS-TOOLS 的目录同步设置中添加迅雷下载的目录。这样每当迅雷下载好后， NAS-TOOLS 就会将影音文件刮削同步到`media`目录
 
 - 导入已下载的影音文件
-比如自己有一些影音文件，自己不想整理，可以在 `data` 目录下新建文件夹 `import` ，再在`import`新建`movies`和`TVs`。将相应的影音文件 copy 到对应目录，在 NAS-TOOLS 里面添加同步目录。这样 NAS-TOOLS 会自动整理重命名这些影音文件。
+比如自己有一些影音文件，自己不想整理，可以在`data`目录下新建文件夹`import`，再在`import`新建`movies`和`TVs`。将相应的影音文件 copy 到对应目录，在 NAS-TOOLS 里面添加同步目录。这样 NAS-TOOLS 会自动整理重命名这些影音文件。
 最后可能目录结构看起来是这样的：
 
 ```
