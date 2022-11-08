@@ -58,6 +58,7 @@ data
 - 目录挂载
 
 将`path/to/data`文件夹挂载到 NAS-TOOLS 的`/data`
+
 ![图片](/../../assets/IMG_1.jpg)
 
 - 设置`PUID`和`PGID`
@@ -72,7 +73,8 @@ data
 
 - 目录同步配置
   1. 电影
-  源目录`/data/downloads/movies` <br>
+  源目录`/data/downloads/movies` 
+  <br>
   目的目录 `/data/media/movies`
   2. 电影剧
   源目录`/data/downloads/TVs`
@@ -98,6 +100,7 @@ data
 - 目录挂载
 
 将`path/to/data/downloads`文件夹挂载到 qBitterent 的`/downloads`
+
 ![图片](/../../assets/IMG_6.jpg)
 
 - 设置 `PUID`和`PGID`
@@ -115,6 +118,7 @@ data
 ![图片](/../../assets/IMG_8.jpg)
 
 设置种子管理模式为自动，这样会按类别保存
+
 ![图片](/../../assets/IMG_9.jpg)
 
 ## 媒体服务器配置 (Jellyfin)
@@ -122,6 +126,7 @@ data
 - 目录挂载
 
 将`path/to/data/media`文件夹挂载到 Jellyfin 的`/media`
+
 ![图片](/../../assets/IMG_10.jpg)
 
 - 设置运行 ID
@@ -137,6 +142,7 @@ data
 - 使用 ls - al
 
 在 `media`里具体到某一个影片文件夹下 执行 `ls -al` ，影片前的数字大于 1 就硬链接成功了，实际上，这个数字是每硬链接一次就+1。
+
 ![图片](/../../assets/IMG_11.jpg)
 
 ## 其他应用
