@@ -9,6 +9,7 @@ NAS媒体库资源归集、整理自动化工具
 ## 添加应用仓库
 
 将应用仓库 https://gitee.com/qwerty0007/xchart 添加目录
+
 ![图片](/../../assets/add.png)
 
 ## 目录结构
