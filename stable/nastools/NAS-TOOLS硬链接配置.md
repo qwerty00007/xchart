@@ -53,7 +53,7 @@ data
 - 目录挂载
 
 将`path/to/data`文件夹挂载到 NAS-TOOLS 的`/data`
-![图片](/../../../assets/IMG_1.jpg)
+![图片](/../../assets/IMG_1.jpg)
 
 - 设置`PUID`和`PGID`
 
