@@ -10,7 +10,7 @@ NAS媒体库资源归集、整理自动化工具
 
 将应用仓库 https://gitee.com/qwerty0007/xchart 添加目录
 
-![图片](.assets/add.png)
+![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/add.png)
 
 ## 目录结构
 
@@ -59,17 +59,17 @@ data
 
 将`path/to/data`文件夹挂载到 NAS-TOOLS 的`/data`
 
-![图片](.assets/IMG_1.jpg)
+![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_1.jpg)
 
 - 设置`PUID`和`PGID`
 
-![图片](.assets/IMG_12.png)
+![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_12.png)
 
 - 媒体库配置
   1. 电影目录 `/data/media/movies`
   2. 电视剧目录 `/data/media/TVs`
 
-![图片](.assets/IMG_4.jpg)
+![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_4.jpg)
 
 - 目录同步配置
   1. 电影
@@ -81,7 +81,7 @@ data
   <br>
   目的目录 `/data/media/TVs`
 
-![图片](.assets/IMG_3.jpg)
+![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_3.jpg)
 
 - 下载器配置 qBitterent
   1. 电影
@@ -93,7 +93,7 @@ data
      访问目录 `/data/downloads/TVs`
      分类标签 TVs
 
-![图片](.assets/IMG_5.jpg)
+![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_5.jpg)
 
 ## 下载器配置 (qBitterent)
 
@@ -101,11 +101,11 @@ data
 
 将`path/to/data/downloads`文件夹挂载到 qBitterent 的`/downloads`
 
-![图片](.assets/IMG_6.jpg)
+![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_6.jpg)
 
 - 设置 `PUID`和`PGID`
 
-![图片](.assets/IMG_13.png)
+![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_13.png)
 
 - 设置分类
 
@@ -113,13 +113,13 @@ data
 1. movies 保存到 `/downloads/movies`
 2. TVs 保存到`/downloads/TVs`
 
-![图片](.assets/IMG_7.jpg)
+![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_7.jpg)
 
-![图片](.assets/IMG_8.jpg)
+![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_8.jpg)
 
 设置种子管理模式为自动，这样会按类别保存
 
-![图片](.assets/IMG_9.jpg)
+![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_9.jpg)
 
 ## 媒体服务器配置 (Jellyfin)
 
@@ -127,11 +127,11 @@ data
 
 将`path/to/data/media`文件夹挂载到 Jellyfin 的`/media`
 
-![图片](.assets/IMG_10.jpg)
+![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_10.jpg)
 
 - 设置运行 ID
 
-![图片](.assets/IMG_14.jpg)
+![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_14.jpg)
 
 - 添加媒体库
 
@@ -143,7 +143,7 @@ data
 
 在 `media`里具体到某一个影片文件夹下 执行 `ls -al` ，影片前的数字大于 1 就硬链接成功了，实际上，这个数字是每硬链接一次就+1。
 
-![图片](.assets/IMG_11.jpg)
+![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_11.jpg)
 
 ## 其他应用
 
