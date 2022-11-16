@@ -34,4 +34,4 @@ spec:
           {{ include "common.containers.imageConfig" .Values.image | nindent 10 }}
           ports:
             - name: tcp
-              containerPort: 8080
+              containerPort: 80

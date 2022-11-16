@@ -1,6 +1,6 @@
 groups:
   - name: "Networking"
-    description: "Networking Configuration for VLMCSD"
+    description: "Networking Configuration for clash-ui"
   - name: "Resource Limits"
     description: "Set CPU/memory limits for Kubernetes Pod"
 
@@ -17,7 +17,7 @@ portals:
 
 questions:
   - variable: tcp_port
-    label: "tcp Port for VLMCSD"
+    label: "tcp Port for clash-ui"
     group: Networking
     schema:
       type: int
