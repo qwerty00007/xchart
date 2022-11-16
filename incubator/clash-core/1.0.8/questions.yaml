@@ -14,7 +14,7 @@ groups:
 
 
 questions:
-  - variable: external_control_port
+  - variable: externalcontrol_port
     label: "Web Port for clash-core"
     group: Networking
     schema:
