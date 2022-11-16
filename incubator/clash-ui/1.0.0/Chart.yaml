@@ -4,10 +4,10 @@ dependencies:
 - name: common
   repository: file://../../../library/common/2207.0.0
   version: 2207.0.0
-description: A docker image running vlmcsd
-home: https://github.com/jxxghp/nas-tools 
-icon: https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/icons/main/VLMCSD-KMS-Server_200x200.png
+description: clash ui
+home: https://www.baidu.com 
+icon: https://ghproxy.com/https://raw.githubusercontent.com/xushier/HD-Icons/main/border-radius/Clash.png
 keywords:
 - tools
-name: vlmcsd
+name: clash-ui
 version: 1.0.0
