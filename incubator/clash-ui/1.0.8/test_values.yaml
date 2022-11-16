@@ -1,0 +1,15 @@
+appVolumeMounts:
+  config:
+    emptyDir: true
+    mountPath: /config
+dnsConfig:
+  options: []
+emptyDirVolumes: true
+environmentVariables: []
+extraAppVolumeMounts: []
+image:
+  pullPolicy: IfNotPresent
+  repository: haishanh/yacd
+  tag: 0.3.8
+timezone: Europe/London
+web_port: 8080
