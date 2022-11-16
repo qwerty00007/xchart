@@ -1,0 +1,16 @@
+appVolumeMounts:
+  config:
+    emptyDir: true
+    mountPath: /config
+dnsConfig:
+  options: []
+emptyDirVolumes: true
+environmentVariables: []
+extraAppVolumeMounts: []
+image:
+  pullPolicy: IfNotPresent
+  repository: dreamacro/clash
+  tag: 1.11.12
+tcp_port: 7893
+timezone: Europe/London
+web_port: 9090

@@ -1,0 +1,6 @@
+{{ $ports := list }}
+{{ $ports = mustAppend $ports (dict "name" "tcp" "port" .Values.tcp_port "nodePort" .Values.tcp_port "targetPort" 80) }}
+{{ $params := . }}
+{{ $_ := set $params "commonService" (dict "type" "NodePort" "ports" $ports ) }}
+{{ $_1 := set .Values "extraSelectorLabels" $selectors }}
+{{ include "common.classes.service" $params }}
