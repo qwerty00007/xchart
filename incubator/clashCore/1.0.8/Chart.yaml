@@ -4,12 +4,10 @@ dependencies:
 - name: common
   repository: file://../../../library/common/2207.0.0
   version: 2207.0.0
-description: core
-home: https://www.baidu.com/
+description: clash core
+home: https://www.baidu.com
 icon: https://ghproxy.com/https://raw.githubusercontent.com/xushier/HD-Icons/main/border-radius/Clash.png
 keywords:
 - tools
-name: clash-core
-sources:
-- https://hub.docker.com/r/dreamacro/clash
-version: 1.0.0
+name: clashCore
+version: 1.0.8

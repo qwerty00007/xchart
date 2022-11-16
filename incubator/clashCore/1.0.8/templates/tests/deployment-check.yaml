@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "{{ .Release.Name }}-xunlei-test"
+  name: {{ .Release.Name }}-qbittorent
   labels:
     app: {{ .Release.Name }}
     release: {{ .Release.Name }}
@@ -17,5 +17,5 @@ spec:
           - /bin/sh
           - -ec
           - |
-            curl --connect-timeout 5 --max-time 10 --retry 5 --retry-delay 15 --retry-max-time 90 --retry-all-errors -ksf http://{{ $serviceName }}-tcp:12345/
+            curl --connect-timeout 5 --max-time 10 --retry 5 --retry-delay 15 --retry-max-time 90 --retry-all-errors -ksf http://{{ $serviceName }}:{{.Values.web_port}}/
     restartPolicy: Never
