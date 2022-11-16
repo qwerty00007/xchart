@@ -12,4 +12,4 @@ keywords:
 name: clash-core
 sources:
 - https://hub.docker.com/r/dreamacro/clash
-version: 1.0.12
+version: 1.0.0
