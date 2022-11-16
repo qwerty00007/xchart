@@ -49,10 +49,10 @@ spec:
               add: {{ toYaml .Values.securityContext.capabilities | nindent 8 }}
             {{ end }}          
           ports:
-            - name: web
-              containerPort: {{ .Values.web_port }}
-            - name: tcp
-              containerPort: {{ .Values.tcp_port }}
+            - name: external_control
+              containerPort: {{ .Values.external_control_port }}
+            - name: mixed
+              containerPort: {{ .Values.mixed_port }}
               protocol: TCP
           env:
             {{ $envList := (default list .Values.environmentVariables) }}

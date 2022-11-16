@@ -1,10 +1,10 @@
 groups:
   - name: "Configuration"
-    description: "Qbittorent application configuration"
+    description: "clash-core application configuration"
   - name: "Storage"
-    description: "Configure storage for qbittorent"
+    description: "Configure storage for clash-core"
   - name: "Networking"
-    description: "Networking Configuration for qbittorent"
+    description: "Networking Configuration for clash-core"
   - name: "Advanced DNS Settings"
     description: "Configure DNS settings"
   - name: "Workload Details"
@@ -12,19 +12,10 @@ groups:
   - name: "Resource Limits"
     description: "Set CPU/memory limits for Kubernetes Pod"
 
-portals:
-  web_portal:
-    protocols:
-      - "http"
-    host:
-      - "$node_ip"
-    ports:
-      - "$variable-web_port"
-    path: "/"
 
 questions:
-  - variable: web_port
-    label: "Web Port for qbittorent"
+  - variable: external_control_port
+    label: "Web Port for clash-core"
     group: Networking
     schema:
       type: int
@@ -32,8 +23,8 @@ questions:
       max: 65535
       default: 9090
       required: true
-  - variable: tcp_port
-    label: "TCP Port for qbittorent"
+  - variable: mixed_port
+    label: "MIXED Port for clash-core"
     group: Networking
     schema:
       type: int
@@ -78,7 +69,7 @@ questions:
         - "definitions/timezone"
 
   - variable: environmentVariables
-    label: "Qbittorent environment"
+    label: "clash-core environment"
     group: "Configuration"
     schema:
       type: list
@@ -99,7 +90,7 @@ questions:
                   type: string
 
   - variable: appVolumeMounts
-    label: "Qbittorent Storage"
+    label: "clash-core Config File"
     group: "Storage"
     schema:
       type: dict
@@ -117,7 +108,7 @@ questions:
                   $ref:
                     - "normalize/ixVolume"
                   show_if: [["hostPathEnabled", "=", false]]
-                  default: "ix-qbittorent_config"
+                  default: "ix-clash-core_config"
                   editable: false
               - variable: mountPath
                 label: "Configuration Mount Path"
@@ -128,14 +119,14 @@ questions:
                   editable: true
                   default: "/root/.config/clash/config.yaml"
               - variable: hostPathEnabled
-                label: "Enable Custom Host Path for Qbittorent Configuration Volume"
+                label: "Enable Custom Host Path for clash-core Configuration Volume"
                 schema:
                   type: boolean
                   default: false
                   show_subquestions_if: true
                   subquestions:
                     - variable: hostPath
-                      label: "Host Path for Qbittorent Configuration Volume"
+                      label: "Host Path for clash-core Configuration Volume"
                       schema:
                         type: hostpath
                         required: true
@@ -148,7 +139,7 @@ questions:
       items:
         - variable: extraAppVolume
           label: "Host Path Volume"
-          description: "Add an extra host path volume for Qbittorent application"
+          description: "Add an extra host path volume for clash-core application"
           schema:
             type: dict
             attrs:
@@ -200,13 +191,13 @@ questions:
                 description: "Configure user id for container."
                 schema:
                   type: int
-                  default: 568
+                  default: 0
               - variable: runAsGroup
                 label: "Run Container As Group"
                 description: "Configure group id for container."
                 schema:
                   type: int
-                  default: 568
+                  default: 0
 
 
 
