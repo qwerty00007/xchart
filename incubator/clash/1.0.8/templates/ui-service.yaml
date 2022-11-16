@@ -1,3 +1,6 @@
+{{ $selectors := list }}
+{{ $selectors = mustAppend $selectors (dict "key" "app" "value" (include "common.names.name" .) ) }}
+{{ $selectors = mustAppend $selectors (dict "key" "release" "value" .Release.Name ) }}
 {{ $ports := list }}
 {{ $ports = mustAppend $ports (dict "name" "tcp" "port" .Values.tcp_port "nodePort" .Values.tcp_port "targetPort" 80) }}
 {{ $params := . }}
