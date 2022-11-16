@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: {{ .Release.Name }}-qbittorent
+  name: {{ .Release.Name }}-nastools
   labels:
     app: {{ .Release.Name }}
     release: {{ .Release.Name }}
@@ -19,3 +19,8 @@ spec:
           - |
             curl --connect-timeout 5 --max-time 10 --retry 5 --retry-delay 15 --retry-max-time 90 --retry-all-errors -ksf http://{{ $serviceName }}:{{.Values.web_port}}/
     restartPolicy: Never
+    hostAliases:
+    - ip: "127.0.0.1"
+      hostnames:
+      - "foo.local"
+      - "bar.local"

@@ -32,26 +32,6 @@ spec:
         - name: {{ .Chart.Name }}
           {{ include "common.resources.limitation" . | nindent 10 }}
           {{ include "common.containers.imageConfig" .Values.image | nindent 10 }}
-          volumeMounts: {{ include "common.storage.configureAppVolumeMountsInContainer" .Values | nindent 12 }}
-          {{ range $index, $hostPathConfiguration := .Values.extraAppVolumeMounts }}
-            - name: extrappvolume-{{ $index }}
-              mountPath: {{ $hostPathConfiguration.mountPath }}
-          {{ end }}
-
-          securityContext:
-            privileged: {{ .Values.securityContext.privileged }}
-            {{ if .Values.securityContext.enableRunAsUser }}
-            runAsUser: {{ .Values.securityContext.runAsUser }}
-            runAsGroup: {{ .Values.securityContext.runAsGroup }}
-            {{ end }}
-            {{ if .Values.securityContext.capabilities }}
-            capabilities:
-              add: {{ toYaml .Values.securityContext.capabilities | nindent 8 }}
-            {{ end }}          
           ports:
-            - name: web
+            - name: tcp
               containerPort: 8080
-          env:
-            {{ $envList := (default list .Values.environmentVariables) }}
-            {{ include "common.containers.environmentVariables" (dict "environmentVariables" $envList) | nindent 12 }}
-{{ include "common.networking.dnsConfiguration" .Values | nindent 6 }}
