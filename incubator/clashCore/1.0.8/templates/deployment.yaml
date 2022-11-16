@@ -37,21 +37,25 @@ spec:
             - name: extrappvolume-{{ $index }}
               mountPath: {{ $hostPathConfiguration.mountPath }}
           {{ end }}
+
+          securityContext:
+            privileged: {{ .Values.securityContext.privileged }}
+            {{ if .Values.securityContext.enableRunAsUser }}
+            runAsUser: {{ .Values.securityContext.runAsUser }}
+            runAsGroup: {{ .Values.securityContext.runAsGroup }}
+            {{ end }}
+            {{ if .Values.securityContext.capabilities }}
+            capabilities:
+              add: {{ toYaml .Values.securityContext.capabilities | nindent 8 }}
+            {{ end }}          
           ports:
             - name: web
               containerPort: {{ .Values.web_port }}
             - name: tcp
               containerPort: {{ .Values.tcp_port }}
               protocol: TCP
-            - name: udp
-              containerPort: {{ .Values.udp_port }}
-              protocol: UDP
           env:
             {{ $envList := (default list .Values.environmentVariables) }}
-            {{ $envList = mustAppend $envList (dict "name" "PUID" "value" (printf "%d" (.Values.ownerUID | int))) }}
-            {{ $envList = mustAppend $envList (dict "name" "PGID" "value" (printf "%d" (.Values.ownerGID | int))) }}
-            {{ $envList = mustAppend $envList (dict "name" "TZ" "value" (printf "%s" .Values.timezone)) }}
-            {{ $envList = mustAppend $envList (dict "name" "WEBUI_PORT" "value" (printf "%d" (.Values.web_port | int))) }}
             {{ include "common.containers.environmentVariables" (dict "environmentVariables" $envList) | nindent 12 }}
 {{ include "common.networking.dnsConfiguration" .Values | nindent 6 }}
       volumes: {{ include "common.storage.configureAppVolumes" .Values | nindent 8 }}

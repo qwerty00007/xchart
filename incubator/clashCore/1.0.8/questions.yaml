@@ -7,6 +7,8 @@ groups:
     description: "Networking Configuration for qbittorent"
   - name: "Advanced DNS Settings"
     description: "Configure DNS settings"
+  - name: "Workload Details"
+    description: "Configure how workload should be deployed"
   - name: "Resource Limits"
     description: "Set CPU/memory limits for Kubernetes Pod"
 
@@ -66,24 +68,6 @@ questions:
                       schema:
                         type: string
                         required: true
-
-  - variable: ownerUID
-    label: "Owner User ID"
-    group: Configuration
-    schema:
-      type: int
-      default: 568
-      min: 1
-      max: 65535
-
-  - variable: ownerGID
-    label: "Owner Group ID"
-    group: Configuration
-    schema:
-      type: int
-      default: 568
-      min: 1
-      max: 65535
 
   - variable: timezone
     label: "Timezone"
@@ -155,42 +139,6 @@ questions:
                       schema:
                         type: hostpath
                         required: true
-        
-        - variable: downloads
-          label: "Downloads Volume"
-          schema:
-            type: dict
-            attrs:
-              - variable: datasetName
-                label: "Downloads Volume Dataset Name"
-                schema:
-                  type: string
-                  hidden: true
-                  $ref:
-                    - "normalize/ixVolume"
-                  show_if: [["hostPathEnabled", "=", false]]
-                  default: "ix-qbittorent_data"
-                  editable: false
-              - variable: mountPath
-                label: "Downloads Mount Path"
-                description: "Path where the volume will be mounted inside the pod"
-                schema:
-                  type: path
-                  hidden: true
-                  editable: true
-                  default: "/downloads"
-              - variable: hostPathEnabled
-                label: "Enable Custom Host Path for Qbittorent Downloads Volume"
-                schema:
-                  type: boolean
-                  default: false
-                  show_subquestions_if: true
-                  subquestions:
-                    - variable: hostPath
-                      label: "Host Path for Qbittorent Downloads Volume"
-                      schema:
-                        type: hostpath
-                        required: true
 
   - variable: extraAppVolumeMounts
     label: "Extra Host Path Volumes"
@@ -216,6 +164,51 @@ questions:
                 schema:
                   type: hostpath
                   required: true
+  - variable: securityContext
+    label: "Security Context"
+    group: "Workload Details"
+    schema:
+      type: dict
+      attrs:
+        - variable: privileged
+          label: "Privileged Mode"
+          description: "Determines if any container in a pod can enable privileged mode. By default a container is not allowed to access any devices on the host, but a 'privileged' container is given access to all devices on the host. This allows the container nearly all the same access as processes running on the host."
+          schema:
+            type: boolean
+            default: true
+        - variable: capabilities
+          label: "Capabilities"
+          description: "With Linux capabilities, you can grant certain privileges to a process without granting all the privileges of the root user."
+          schema:
+            type: list
+            items:
+              - variable: capability
+                description: "Add Capability"
+                label: "Add Capability"
+                schema:
+                  type: string
+        - variable: enableRunAsUser
+          label: "Configure Container User and Group ID"
+          description: "Configure security context runAsUser and runAsGroup variables"
+          schema:
+            type: boolean
+            default: false
+            show_subquestions_if: true
+            subquestions:
+              - variable: runAsUser
+                label: "Run Container As User"
+                description: "Configure user id for container."
+                schema:
+                  type: int
+                  default: 568
+              - variable: runAsGroup
+                label: "Run Container As Group"
+                description: "Configure group id for container."
+                schema:
+                  type: int
+                  default: 568
+
+
 
   - variable: enableResourceLimits
     label: "Enable Pod resource limits"

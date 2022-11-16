@@ -2,9 +2,6 @@ appVolumeMounts:
   config:
     emptyDir: true
     mountPath: /config
-  downloads:
-    emptyDir: true
-    mountPath: /downloads
 dnsConfig:
   options: []
 emptyDirVolumes: true
@@ -12,11 +9,8 @@ environmentVariables: []
 extraAppVolumeMounts: []
 image:
   pullPolicy: IfNotPresent
-  repository: linuxserver/qbittorrent
-  tag: 4.4.5
-ownerGID: 568
-ownerUID: 568
-tcp_port: 32001
+  repository: dreamacro/clash
+  tag: 1.11.12
+tcp_port: 7893
 timezone: Europe/London
-udp_port: 32002
-web_port: 32000
+web_port: 9090
