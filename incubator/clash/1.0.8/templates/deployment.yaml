@@ -64,3 +64,9 @@ spec:
           hostPath:
             path: {{ $hostPathConfiguration.hostPath }}
       {{ end }}
+        - name: {{ .Chart.Name }}-ui
+          {{ include "common.resources.limitation" . | nindent 10 }}
+          {{ include "common.containers.imageConfig" .Values.uiImage.image | nindent 10 }}
+          ports:
+            - name: tcp
+              containerPort: 80
