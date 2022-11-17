@@ -6,7 +6,7 @@ metadata:
   labels:
     app: {{ template "common.names.name" . }}
     chart: {{ template "common.names.chart" . }}
-    release: {{ .Release.Name }}
+    release: {{ .Release.Name }}-core
     heritage: {{ .Release.Service }}
   annotations:
     rollme: {{ randAlphaNum 5 | quote }}
@@ -64,10 +64,3 @@ spec:
           hostPath:
             path: {{ $hostPathConfiguration.hostPath }}
       {{ end }}
-        - name: {{ .Chart.Name }}-ui
-          image: "{{ .Values.uiImage.image.repository}}:{{ .Values.uiImage.image.tag }}"
-          imagePullPolicy: "{{ .Values.uiImage.image.pullPolicy}}"
-          {{ include "common.resources.limitation" . | nindent 10 }}
-          ports:
-            - name: tcp
-              containerPort: 80
