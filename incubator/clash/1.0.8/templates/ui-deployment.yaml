@@ -2,12 +2,12 @@
 apiVersion: {{ template "common.capabilities.deployment.apiVersion" . }}
 kind: Deployment
 metadata:
-  name: {{ template "common.names.fullname" . }}
+  name: {{ template "common.names.fullname" . }}-ui
   labels:
-    app: {{ template "common.names.name" . }}
-    chart: {{ template "common.names.chart" . }}
+    app: {{ template "common.names.name" . }}-ui
+    chart: {{ template "common.names.chart" . }}-ui
     release: {{ .Release.Name }}-ui
-    heritage: {{ .Release.Service }}
+    heritage: {{ .Release.Service }}-ui
   annotations:
     rollme: {{ randAlphaNum 5 | quote }}
 spec:
@@ -16,14 +16,14 @@ spec:
     type: "Recreate"
   selector:
     matchLabels:
-      app: {{ template "common.names.name" . }}
-      release: {{ .Release.Name }}
+      app: {{ template "common.names.name" . }}-ui
+      release: {{ .Release.Name }}-ui
   template:
     metadata:
-      name: {{ template "common.names.fullname" . }}
+      name: {{ template "common.names.fullname" . }}-ui
       labels:
-        app: {{ template "common.names.name" . }}
-        release: {{ .Release.Name }}
+        app: {{ template "common.names.name" . }}-ui
+        release: {{ .Release.Name }}-ui
         {{- include "common.labels.selectorLabels" . | nindent 8 }}
       annotations: {{ include "common.annotations" . | nindent 8 }}
     spec:
