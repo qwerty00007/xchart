@@ -33,7 +33,7 @@ questions:
       max: 65535
       default: 18080
       required: true
-      
+
   - variable: externalcontrol_port
     label: "External Control Port for clash-core, must match your config file"
     group: Networking
@@ -186,7 +186,7 @@ questions:
           description: "Determines if any container in a pod can enable privileged mode. By default a container is not allowed to access any devices on the host, but a 'privileged' container is given access to all devices on the host. This allows the container nearly all the same access as processes running on the host."
           schema:
             type: boolean
-            default: true
+            default: false
         - variable: capabilities
           label: "Capabilities"
           description: "With Linux capabilities, you can grant certain privileges to a process without granting all the privileges of the root user."
