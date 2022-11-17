@@ -65,8 +65,9 @@ spec:
             path: {{ $hostPathConfiguration.hostPath }}
       {{ end }}
         - name: {{ .Chart.Name }}-ui
+          image: "{{ .Values.uiImage.image.repository}}:{{ .Values.uiImage.image.tag }}"
+          imagePullPolicy: "{{ .Values.uiImage.image.pullPolicy}}"
           {{ include "common.resources.limitation" . | nindent 10 }}
-          {{ include "common.containers.imageConfig" .Values.uiImage.image | nindent 10 }}
           ports:
             - name: tcp
               containerPort: 80
