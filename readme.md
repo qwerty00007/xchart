@@ -24,11 +24,8 @@
 
 ## 使用集群内的内部域名，应用内互访
 
-- 查看所有 pod 的信息，获得应用的 NAMESPACE
-  `k3s kubectl get pod -A` 
+- 查看所有 pod 的信息，获得应用的 NAMESPACE<br>`k3s kubectl get pod -A` 
 
-- 查看指定命名空间的 svc 信息，获得应用的 SERVICE-NAME
-  `k3s kubectl get svc -n $NAMESPACE`
+- 查看指定命名空间的 svc 信息，获得应用的 SERVICE-NAME<br>`k3s kubectl get svc -n $NAMESPACE`
 
-- 集群内的域名
-  `$SERVICE-NAME.$NAMESPACE.svc.cluster.local`
+- 集群内的域名<br>`$SERVICE-NAME.$NAMESPACE.svc.cluster.local`
