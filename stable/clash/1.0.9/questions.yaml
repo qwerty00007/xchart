@@ -1,0 +1,247 @@
+groups:
+  - name: "Configuration"
+    description: "clash-core application configuration"
+  - name: "Storage"
+    description: "Configure storage for clash-core"
+  - name: "Networking"
+    description: "Networking Configuration for clash-core"
+  - name: "Advanced DNS Settings"
+    description: "Configure DNS settings"
+  - name: "Workload Details"
+    description: "Configure how workload should be deployed"
+  - name: "Resource Limits"
+    description: "Set CPU/memory limits for Kubernetes Pod"
+
+portals:
+  web_portal:
+    protocols:
+      - "http"
+    host:
+      - "$node_ip"
+    ports:
+      - "$variable-tcp_port"
+    path: "/"
+
+questions:
+
+  - variable: tcp_port
+    label: "tcp Port for clash-ui"
+    group: Networking
+    schema:
+      type: int
+      min: 8000
+      max: 65535
+      default: 18080
+      required: true
+
+  - variable: externalcontrol_port
+    label: "External Control Port for clash-core, must match your config file"
+    group: Networking
+    schema:
+      type: int
+      min: 8000
+      max: 65535
+      default: 9090
+      required: true
+  - variable: mixed_port
+    label: "Mixed Port for clash-core, must match your config file"
+    group: Networking
+    schema:
+      type: int
+      min: 8000
+      max: 65535
+      default: 17893
+      required: true
+
+  - variable: dnsConfig
+    label: "DNS Configuration"
+    group: "Advanced DNS Settings"
+    schema:
+      type: dict
+      attrs:
+        - variable: options
+          label: "DNS Options"
+          schema:
+            type: list
+            items:
+              - variable: optionsEntry
+                label: "Option Entry Configuration"
+                schema:
+                  type: dict
+                  attrs:
+                    - variable: name
+                      label: "Option Name"
+                      schema:
+                        type: string
+                        required: true
+                    - variable: value
+                      label: "Option Value"
+                      schema:
+                        type: string
+                        required: true
+
+  - variable: timezone
+    label: "Timezone"
+    group: "Configuration"
+    schema:
+      type: string
+      $ref:
+        - "definitions/timezone"
+
+  - variable: environmentVariables
+    label: "clash-core environment"
+    group: "Configuration"
+    schema:
+      type: list
+      default: [ ]
+      items:
+        - variable: environmentVariable
+          label: "Environment Variable"
+          schema:
+            type: dict
+            attrs:
+              - variable: name
+                label: "Name"
+                schema:
+                  type: string
+              - variable: value
+                label: "Value"
+                schema:
+                  type: string
+
+  - variable: appVolumeMounts
+    label: "clash-core Config File"
+    group: "Storage"
+    schema:
+      type: dict
+      attrs:
+        - variable: config
+          label: "Configuration File"
+          schema:
+            type: dict
+            attrs:
+              - variable: datasetName
+                label: "Configuration File Name"
+                schema:
+                  type: string
+                  hidden: true
+                  $ref:
+                    - "normalize/ixVolume"
+                  show_if: [["hostPathEnabled", "=", false]]
+                  default: "ix-clash-core_config"
+                  editable: false
+              - variable: mountPath
+                label: "Configuration Mount Path"
+                description: "Path where the volume will be mounted inside the pod"
+                schema:
+                  type: path
+                  hidden: true
+                  editable: true
+                  default: "/root/.config/clash/config.yaml"
+              - variable: hostPathEnabled
+                label: "Enable Custom Host Path for clash-core Configuration File"
+                schema:
+                  type: boolean
+                  default: false
+                  show_subquestions_if: true
+                  subquestions:
+                    - variable: hostPath
+                      label: "Host Path for clash-core Configuration File"
+                      schema:
+                        type: hostpath
+                        required: true
+
+  - variable: extraAppVolumeMounts
+    label: "Extra Host Path Volumes"
+    group: "Storage"
+    schema:
+      type: list
+      items:
+        - variable: extraAppVolume
+          label: "Host Path Volume"
+          description: "Add an extra host path volume for clash-core application"
+          schema:
+            type: dict
+            attrs:
+              - variable: mountPath
+                label: "Mount Path in Pod"
+                description: "Path where the volume will be mounted inside the pod"
+                schema:
+                  type: path
+                  required: true
+              - variable: hostPath
+                label: "Host Path"
+                description: "Host path"
+                schema:
+                  type: hostpath
+                  required: true
+  - variable: securityContext
+    label: "Security Context"
+    group: "Workload Details"
+    schema:
+      type: dict
+      attrs:
+        - variable: privileged
+          label: "Privileged Mode"
+          description: "Determines if any container in a pod can enable privileged mode. By default a container is not allowed to access any devices on the host, but a 'privileged' container is given access to all devices on the host. This allows the container nearly all the same access as processes running on the host."
+          schema:
+            type: boolean
+            default: false
+        - variable: capabilities
+          label: "Capabilities"
+          description: "With Linux capabilities, you can grant certain privileges to a process without granting all the privileges of the root user."
+          schema:
+            type: list
+            items:
+              - variable: capability
+                description: "Add Capability"
+                label: "Add Capability"
+                schema:
+                  type: string
+        - variable: enableRunAsUser
+          label: "Configure Container User and Group ID"
+          description: "Configure security context runAsUser and runAsGroup variables"
+          schema:
+            type: boolean
+            default: false
+            show_subquestions_if: true
+            subquestions:
+              - variable: runAsUser
+                label: "Run Container As User"
+                description: "Configure user id for container."
+                schema:
+                  type: int
+                  default: 0
+              - variable: runAsGroup
+                label: "Run Container As Group"
+                description: "Configure group id for container."
+                schema:
+                  type: int
+                  default: 0
+
+
+
+  - variable: enableResourceLimits
+    label: "Enable Pod resource limits"
+    group: "Resource Limits"
+    schema:
+      type: boolean
+      default: false
+  - variable: cpuLimit
+    label: "CPU Limresource limitsit"
+    description: "CPU resource limit allow  plain integer values with suffix m(milli) e.g 1000m, 100."
+    group: "Resource Limits"
+    schema:
+      type: string
+      show_if: [["enableResourceLimits", "=", true]]
+      valid_chars: "^\\d+(?:\\.\\d+(?!.*m$)|m?$)"
+      default: "4000m"
+  - variable: memLimit
+    label: "Memory Limit"
+    group: "Resource Limits"
+    description: "Memory limits is specified by number of bytes. Followed by quantity suffix like E,P,T,G,M,k and Ei,Pi,Ti,Mi,Gi,Ki can also be used. e.g 129e6, 129M,  128974848000m, 123Mi"
+    schema:
+      type: string
+      show_if: [["enableResourceLimits", "=", true]]
+      valid_chars: "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$"
+      default: "8Gi"

@@ -6,7 +6,7 @@ dependencies:
   version: 2207.0.0
 description: Jellyfin Server
 home: https://jellyfin.org/
-icon: https://truecharts.org/img/hotlink-ok/chart-icons/jellyfin.png
+icon: https://gitee.com/qwerty0007/xchart/raw/main/assets/jellyfin.png
 keywords:
 - jellyfin
 - media

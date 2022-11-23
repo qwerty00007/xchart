@@ -1,0 +1,81 @@
+groups:
+  - name: "Configuration"
+    description: "StripCharts application configuration"
+
+  - name: "Resource Limits"
+    description: "Set CPU/memory limits for Kubernetes Pod"
+
+
+questions:
+
+  - variable: STRIP_STABLE
+    label: "STABLE APPS"
+    description: "to specify the stable apps to grab, e.g. app1|app2|app3"
+    group: Configuration
+    schema:
+      type: string
+      default: "nextcloud|plex|traefik|cloudflareddns|vaultwarden"
+
+  - variable: STRIP_INCUBATOR
+    label: "INCUBATOR APPS"
+    description: "to specify the incubator apps to grab, e.g. app1|app2|app3"
+    group: Configuration
+    schema:
+      type: string
+      default: "actualserver|breitbandmessung-de"
+
+  - variable: STRIP_REPO
+    label: "STRIPED REPO URL"
+    description: "to specify your git repo URL where to push the stripped down catalog."
+    group: Configuration
+    schema:
+      type: string
+      default: "https://PersonalAccessTokens@github.com/your/repository.git"
+
+  - variable: environmentVariables
+    label: "StripCharts environment"
+    group: "Configuration"
+    schema:
+      type: list
+      default: [ ]
+      items:
+        - variable: environmentVariable
+          label: "Environment Variable"
+          schema:
+            type: dict
+            attrs:
+              - variable: name
+                label: "Name"
+                schema:
+                  type: string
+              - variable: value
+                label: "Value"
+                schema:
+                  type: string
+
+
+
+  - variable: enableResourceLimits
+    label: "Enable Pod resource limits"
+    group: "Resource Limits"
+    schema:
+      type: boolean
+      default: false
+  - variable: cpuLimit
+    label: "CPU Limresource limitsit"
+    description: "CPU resource limit allow  plain integer values with suffix m(milli) e.g 1000m, 100."
+    group: "Resource Limits"
+    schema:
+      type: string
+      show_if: [["enableResourceLimits", "=", true]]
+      valid_chars: "^\\d+(?:\\.\\d+(?!.*m$)|m?$)"
+      default: "4000m"
+  - variable: memLimit
+    label: "Memory Limit"
+    group: "Resource Limits"
+    description: "Memory limits is specified by number of bytes. Followed by quantity suffix like E,P,T,G,M,k and Ei,Pi,Ti,Mi,Gi,Ki can also be used. e.g 129e6, 129M,  128974848000m, 123Mi"
+    schema:
+      type: string
+      show_if: [["enableResourceLimits", "=", true]]
+      valid_chars: "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$"
+      default: "8Gi"

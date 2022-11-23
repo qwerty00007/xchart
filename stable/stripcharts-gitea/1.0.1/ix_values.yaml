@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: ghcr.io/qwerty00007/stripcharts
+  tag: main
