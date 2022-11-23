@@ -6,7 +6,7 @@ dependencies:
   version: 2207.0.0
 description: xunlei 下载
 home: https://www.xunlei.com/
-icon: https://gitee.com/qwerty0007/xchart/raw/main/assets/xunlei.png
+icon: https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/xunlei.png
 keywords:
 - media
 name: xunlei

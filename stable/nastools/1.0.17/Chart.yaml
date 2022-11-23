@@ -6,8 +6,8 @@ dependencies:
   version: 2207.0.0
 description: NAS媒体库资源归集、整理自动化工具
 home: https://github.com/jxxghp/nas-tools 
-icon: https://gitee.com/qwerty0007/xchart/raw/main/assets/nas-tools.png
+icon: https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/nas-tools.png
 keywords:
 - media
 name: nastools
-version: 1.0.16
+version: 1.0.17
