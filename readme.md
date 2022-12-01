@@ -29,3 +29,10 @@
 - 查看指定命名空间的 svc 信息，获得应用的 SERVICE-NAME<br>`k3s kubectl get svc -n $NAMESPACE`
 
 - 集群内的域名<br>`$SERVICE-NAME.$NAMESPACE.svc.cluster.local`
+
+## 请我喝奶茶
+- 微信
+![](https://gitee.com/qwerty0007/xchart/raw/main/assets/wechat.jpg)
+
+- 支付宝
+![](https://gitee.com/qwerty0007/xchart/raw/main/assets/alipay.jpg)
