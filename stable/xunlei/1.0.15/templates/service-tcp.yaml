@@ -1,0 +1,13 @@
+{{ $svc := .Values.xunleiServerHttp }}
+{{ $ports := list }}
+{{ $ports = mustAppend $ports (dict "name" "xunlei" "port" $svc.port "nodePort" $svc.port "targetPort" "xunlei") }}
+{{ $params := . }}
+{{ $_ := set $params "commonService" (dict "ports" $ports ) }}
+{{ if .Values.hostNetwork }}
+{{ $_ := set $params.commonService "nameSuffix" "tcp-cluster-ip" }}
+{{ $_1 := set $params.commonService "type" "ClusterIP" }}
+{{ else }}
+{{ $_ := set $params.commonService "nameSuffix" "tcp" }}
+{{ $_1 := set $params.commonService "type" "NodePort" }}
+{{ end }}
+{{ include "common.classes.service" $params }}
