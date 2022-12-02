@@ -1,4 +1,4 @@
 image:
   pullPolicy: IfNotPresent
-  repository: cnk3x/xunlei
+  repository: ghcr.nju.edu.cn/cnk3x/xunlei
   tag: v3.0.2@sha256:efecda8c305164263b9759bedcf578f651cce7ddc15c31c729f0ba314b491856
