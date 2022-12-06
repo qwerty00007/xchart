@@ -1,4 +1,4 @@
 image:
   pullPolicy: IfNotPresent
   repository: cnk3x/xunlei
-  tag: v3.1.8
+  tag: 3.1.8
