@@ -178,6 +178,11 @@ data
 
 ![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_15.png)
 
+
+## 参考配置
+
+![](https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/nastools_readme.jpg)
+
 ## 参考
 
 - [Hardlinks and Instant Moves (Atomic-Moves)](https://trash-guides.info/Hardlinks/Hardlinks-and-Instant-Moves/)

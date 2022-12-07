@@ -2,6 +2,8 @@
 
 ## APP List
 
+> 应用部署请参考各个应用下的readme.md
+
 - **jellyfin** 使用 [nyanmisaka/jellyfin](https://hub.docker.com/r/nyanmisaka/jellyfin) docker 镜像，增加配置 `/etc/hosts`
 - **nastools** 增加配置 `/etc/hosts`，相关[教程](https://gitee.com/qwerty0007/xchart/blob/main/stable/nastools/readme.md)
 - **stripcharts** 下载社区应用的压缩包 [main.zip](https://github.com/truecharts/catalog/archive/refs/heads/main.zip)， 后筛选出自己需要的应用，push 到自己的 github 仓库，减少目录同步时间
@@ -29,6 +31,22 @@
 - 查看指定命名空间的 svc 信息，获得应用的 SERVICE-NAME<br>`k3s kubectl get svc -n $NAMESPACE`
 
 - 集群内的域名<br>`$SERVICE-NAME.$NAMESPACE.svc.cluster.local`
+
+## 简单的权限设置避免部署应用时出现权限问题
+
+- 在 truenas scale 新建普通用户，uid 一般是 1000，可以命令行验证
+  ￼![图片](assets/IMG_16.jpg)
+  ￼![图片](assets/IMG_17.jpg)
+- 设置数据集的所有者和所有组为新建的这个普通用户
+  ![图片](assets/IMG_18.png)
+- 将该数据集用 smb 共享出去，然后再在客户端挂载以后新建文件夹，这样就能保证文件夹的权限为该普通用户，也就是 uid=1000， gid=1000
+  ![图片](assets/IMG_19.png)
+  ![图片](assets/IMG_20.png)
+  ![图片](assets/IMG_21.png)
+- 其他有需要快照备份的应用，可以新建数据集然后修改权限。
+
+> 个人家用建议这样配置，不需要去配置 acl 简单方便
+
 
 ## 请我喝奶茶
 - 微信

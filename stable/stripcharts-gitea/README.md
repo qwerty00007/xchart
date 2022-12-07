@@ -7,3 +7,7 @@
 * `CATALOG_REPO` 将社区应用 [catalog](https://github.com/truecharts/catalog.git)，镜像到 gitea 服务器，然后将仓库地址填入，例如：`http://nas_ip:10037/user/catalog/archive/main.zip`
 
 这样可以减少同步目录的时间，和减少下载大量无用的应用。
+
+## 参考配置
+
+![](https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/stripcharts_gitea_readme.jpg)
