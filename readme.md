@@ -16,7 +16,7 @@
 
 ## how to 增加第三方应用库
 
-![增加第三方应用库](https://gitee.com/qwerty0007/xchart/raw/main/assets/add.png)
+  ![增加第三方应用库](https://gitee.com/qwerty0007/xchart/raw/main/assets/add.png)
 
 - gitee 源
   `https://gitee.com/qwerty0007/xchart.git`
@@ -35,8 +35,8 @@
 ## 简单的权限设置避免部署应用时出现权限问题
 
 - 在 truenas scale 新建普通用户，uid 一般是 1000，可以命令行验证
-  ￼![图片](assets/IMG_16.jpg)
-  ￼![图片](assets/IMG_17.jpg)
+  ![图片](assets/IMG_16.jpg)
+ ￼![图片](assets/IMG_17.jpg)
 - 设置数据集的所有者和所有组为新建的这个普通用户
   ![图片](assets/IMG_18.png)
 - 将该数据集用 smb 共享出去，然后再在客户端挂载以后新建文件夹，这样就能保证文件夹的权限为该普通用户，也就是 uid=1000， gid=1000
@@ -51,8 +51,8 @@
 ## 请我喝奶茶
 - 微信
 
-![](https://gitee.com/qwerty0007/xchart/raw/main/assets/wechat.jpg)
+  ![](https://gitee.com/qwerty0007/xchart/raw/main/assets/wechat.jpg)
 
 - 支付宝
 
-![](https://gitee.com/qwerty0007/xchart/raw/main/assets/alipay.jpg)
+  ![](https://gitee.com/qwerty0007/xchart/raw/main/assets/alipay.jpg)
