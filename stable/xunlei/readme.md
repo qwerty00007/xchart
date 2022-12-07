@@ -6,4 +6,4 @@
 
 ## 参考配置
 
-![](https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/xunlei_readme.jpg)
+![](/assets/xunlei_readme.jpg)
