@@ -1,0 +1,10 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: dreamacro/clash
+  tag: v1.12.0@sha256:7c820ac6283da61df20ed1995acccce58f16fd3c6547df9f1b60199bcb0986e4
+uiImage:
+  image:
+    pullPolicy: IfNotPresent
+    repository: haishanh/yacd
+    tag: v0.3.8@sha256:87711359e50f3e1eda25d9e7b4044a08084521fbab18a9b48166ca35f04fd38f
+useServiceNameForHost: false

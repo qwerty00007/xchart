@@ -1,0 +1,13 @@
+apiVersion: v2
+appVersion: 0.45.1
+dependencies:
+- name: common
+  repository: file://../../../library/common/2207.0.0
+  version: 2207.0.0
+description: 自动化搞定限定条件下中文字幕下载。
+home: https://github.com/allanpk716/ChineseSubFinder 
+icon: https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/chinesesubfinder.png
+keywords:
+- tools
+name: chinesesubfinder
+version: 1.0.7

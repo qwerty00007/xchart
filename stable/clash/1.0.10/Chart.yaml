@@ -1,0 +1,13 @@
+apiVersion: v2
+appVersion: 1.12.0
+dependencies:
+- name: common
+  repository: file://../../../library/common/2207.0.0
+  version: 2207.0.0
+description: clash core
+home: https://www.baidu.com
+icon: https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/clash.png
+keywords:
+- tools
+name: clash
+version: 1.0.10
