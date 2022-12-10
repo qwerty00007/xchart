@@ -1,4 +1,4 @@
 image:
   pullPolicy: IfNotPresent
-  repository: tuky/stripcharts
+  repository: ghcr.nju.edu.cn/tuky/stripcharts
   tag: main
