@@ -1,0 +1,15 @@
+apiVersion: v2
+appVersion: 1.0.25
+dependencies:
+- name: common
+  repository: file://../../../library/common/2207.0.0
+  version: 2207.0.0
+description: metatube
+home: https://github.com/metatube-community
+icon: https://ghproxy.com/https://raw.githubusercontent.com/metatube-community/jellyfin-plugin-metatube/main/Jellyfin.Plugin.MetaTube/thumb.png
+keywords:
+- media
+name: metatube
+sources:
+- https://hub.docker.com/r/metatube/metatube-server
+version: 1.0.14
