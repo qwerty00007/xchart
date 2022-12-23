@@ -13,6 +13,7 @@
 - **MT Photos** 照片备份 APP,收费软件，[官方网站](https://mtmt.tech/)
 - **xunlei** 迅雷 docker 版本，邀请码：迅雷牛通
 - **clash** 包含 core 和 ui。
+- **metatube** 9kg 元数据
 
 ## how to 增加第三方应用库
 
