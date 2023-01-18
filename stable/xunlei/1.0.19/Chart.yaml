@@ -1,0 +1,15 @@
+apiVersion: v2
+appVersion: 3.1.10
+dependencies:
+- name: common
+  repository: file://../../../library/common/2207.0.0
+  version: 2207.0.0
+description: xunlei 下载
+home: https://www.xunlei.com/
+icon: https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/xunlei.png
+keywords:
+- media
+name: xunlei
+sources:
+- https://hub.docker.com/r/cnk3x/xunlei
+version: 1.0.19
