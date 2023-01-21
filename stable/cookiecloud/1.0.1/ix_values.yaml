@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: easychen/cookiecloud
+  tag: v2023.01.20.16.39@sha256:5dfd81976f2df6ca691434f80d38c646c5e7d5d471779b67f269941d4049ab13
