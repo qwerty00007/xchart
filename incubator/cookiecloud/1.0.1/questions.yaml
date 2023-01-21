@@ -1,6 +1,6 @@
 groups:
   - name: "Networking"
-    description: "Networking Configuration for clash-ui"
+    description: "Networking Configuration for cookiecloud"
   - name: "Resource Limits"
     description: "Set CPU/memory limits for Kubernetes Pod"
 
@@ -17,13 +17,13 @@ portals:
 
 questions:
   - variable: tcp_port
-    label: "tcp Port for clash-ui"
+    label: "tcp Port for cookiecloud"
     group: Networking
     schema:
       type: int
       min: 8000
       max: 65535
-      default: 18080
+      default: 38088
       required: true
 
 

@@ -1,7 +1,7 @@
 image:
   pullPolicy: IfNotPresent
-  repository: mogeko/vlmcsd
+  repository: easychen/cookiecloud
   tag: latest
 
-tcp_port: 1688
+tcp_port: 8088
 

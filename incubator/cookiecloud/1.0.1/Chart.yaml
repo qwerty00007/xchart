@@ -1,0 +1,13 @@
+apiVersion: v2
+appVersion: 23.01.20
+dependencies:
+- name: common
+  repository: file://../../../library/common/2207.0.0
+  version: 2207.0.0
+description: cookiecloud
+home: https://hub.docker.com/r/easychen/cookiecloud 
+icon: https://ghproxy.com/https://raw.githubusercontent.com/easychen/CookieCloud/master/extension/assets/icon.png
+keywords:
+- tools
+name: cookiecloud
+version: 1.0.1
