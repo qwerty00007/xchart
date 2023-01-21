@@ -29,9 +29,9 @@ spec:
     spec:
       hostNetwork: false
       containers:
-        - name: {{ .Chart.Name }}-ui
+        - name: {{ .Chart.Name }}
           {{ include "common.resources.limitation" . | nindent 10 }}
-          {{ include "common.containers.imageConfig" .Values.uiImage.image | nindent 10 }}
+          {{ include "common.containers.imageConfig" .Values.image | nindent 10 }}
           ports:
             - name: tcp
               containerPort: 8088
