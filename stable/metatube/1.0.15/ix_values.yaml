@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: metatube/metatube-server
+  tag: 1.0.26@sha256:c8931c1e54eda4ea21d4e670ba0cc24c352aacccd7d673d6925059a3790c8870

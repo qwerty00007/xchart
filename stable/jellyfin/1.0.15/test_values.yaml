@@ -1,0 +1,19 @@
+appVolumeMounts:
+  config:
+    emptyDir: true
+    mountPath: /config
+jellyfinServerHttp:
+  port: 32496
+emptyDirVolumes: true
+environmentVariables: []
+extraAppVolumeMounts:
+- hostPath: /mnt/extras/something
+  mountPath: /mnt/extras
+  readOnly: true
+gpuConfiguration: {}
+hostNetwork: false
+image:
+  pullPolicy: IfNotPresent
+  repository: nyanmisaka/jellyfin
+  tag: latest
+updateStrategy: Recreate
