@@ -1,0 +1,13 @@
+apiVersion: v2
+appVersion: 2.9.1
+dependencies:
+- name: common
+  repository: file://../../../library/common/2207.0.0
+  version: 2207.0.0
+description: NAS媒体库资源归集、整理自动化工具
+home: https://github.com/jxxghp/nas-tools 
+icon: https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/nas-tools.png
+keywords:
+- media
+name: nastools
+version: 1.0.29
