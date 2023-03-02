@@ -4,7 +4,7 @@ dependencies:
 - name: common
   repository: file://../../../library/common/2207.0.0
   version: 2207.0.0
-description: 自动化搞定限定条件下中文字幕下载。
+description: 硬链接文件
 home: https://hlink.likun.me/ 
 icon: https://hlink.likun.me/logo.svg
 keywords:
