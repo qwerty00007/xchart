@@ -104,6 +104,41 @@ questions:
     schema:
       type: dict
       attrs:
+        - variable: config
+          label: "Configuration Volume"
+          schema:
+            type: dict
+            attrs:
+              - variable: datasetName
+                label: "Configuration Volume Dataset Name"
+                schema:
+                  type: string
+                  hidden: true
+                  $ref:
+                    - "normalize/ixVolume"
+                  show_if: [["hostPathEnabled", "=", false]]
+                  default: "ix-hlink_config"
+                  editable: false
+              - variable: mountPath
+                label: "Configuration Mount Path"
+                description: "Path where the volume will be mounted inside the pod"
+                schema:
+                  type: path
+                  hidden: true
+                  editable: true
+                  default: "/hlink"
+              - variable: hostPathEnabled
+                label: "Enable Custom Host Path for hlink Configuration Volume"
+                schema:
+                  type: boolean
+                  default: false
+                  show_subquestions_if: true
+                  subquestions:
+                    - variable: hostPath
+                      label: "Host Path for hlink Configuration Volume"
+                      schema:
+                        type: hostpath
+                        required: true
         - variable: data
           label: "Data Volume"
           schema:
