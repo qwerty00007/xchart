@@ -133,7 +133,7 @@ questions:
                   type: path
                   hidden: true
                   editable: true
-                  default: "/hlink"
+                  default: $variable-hlink_home_dir
               - variable: hostPathEnabled
                 label: "Enable Custom Host Path for hlink home dir"
                 schema:
