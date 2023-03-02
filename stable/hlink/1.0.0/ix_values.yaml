@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: likun7981/hlink
+  tag: latest
