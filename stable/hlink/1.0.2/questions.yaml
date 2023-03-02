@@ -112,12 +112,12 @@ questions:
       type: dict
       attrs:
         - variable: config
-          label: "Configuration Volume"
+          label: "hlink home dir"
           schema:
             type: dict
             attrs:
               - variable: datasetName
-                label: "Configuration Volume Dataset Name"
+                label: "hlink home dir Dataset Name"
                 schema:
                   type: string
                   hidden: true
@@ -127,7 +127,7 @@ questions:
                   default: "ix-hlink_config"
                   editable: false
               - variable: mountPath
-                label: "Configuration Mount Path"
+                label: "hlink home dir Mount Path"
                 description: "Path where the volume will be mounted inside the pod"
                 schema:
                   type: path
@@ -135,14 +135,14 @@ questions:
                   editable: true
                   default: "/hlink"
               - variable: hostPathEnabled
-                label: "Enable Custom Host Path for hlink Configuration Volume"
+                label: "Enable Custom Host Path for hlink home dir"
                 schema:
                   type: boolean
                   default: false
                   show_subquestions_if: true
                   subquestions:
                     - variable: hostPath
-                      label: "Host Path for hlink Configuration Volume"
+                      label: "Host Path for hlink home dir"
                       schema:
                         type: hostpath
                         required: true
