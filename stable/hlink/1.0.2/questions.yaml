@@ -75,6 +75,13 @@ questions:
       default: 1000
       min: 1
       max: 65535
+      
+  - variable: hlink_home_dir
+    label: "hlink home dir"
+    group: Configuration
+    schema:
+      type: string
+      default: "/hlink"
 
 
   - variable: environmentVariables
