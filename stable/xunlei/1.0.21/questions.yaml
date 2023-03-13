@@ -36,7 +36,7 @@ questions:
 
   - variable: ownerUID
     label: "UID"
-    group: Configuration
+    group: "Xunlei Configuration"
     schema:
       type: int
       default: 1000
@@ -45,7 +45,7 @@ questions:
 
   - variable: ownerGID
     label: "GID"
-    group: Configuration
+    group: "Xunlei Configuration"
     schema:
       type: int
       default: 1000
