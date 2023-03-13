@@ -34,6 +34,25 @@ questions:
       type: boolean
       default: false
 
+  - variable: ownerUID
+    label: "UID"
+    group: Configuration
+    schema:
+      type: int
+      default: 1000
+      min: 1
+      max: 65535
+
+  - variable: ownerGID
+    label: "GID"
+    group: Configuration
+    schema:
+      type: int
+      default: 1000
+      min: 1
+      max: 65535
+
+
   - variable: environmentVariables
     label: "Environment Variables for Xunlei"
     group: "Xunlei Configuration"
