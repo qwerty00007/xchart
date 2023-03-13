@@ -52,7 +52,6 @@ questions:
       min: 1
       max: 65535
 
-
   - variable: environmentVariables
     label: "Environment Variables for Xunlei"
     group: "Xunlei Configuration"

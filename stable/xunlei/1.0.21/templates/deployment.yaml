@@ -50,7 +50,6 @@ spec: {{ include "common.deployment.common_spec" . | nindent 2 }}
             {{ $envList = mustAppend $envList (dict "name" "UID" "value" (printf "%d" (.Values.ownerUID | int))) }}
             {{ $envList = mustAppend $envList (dict "name" "GID" "value" (printf "%d" (.Values.ownerGID | int))) }}
             {{ include "common.containers.environmentVariables" (dict "environmentVariables" $envList) | nindent 12 }}
-
       volumes: {{ include "common.storage.configureAppVolumes" .Values | nindent 8 }}
         {{ range $index, $hostPathConfiguration := .Values.extraAppVolumeMounts }}
         - name: extrappvolume-{{ $index }}
