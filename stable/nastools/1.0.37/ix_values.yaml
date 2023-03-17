@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: nastools/nas-tools
+  tag: v2.9.1@sha256:6653fb322d8b2463332466bfd002b1eb2ec3c72dabfb6d568e4f8a66e7314dc8
