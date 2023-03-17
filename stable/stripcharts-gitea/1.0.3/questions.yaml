@@ -24,6 +24,14 @@ questions:
       type: string
       default: "actualserver|breitbandmessung-de"
 
+  - variable: STRIP_ENTERPRISE
+    label: "ENTERPRISE APPS"
+    description: "to specify the enterprise apps to grab, e.g. app1|app2|app3"
+    group: Configuration
+    schema:
+      type: string
+      default: "traefix"
+
   - variable: CATALOG_REPO
     label: "CATALOG REPO URL"
     description: "to specify your repo URL where to download the truecharts catalog."
