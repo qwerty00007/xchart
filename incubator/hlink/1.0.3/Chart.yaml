@@ -1,0 +1,13 @@
+apiVersion: v2
+appVersion: 2.0.9
+dependencies:
+- name: common
+  repository: file://../../../library/common/2207.0.0
+  version: 2207.0.0
+description: 硬链接文件
+home: https://hlink.likun.me/ 
+icon: https://hlink.likun.me/logo.svg
+keywords:
+- tools
+name: hlink
+version: 1.0.3

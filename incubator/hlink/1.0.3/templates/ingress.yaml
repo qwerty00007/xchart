@@ -1,0 +1,23 @@
+{{ include "common.classes.service" $params }}
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ template "common.names.fullname" . }}-ingress
+spec:
+  rules:
+  - host: a.domain.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: $params.commonService
+            port:
+              number: .Values.web_port
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - a.domain.com
+    secretName: external-service-tls-0-ixcert-1-1
