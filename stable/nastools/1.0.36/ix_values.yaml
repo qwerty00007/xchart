@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: test/nastools
+  tag: 1.0.1
