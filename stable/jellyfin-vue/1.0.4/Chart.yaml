@@ -6,8 +6,8 @@ dependencies:
   version: 2207.0.0
 description: A docker image running jellyfin-vue
 home: https://github.com/jellyfin/jellyfin-vue 
-icon: https://ghproxy.com/https://raw.githubusercontent.com/jellyfin/jellyfin-vue/master/frontend/static/icon.png
+icon: https://ghproxy.com/https://raw.githubusercontent.com/jellyfin/jellyfin-vue/master/frontend/public/icon.png
 keywords:
 - tools
 name: jellyfin-vue
-version: 1.0.3
+version: 1.0.4
