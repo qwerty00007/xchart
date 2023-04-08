@@ -1,5 +1,5 @@
 apiVersion: v2
-appVersion: 3.4.0
+appVersion: 3.5.2
 dependencies:
 - name: common
   repository: file://../../../library/common/2207.0.0
@@ -12,4 +12,4 @@ keywords:
 name: xunlei
 sources:
 - https://hub.docker.com/r/cnk3x/xunlei
-version: 1.0.21
+version: 1.0.22
