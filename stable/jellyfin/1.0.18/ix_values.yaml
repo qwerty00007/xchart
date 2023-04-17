@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: nyanmisaka/jellyfin
+  tag: v230414-amd64@sha256:c1482f31b727294500623867f463af5a5d50f240148a5754c613a5676a9d7962
