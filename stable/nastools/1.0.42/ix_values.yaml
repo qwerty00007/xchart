@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: jxxghp/nas-tools
+  tag: v3.2.0@sha256:29a497db5148df48ff688c39265425d160624fd32dd78a5b6c018c96a940ef95
