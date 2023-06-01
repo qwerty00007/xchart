@@ -1,4 +1,4 @@
 image:
   pullPolicy: IfNotPresent
   repository: mtphotos/mt-photos
-  tag: v1.19.0
+  tag: 1.19.0
