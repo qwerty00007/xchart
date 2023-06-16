@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: nastool/nas-tools
+  tag: latest

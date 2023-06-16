@@ -1,0 +1,11 @@
+{{ $selectors := list }}
+{{ $selectors = mustAppend $selectors (dict "key" "app" "value" (include "common.names.name" .) ) }}
+{{ $selectors = mustAppend $selectors (dict "key" "release" "value" .Release.Name ) }}
+{{ $ports := list }}
+{{ $ports = mustAppend $ports (dict "name" "tcp" "port" .Values.tcp_port "nodePort" .Values.tcp_port "targetPort" 80) }}
+{{ $ports = mustAppend $ports (dict "name" "externalcontrol" "port" .Values.externalcontrol_port "nodePort" .Values.externalcontrol_port "targetPort" .Values.externalcontrol_port) }}
+{{ $ports = mustAppend $ports (dict "name" "mixed" "port" .Values.mixed_port "nodePort" .Values.mixed_port "targetPort" .Values.mixed_port) }}
+{{ $params := . }}
+{{ $_ := set $params "commonService" (dict "type" "NodePort" "ports" $ports ) }}
+{{ $_1 := set .Values "extraSelectorLabels" $selectors }}
+{{ include "common.classes.service" $params }}
