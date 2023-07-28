@@ -1,4 +1,4 @@
 image:
   pullPolicy: IfNotPresent
   repository: jxxghp/moviepilot
-  tag: v1.0.0@sha256:20e52b9a8308c2a9a9a8bdc419110f12d5e6d7da232c83923c9c255c3f3cabec
+  tag: latest
