@@ -1,0 +1,300 @@
+groups:
+  - name: "Jellyfin Server Configuration"
+    description: "Configure Jellyfin Server"
+  - name: "Networking"
+    description: "Configure networking for container"
+  - name: "Storage"
+    description: "Persist and share data that is separate from the lifecycle of the container"
+  - name: "Workload Details"
+    description: "Configure how workload should be deployed"
+  - name: "Scaling/Upgrade Policy"
+    description: "Configure how pods are replaced when configuration is upgraded"
+  - name: "Restart Policy"
+    description: "Configure when pod should be restarted in case of failure"
+  - name: "Resource Reservation"
+    description: "Specify resources to be allocated to workload"
+  - name: "Resource Limits"
+    description: "Set CPU/memory limits for Kubernetes Pod"
+
+portals:
+  web_portal:
+    protocols:
+      - "http"
+    host:
+      - "$node_ip"
+    ports:
+      - "$variable-jellyfinServerHttp.port"
+    path: "/"
+
+questions:
+  - variable: hostNetwork
+    label: "Configure Host Network"
+    group: "Networking"
+    schema:
+      type: boolean
+      default: false
+
+  - variable: environmentVariables
+    label: "Environment Variables for Jellyfin Server"
+    group: "Jellyfin Server Configuration"
+    schema:
+      type: list
+      default: []
+      items:
+        - variable: environmentVariable
+          label: "Environment Variable"
+          schema:
+            type: dict
+            attrs:
+              - variable: name
+                label: "Name"
+                schema:
+                  type: string
+              - variable: value
+                label: "Value"
+                schema:
+                  type: string
+
+  # Update strategy
+  - variable: updateStrategy
+    description: "Upgrade Policy"
+    label: "Update Strategy"
+    group: "Scaling/Upgrade Policy"
+    schema:
+      type: string
+      default: "Recreate"
+      enum:
+        - value: "RollingUpdate"
+          description: "Create new pods and then kill old ones"
+        - value: "Recreate"
+          description: "Kill existing pods before creating new ones"
+
+  # Port configuration
+  - variable: jellyfinServerHttp
+    label: "Configure Jellyfin Server HTTP Service"
+    group: "Networking"
+    schema:
+      type: dict
+      attrs:
+        - variable: port
+          label: "Port to expose for Jellyfin Server UI"
+          schema:
+            type: int
+            min: 9000
+            max: 65535
+            default: 9096
+            
+  # extra Hosts configuration
+  - variable: extraHosts
+    label: "Extra Hosts"
+    group: "Networking"
+    schema:
+      type: list
+      items:
+        - variable: extraHost
+          label: "Extra Host"
+          description: "Add an extra host for Jellyfin application"
+          schema:
+            type: dict
+            attrs:
+              - variable: ip
+                label: "ip"
+                description: "hostname ip"
+                schema:
+                  type: string
+                  required: true
+              - variable: hostname
+                label: "Host Name"
+                description: "Host Name"
+                schema:
+                  type: string
+                  required: true
+
+  # Specify GPU configuration
+  - variable: gpuConfiguration
+    label: "GPU Configuration"
+    group: "Resource Reservation"
+    schema:
+      type: dict
+      $ref:
+        - "definitions/gpuConfiguration"
+      attrs: []
+
+  - variable: appVolumeMounts
+    label: "Jellyfin Server Storage"
+    group: "Storage"
+    schema:
+      type: dict
+      attrs:
+        - variable: config
+          label: "Configuration Volume"
+          schema:
+            type: dict
+            attrs:
+              - variable: datasetName
+                label: "Configuration Volume Dataset Name"
+                schema:
+                  type: string
+                  hidden: true
+                  $ref:
+                    - "normalize/ixVolume"
+                  show_if: [["hostPathEnabled", "=", false]]
+                  default: "ix-jellyfin_config"
+                  editable: false
+              - variable: mountPath
+                label: "Configuration Mount Path"
+                description: "Path where the volume will be mounted inside the pod"
+                schema:
+                  type: path
+                  hidden: true
+                  editable: true
+                  default: "/config"
+              - variable: hostPathEnabled
+                label: "Enable Custom Host Path for Jellyfin Server Configuration Volume"
+                schema:
+                  type: boolean
+                  default: false
+                  show_subquestions_if: true
+                  subquestions:
+                    - variable: hostPath
+                      label: "Host Path for Jellyfin Configuration Volume"
+                      schema:
+                        type: hostpath
+                        required: true
+        - variable: media
+          label: "Media Volume"
+          schema:
+            type: dict
+            attrs:
+              - variable: datasetName
+                label: "Media Volume Dataset Name"
+                schema:
+                  type: string
+                  hidden: true
+                  $ref:
+                    - "normalize/ixVolume"
+                  show_if: [["hostPathEnabled", "=", false]]
+                  default: "ix-jellyfin_data"
+                  editable: false
+              - variable: mountPath
+                label: "Media Mount Path"
+                description: "Path where the volume will be mounted inside the pod"
+                schema:
+                  type: path
+                  hidden: true
+                  editable: true
+                  default: "/media"
+              - variable: hostPathEnabled
+                label: "Enable Custom Host Path for Jellyfin Server Media Volume"
+                schema:
+                  type: boolean
+                  default: false
+                  show_subquestions_if: true
+                  subquestions:
+                    - variable: hostPath
+                      label: "Host Path for Jellyfin Media Volume"
+                      schema:
+                        type: hostpath
+                        required: true
+
+  - variable: extraAppVolumeMounts
+    label: "Jellyfin Server Extra Host Path Volumes"
+    group: "Storage"
+    schema:
+      type: list
+      items:
+        - variable: extraAppVolume
+          label: "Jellyfin Server Host Path Volume"
+          description: "Add an extra host path volume for jellyfin application"
+          schema:
+            type: dict
+            attrs:
+              - variable: mountPath
+                label: "Mount Path in Pod"
+                description: "Path where the volume will be mounted inside the pod"
+                schema:
+                  type: path
+                  required: true
+              - variable: hostPath
+                label: "Host Path"
+                description: "Host path"
+                schema:
+                  type: hostpath
+                  required: true
+              - variable: readOnly
+                label: "Read Only"
+                description: "Mount hostpath in read-only mode"
+                schema:
+                  type: boolean
+                  default: false
+
+
+  - variable: securityContext
+    label: "Security Context"
+    group: "Workload Details"
+    schema:
+      type: dict
+      attrs:
+        - variable: privileged
+          label: "Privileged Mode"
+          description: "Determines if any container in a pod can enable privileged mode. By default a container is not allowed to access any devices on the host, but a 'privileged' container is given access to all devices on the host. This allows the container nearly all the same access as processes running on the host."
+          schema:
+            type: boolean
+            default: false
+        - variable: capabilities
+          label: "Capabilities"
+          description: "With Linux capabilities, you can grant certain privileges to a process without granting all the privileges of the root user."
+          schema:
+            type: list
+            items:
+              - variable: capability
+                description: "Add Capability"
+                label: "Add Capability"
+                schema:
+                  type: string
+        - variable: enableRunAsUser
+          label: "Configure Container User and Group ID"
+          description: "Configure security context runAsUser and runAsGroup variables"
+          schema:
+            type: boolean
+            default: false
+            show_subquestions_if: true
+            subquestions:
+              - variable: runAsUser
+                label: "Run Container As User"
+                description: "Configure user id for container."
+                schema:
+                  type: int
+                  default: 568
+              - variable: runAsGroup
+                label: "Run Container As Group"
+                description: "Configure group id for container."
+                schema:
+                  type: int
+                  default: 568
+
+
+  - variable: enableResourceLimits
+    label: "Enable Pod resource limits"
+    group: "Resource Limits"
+    schema:
+      type: boolean
+      default: false
+  - variable: cpuLimit
+    label: "CPU Limit"
+    description: "CPU resource limit allow  plain integer values with suffix m(milli) e.g 1000m, 100."
+    group: "Resource Limits"
+    schema:
+      type: string
+      show_if: [["enableResourceLimits", "=", true]]
+      valid_chars: "^\\d+(?:\\.\\d+(?!.*m$)|m?$)"
+      default: "4000m"
+  - variable: memLimit
+    label: "Memory Limit"
+    group: "Resource Limits"
+    description: "Memory limits is specified by number of bytes. Followed by quantity suffix like E,P,T,G,M,k and Ei,Pi,Ti,Mi,Gi,Ki can also be used. e.g 129e6, 129M,  128974848000m, 123Mi"
+    schema:
+      type: string
+      show_if: [["enableResourceLimits", "=", true]]
+      valid_chars: "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$"
+      default: "8Gi"
