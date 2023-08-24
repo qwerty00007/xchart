@@ -1,9 +1,5 @@
 apiVersion: v2
-<<<<<<< HEAD
-appVersion: 10.8.9
-=======
 appVersion: 10.8.10
->>>>>>> bfc90d85a3c60ba628bdf306b1c37ad8c0aa450b
 dependencies:
 - name: common
   repository: file://../../../library/common/2207.0.0
