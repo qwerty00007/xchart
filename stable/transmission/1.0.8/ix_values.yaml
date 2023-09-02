@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: linuxserver/transmission
+  tag: 4.0.4
