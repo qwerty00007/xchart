@@ -1,0 +1,5 @@
+{{ $ports := list }}
+{{ $ports = mustAppend $ports (dict "name" "bt-port" "port" .Values.bt_port "protocol" "UDP" "targetPort" .Values.bt_port) }}
+{{ $params := . }}
+{{ $_ := set $params "commonService" (dict "type" "ClusterIP" "ports" $ports "nameSuffix" "udp" ) }}
+{{ include "common.classes.service" $params }}
