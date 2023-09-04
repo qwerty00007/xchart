@@ -1,10 +1,10 @@
 groups:
   - name: "Configuration"
-    description: "Transmission application configuration"
+    description: "qBittorrent application configuration"
   - name: "Storage"
-    description: "Configure storage for Transmission"
+    description: "Configure storage for qBittorrent"
   - name: "Networking"
-    description: "Networking Configuration for Transmission"
+    description: "Networking Configuration for qBittorrent"
   - name: "Advanced DNS Settings"
     description: "Configure DNS settings"
   - name: "Resource Limits"
@@ -22,33 +22,39 @@ portals:
 
 questions:
   - variable: web_port
-    label: "Web Port for Transmission"
+    label: "Web Port for qBittorrent"
     group: Networking
     schema:
       type: int
       min: 8000
       max: 65535
-      default: 9091
+      default: 20909
       required: true
   - variable: tcp_port
-    label: "TCP Port for Transmission"
+    label: "TCP Port for qBittorrent"
     group: Networking
     schema:
       type: int
       min: 8000
       max: 65535
-      default: 51413
+      default: 20988
       required: true
   - variable: udp_port
-    label: "UDP Port for Transmission"
+    label: "UDP Port for qBittorrent"
     group: Networking
     schema:
       type: int
       min: 8000
       max: 65535
-      default: 51413
+      default: 20989
       required: true
-
+  - variable: hostNetwork
+    label: "Configure Host Network"
+    group: "Networking"
+    schema:
+      type: boolean
+      default: false
+      
   - variable: dnsConfig
     label: "DNS Configuration"
     group: "Advanced DNS Settings"
@@ -103,7 +109,7 @@ questions:
         - "definitions/timezone"
 
   - variable: environmentVariables
-    label: "Transmission environment"
+    label: "qBittorrent environment"
     group: "Configuration"
     schema:
       type: list
@@ -124,7 +130,7 @@ questions:
                   type: string
 
   - variable: appVolumeMounts
-    label: "Transmission Storage"
+    label: "qBittorrent Storage"
     group: "Storage"
     schema:
       type: dict
@@ -142,7 +148,7 @@ questions:
                   $ref:
                     - "normalize/ixVolume"
                   show_if: [["hostPathEnabled", "=", false]]
-                  default: "ix-transmission_config"
+                  default: "ix-qBittorrent_config"
                   editable: false
               - variable: mountPath
                 label: "Configuration Mount Path"
@@ -153,14 +159,14 @@ questions:
                   editable: true
                   default: "/config"
               - variable: hostPathEnabled
-                label: "Enable Custom Host Path for Transmission Configuration Volume"
+                label: "Enable Custom Host Path for qBittorrent Configuration Volume"
                 schema:
                   type: boolean
                   default: false
                   show_subquestions_if: true
                   subquestions:
                     - variable: hostPath
-                      label: "Host Path for Transmission Configuration Volume"
+                      label: "Host Path for qBittorrent Configuration Volume"
                       schema:
                         type: hostpath
                         required: true
@@ -177,7 +183,7 @@ questions:
                   $ref:
                     - "normalize/ixVolume"
                   show_if: [["hostPathEnabled", "=", false]]
-                  default: "ix-transmission_data"
+                  default: "ix-qBittorrent_data"
                   editable: false
               - variable: mountPath
                 label: "Downloads Mount Path"
@@ -188,14 +194,14 @@ questions:
                   editable: true
                   default: "/downloads"
               - variable: hostPathEnabled
-                label: "Enable Custom Host Path for Transmission Downloads Volume"
+                label: "Enable Custom Host Path for qBittorrent Downloads Volume"
                 schema:
                   type: boolean
                   default: false
                   show_subquestions_if: true
                   subquestions:
                     - variable: hostPath
-                      label: "Host Path for Transmission Downloads Volume"
+                      label: "Host Path for qBittorrent Downloads Volume"
                       schema:
                         type: hostpath
                         required: true
@@ -208,7 +214,7 @@ questions:
       items:
         - variable: extraAppVolume
           label: "Host Path Volume"
-          description: "Add an extra host path volume for Transmission application"
+          description: "Add an extra host path volume for qBittorrent application"
           schema:
             type: dict
             attrs:
