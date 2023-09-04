@@ -59,6 +59,7 @@ spec: {{ include "common.deployment.common_spec" . | nindent 2 }}
                 fieldRef:
                   fieldPath: status.podIP
             {{ $envList := (default list .Values.environmentVariables) }}
+            {{ $envList = mustAppend $envList (dict "name" "TZ" "value" (printf "%s" .Values.timezone)) }}
             {{ if and .Values.gpuConfiguration (hasKey .Values.gpuConfiguration "nvidia.com/gpu") (gt (get .Values.gpuConfiguration "nvidia.com/gpu" | toDecimal) 0) }}
             {{ $envList = mustAppend $envList (dict "name" "NVIDIA_DRIVER_CAPABILITIES" "value" "all") }}
             {{ end }}
