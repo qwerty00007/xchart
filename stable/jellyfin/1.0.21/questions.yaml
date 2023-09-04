@@ -36,7 +36,7 @@ questions:
 
   - variable: timezone
     label: "Timezone"
-    group: "Configuration"
+    group: "Jellyfin Server Configuration"
     schema:
       type: string
       $ref:
