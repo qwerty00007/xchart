@@ -65,7 +65,7 @@
     "cookiecloud": {
       "app_readme": "<h1>cookiecloud</h1>\n<p>A rule-based tunnel in GO</p>",
       "categories": [
-        "tools"
+        "networking"
       ],
       "description": "cookiecloud",
       "healthy": true,
@@ -92,6 +92,37 @@
         "https://github.com/easychen/CookieCloud"
       ],
       "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/easychen/CookieCloud/master/extension/assets/icon.png"
+    },
+    "hlink": {
+      "app_readme": "<h1>hlink</h1>\n<p>批量、快速硬链工具(The batch, fast hard link toolkit)</p>",
+      "categories": [
+        "Tools-Utilities"
+      ],
+      "description": "hlink",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://hlink.likun.me/",
+      "location": "/__w/xhcart/xchart/stable/hlink",
+      "latest_version": "1.0.3",
+      "latest_app_version": "2.0.9",
+      "latest_human_version": "2.0.9",
+      "last_update": "2023-08-25 13:33:23",
+      "name": "hlink",
+      "recommended": false,
+      "title": "hlink",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://hlink.likun.me/"
+      ],
+      "icon_url": "https://hlink.likun.me/logo.svg"
     }
   }
 }
