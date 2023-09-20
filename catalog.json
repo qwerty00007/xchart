@@ -159,6 +159,37 @@
         "https://jellyfin.org/"
       ],
       "icon_url": "https://jellyfin.org/images/logo.svg"
+    },
+    "mtphotos": {
+      "app_readme": "<h1>mtphotos</h1>\n<p>一款为Nas玩家准备的照片管理系统</p>",
+      "categories": [
+        "media"
+      ],
+      "description": "mtphotos",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://mtmt.tech/",
+      "location": "/__w/xhcart/xchart/stable/mtphotos",
+      "latest_version": "1.0.21",
+      "latest_app_version": "1.22.2",
+      "latest_human_version": "1.22.2",
+      "last_update": "2023-08-25 13:33:23",
+      "name": "mtphotos",
+      "recommended": false,
+      "title": "mtphotos",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://gitee.com/mt-photos/charts.git"
+      ],
+      "icon_url": "https://cdn.mtmt.tech/logo-r.png"
     }
   }
 }
