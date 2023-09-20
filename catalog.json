@@ -92,7 +92,7 @@
         "https://github.com/easychen/CookieCloud"
       ],
       "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/easychen/CookieCloud/master/extension/assets/icon.png"
-    },
+    },/*
     "hlink": {
       "app_readme": "<h1>hlink</h1>\n<p>批量、快速硬链工具(The batch, fast hard link toolkit)</p>",
       "categories": [
@@ -123,7 +123,7 @@
         "https://hlink.likun.me/"
       ],
       "icon_url": "https://hlink.likun.me/logo.svg"
-    },
+    },*/
     "jellyfin": {
       "app_readme": "<h1>jellyfin</h1>\n<p>使用 nyanmisaka/jellyfin 镜像 增加配置 /etc/hosts</p>",
       "categories": [
@@ -161,7 +161,7 @@
       "icon_url": "https://jellyfin.org/images/logo.svg"
     },
     "mtphotos": {
-      "app_readme": "<h1>mtphotos</h1>\n<p>一款为Nas玩家准备的照片管理系统</p>",
+      "app_readme": "<h1>mtphotos</h1>\n<p>一款为 Nas 玩家准备的照片管理系统</p>",
       "categories": [
         "media"
       ],
@@ -190,6 +190,37 @@
         "https://gitee.com/mt-photos/charts.git"
       ],
       "icon_url": "https://cdn.mtmt.tech/logo-r.png"
+    },
+    "moviepilot": {
+      "app_readme": "<h1>moviepilot</h1>\n<p>媒体整理， pt 刷流工具</p>",
+      "categories": [
+        "media"
+      ],
+      "description": "moviepilot",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://github.com/jxxghp/MoviePilot",
+      "location": "/__w/xhcart/xchart/stable/moviepilot",
+      "latest_version": "1.0.1",
+      "latest_app_version": "1.0.0",
+      "latest_human_version": "1.0.0",
+      "last_update": "2023-08-25 13:33:23",
+      "name": "moviepilot",
+      "recommended": false,
+      "title": "moviepilot",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/jxxghp/MoviePilot"
+      ],
+      "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/jxxghp/MoviePilot-Frontend/main/public/logo.png"
     }
   }
 }
