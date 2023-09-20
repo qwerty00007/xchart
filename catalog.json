@@ -1,0 +1,97 @@
+{
+  "stable": {
+    "clash": {
+      "app_readme": "<h1>clash</h1>\n<p>A rule-based tunnel in GO</p>",
+      "categories": [
+        "networking"
+      ],
+      "description": "clash",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://github.com/dreamacro/clash",
+      "location": "/__w/xhcart/xchart/stable/clash",
+      "latest_version": "1.0.11",
+      "latest_app_version": "1.16.0",
+      "latest_human_version": "1.16.0",
+      "last_update": "2023-08-25 13:33:23",
+      "name": "clash",
+      "recommended": false,
+      "title": "clash",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/dreamacro/clash"
+      ],
+      "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/clash.png"
+    },
+    "chinesesubfinder": {
+      "app_readme": "<h1>chinesesubfinder</h1>\n<p>自动化搞定限定条件下中文字幕下载。</p>",
+      "categories": [
+        "media"
+      ],
+      "description": "chinesesubfinder",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://github.com/ChineseSubFinder/ChineseSubFinder",
+      "location": "/__w/xhcart/xchart/stable/chinesesubfinder",
+      "latest_version": "1.0.11",
+      "latest_app_version": "0.50.3",
+      "latest_human_version": "0.50.3",
+      "last_update": "2023-08-25 13:33:23",
+      "name": "chinesesubfinder",
+      "recommended": false,
+      "title": "chinesesubfinder",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/ChineseSubFinder/ChineseSubFinder"
+      ],
+      "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/chinesesubfinder.png"
+    },
+    "cookiecloud": {
+      "app_readme": "<h1>cookiecloud</h1>\n<p>A rule-based tunnel in GO</p>",
+      "categories": [
+        "tools"
+      ],
+      "description": "cookiecloud",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://github.com/easychen/CookieCloud",
+      "location": "/__w/xhcart/xchart/stable/cookiecloud",
+      "latest_version": "1.0.1",
+      "latest_app_version": "23.01.20",
+      "latest_human_version": "23.01.20",
+      "last_update": "2023-08-25 13:33:23",
+      "name": "cookiecloud",
+      "recommended": false,
+      "title": "cookiecloud",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/easychen/CookieCloud"
+      ],
+      "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/easychen/CookieCloud/master/extension/assets/icon.png"
+    }
+  }
+}
