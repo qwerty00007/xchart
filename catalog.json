@@ -123,6 +123,42 @@
         "https://hlink.likun.me/"
       ],
       "icon_url": "https://hlink.likun.me/logo.svg"
+    },
+    "jellyfin": {
+      "app_readme": "<h1>jellyfin</h1>\n<p>使用 nyanmisaka/jellyfin 镜像 增加配置 /etc/hosts</p>",
+      "categories": [
+        "media"
+      ],
+      "description": "jellyfin",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://jellyfin.org/",
+      "location": "/__w/xhcart/xchart/stable/jellyfin",
+      "latest_version": "1.0.21",
+      "latest_app_version": "10.8.10",
+      "latest_human_version": "10.8.10",
+      "last_update": "2023-08-25 13:33:23",
+      "name": "jellyfin",
+      "recommended": false,
+      "title": "jellyfin",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [
+        "https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png",
+        "https://jellyfin.org/assets/images/10.8-details-df4f7caaee389ffbaeeaa95b668fa037.png"
+      ],
+      "sources": [
+        "https://hub.docker.com/r/jellyfin/jellyfin",
+        "https://github.com/truenas/charts/tree/master/community/jellyfin",
+        "https://jellyfin.org/"
+      ],
+      "icon_url": "https://jellyfin.org/images/logo.svg"
     }
   }
 }
