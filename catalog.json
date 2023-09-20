@@ -92,7 +92,7 @@
         "https://github.com/easychen/CookieCloud"
       ],
       "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/easychen/CookieCloud/master/extension/assets/icon.png"
-    },/*
+    }, /*
     "hlink": {
       "app_readme": "<h1>hlink</h1>\n<p>批量、快速硬链工具(The batch, fast hard link toolkit)</p>",
       "categories": [
@@ -194,7 +194,8 @@
     "moviepilot": {
       "app_readme": "<h1>moviepilot</h1>\n<p>媒体整理， pt 刷流工具</p>",
       "categories": [
-        "media"
+        "media",
+        "Tools-Utilities"
       ],
       "description": "moviepilot",
       "healthy": true,
@@ -221,6 +222,164 @@
         "https://github.com/jxxghp/MoviePilot"
       ],
       "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/jxxghp/MoviePilot-Frontend/main/public/logo.png"
+    },
+    "nastools": {
+      "app_readme": "<h1>nastools</h1>\n<p>媒体整理， pt 刷流工具</p>",
+      "categories": [
+        "media",
+        "Tools-Utilities"
+      ],
+      "description": "nastools",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://github.com/NAStool/nas-tools",
+      "location": "/__w/xhcart/xchart/stable/nastools",
+      "latest_version": "1.0.44",
+      "latest_app_version": "latest",
+      "latest_human_version": "latest",
+      "last_update": "2023-08-25 13:33:23",
+      "name": "nastools",
+      "recommended": false,
+      "title": "nastools",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/NAStool/nas-tools"
+      ],
+      "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/nastools.png"
+    },
+    "qbittorrent": {
+      "app_readme": "<h1>qbittorrent</h1>\n<p>一个基于 Qt 工具箱和 libtorrent-rasterbar 并用 C++ 编写的高级 BitTorrent 客户端。</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "qbittorrent",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://www.qbittorrent.org/",
+      "location": "/__w/xhcart/xchart/stable/qbittorrent",
+      "latest_version": "1.0.09",
+      "latest_app_version": "4.5.5",
+      "latest_human_version": "4.5.5",
+      "last_update": "2023-08-25 13:33:23",
+      "name": "qbittorrent",
+      "recommended": false,
+      "title": "qbittorrent",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [],
+      "icon_url": "https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/qbittorrent-icon.png"
+    },
+    "transmission": {
+      "app_readme": "<h1>transmission</h1>\n<p>A Fast, Easy and Free Bittorrent Client For macOS, Windows and Linux</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "transmission",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://transmissionbt.com/",
+      "location": "/__w/xhcart/xchart/stable/transmission",
+      "latest_version": "1.0.9",
+      "latest_app_version": "4.0.4",
+      "latest_human_version": "4.0.4",
+      "last_update": "2023-08-25 13:33:23",
+      "name": "transmission",
+      "recommended": false,
+      "title": "transmission",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/transmission/transmission"
+      ],
+      "icon_url": "https://transmissionbt.com/assets/images/Transmission_icon.png"
+    },
+    "vlmcsd": {
+      "app_readme": "<h1>vlmcsd</h1>\n<p>KMS server</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "vlmcsd",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://hub.docker.com/r/mogeko/vlmcsd",
+      "location": "/__w/xhcart/xchart/stable/vlmcsd",
+      "latest_version": "1.0.1",
+      "latest_app_version": "2022.01.16",
+      "latest_human_version": "2022.01.16",
+      "last_update": "2023-08-25 13:33:23",
+      "name": "vlmcsd",
+      "recommended": false,
+      "title": "vlmcsd",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/Wind4/vlmcsd"
+      ],
+      "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/vlmcsd.png"
+    },
+    "xunlei": {
+      "app_readme": "<h1>xunlei</h1>\n<p>迅雷下载</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "xunlei",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://www.xunlei.com/",
+      "location": "/__w/xhcart/xchart/stable/xunlei",
+      "latest_version": "1.0.23",
+      "latest_app_version": "3.7.1",
+      "latest_human_version": "3.7.1",
+      "last_update": "2023-08-25 13:33:23",
+      "name": "xunlei",
+      "recommended": false,
+      "title": "xunlei",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://hub.docker.com/r/cnk3x/xunlei"
+      ],
+      "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/xunlei.png"
     }
   }
 }
