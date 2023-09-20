@@ -92,7 +92,8 @@
         "https://github.com/easychen/CookieCloud"
       ],
       "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/easychen/CookieCloud/master/extension/assets/icon.png"
-    }, /*
+    }, 
+    /*
     "hlink": {
       "app_readme": "<h1>hlink</h1>\n<p>批量、快速硬链工具(The batch, fast hard link toolkit)</p>",
       "categories": [
