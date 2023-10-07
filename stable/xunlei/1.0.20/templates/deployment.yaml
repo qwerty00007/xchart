@@ -13,11 +13,14 @@ spec: {{ include "common.deployment.common_spec" . | nindent 2 }}
           {{ include "common.resources.limitation" . | nindent 10 }}
           {{ include "common.containers.imageConfig" .Values.image | nindent 10 }}
           securityContext:
-            {{ if .Values.securityContext.privileged }}
             privileged: {{ .Values.securityContext.privileged }}
-            {{ else }}
+            {{ if .Values.securityContext.enableRunAsUser }}
+            runAsUser: {{ .Values.securityContext.runAsUser }}
+            runAsGroup: {{ .Values.securityContext.runAsGroup }}
+            {{ end }}
+            {{ if .Values.securityContext.capabilities }}
             capabilities:
-              add: - SYS_ADMIN
+              add: ["SYS_ADMIN"]
             {{ end }}          
           volumeMounts: {{ include "common.storage.configureAppVolumeMountsInContainer" .Values | nindent 12 }}
             {{ range $index, $hostPathConfiguration := .Values.extraAppVolumeMounts }}
