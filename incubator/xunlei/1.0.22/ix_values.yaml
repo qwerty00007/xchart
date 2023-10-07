@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: cnk3x/xunlei
+  tag: 3.5.2@sha256:50fa9d526d40b73c76d6dff21e3a1e0ee5d05a66a99b2732db988f3b4ad9098b
