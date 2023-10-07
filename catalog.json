@@ -350,39 +350,5 @@
       ],
       "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/xunlei.png"
     }
-  },
-  "incubator": {
-    "xunlei": {
-      "app_readme": "<h1>xunlei</h1>\n<p>迅雷下载</p>",
-      "categories": [
-        "networking",
-        "Tools-Utilities"
-      ],
-      "description": "xunlei",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://www.xunlei.com/",
-      "location": "/__w/xhcart/xchart/incubator/xunlei",
-      "latest_version": "1.0.1",
-      "latest_app_version": "3.7.1",
-      "latest_human_version": "3.7.1",
-      "last_update": "2023-08-25 13:33:23",
-      "name": "xunlei",
-      "recommended": false,
-      "title": "xunlei",
-      "maintainers": [
-        {
-          "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://hub.docker.com/r/cnk3x/xunlei"
-      ],
-      "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/xunlei.png"
-    }
   }
 }
