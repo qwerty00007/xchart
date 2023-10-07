@@ -362,7 +362,7 @@
       "healthy": true,
       "healthy_error": null,
       "home": "https://www.xunlei.com/",
-      "location": "/__w/xhcart/xchart/stable/xunlei",
+      "location": "/__w/xhcart/xchart/incubator/xunlei",
       "latest_version": "1.0.1",
       "latest_app_version": "3.7.1",
       "latest_human_version": "3.7.1",
