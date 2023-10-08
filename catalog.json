@@ -222,7 +222,7 @@
       "sources": [
         "https://github.com/NAStool/nas-tools"
       ],
-      "icon_url": "https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/nastools.png"
+      "icon_url": "https://gitee.com/qwerty0007/xchart/raw/main/assets/nas-tools.png"
     },
     "qbittorrent": {
       "app_readme": "<h1>qbittorrent</h1>\n<p>一个基于 Qt 工具箱和 libtorrent-rasterbar 并用 C++ 编写的高级 BitTorrent 客户端。</p>",
@@ -316,7 +316,7 @@
       "sources": [
         "https://github.com/Wind4/vlmcsd"
       ],
-      "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/vlmcsd.png"
+      "icon_url": "https://gitee.com/qwerty0007/xchart/raw/main/assets/VLMCSD.png"
     },
     "xunlei": {
       "app_readme": "<h1>xunlei</h1>\n<p>迅雷下载</p>",
