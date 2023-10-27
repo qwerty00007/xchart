@@ -142,7 +142,7 @@ questions:
                   $ref:
                     - "normalize/ixVolume"
                   show_if: [["hostPathEnabled", "=", false]]
-                  default: "ix-nastools_config"
+                  default: "ix-moviepilot_config"
                   editable: false
               - variable: mountPath
                 label: "Configuration Mount Path"
@@ -178,7 +178,7 @@ questions:
                   $ref:
                     - "normalize/ixVolume"
                   show_if: [["hostPathEnabled", "=", false]]
-                  default: "ix-nastools_config"
+                  default: "ix-moviepilot_moviepilot"
                   editable: false
               - variable: mountPath
                 label: "Configuration Mount Path"
@@ -213,7 +213,7 @@ questions:
                   $ref:
                     - "normalize/ixVolume"
                   show_if: [["hostPathEnabled", "=", false]]
-                  default: "ix-nastools_data"
+                  default: "ix-moviepilot_data"
                   editable: false
               - variable: mountPath
                 label: "Media Data Mount Path"
