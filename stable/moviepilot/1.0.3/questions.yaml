@@ -151,6 +151,7 @@ questions:
           schema:
             show_if: [["AUTH_SITE", "=", "iyuu"]]
             type: string
+            private: true
             default: ""
 
         - variable: HHCLUB_USERNAME
@@ -164,6 +165,7 @@ questions:
           schema:
             show_if: [["AUTH_SITE", "=", "hhclub"]]
             type: string
+            private: true
             default: ""
 
         - variable: AUDIENCES_UID
@@ -177,6 +179,7 @@ questions:
           schema:
             show_if: [["AUTH_SITE", "=", "audiences"]]
             type: string
+            private: true
             default: ""
 
         - variable: HDDOLBY_ID
@@ -190,6 +193,7 @@ questions:
           schema:
             show_if: [["AUTH_SITE", "=", "hddolby"]]
             type: string
+            private: true
             default: ""
 
         - variable: ZMPT_UID
@@ -203,6 +207,7 @@ questions:
           schema:
             show_if: [["AUTH_SITE", "=", "zmpt"]]
             type: string
+            private: true
             default: ""
 
         - variable: FREEFARM_UID
@@ -216,6 +221,119 @@ questions:
           schema:
             show_if: [["AUTH_SITE", "=", "freefarm"]]
             type: string
+            private: true
+            default: ""
+
+        - variable: HDFANS_UID
+          label: HDFANS UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "hdfans"]]
+            type: string
+            default: ""
+        - variable: HDFANS_PASSKEY
+          label: HDFANS PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "hdfans"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: WINTERSAKURA_UID
+          label: WINTERSAKURA UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "wintersakura"]]
+            type: string
+            default: ""
+        - variable: WINTERSAKURA_PASSKEY
+          label: WINTERSAKURA PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "wintersakura"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: LEAVES_UID
+          label: LEAVES UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "leaves"]]
+            type: string
+            default: ""
+        - variable: LEAVES_PASSKEY
+          label: LEAVES PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "leaves"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: 1PTBA_UID
+          label: 1PTBA UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "1ptba"]]
+            type: string
+            default: ""
+        - variable: 1PTBA_PASSKEY
+          label: 1PTBA PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "1ptba"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: ICC2022_UID
+          label: ICC2022 UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "icc2022"]]
+            type: string
+            default: ""
+        - variable: ICC2022_PASSKEY
+          label: ICC2022 PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "icc2022"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: PTLSP_UID
+          label: PTLSP UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "ptlsp"]]
+            type: string
+            default: ""
+        - variable: PTLSP_PASSKEY
+          label: PTLSP PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "ptlsp"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: XINGTAN_UID
+          label: XINGTAN UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "xingtan"]]
+            type: string
+            default: ""
+        - variable: XINGTAN_PASSKEY
+          label: XINGTAN PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "xingtan"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: PTVICOMO_UID
+          label: PTVICOMO UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "ptvicomo"]]
+            type: string
+            default: ""
+        - variable: PTVICOMO_PASSKEY
+          label: PTVICOMO PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "ptvicomo"]]
+            type: string
+            private: true
             default: ""
 
   - variable: autoupdate
