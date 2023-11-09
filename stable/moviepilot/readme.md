@@ -46,9 +46,13 @@ data
 
 - moviepilot 目录挂载
 Moviepilot Storage
+
 Configuration Volume 挂载到 moviepilot 的 `/config`
+
 moviepilot Volume 挂载到 moviepilot 的 `/moviepilot`
+
 Media Data Volume `/path/to/data`挂载到 moviepilot 的 `/data`
+
 Downloads Volume `/path/to/data/downloads`（*这个目录必须是 data 下的文件夹*）挂载到 moviepilot 的 `/downloads`
 
 ![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_1.png)
