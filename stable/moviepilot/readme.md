@@ -6,7 +6,7 @@ NAS 媒体库资源归集、整理自动化工具
 
 > 这个教程将告诉你在 TrueNAS SCALE 下部署 moviepilot，并配置硬链接的详细流程，配置好硬链接后，pt/bt 下载的文件不会变动，而是将媒体文件硬链接到另一个文件夹并重命名，刮削媒体信息，并且只占用一份容量。
 
-配置文件请使用简化后的app.env
+配置文件请使用注释后的[app.env](https://gitee.com/qwerty0007/xchart/raw/main/stable/moviepilot/app.env)
 
 ## 添加应用仓库
 
