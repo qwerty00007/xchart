@@ -413,8 +413,7 @@ questions:
       type: dict
       attrs:
         - variable: DOWNLOADER
-          label: Downloader
-          description: SELECT Downloader
+          label: select downloader
           schema:
             type: string
             default: qbittorrent
