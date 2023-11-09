@@ -139,10 +139,10 @@
       "healthy_error": null,
       "home": "https://mtmt.tech/",
       "location": "/__w/xhcart/xchart/stable/mtphotos",
-      "latest_version": "1.0.24",
-      "latest_app_version": "1.24.0",
-      "latest_human_version": "1.24.0",
-      "last_update": "2023-11-01 15:07:23",
+      "latest_version": "1.0.25",
+      "latest_app_version": "1.24.2",
+      "latest_human_version": "1.24.2",
+      "last_update": "2023-11-09 08:53:23",
       "name": "mtphotos",
       "recommended": false,
       "title": "mtphotos",
@@ -349,6 +349,38 @@
         "https://hub.docker.com/r/cnk3x/xunlei"
       ],
       "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/xunlei.png"
+    },
+    "hlink": {
+      "app_readme": "<h1>hlink</h1>\n<p>批量、快速硬链工具</p>",
+      "categories": [
+        "Tools-Utilities"
+      ],
+      "description": "hlink",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://hlink.likun.me/",
+      "location": "/__w/xhcart/xchart/stable/hlink",
+      "latest_version": "1.0.3",
+      "latest_app_version": "2.0.10",
+      "latest_human_version": "2.0.10",
+      "last_update": "2023-11-09 08:53:23",
+      "name": "hlink",
+      "recommended": false,
+      "title": "hlink",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/likun7981/hlink",
+        "https://hub.docker.com/r/likun7981/hlink"
+      ],
+      "icon_url": "https://hlink.likun.me/logo.svg"
     }
   }
 }
