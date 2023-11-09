@@ -1,10 +1,12 @@
-# NAS-Tools
+# moviepilot
 
 NAS 媒体库资源归集、整理自动化工具
 
-# NAS-TOOLS 硬链接详细配置
+# moviepilot 硬链接详细配置
 
-> 这个教程将告诉你在 TrueNAS SCALE 下部署 NAS- TOOLS，并配置硬链接的详细流程，配置好硬链接后，pt/bt 下载的文件不会变动，而是将媒体文件硬链接到另一个文件夹并重命名，刮削媒体信息，并且只占用一份容量。
+> 这个教程将告诉你在 TrueNAS SCALE 下部署 moviepilot，并配置硬链接的详细流程，配置好硬链接后，pt/bt 下载的文件不会变动，而是将媒体文件硬链接到另一个文件夹并重命名，刮削媒体信息，并且只占用一份容量。
+
+配置文件请使用简化后的app.env
 
 ## 添加应用仓库
 
@@ -17,17 +19,17 @@ NAS 媒体库资源归集、整理自动化工具
 我们使用`data`文件夹做为根目录。
 `data`有两个子文件夹`downloads`和`media`，它们分别又有子文件夹`movies`，`TVs`和`others`。
 
-> 要确保 NAS-TOOLS， 媒体服务器，下载器，对 `data`文件夹有**写入权限**。一般来说普通用户 id 都是 1000， 确保 id 为 1000 的用户对`data`有写入权限。
-> 仓库内的 NAS-TOOLS，Jellyfin，官方应用 qBitterent，都可以方便的配置运行 id。
+> 要确保 moviepilot， 媒体服务器，下载器，对 `data`文件夹有**写入权限**。一般来说普通用户 id 都是 1000， 确保 id 为 1000 的用户对`data`有写入权限。
+> 仓库内的 moviepilot，Jellyfin，官方应用 qBitterent，都可以方便的配置运行 id。
 
 - `data/downloads`文件夹挂载到下载器如 qBittorrent。
   > 对于下载器来说，它只需要访问`downloads`文件夹，将相应的媒体保存至相应的目录`movies`或者`TVs`。
 - `data/media`文件夹挂载到媒体服务器 Jellyfin，Emby 或者 Plex。
   > 对于媒体服务器来说，它只需要访问硬链接后的文件就行了，也就是`data/media`文件夹。
-- `data`文件夹挂载到 NAS-TOOLS
-  > 而对于 NAS-TOOLS 来说，因为他需要将`downloads`下的文件链接到`media`文件夹下，所以需要将挂载`/data`到 NAS-TOOLS
+- `data`文件夹挂载到 moviepilot
+  > 而对于 moviepilot 来说，因为他需要将`downloads`下的文件链接到`media`文件夹下，所以需要将挂载`/data`到 moviepilot
 
-**注意：不可以将`downloads`和`media`文件夹分别挂载到 NAS-TOOLS，因为这样会被 docker 识别成两文件系统，导致不能创建硬链接。**
+**注意：不可以将`downloads`和`media`文件夹分别挂载到 moviepilot，因为这样会被 docker 识别成两文件系统，导致不能创建硬链接。**
 
 这个目录结构看起来是这样的：
 
@@ -53,11 +55,11 @@ data
 
 挂载 smb，按照上面文件结构新建文件夹。
 
-## NAS-TOOLS 配置
+## moviepilot 配置
 
 - 目录挂载
 
-将`path/to/data`文件夹挂载到 NAS-TOOLS 的`/data`
+将`path/to/data`文件夹挂载到 moviepilot 的`/data`
 
 ![图片](https://gitee.com/qwerty0007/xchart/raw/main/assets/IMG_1.jpg)
 
@@ -152,10 +154,10 @@ data
 
 > 在`downloads`下再新建`xunlei`文件夹是为了方便管理各个下载器的文件。
 
-然后在 NAS-TOOLS 的目录同步设置中添加迅雷下载的目录。这样每当迅雷下载好后， NAS-TOOLS 就会将影音文件刮削同步到`media`目录
+然后在 moviepilot 的目录同步设置中添加迅雷下载的目录。这样每当迅雷下载好后， moviepilot 就会将影音文件刮削同步到`media`目录
 
 - 导入已下载的影音文件
-比如自己有一些影音文件，自己不想整理，可以在`data`目录下新建文件夹`import`，再在`import`新建`movies`和`TVs`。将相应的影音文件 copy 到对应目录，在 NAS-TOOLS 里面添加同步目录。这样 NAS-TOOLS 会自动整理重命名这些影音文件。
+比如自己有一些影音文件，自己不想整理，可以在`data`目录下新建文件夹`import`，再在`import`新建`movies`和`TVs`。将相应的影音文件 copy 到对应目录，在 moviepilot 里面添加同步目录。这样 moviepilot 会自动整理重命名这些影音文件。
 最后可能目录结构看起来是这样的：
 
 ```
