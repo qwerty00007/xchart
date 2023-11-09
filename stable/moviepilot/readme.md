@@ -45,6 +45,7 @@ data
 **注意：不可以将`downloads`和`media`文件夹分别挂载到 moviepilot，因为这样会被 docker 识别成两文件系统，导致不能创建硬链接。**
 
 - moviepilot 目录挂载
+
 Moviepilot Storage
 
 Configuration Volume 挂载到 moviepilot 的 `/config`
