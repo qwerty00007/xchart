@@ -1,0 +1,17 @@
+appVolumeMounts:
+  data:
+    emptyDir: true
+    mountPath: /data
+dnsConfig:
+  options: []
+emptyDirVolumes: true
+environmentVariables: []
+extraAppVolumeMounts: []
+image:
+  pullPolicy: IfNotPresent
+  repository: likun7981/hlink
+  tag: latest
+ownerGID: 1000
+ownerUID: 1000
+tcp_port: 9090
+
