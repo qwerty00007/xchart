@@ -44,7 +44,7 @@ spec:
             {{ $envList := (default list .Values.environmentVariables) }}
             {{ $envList = mustAppend $envList (dict "name" "PUID" "value" (printf "%d" (.Values.ownerUID | int))) }}
             {{ $envList = mustAppend $envList (dict "name" "PGID" "value" (printf "%d" (.Values.ownerGID | int))) }}
-            {{ $envList = mustAppend $envList (dict "name" "HLINK_HOME" "value" .Values.hlink_home_dir) }}
+            {{ $envList = mustAppend $envList (dict "name" "HLINK_HOME" "value" .Values.hlink_home) }}
             {{ include "common.containers.environmentVariables" (dict "environmentVariables" $envList) | nindent 12 }}
 {{ include "common.networking.dnsConfiguration" .Values | nindent 6 }}
       volumes: {{ include "common.storage.configureAppVolumes" .Values | nindent 8 }}

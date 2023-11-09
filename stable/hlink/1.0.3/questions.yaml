@@ -76,8 +76,8 @@ questions:
       min: 1
       max: 65535
       
-  - variable: hlink_home_dir
-    label: "hlink home dir"
+  - variable: hlink_home
+    label: "hlink home"
     group: Configuration
     schema:
       type: string
@@ -127,22 +127,22 @@ questions:
                   default: "ix-hlink_config"
                   editable: false
               - variable: mountPath
-                label: "hlink home dir Mount Path"
+                label: "hlink home Mount Path"
                 description: "Path where the volume will be mounted inside the pod"
                 schema:
                   type: path
                   hidden: true
                   editable: true
-                  default: "$variable-hlink_home_dir"
+                  default: "/hlink"
               - variable: hostPathEnabled
-                label: "Enable Custom Host Path for hlink home dir"
+                label: "Enable Custom Host Path for hlink home"
                 schema:
                   type: boolean
                   default: false
                   show_subquestions_if: true
                   subquestions:
                     - variable: hostPath
-                      label: "Host Path for hlink home dir"
+                      label: "Host Path for hlink home"
                       schema:
                         type: hostpath
                         required: true
