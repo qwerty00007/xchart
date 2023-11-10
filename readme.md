@@ -5,7 +5,7 @@
 > 应用部署请参考各个应用下的readme.md
 
 - **jellyfin** 使用 [nyanmisaka/jellyfin](https://hub.docker.com/r/nyanmisaka/jellyfin) docker 镜像，增加配置 `/etc/hosts`
-- **nastools** 增加配置 `/etc/hosts`，相关[教程](https://gitee.com/qwerty0007/xchart/blob/main/stable/nastools/readme.md)，**由于 truenas 系统原因，23.10版本无法运行**
+- **nastools** 增加配置 `/etc/hosts`，相关[教程](https://www.bilibili.com/video/BV1884y147Ny/?share_source=copy_web&vd_source=5158532412bafce97b73614e5a9f994c)，**由于 truenas 系统原因，23.10版本无法运行**
 - **vlmcsd** 运行在 docker 里的 kms 激活服务器
 - **ChineseSubFinder** 自动下载字幕
 - **MT Photos** 照片备份 APP,收费软件，[官方网站](https://mtmt.tech/)
