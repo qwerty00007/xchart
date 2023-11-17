@@ -1,4 +1,0 @@
-image:
-  pullPolicy: IfNotPresent
-  repository: jxxghp/moviepilot
-  tag: latest
