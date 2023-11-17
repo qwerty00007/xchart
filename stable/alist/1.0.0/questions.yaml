@@ -127,7 +127,7 @@ questions:
                   editable: true
                   default: "/opt/alist/data"
               - variable: hostPathEnabled
-                label: "Enable Custom Host Path for alist home"
+                label: "Enable Custom Host Path for alist config"
                 schema:
                   type: boolean
                   default: false
