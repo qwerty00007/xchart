@@ -350,6 +350,37 @@
         "https://hub.docker.com/r/likun7981/hlink"
       ],
       "icon_url": "https://hlink.likun.me/logo.svg"
+    },
+    "alist": {
+      "app_readme": "<h1>alist</h1>\n<p>🗂️ 一个支持多种存储的文件列表程序，使用 Gin 和 Solidjs。</p>",
+      "categories": [
+        "Tools-Utilities"
+      ],
+      "description": "alist",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://alist.nn.ci/zh/",
+      "location": "/__w/xhcart/xchart/stable/alist",
+      "latest_version": "1.0.0",
+      "latest_app_version": "3.28.0",
+      "latest_human_version": "3.28.0",
+      "last_update": "2023-11-17 23:25:23",
+      "name": "alist",
+      "recommended": false,
+      "title": "alist",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/alist-org/alist",
+      ],
+      "icon_url": "https://alist.nn.ci/logo.svg"
     }
   }
 }
