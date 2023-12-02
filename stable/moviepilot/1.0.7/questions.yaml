@@ -30,7 +30,15 @@ questions:
       max: 65535
       default: 23000
       required: true
-
+  - variable: api_port
+    label: "api Port for Moviepilot"
+    group: Networking
+    schema:
+      type: int
+      min: 8000
+      max: 65535
+      default: 23001
+      required: true
   - variable: extraHosts
     label: "Extra Hosts"
     group: "Networking"
