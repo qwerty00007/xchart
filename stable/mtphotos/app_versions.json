@@ -1,0 +1,51 @@
+{
+  "1.0.27": {
+    "healthy": true,
+    "supported": false,
+    "healthy_error": null,
+    "location": "/__w/xhcart/xchart/stable/mtphotos/1.0.27",
+    "last_update": "2024-02-24 21:52:07",
+    "required_features": [
+      "definitions/gpuConfiguration",
+      "normalize/acl",
+      "normalize/ixVolume"
+    ],
+    "human_version": "1.27.0_1.0.27",
+    "version": "1.0.27",
+    "chart_metadata": {
+      "name": "mtphotos",
+      "description": "MT Photos照片管理系统",
+      "annotations": {
+        "title": "MT Photos"
+      },
+      "type": "application",
+      "version": "1.0.27",
+      "apiVersion": "v2",
+      "appVersion": "1.27.0",
+      "kubeVersion": ">=1.16.0-0",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007",
+          "email": "1165505953@.com"
+        }
+      ],
+      "dependencies": [
+        {
+          "name": "common",
+          "repository": "file://../../../common",
+          "version": "2207.0.0"
+        }
+      ],
+      "home": "https://cdn.mtmt.tech/",
+      "icon": "https://cdn.mtmt.tech/logo-r.png",
+      "sources": [
+        "https://mtmt.tech/"
+      ],
+      "keywords": [
+        "mtphotos",
+        "media"
+      ]
+    }
+  }
+}
