@@ -38,7 +38,7 @@
         }
       ],
       "home": "https://www.qbittorrent.org/",
-      "icon": "https://github.com/linuxserver/docker-templates/raw/master/linuxserver.io/img/qbittorrent-icon.png",
+      "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/qbittorrent.png",
       "sources": [
         "https://www.qbittorrent.org/"
       ],
