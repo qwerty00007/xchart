@@ -1,4 +1,0 @@
-image:
-  pullPolicy: IfNotPresent
-  repository: mtphotos/mt-photos
-  tag: v1.23.0@sha256:6fb42d2954cf210018b779abb3b715abc14aef931d084a4a37bf074c11819bb9

@@ -1,0 +1,125 @@
+{
+  "1.0.1": {
+    "healthy": true,
+    "supported": false,
+    "healthy_error": null,
+    "location": "/__w/xhcart/xchart/stable/vlmcsd/1.0.1",
+    "last_update": "2024-02-24 21:52:07",
+    "required_features": [
+      "definitions/gpuConfiguration",
+      "normalize/acl",
+      "normalize/ixVolume"
+    ],
+    "human_version": "2022.01.16_1.0.1",
+    "version": "1.0.1",
+    "chart_metadata": {
+      "name": "vlmcsd",
+      "description": "A docker image running vlmcsd",
+      "annotations": {
+        "title": "vlmcsd"
+      },
+      "type": "application",
+      "version": "1.0.1",
+      "apiVersion": "v2",
+      "appVersion": "2022.01.16",
+      "kubeVersion": ">=1.16.0-0",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007",
+          "email": "1165505953@.com"
+        }
+      ],
+      "dependencies": [
+        {
+          "name": "common",
+          "repository": "file://../../../common",
+          "version": "2207.0.0"
+        }
+      ],
+      "home": "https://hub.docker.com/r/mogeko/vlmcsd",
+      "icon": "https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/icons/main/VLMCSD-KMS-Server_200x200.png",
+      "sources": [
+        "https://hub.docker.com/r/mogeko/vlmcsd"
+      ],
+      "keywords": [
+        "vlmcsd"
+      ]
+    },
+    "app_metadata": null,
+    "schema": {
+      "groups": [
+        {
+          "name": "Networking",
+          "description": "Networking Configuration for VLMCSD"
+        },
+        {
+          "name": "Resource Limits",
+          "description": "Set CPU/memory limits for Kubernetes Pod"
+        }
+      ],
+      "questions": [
+        {
+          "variable": "tcp_port",
+          "label": "tcp Port for VLMCSD",
+          "group": "Networking",
+          "schema": {
+            "type": "int",
+            "min": 8000,
+            "max": 65535,
+            "default": 11688,
+            "required": true
+          }
+        },
+        {
+          "variable": "enableResourceLimits",
+          "label": "Enable Pod resource limits",
+          "group": "Resource Limits",
+          "schema": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        {
+          "variable": "cpuLimit",
+          "label": "CPU Limresource limitsit",
+          "description": "CPU resource limit allow  plain integer values with suffix m(milli) e.g 1000m, 100.",
+          "group": "Resource Limits",
+          "schema": {
+            "type": "string",
+            "show_if": [
+              [
+                "enableResourceLimits",
+                "=",
+                true
+              ]
+            ],
+            "valid_chars": "^\\d+(?:\\.\\d+(?!.*m$)|m?$)",
+            "default": "4000m"
+          }
+        },
+        {
+          "variable": "memLimit",
+          "label": "Memory Limit",
+          "group": "Resource Limits",
+          "description": "Memory limits is specified by number of bytes. Followed by quantity suffix like E,P,T,G,M,k and Ei,Pi,Ti,Mi,Gi,Ki can also be used. e.g 129e6, 129M,  128974848000m, 123Mi",
+          "schema": {
+            "type": "string",
+            "show_if": [
+              [
+                "enableResourceLimits",
+                "=",
+                true
+              ]
+            ],
+            "valid_chars": "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$",
+            "default": "8Gi"
+          }
+        }
+      ]
+    },
+    "app_readme": "<h1>vlmcsd</h1>\n<p>A docker image running vlmcsd</p>",
+    "detailed_readme": "",
+    "changelog": null
+  }
+}

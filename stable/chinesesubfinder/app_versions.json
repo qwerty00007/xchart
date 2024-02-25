@@ -1,0 +1,526 @@
+{
+  "1.0.12": {
+    "healthy": true,
+    "supported": false,
+    "healthy_error": null,
+    "location": "/__w/xhcart/xchart/stable/chinesesubfinder/1.0.12",
+    "last_update": "2024-02-24 21:52:07",
+    "required_features": [
+      "definitions/gpuConfiguration",
+      "normalize/acl",
+      "normalize/ixVolume"
+    ],
+    "human_version": "0.50.3_1.0.12",
+    "version": "1.0.12",
+    "chart_metadata": {
+      "name": "chinesesubfinder",
+      "description": "自动化搞定限定条件下中文字幕下载。",
+      "annotations": {
+        "title": "chinesesubfinder"
+      },
+      "type": "application",
+      "version": "1.0.12",
+      "apiVersion": "v2",
+      "appVersion": "0.50.3",
+      "kubeVersion": ">=1.16.0-0",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007",
+          "email": "1165505953@.com"
+        }
+      ],
+      "dependencies": [
+        {
+          "name": "common",
+          "repository": "file://../../../common",
+          "version": "2207.0.0"
+        }
+      ],
+      "home": "https://github.com/allanpk716/ChineseSubFinder",
+      "icon": "https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/chinesesubfinder.png",
+      "sources": [
+        "https://github.com/allanpk716/ChineseSubFinder"
+      ],
+      "keywords": [
+        "chinesesubfinder"
+      ]
+    },
+    "app_metadata": null,
+    "schema": {
+      "groups": [
+        {
+          "name": "Configuration",
+          "description": "ChineseSubFinder application configuration"
+        },
+        {
+          "name": "Storage",
+          "description": "Configure storage for ChineseSubFinder"
+        },
+        {
+          "name": "Networking",
+          "description": "Networking Configuration for ChineseSubFinder"
+        },
+        {
+          "name": "Advanced DNS Settings",
+          "description": "Configure DNS settings"
+        },
+        {
+          "name": "Resource Limits",
+          "description": "Set CPU/memory limits for Kubernetes Pod"
+        }
+      ],
+      "portals": {
+        "web_portal": {
+          "protocols": [
+            "http"
+          ],
+          "host": [
+            "$node_ip"
+          ],
+          "ports": [
+            "$variable-web_port"
+          ],
+          "path": "/"
+        }
+      },
+      "questions": [
+        {
+          "variable": "web_port",
+          "label": "Web Port for ChineseSubFinder",
+          "group": "Networking",
+          "schema": {
+            "type": "int",
+            "min": 8000,
+            "max": 65535,
+            "default": 19035,
+            "required": true
+          }
+        },
+        {
+          "variable": "tcp_port",
+          "label": "TCP Port for ChineseSubFinder",
+          "group": "Networking",
+          "schema": {
+            "type": "int",
+            "min": 8000,
+            "max": 65535,
+            "default": 19037,
+            "required": true
+          }
+        },
+        {
+          "variable": "extraHosts",
+          "label": "Extra Hosts",
+          "group": "Networking",
+          "schema": {
+            "type": "list",
+            "items": [
+              {
+                "variable": "extraHost",
+                "label": "Extra Host",
+                "description": "Add an extra host for Chinesesubfinder application",
+                "schema": {
+                  "type": "dict",
+                  "attrs": [
+                    {
+                      "variable": "ip",
+                      "label": "ip",
+                      "description": "hostname ip",
+                      "schema": {
+                        "type": "string",
+                        "required": true
+                      }
+                    },
+                    {
+                      "variable": "hostname",
+                      "label": "Host Name",
+                      "description": "Host Name",
+                      "schema": {
+                        "type": "string",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "variable": "dnsConfig",
+          "label": "DNS Configuration",
+          "group": "Advanced DNS Settings",
+          "schema": {
+            "type": "dict",
+            "attrs": [
+              {
+                "variable": "options",
+                "label": "DNS Options",
+                "schema": {
+                  "type": "list",
+                  "items": [
+                    {
+                      "variable": "optionsEntry",
+                      "label": "Option Entry Configuration",
+                      "schema": {
+                        "type": "dict",
+                        "attrs": [
+                          {
+                            "variable": "name",
+                            "label": "Option Name",
+                            "schema": {
+                              "type": "string",
+                              "required": true
+                            }
+                          },
+                          {
+                            "variable": "value",
+                            "label": "Option Value",
+                            "schema": {
+                              "type": "string",
+                              "required": true
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "variable": "ownerUID",
+          "label": "Owner User ID",
+          "group": "Configuration",
+          "schema": {
+            "type": "int",
+            "default": 1000,
+            "min": 1,
+            "max": 65535
+          }
+        },
+        {
+          "variable": "ownerGID",
+          "label": "Owner Group ID",
+          "group": "Configuration",
+          "schema": {
+            "type": "int",
+            "default": 1000,
+            "min": 1,
+            "max": 65535
+          }
+        },
+        {
+          "variable": "environmentVariables",
+          "label": "ChineseSubFinder environment",
+          "group": "Configuration",
+          "schema": {
+            "type": "list",
+            "default": [],
+            "items": [
+              {
+                "variable": "environmentVariable",
+                "label": "Environment Variable",
+                "schema": {
+                  "type": "dict",
+                  "attrs": [
+                    {
+                      "variable": "name",
+                      "label": "Name",
+                      "schema": {
+                        "type": "string"
+                      }
+                    },
+                    {
+                      "variable": "value",
+                      "label": "Value",
+                      "schema": {
+                        "type": "string"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "variable": "appVolumeMounts",
+          "label": "ChineseSubFinder Storage",
+          "group": "Storage",
+          "schema": {
+            "type": "dict",
+            "attrs": [
+              {
+                "variable": "config",
+                "label": "Configuration Volume",
+                "schema": {
+                  "type": "dict",
+                  "attrs": [
+                    {
+                      "variable": "datasetName",
+                      "label": "Configuration Volume Dataset Name",
+                      "schema": {
+                        "type": "string",
+                        "hidden": true,
+                        "$ref": [
+                          "normalize/ixVolume"
+                        ],
+                        "show_if": [
+                          [
+                            "hostPathEnabled",
+                            "=",
+                            false
+                          ]
+                        ],
+                        "default": "ix-chinesesubfinder_config",
+                        "editable": false
+                      }
+                    },
+                    {
+                      "variable": "mountPath",
+                      "label": "Configuration Mount Path",
+                      "description": "Path where the volume will be mounted inside the pod",
+                      "schema": {
+                        "type": "path",
+                        "hidden": true,
+                        "editable": true,
+                        "default": "/config"
+                      }
+                    },
+                    {
+                      "variable": "hostPathEnabled",
+                      "label": "Enable Custom Host Path for ChineseSubFinder Configuration Volume",
+                      "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "show_subquestions_if": true,
+                        "subquestions": [
+                          {
+                            "variable": "hostPath",
+                            "label": "Host Path for ChineseSubFinder Configuration Volume",
+                            "schema": {
+                              "type": "hostpath",
+                              "required": true
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "variable": "media",
+                "label": "Media Data Volume",
+                "schema": {
+                  "type": "dict",
+                  "attrs": [
+                    {
+                      "variable": "datasetName",
+                      "label": "Media Data Volume Dataset Name",
+                      "schema": {
+                        "type": "string",
+                        "hidden": true,
+                        "$ref": [
+                          "normalize/ixVolume"
+                        ],
+                        "show_if": [
+                          [
+                            "hostPathEnabled",
+                            "=",
+                            false
+                          ]
+                        ],
+                        "default": "ix-chinesesubfinder_data",
+                        "editable": false
+                      }
+                    },
+                    {
+                      "variable": "mountPath",
+                      "label": "Media Data Mount Path",
+                      "description": "Path where the volume will be mounted inside the pod",
+                      "schema": {
+                        "type": "path",
+                        "hidden": true,
+                        "editable": true,
+                        "default": "/media"
+                      }
+                    },
+                    {
+                      "variable": "hostPathEnabled",
+                      "label": "Enable Custom Host Path for ChineseSubFinder Media Volume",
+                      "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "show_subquestions_if": true,
+                        "subquestions": [
+                          {
+                            "variable": "hostPath",
+                            "label": "Host Path for ChineseSubFinder Media Data Volume",
+                            "schema": {
+                              "type": "hostpath",
+                              "required": true
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "variable": "browser",
+                "label": "Chrome Volume",
+                "schema": {
+                  "type": "dict",
+                  "attrs": [
+                    {
+                      "variable": "datasetName",
+                      "label": "Chrome Volume Dataset Name",
+                      "schema": {
+                        "type": "string",
+                        "hidden": true,
+                        "$ref": [
+                          "normalize/ixVolume"
+                        ],
+                        "show_if": [
+                          [
+                            "hostPathEnabled",
+                            "=",
+                            false
+                          ]
+                        ],
+                        "default": "ix-chinesesubfinder_data",
+                        "editable": false
+                      }
+                    },
+                    {
+                      "variable": "mountPath",
+                      "label": "Chrome Volume Mount Path",
+                      "description": "Path where the volume will be mounted inside the pod",
+                      "schema": {
+                        "type": "path",
+                        "hidden": true,
+                        "editable": true,
+                        "default": "/root/.cache/rod/browser"
+                      }
+                    },
+                    {
+                      "variable": "hostPathEnabled",
+                      "label": "Enable Custom Host Path for ChineseSubFinder Chrome Volume",
+                      "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "show_subquestions_if": true,
+                        "subquestions": [
+                          {
+                            "variable": "hostPath",
+                            "label": "Host Path for ChineseSubFinder Chrome Volume",
+                            "schema": {
+                              "type": "hostpath",
+                              "required": true
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "variable": "extraAppVolumeMounts",
+          "label": "Extra Host Path Volumes",
+          "group": "Storage",
+          "schema": {
+            "type": "list",
+            "items": [
+              {
+                "variable": "extraAppVolume",
+                "label": "Host Path Volume",
+                "description": "Add an extra host path volume for ChineseSubFinder application",
+                "schema": {
+                  "type": "dict",
+                  "attrs": [
+                    {
+                      "variable": "mountPath",
+                      "label": "Mount Path in Pod",
+                      "description": "Path where the volume will be mounted inside the pod",
+                      "schema": {
+                        "type": "path",
+                        "required": true
+                      }
+                    },
+                    {
+                      "variable": "hostPath",
+                      "label": "Host Path",
+                      "description": "Host path",
+                      "schema": {
+                        "type": "hostpath",
+                        "required": true
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "variable": "enableResourceLimits",
+          "label": "Enable Pod resource limits",
+          "group": "Resource Limits",
+          "schema": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        {
+          "variable": "cpuLimit",
+          "label": "CPU Limresource limitsit",
+          "description": "CPU resource limit allow  plain integer values with suffix m(milli) e.g 1000m, 100.",
+          "group": "Resource Limits",
+          "schema": {
+            "type": "string",
+            "show_if": [
+              [
+                "enableResourceLimits",
+                "=",
+                true
+              ]
+            ],
+            "valid_chars": "^\\d+(?:\\.\\d+(?!.*m$)|m?$)",
+            "default": "4000m"
+          }
+        },
+        {
+          "variable": "memLimit",
+          "label": "Memory Limit",
+          "group": "Resource Limits",
+          "description": "Memory limits is specified by number of bytes. Followed by quantity suffix like E,P,T,G,M,k and Ei,Pi,Ti,Mi,Gi,Ki can also be used. e.g 129e6, 129M,  128974848000m, 123Mi",
+          "schema": {
+            "type": "string",
+            "show_if": [
+              [
+                "enableResourceLimits",
+                "=",
+                true
+              ]
+            ],
+            "valid_chars": "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$",
+            "default": "8Gi"
+          }
+        }
+      ]
+    },
+    "app_readme": "<h1>chinesesubfinder</h1>\n<p>自动化搞定限定条件下中文字幕下载。</p>",
+    "detailed_readme": "",
+    "changelog": null
+  }
+}
