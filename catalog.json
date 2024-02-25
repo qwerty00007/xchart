@@ -285,7 +285,7 @@
       "sources": [
         "https://hub.docker.com/r/cnk3x/xunlei"
       ],
-      "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/xunlei.png"
+      "icon_url": "https://www.xunlei.com/icons/logo.svg"
     },
     "hlink": {
       "app_readme": "<h1>hlink</h1>\n<p>批量、快速硬链工具</p>",
