@@ -6,7 +6,7 @@ dependencies:
   version: 2207.0.0
 description: A docker image running vlmcsd
 home: https://hub.docker.com/r/mogeko/vlmcsd 
-icon: https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/icons/main/VLMCSD-KMS-Server_200x200.png
+icon: https://truecharts.org/img/hotlink-ok/chart-icons/kms.png
 keywords:
 - tools
 name: vlmcsd

@@ -29,7 +29,7 @@
       "sources": [
         "https://github.com/ChineseSubFinder/ChineseSubFinder"
       ],
-      "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/chinesesubfinder.png"
+      "icon_url": "https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/chinesesubfinder.png"
     },
     "cookiecloud": {
       "app_readme": "<h1>cookiecloud</h1>\n<p>A rule-based tunnel in GO</p>",
@@ -60,7 +60,7 @@
       "sources": [
         "https://github.com/easychen/CookieCloud"
       ],
-      "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/easychen/CookieCloud/master/extension/assets/icon.png"
+      "icon_url": "https://raw.githubusercontent.com/easychen/CookieCloud/master/extension/assets/icon.png"
     }, 
     "jellyfin": {
       "app_readme": "<h1>jellyfin</h1>\n<p>使用 nyanmisaka/jellyfin 镜像 增加配置 /etc/hosts</p>",
@@ -159,7 +159,7 @@
       "sources": [
         "https://github.com/jxxghp/MoviePilot"
       ],
-      "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/jxxghp/MoviePilot-Frontend/main/public/logo.png"
+      "icon_url": "https://raw.githubusercontent.com/jxxghp/MoviePilot-Frontend/main/public/logo.png"
     },
     "qbittorrent": {
       "app_readme": "<h1>qbittorrent</h1>\n<p>一个基于 Qt 工具箱和 libtorrent-rasterbar 并用 C++ 编写的高级 BitTorrent 客户端。</p>",
@@ -253,7 +253,7 @@
       "sources": [
         "https://github.com/Wind4/vlmcsd"
       ],
-      "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/icons/main/VLMCSD-KMS-Server_200x200.png"
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/kms.png"
     },
     "xunlei": {
       "app_readme": "<h1>xunlei</h1>\n<p>迅雷下载</p>",

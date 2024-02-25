@@ -6,7 +6,7 @@ dependencies:
   version: 2207.0.0
 description: cookiecloud
 home: https://hub.docker.com/r/easychen/cookiecloud 
-icon: https://ghproxy.com/https://raw.githubusercontent.com/easychen/CookieCloud/master/extension/assets/icon.png
+icon: https://raw.githubusercontent.com/easychen/CookieCloud/master/extension/assets/icon.png
 keywords:
 - tools
 name: cookiecloud

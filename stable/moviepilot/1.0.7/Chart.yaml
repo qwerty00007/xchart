@@ -6,7 +6,7 @@ dependencies:
   version: 2207.0.0
 description: NAS媒体库资源归集、整理自动化工具
 home: https://github.com/jxxghp/moviepilot 
-icon: https://ghproxy.com/https://raw.githubusercontent.com/jxxghp/MoviePilot-Frontend/main/public/logo.png
+icon: https://raw.githubusercontent.com/jxxghp/MoviePilot-Frontend/main/public/logo.png
 keywords:
 - media
 name: moviepilot
