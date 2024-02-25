@@ -161,38 +161,6 @@
       ],
       "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/jxxghp/MoviePilot-Frontend/main/public/logo.png"
     },
-    "nastools": {
-      "app_readme": "<h1>nastools</h1>\n<p>媒体整理， pt 刷流工具</p>",
-      "categories": [
-        "media",
-        "Tools-Utilities"
-      ],
-      "description": "nastools",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://github.com/NAStool/nas-tools",
-      "location": "/__w/xhcart/xchart/stable/nastools",
-      "latest_version": "1.0.44",
-      "latest_app_version": "latest",
-      "latest_human_version": "latest",
-      "last_update": "2023-08-25 13:33:23",
-      "name": "nastools",
-      "recommended": false,
-      "title": "nastools",
-      "maintainers": [
-        {
-          "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://github.com/NAStool/nas-tools"
-      ],
-      "icon_url": "https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/nas-tools.png"
-    },
     "qbittorrent": {
       "app_readme": "<h1>qbittorrent</h1>\n<p>一个基于 Qt 工具箱和 libtorrent-rasterbar 并用 C++ 编写的高级 BitTorrent 客户端。</p>",
       "categories": [
