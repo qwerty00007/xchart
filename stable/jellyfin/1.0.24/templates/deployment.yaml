@@ -24,7 +24,9 @@ spec: {{ include "common.deployment.common_spec" . | nindent 2 }}
             runAsUser: {{ .Values.securityContext.runAsUser }}
             runAsGroup: {{ .Values.securityContext.runAsGroup }}
             {{ end }}
-            supplementalGroups: [44,107]
+            supplementalGroups:
+            - 44
+            - 107
             {{ if .Values.securityContext.capabilities }}
             capabilities:
               add: {{ toYaml .Values.securityContext.capabilities | nindent 8 }}
