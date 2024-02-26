@@ -457,7 +457,7 @@
                 "description": "Configure security context runAsUser and runAsGroup variables",
                 "schema": {
                   "type": "boolean",
-                  "default": false,
+                  "default": true,
                   "show_subquestions_if": true,
                   "subquestions": [
                     {
@@ -466,7 +466,7 @@
                       "description": "Configure user id for container.",
                       "schema": {
                         "type": "int",
-                        "default": 568
+                        "default": 1000
                       }
                     },
                     {
@@ -475,7 +475,7 @@
                       "description": "Configure group id for container.",
                       "schema": {
                         "type": "int",
-                        "default": 568
+                        "default": 1000
                       }
                     }
                   ]
