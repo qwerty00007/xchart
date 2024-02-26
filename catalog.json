@@ -253,7 +253,7 @@
       "sources": [
         "https://github.com/Wind4/vlmcsd"
       ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/kms.png"
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/vlmcsd-kms-server.png"
     },
     "xunlei": {
       "app_readme": "<h1>xunlei</h1>\n<p>迅雷下载</p>",
@@ -266,10 +266,10 @@
       "healthy_error": null,
       "home": "https://www.xunlei.com/",
       "location": "/__w/xhcart/xchart/stable/xunlei",
-      "latest_version": "1.0.24",
+      "latest_version": "1.0.25",
       "latest_app_version": "3.7.1",
-      "latest_human_version": "3.7.1_1.0.24",
-      "last_update": "2023-10-07 15:43:23",
+      "latest_human_version": "3.7.1_1.0.25",
+      "last_update": "2024-02-26 11:03:23",
       "name": "xunlei",
       "recommended": false,
       "title": "xunlei",

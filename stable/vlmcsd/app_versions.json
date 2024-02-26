@@ -38,7 +38,7 @@
         }
       ],
       "home": "https://hub.docker.com/r/mogeko/vlmcsd",
-      "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/kms.png",
+      "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/vlmcsd-kms-server.png",
       "sources": [
         "https://hub.docker.com/r/mogeko/vlmcsd"
       ],
