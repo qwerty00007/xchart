@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: xhofe/alist
+  tag: v3.28.0@sha256:5366e1e0b8eaaf6ea2dbd15f46d18d5f9b07e44bc322f36d7c498df4cdbc69d3

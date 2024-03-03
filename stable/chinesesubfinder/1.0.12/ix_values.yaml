@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: allanpk716/chinesesubfinder
+  tag: latest

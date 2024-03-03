@@ -1,0 +1,720 @@
+groups:
+  - name: "Configuration"
+    description: "Moviepilot application configuration"
+  - name: "Storage"
+    description: "Configure storage for Moviepilot"
+  - name: "Networking"
+    description: "Networking Configuration for Moviepilot"
+  - name: "Advanced DNS Settings"
+    description: "Configure DNS settings"
+  - name: "Resource Limits"
+    description: "Set CPU/memory limits for Kubernetes Pod"
+
+portals:
+  web_portal:
+    protocols:
+      - "http"
+    host:
+      - "$node_ip"
+    ports:
+      - "$variable-web_port"
+    path: "/"
+
+questions:
+  - variable: web_port
+    label: "Web Port for Moviepilot"
+    group: Networking
+    schema:
+      type: int
+      min: 8000
+      max: 65535
+      default: 23000
+      required: true
+  - variable: api_port
+    label: "api Port for Moviepilot"
+    group: Networking
+    schema:
+      type: int
+      min: 8000
+      max: 65535
+      default: 23001
+      required: true
+  - variable: extraHosts
+    label: "Extra Hosts"
+    group: "Networking"
+    schema:
+      type: list
+      items:
+        - variable: extraHost
+          label: "Extra Host"
+          description: "Add an extra host for Moviepilot application"
+          schema:
+            type: dict
+            attrs:
+              - variable: ip
+                label: "ip"
+                description: "hostname ip"
+                schema:
+                  type: string
+                  required: true
+              - variable: hostname
+                label: "Host Name"
+                description: "Host Name"
+                schema:
+                  type: string
+                  required: true
+
+  - variable: dnsConfig
+    label: "DNS Configuration"
+    group: "Advanced DNS Settings"
+    schema:
+      type: dict
+      attrs:
+        - variable: options
+          label: "DNS Options"
+          schema:
+            type: list
+            items:
+              - variable: optionsEntry
+                label: "Option Entry Configuration"
+                schema:
+                  type: dict
+                  attrs:
+                    - variable: name
+                      label: "Option Name"
+                      schema:
+                        type: string
+                        required: true
+                    - variable: value
+                      label: "Option Value"
+                      schema:
+                        type: string
+                        required: true
+
+  - variable: superUser
+    label: "Super User"
+    group: Configuration
+    schema:
+      type: string
+      required: true
+      default: "admin"
+  - variable: superUser_password
+    label: "Super User Password"
+    group: Configuration
+    schema:
+      type: string
+      required: true
+      private: true
+      default: "password"
+
+  - variable: ownerUID
+    label: "Owner User ID"
+    group: Configuration
+    schema:
+      type: int
+      default: 1000
+      min: 1
+      max: 65535
+
+  - variable: ownerGID
+    label: "Owner Group ID"
+    group: Configuration
+    schema:
+      type: int
+      default: 1000
+      min: 1
+      max: 65535
+
+  - variable: transfer_type
+    label: transfer type
+    group: Configuration
+    description: Select Transfer Type
+    schema:
+      type: string
+      default: link
+      enum:
+        - value: link
+          description: "link"
+        - value: copy
+          description: "copy"
+        - value: move
+          description: "move"
+        - value: softlink
+          description: "softlink"
+        - value: rclone_copy
+          description: "rclone copy"
+        - value: rclone_move
+          description: "rclone move"
+
+  - variable: auth_env
+    label: "auth env"
+    description: "auth env"
+    group: Configuration
+    schema:
+      additional_attrs: true
+      type: dict
+      attrs:
+        - variable: AUTH_SITE
+          label: AUTH SITE
+          description: SELECT AUTH SITE
+          schema:
+            type: string
+            default: iyuu
+            enum:
+              - value: iyuu
+                description: "iyuu"
+              - value: hhclub
+                description: "hhclub"
+              - value: audiences
+                description: "audiences"
+              - value: hddolby
+                description: "hddolby"
+              - value: zmpt
+                description: "zmpt"
+              - value: freefarm
+                description: "freefarm"
+              - value: hdfans
+                description: "hdfans"
+              - value: wintersakura
+                description: "wintersakura"
+              - value: leaves
+                description: "leaves"
+              - value: 1ptba
+                description: "1ptba"
+              - value: icc2022
+                description: "icc2022"
+              - value: ptlsp
+                description: "ptlsp"
+              - value: xingtan
+                description: "xingtan"
+              - value: ptvicomo
+                description: "ptvicomo"
+
+
+        - variable: IYUU_SIGN
+          label: IYUU_SIGN
+          schema:
+            show_if: [["AUTH_SITE", "=", "iyuu"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: HHCLUB_USERNAME
+          label: HHCLUB USERNAME
+          schema:
+            show_if: [["AUTH_SITE", "=", "hhclub"]]
+            type: string
+            default: ""
+        - variable: HHCLUB_PASSKEY
+          label: HHCLUB PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "hhclub"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: AUDIENCES_UID
+          label: AUDIENCES UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "audiences"]]
+            type: string
+            default: ""
+        - variable: AUDIENCES_PASSKEY
+          label: AUDIENCES PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "audiences"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: HDDOLBY_ID
+          label: HDDOLBY ID
+          schema:
+            show_if: [["AUTH_SITE", "=", "hddolby"]]
+            type: string
+            default: ""
+        - variable: HDDOLBY_PASSKEY
+          label: HDDOLBY PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "hddolby"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: ZMPT_UID
+          label: ZMPT UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "zmpt"]]
+            type: string
+            default: ""
+        - variable: ZMPT_PASSKEY
+          label: ZMPT PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "zmpt"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: FREEFARM_UID
+          label: FREEFARM UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "freefarm"]]
+            type: string
+            default: ""
+        - variable: FREEFARM_PASSKEY
+          label: FREEFARM PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "freefarm"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: HDFANS_UID
+          label: HDFANS UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "hdfans"]]
+            type: string
+            default: ""
+        - variable: HDFANS_PASSKEY
+          label: HDFANS PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "hdfans"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: WINTERSAKURA_UID
+          label: WINTERSAKURA UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "wintersakura"]]
+            type: string
+            default: ""
+        - variable: WINTERSAKURA_PASSKEY
+          label: WINTERSAKURA PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "wintersakura"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: LEAVES_UID
+          label: LEAVES UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "leaves"]]
+            type: string
+            default: ""
+        - variable: LEAVES_PASSKEY
+          label: LEAVES PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "leaves"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: 1PTBA_UID
+          label: 1PTBA UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "1ptba"]]
+            type: string
+            default: ""
+        - variable: 1PTBA_PASSKEY
+          label: 1PTBA PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "1ptba"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: ICC2022_UID
+          label: ICC2022 UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "icc2022"]]
+            type: string
+            default: ""
+        - variable: ICC2022_PASSKEY
+          label: ICC2022 PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "icc2022"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: PTLSP_UID
+          label: PTLSP UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "ptlsp"]]
+            type: string
+            default: ""
+        - variable: PTLSP_PASSKEY
+          label: PTLSP PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "ptlsp"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: XINGTAN_UID
+          label: XINGTAN UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "xingtan"]]
+            type: string
+            default: ""
+        - variable: XINGTAN_PASSKEY
+          label: XINGTAN PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "xingtan"]]
+            type: string
+            private: true
+            default: ""
+
+        - variable: PTVICOMO_UID
+          label: PTVICOMO UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "ptvicomo"]]
+            type: string
+            default: ""
+        - variable: PTVICOMO_PASSKEY
+          label: PTVICOMO PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "ptvicomo"]]
+            type: string
+            private: true
+            default: ""
+
+  - variable: cookieCloud_host
+    label: "CookieCloud host"
+    group: Configuration
+    schema:
+      type: string
+      required: true
+      default: "http://cookiecloud.ix-cookiecloud.svc.cluster.local:38088"
+  - variable: cookieCloud_key
+    label: "CookieCloud Key"
+    group: Configuration
+    schema:
+      type: string
+      required: true
+      default: ""
+  - variable: cookieCloud_password
+    label: "CookieCloud Password"
+    group: Configuration
+    schema:
+      type: string
+      required: true
+      private: true
+      default: "password"
+  - variable: cookieCloud_interval
+    label: "CookieCloud INTERVAL (min)"
+    group: Configuration
+    schema:
+      type: int
+      required: true
+      default: 1440
+
+
+  - variable: downloader_env
+    label: "Downloader"
+    description: "Downloader"
+    group: Configuration
+    schema:
+      additional_attrs: true
+      type: dict
+      attrs:
+        - variable: DOWNLOADER
+          label: select downloader
+          schema:
+            type: string
+            default: qbittorrent
+            enum:
+              - value: qbittorrent
+                description: "qbittorrent"
+              - value: transmission
+                description: "transmission"
+
+        - variable: QB_HOST
+          label: QB HOST
+          schema:
+            show_if: [["DOWNLOADER", "=", "qbittorrent"]]
+            type: string
+            default: "qbittorrent-tcp.ix-qbittorrent.svc.cluster.local:20909"
+
+        - variable: QB_USER
+          label: QB USER
+          schema:
+            show_if: [["DOWNLOADER", "=", "qbittorrent"]]
+            type: string
+            default: "admin"
+        - variable: QB_PASSWORD
+          label: QB PASSWORD
+          schema:
+            show_if: [["DOWNLOADER", "=", "qbittorrent"]]
+            type: string
+            private: true
+            default: "adminadmin"
+
+        - variable: QB_CATEGORY
+          label: QB CATEGORY
+          schema:
+            show_if: [["DOWNLOADER", "=", "qbittorrent"]]
+            type: boolean
+            default: true
+
+        - variable: TR_HOST
+          label: TR HOST
+          schema:
+            show_if: [["DOWNLOADER", "=", "transmission"]]
+            type: string
+            default: "transmission-tcp.ix-transmission.svc.cluster.local:9091"
+
+        - variable: TR_USER
+          label: QB USER
+          schema:
+            show_if: [["DOWNLOADER", "=", "transmission"]]
+            type: string
+            default: "admin"
+        - variable: TR_PASSWORD
+          label: TR PASSWORD
+          schema:
+            show_if: [["DOWNLOADER", "=", "transmission"]]
+            type: string
+            private: true
+            default: "adminadmin"
+
+        - variable: TORRENT_TAG
+          label: TORRENT_TAG
+          schema:
+            show_if: [["DOWNLOADER", "=", "transmission"]]
+            type: string
+            default: ""
+
+  - variable: autoupdate
+    label: "autoupdate"
+    group: "Configuration"
+    schema:
+      type: dict
+      attrs:
+        - variable: enabled
+          label: "enable autoupdate"
+          description: "enable autoupdate"
+          schema:
+            type: boolean
+            default: false
+  - variable: environmentVariables
+    label: "Moviepilot environment"
+    group: "Configuration"
+    schema:
+      type: list
+      default: []
+      items:
+        - variable: environmentVariable
+          label: "Environment Variable"
+          schema:
+            type: dict
+            attrs:
+              - variable: name
+                label: "Name"
+                schema:
+                  type: string
+              - variable: value
+                label: "Value"
+                schema:
+                  type: string
+
+  - variable: appVolumeMounts
+    label: "Moviepilot Storage"
+    group: "Storage"
+    schema:
+      type: dict
+      attrs:
+        - variable: config
+          label: "Configuration Volume"
+          schema:
+            type: dict
+            attrs:
+              - variable: datasetName
+                label: "Configuration Volume Dataset Name"
+                schema:
+                  type: string
+                  hidden: true
+                  $ref:
+                    - "normalize/ixVolume"
+                  show_if: [["hostPathEnabled", "=", false]]
+                  default: "ix-moviepilot_config"
+                  editable: false
+              - variable: mountPath
+                label: "Configuration Mount Path"
+                description: "Path where the volume will be mounted inside the pod"
+                schema:
+                  type: path
+                  hidden: true
+                  editable: true
+                  default: "/config"
+              - variable: hostPathEnabled
+                label: "Enable Custom Host Path for Moviepilot Configuration Volume"
+                schema:
+                  type: boolean
+                  default: false
+                  show_subquestions_if: true
+                  subquestions:
+                    - variable: hostPath
+                      label: "Host Path for Moviepilot Configuration Volume"
+                      schema:
+                        type: hostpath
+                        required: true
+
+        - variable: moviepilot
+          label: "moviepilot Volume"
+          schema:
+            type: dict
+            attrs:
+              - variable: datasetName
+                label: "Configuration Volume Dataset Name"
+                schema:
+                  type: string
+                  hidden: true
+                  $ref:
+                    - "normalize/ixVolume"
+                  show_if: [["hostPathEnabled", "=", false]]
+                  default: "ix-moviepilot_moviepilot"
+                  editable: false
+              - variable: mountPath
+                label: "Moviepilot Mount Path"
+                description: "Path where the volume will be mounted inside the pod"
+                schema:
+                  type: path
+                  hidden: true
+                  editable: true
+                  default: "/moviepilot"
+              - variable: hostPathEnabled
+                label: "Enable Custom Host Path for Moviepilot Volume"
+                schema:
+                  type: boolean
+                  default: false
+                  show_subquestions_if: true
+                  subquestions:
+                    - variable: hostPath
+                      label: "Host Path for Moviepilot Volume"
+                      schema:
+                        type: hostpath
+                        required: true
+        - variable: data
+          label: "Media Data Volume"
+          schema:
+            type: dict
+            attrs:
+              - variable: datasetName
+                label: "Media Data Volume Dataset Name"
+                schema:
+                  type: string
+                  hidden: true
+                  $ref:
+                    - "normalize/ixVolume"
+                  show_if: [["hostPathEnabled", "=", false]]
+                  default: "ix-moviepilot_data"
+                  editable: false
+              - variable: mountPath
+                label: "Media Data Mount Path"
+                description: "Path where the volume will be mounted inside the pod"
+                schema:
+                  type: path
+                  hidden: true
+                  editable: true
+                  default: "/data"
+              - variable: hostPathEnabled
+                label: "Enable Custom Host Path for Moviepilot Media Volume"
+                schema:
+                  type: boolean
+                  default: false
+                  show_subquestions_if: true
+                  subquestions:
+                    - variable: hostPath
+                      label: "Host Path for Moviepilot Media Data Volume"
+                      schema:
+                        type: hostpath
+                        required: true
+
+        - variable: downloads
+          label: "Downloads Volume"
+          schema:
+            type: dict
+            attrs:
+              - variable: datasetName
+                label: "Downloads Volume Dataset Name"
+                schema:
+                  type: string
+                  hidden: true
+                  $ref:
+                    - "normalize/ixVolume"
+                  show_if: [["hostPathEnabled", "=", false]]
+                  default: "ix-moviepilot_downloads"
+                  editable: false
+              - variable: mountPath
+                label: "Downloads Mount Path"
+                description: "Path where the volume will be mounted inside the pod"
+                schema:
+                  type: path
+                  hidden: true
+                  editable: true
+                  default: "/downloads"
+              - variable: hostPathEnabled
+                label: "Enable Custom Host Path for Moviepilot Downloads Volume"
+                schema:
+                  type: boolean
+                  default: false
+                  show_subquestions_if: true
+                  subquestions:
+                    - variable: hostPath
+                      label: "Host Path for Moviepilot Downloads Volume"
+                      schema:
+                        type: hostpath
+                        required: true
+                        
+  - variable: extraAppVolumeMounts
+    label: "Extra Host Path Volumes"
+    group: "Storage"
+    schema:
+      type: list
+      items:
+        - variable: extraAppVolume
+          label: "Host Path Volume"
+          description: "Add an extra host path volume for Moviepilot application"
+          schema:
+            type: dict
+            attrs:
+              - variable: mountPath
+                label: "Mount Path in Pod"
+                description: "Path where the volume will be mounted inside the pod"
+                schema:
+                  type: path
+                  required: true
+              - variable: hostPath
+                label: "Host Path"
+                description: "Host path"
+                schema:
+                  type: hostpath
+                  required: true
+
+  - variable: enableResourceLimits
+    label: "Enable Pod resource limits"
+    group: "Resource Limits"
+    schema:
+      type: boolean
+      default: false
+  - variable: cpuLimit
+    label: "CPU Limresource limitsit"
+    description: "CPU resource limit allow  plain integer values with suffix m(milli) e.g 1000m, 100."
+    group: "Resource Limits"
+    schema:
+      type: string
+      show_if: [["enableResourceLimits", "=", true]]
+      valid_chars: "^\\d+(?:\\.\\d+(?!.*m$)|m?$)"
+      default: "4000m"
+  - variable: memLimit
+    label: "Memory Limit"
+    group: "Resource Limits"
+    description: "Memory limits is specified by number of bytes. Followed by quantity suffix like E,P,T,G,M,k and Ei,Pi,Ti,Mi,Gi,Ki can also be used. e.g 129e6, 129M,  128974848000m, 123Mi"
+    schema:
+      type: string
+      show_if: [["enableResourceLimits", "=", true]]
+      valid_chars: "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$"
+      default: "8Gi"

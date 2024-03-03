@@ -1,0 +1,14 @@
+apiVersion: v2
+appVersion: 1.25.1
+dependencies:
+- name: common
+  repository: file://../../../library/common/2207.0.0
+  version: 2207.0.0
+description: A photo management system for Nas users
+home: https://mtmt.tech/
+icon: https://cdn.mtmt.tech/logo-r.png
+keywords:
+- storage
+- cloud
+name: mtphotos
+version: 1.0.26

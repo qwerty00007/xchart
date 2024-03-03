@@ -1,0 +1,14 @@
+apiVersion: v2
+appVersion: 4.0.4
+dependencies:
+- name: common
+  repository: file://../../../library/common/2207.0.0
+  version: 2207.0.0
+description: Download data from transmission.
+home: https://transmissionbt.com/
+icon: https://truecharts.org/img/hotlink-ok/chart-icons/transmission.png
+keywords:
+- storage
+- torrent
+name: transmission
+version: 1.0.10

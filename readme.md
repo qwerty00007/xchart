@@ -5,15 +5,16 @@
 > 应用部署请参考各个应用下的readme.md
 
 - **jellyfin** 使用 [nyanmisaka/jellyfin](https://hub.docker.com/r/nyanmisaka/jellyfin) docker 镜像，增加配置 `/etc/hosts`
-- **nastools** 增加配置 `/etc/hosts`，相关[教程](https://gitee.com/qwerty0007/xchart/blob/main/stable/nastools/readme.md)
-- **stripcharts** 下载社区应用的压缩包 [main.zip](https://github.com/truecharts/catalog/archive/refs/heads/main.zip)， 后筛选出自己需要的应用，push 到自己的 github 仓库，减少目录同步时间
-- **stripcharts-gitea** 自己搭建 gitea 服务，将社区应用 [catalog](https://github.com/truecharts/catalog.git)，镜像到 gitea 服务器，再后筛选出自己需要的应用，push 到自己的 gitea 仓库
+- **nastools** 增加配置 `/etc/hosts`，相关[教程](https://www.bilibili.com/video/BV1884y147Ny/?share_source=copy_web&vd_source=5158532412bafce97b73614e5a9f994c)，**由于 truenas 系统原因，23.10版本无法运行**
 - **vlmcsd** 运行在 docker 里的 kms 激活服务器
 - **ChineseSubFinder** 自动下载字幕
 - **MT Photos** 照片备份 APP,收费软件，[官方网站](https://mtmt.tech/)
 - **xunlei** 迅雷 docker 版本，邀请码：迅雷牛通
-- **clash** 包含 core 和 ui。
-- **metatube** 9kg 元数据
+- **moviepilot** 追剧，媒体整理
+- **cookiecloud** 同步 cookie
+- **hlink** 硬链接工具
+- **qbittorrent** bt 下载工具，支持 host 网络模式
+- **transmission** bt 下载工具，支持 host 网络模式
 
 ## how to 增加第三方应用库
 
@@ -22,8 +23,9 @@
 - gitee 源
   `https://gitee.com/qwerty0007/xchart.git`
 
-- github 源
-  `https://github.com/qwerty00007/xchart.git`
+由于国内连接 github 经常出问题，不提供 github 的源了
+
+~~https://github.com/qwerty00007/xchart.git~~
 
 ## 使用集群内的内部域名，应用内互访
 

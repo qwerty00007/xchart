@@ -1,0 +1,354 @@
+{
+  "stable": {
+    "chinesesubfinder": {
+      "app_readme": "<h1>chinesesubfinder</h1>\n<p>自动化搞定限定条件下中文字幕下载。</p>",
+      "categories": [
+        "media"
+      ],
+      "description": "chinesesubfinder",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://github.com/ChineseSubFinder/ChineseSubFinder",
+      "location": "/__w/xhcart/xchart/stable/chinesesubfinder",
+      "latest_version": "1.0.12",
+      "latest_app_version": "0.50.3",
+      "latest_human_version": "0.50.3_1.0.12",
+      "last_update": "2023-11-01 13:33:23",
+      "name": "chinesesubfinder",
+      "recommended": false,
+      "title": "chinesesubfinder",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/ChineseSubFinder/ChineseSubFinder"
+      ],
+      "icon_url": "https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/chinesesubfinder.png"
+    },
+    "cookiecloud": {
+      "app_readme": "<h1>cookiecloud</h1>\n<p>A rule-based tunnel in GO</p>",
+      "categories": [
+        "networking"
+      ],
+      "description": "cookiecloud",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://github.com/easychen/CookieCloud",
+      "location": "/__w/xhcart/xchart/stable/cookiecloud",
+      "latest_version": "1.0.2",
+      "latest_app_version": "23.01.20",
+      "latest_human_version": "23.01.20_1.0.2",
+      "last_update": "2024-03-03 19:52:07",
+      "name": "cookiecloud",
+      "recommended": false,
+      "title": "cookiecloud",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/easychen/CookieCloud"
+      ],
+      "icon_url": "https://raw.githubusercontent.com/easychen/CookieCloud/master/extension/assets/icon.png"
+    }, 
+    "jellyfin": {
+      "app_readme": "<h1>jellyfin</h1>\n<p>使用 nyanmisaka/jellyfin 镜像 增加配置 /etc/hosts</p>",
+      "categories": [
+        "media"
+      ],
+      "description": "jellyfin",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://jellyfin.org/",
+      "location": "/__w/xhcart/xchart/stable/jellyfin",
+      "latest_version": "1.0.25",
+      "latest_app_version": "10.8.13",
+      "latest_human_version": "10.8.13_1.0.25",
+      "last_update": "2024-02-26 14:30:07",
+      "name": "jellyfin",
+      "recommended": false,
+      "title": "jellyfin",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [
+        "https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png",
+        "https://jellyfin.org/assets/images/10.8-details-df4f7caaee389ffbaeeaa95b668fa037.png"
+      ],
+      "sources": [
+        "https://hub.docker.com/r/jellyfin/jellyfin",
+        "https://github.com/truenas/charts/tree/master/community/jellyfin",
+        "https://jellyfin.org/"
+      ],
+      "icon_url": "https://jellyfin.org/images/logo.svg"
+    },
+    "mtphotos": {
+      "app_readme": "<h1>mtphotos</h1>\n<p>一款为 Nas 玩家准备的照片管理系统</p>",
+      "categories": [
+        "media"
+      ],
+      "description": "mtphotos",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://mtmt.tech/",
+      "location": "/__w/xhcart/xchart/stable/mtphotos",
+      "latest_version": "1.0.27",
+      "latest_app_version": "1.27.0",
+      "latest_human_version": "1.27.0_1.0.27",
+      "last_update": "2024-02-24 13:27:23",
+      "name": "mtphotos",
+      "recommended": false,
+      "title": "mtphotos",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://gitee.com/mt-photos/charts.git"
+      ],
+      "icon_url": "https://cdn.mtmt.tech/logo-r.png"
+    },
+    "moviepilot": {
+      "app_readme": "<h1>moviepilot</h1>\n<p>媒体整理， pt 刷流工具</p>",
+      "categories": [
+        "media",
+        "Tools-Utilities"
+      ],
+      "description": "moviepilot",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://github.com/jxxghp/MoviePilot",
+      "location": "/__w/xhcart/xchart/stable/moviepilot",
+      "latest_version": "1.0.7",
+      "latest_app_version": "1.4.8",
+      "latest_human_version": "1.4.8_1.0.7",
+      "last_update": "2023-12-02 13:30:23",
+      "name": "moviepilot",
+      "recommended": false,
+      "title": "moviepilot",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/jxxghp/MoviePilot"
+      ],
+      "icon_url": "https://raw.githubusercontent.com/jxxghp/MoviePilot-Frontend/main/public/logo.png"
+    },
+    "qbittorrent": {
+      "app_readme": "<h1>qbittorrent</h1>\n<p>一个基于 Qt 工具箱和 libtorrent-rasterbar 并用 C++ 编写的高级 BitTorrent 客户端。</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "qbittorrent",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://www.qbittorrent.org/",
+      "location": "/__w/xhcart/xchart/stable/qbittorrent",
+      "latest_version": "1.0.9",
+      "latest_app_version": "4.5.5",
+      "latest_human_version": "4.5.5_1.0.9",
+      "last_update": "2023-08-25 13:33:23",
+      "name": "qbittorrent",
+      "recommended": false,
+      "title": "qbittorrent",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [],
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/qbittorrent.png"
+    },
+    "transmission": {
+      "app_readme": "<h1>transmission</h1>\n<p>A Fast, Easy and Free Bittorrent Client For macOS, Windows and Linux</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "transmission",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://transmissionbt.com/",
+      "location": "/__w/xhcart/xchart/stable/transmission",
+      "latest_version": "1.0.10",
+      "latest_app_version": "4.0.4",
+      "latest_human_version": "4.0.4_1.0.10",
+      "last_update": "2023-10-05 11:47:23",
+      "name": "transmission",
+      "recommended": false,
+      "title": "transmission",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/transmission/transmission"
+      ],
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/transmission.png"
+    },
+    "vlmcsd": {
+      "app_readme": "<h1>vlmcsd</h1>\n<p>KMS server</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "vlmcsd",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://hub.docker.com/r/mogeko/vlmcsd",
+      "location": "/__w/xhcart/xchart/stable/vlmcsd",
+      "latest_version": "1.0.1",
+      "latest_app_version": "2022.01.16",
+      "latest_human_version": "2022.01.16_1.0.1",
+      "last_update": "2023-08-25 13:33:23",
+      "name": "vlmcsd",
+      "recommended": false,
+      "title": "vlmcsd",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/Wind4/vlmcsd"
+      ],
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/vlmcsd-kms-server.png"
+    },
+    "xunlei": {
+      "app_readme": "<h1>xunlei</h1>\n<p>迅雷下载</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "xunlei",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://www.xunlei.com/",
+      "location": "/__w/xhcart/xchart/stable/xunlei",
+      "latest_version": "1.0.25",
+      "latest_app_version": "3.7.1",
+      "latest_human_version": "3.7.1_1.0.25",
+      "last_update": "2024-02-26 11:03:23",
+      "name": "xunlei",
+      "recommended": false,
+      "title": "xunlei",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://hub.docker.com/r/cnk3x/xunlei"
+      ],
+      "icon_url": "https://www.xunlei.com/icons/logo.svg"
+    },
+    "hlink": {
+      "app_readme": "<h1>hlink</h1>\n<p>批量、快速硬链工具</p>",
+      "categories": [
+        "Tools-Utilities"
+      ],
+      "description": "hlink",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://hlink.likun.me/",
+      "location": "/__w/xhcart/xchart/stable/hlink",
+      "latest_version": "1.0.4",
+      "latest_app_version": "2.0.10",
+      "latest_human_version": "2.0.10_1.0.4",
+      "last_update": "2023-11-09 09:53:23",
+      "name": "hlink",
+      "recommended": false,
+      "title": "hlink",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/likun7981/hlink",
+        "https://hub.docker.com/r/likun7981/hlink"
+      ],
+      "icon_url": "https://hlink.likun.me/logo.svg"
+    },
+    "alist": {
+      "app_readme": "<h1>alist</h1>\n<p>🗂️ 一个支持多种存储的文件列表程序，使用 Gin 和 Solidjs。</p>",
+      "categories": [
+        "Tools-Utilities"
+      ],
+      "description": "alist",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://alist.nn.ci/zh/",
+      "location": "/__w/xhcart/xchart/stable/alist",
+      "latest_version": "1.0.1",
+      "latest_app_version": "3.28.0",
+      "latest_human_version": "3.28.0_1.0.1",
+      "last_update": "2023-11-17 23:56:23",
+      "name": "alist",
+      "recommended": false,
+      "title": "alist",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/alist-org/alist"
+      ],
+      "icon_url": "https://alist.nn.ci/logo.svg"
+    }
+  }
+}

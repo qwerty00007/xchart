@@ -1,0 +1,13 @@
+apiVersion: v2
+appVersion: 3.28.0
+dependencies:
+- name: common
+  repository: file://../../../library/common/2207.0.0
+  version: 2207.0.0
+description: 硬链接文件
+home: https://alist.nn.ci/ 
+icon: https://alist.nn.ci/logo.svg
+keywords:
+- tools
+name: alist
+version: 1.0.1

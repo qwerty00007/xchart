@@ -1,0 +1,203 @@
+iyuu	IYUU_SIGN：IYUU登录令牌
+hhclub	HHCLUB_USERNAME：用户名
+HHCLUB_PASSKEY：密钥
+audiences	AUDIENCES_UID：用户ID
+AUDIENCES_PASSKEY：密钥
+hddolby	HDDOLBY_ID：用户ID
+HDDOLBY_PASSKEY：密钥
+zmpt	ZMPT_UID：用户ID
+ZMPT_PASSKEY：密钥
+freefarm	FREEFARM_UID：用户ID
+FREEFARM_PASSKEY：密钥
+hdfans	HDFANS_UID：用户ID
+HDFANS_PASSKEY：密钥
+wintersakura	WINTERSAKURA_UID：用户ID
+WINTERSAKURA_PASSKEY：密钥
+leaves	LEAVES_UID：用户ID
+LEAVES_PASSKEY：密钥
+1ptba	1PTBA_UID：用户ID
+1PTBA_PASSKEY：密钥
+icc2022	ICC2022_UID：用户ID
+ICC2022_PASSKEY：密钥
+ptlsp	PTLSP_UID：用户ID
+PTLSP_PASSKEY：密钥
+xingtan	XINGTAN_UID：用户ID
+XINGTAN_PASSKEY：密钥
+ptvicomo	PTVICOMO_UID：用户ID
+PTVICOMO_PASSKEY：密钥
+
+
+
+
+  - variable: auth
+    label: auth env
+    description: auth env
+    group: Configuration
+    schema:
+      additional_attrs: true
+      type: dict
+      attrs:
+
+    
+        - variable: auth
+          label: auth env
+          description: auth env
+          group: Configuration
+          schema:
+            additional_attrs: true
+            type: dict
+            attrs:
+              - variable: type
+                label: Type of Storage
+                description: Sets the persistence type, Anything other than PVC could break rollback!
+                schema:
+                  type: string
+                  default: iyuu
+                  enum:
+                    - value: iyuu
+                      description: iyuu
+                    - value: hddolby
+                      description: hddolby
+                    - value: hhclub
+                      description: hhclub
+
+              - variable: IYUU_SIGN
+                label: IYUU_SIGN
+                schema:
+                  show_if: [["type", "=", "iyuu"]]
+                  type: string
+                  default: ""
+
+              - variable: HHCLUB_USERNAME
+                label: HHCLUB USERNAME
+                schema:
+                  show_if: [["type", "=", "hhclub"]]
+                  type: string
+                  default: ""
+              - variable: HHCLUB_PASSKEY
+                label: HHCLUB PASSKEY
+                schema:
+                  show_if: [["type", "=", "hhclub"]]
+                  type: string
+                  default: ""
+              - variable: HDDOLBY_ID
+                label: HDDOLBY ID
+                schema:
+                  show_if: [["type", "=", "hddolby"]]
+                  type: string
+                  default: ""
+              - variable: HDDOLBY_PASSKEY
+                label: HDDOLBY PASSKEY
+                schema:
+                  show_if: [["type", "=", "hddolby"]]
+                  type: string
+                  default: ""
+- variable: persistence
+    label: Integrated Persistent Storage
+    description: Integrated Persistent Storage
+    group: Storage and Persistence
+    schema:
+      additional_attrs: true
+      type: dict
+      attrs:
+        - variable: config
+          label: App Config Storage
+          description: Stores the Application Configuration.
+          schema:
+            additional_attrs: true
+            type: dict
+            attrs:
+              - variable: type
+                label: Type of Storage
+                description: Sets the persistence type, Anything other than PVC could break rollback!
+                schema:
+                  type: string
+                  default: pvc
+                  enum:
+                    - value: pvc
+                      description: PVC
+                    - value: hostPath
+                      description: Host Path
+                    - value: emptyDir
+                      description: emptyDir
+                    - value: nfs
+                      description: NFS Share
+              - variable: server
+                label: NFS Server
+                schema:
+                  show_if: [["type", "=", "nfs"]]
+                  type: string
+                  default: ""
+              - variable: path
+                label: Path on NFS Server
+                schema:
+                  show_if: [["type", "=", "nfs"]]
+                  type: string
+                  default: ""
+              - variable: autoPermissions
+                label: Automatic Permissions Configuration
+                description: Automatically set permissions
+                schema:
+                  show_if: [["type", "!=", "pvc"]]
+                  type: dict
+                  additional_attrs: true
+                  attrs:
+                    - variable: enabled
+                      label: enabled
+                      schema:
+                        type: boolean
+                        default: false
+                        show_subquestions_if: true
+                        subquestions:
+                          - variable: chown
+                            label: Run CHOWN
+                            description: |
+                              It will run CHOWN on the path with the given fsGroup                              
+                            schema:
+                              type: boolean
+                              default: false
+                          - variable: chmod
+                            label: Run CHMOD
+                            description: |
+                              It will run CHMOD on the path with the given value</br>
+                              Format should be 3 digits, e.g. 770                              
+                            schema:
+                              type: string
+                              valid_chars: '[0-9]{3}'
+                              default: ""
+                          - variable: recursive
+                            label: Recursive
+                            description: |
+                              It will run CHOWN and CHMOD recursively                              
+                            schema:
+                              type: boolean
+                              default: false
+              - variable: readOnly
+                label: Read Only
+                schema:
+                  type: boolean
+                  default: false
+              - variable: hostPath
+                label: Host Path
+                description: Path inside the container the storage is mounted
+                schema:
+                  show_if: [["type", "=", "hostPath"]]
+                  type: hostpath
+              - variable: medium
+                label: EmptyDir Medium
+                schema:
+                  show_if: [["type", "=", "emptyDir"]]
+                  type: string
+                  default: ""
+                  enum:
+                    - value: ""
+                      description: Default
+                    - value: Memory
+                      description: Memory
+              - variable: size
+                label: Size quotum of Storage (Do NOT REDUCE after installation)
+                description: This value can ONLY be INCREASED after the installation
+                schema:
+                  show_if: [["type", "=", "pvc"]]
+                  type: string
+                  default: 256Gi

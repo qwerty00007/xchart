@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: likun7981/hlink
+  tag: v2.0.10@sha256:1fc757ae40fc41e55fde0abbabf4e283897cff2587cc31e5605675293f4bdfe3

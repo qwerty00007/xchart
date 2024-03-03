@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: dongjianting/nastools
+  tag: 2.9.1
