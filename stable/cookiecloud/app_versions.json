@@ -1,17 +1,17 @@
 {
-  "1.0.2": {
+  "1.0.1": {
     "healthy": true,
     "supported": false,
     "healthy_error": null,
-    "location": "/__w/xhcart/xchart/stable/cookiecloud/1.0.2",
-    "last_update": "2024-03-03 19:52:07",
+    "location": "/__w/xhcart/xchart/stable/cookiecloud/1.0.1",
+    "last_update": "2024-02-24 21:52:07",
     "required_features": [
       "definitions/gpuConfiguration",
       "normalize/acl",
       "normalize/ixVolume"
     ],
-    "human_version": "23.01.20_1.0.2",
-    "version": "1.0.2",
+    "human_version": "23.01.20_1.0.1",
+    "version": "1.0.1",
     "chart_metadata": {
       "name": "cookiecloud",
       "description": "cookiecloud",
@@ -19,7 +19,7 @@
         "title": "cookiecloud"
       },
       "type": "application",
-      "version": "1.0.2",
+      "version": "1.0.1",
       "apiVersion": "v2",
       "appVersion": "23.01.20",
       "kubeVersion": ">=1.16.0-0",
@@ -54,10 +54,6 @@
           "description": "Networking Configuration for cookiecloud"
         },
         {
-          "name": "Ingress",
-          "description": "Configuration Ingress using Traefik"
-        },
-        {
           "name": "Resource Limits",
           "description": "Set CPU/memory limits for Kubernetes Pod"
         }
@@ -65,15 +61,15 @@
       "portals": {
         "web_portal": {
           "protocols": [
-            "$kubernetes-resource_configmap_portal_protocol"
+            "http"
           ],
           "host": [
-            "$kubernetes-resource_configmap_portal_host"
+            "$node_ip"
           ],
           "ports": [
-            "$kubernetes-resource_configmap_portal_port"
+            "$variable-tcp_port"
           ],
-          "path": "$kubernetes-resource_configmap_portal_path"
+          "path": "/"
         }
       },
       "questions": [
@@ -87,64 +83,6 @@
             "max": 65535,
             "default": 38088,
             "required": true
-          }
-        },
-        {
-          "variable": "ingress",
-          "group": "Ingress",
-          "schema": {
-            "type": "dict",
-            "attrs": [
-              {
-                "variable": "enabled",
-                "label": "Enable Ingress",
-                "description": "config ingress, you must install traefik first",
-                "schema": {
-                  "type": "boolean",
-                  "default": false,
-                  "show_subquestions_if": true,
-                  "subquestions": [
-                    {
-                      "variable": "certificate",
-                      "label": "Certificate Configuration",
-                      "schema": {
-                        "type": "int",
-                        "$ref": [
-                          "definitions/certificate"
-                        ]
-                      }
-                    },
-                    {
-                      "variable": "host",
-                      "label": "HostName",
-                      "schema": {
-                        "type": "string",
-                        "default": "test.test.org",
-                        "required": true
-                      }
-                    },
-                    {
-                      "variable": "path",
-                      "label": "Path",
-                      "schema": {
-                        "type": "string",
-                        "required": true,
-                        "default": "/"
-                      }
-                    },
-                    {
-                      "variable": "pathType",
-                      "label": "Path Type",
-                      "schema": {
-                        "type": "string",
-                        "required": true,
-                        "default": "Prefix"
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
           }
         },
         {
