@@ -55,7 +55,7 @@
         },
         {
           "name": "Ingress",
-          "description": "Configuration Ingress using Traefik"
+          "description": "Configuration Ingress"
         },
         {
           "name": "Resource Limits",
