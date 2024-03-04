@@ -1,17 +1,17 @@
 {
-  "1.0.28": {
+  "1.0.27": {
     "healthy": true,
     "supported": false,
     "healthy_error": null,
-    "location": "/__w/xhcart/xchart/stable/mtphotos/1.0.28",
+    "location": "/__w/xhcart/xchart/stable/mtphotos/1.0.27",
     "last_update": "2024-02-24 21:52:07",
     "required_features": [
       "definitions/gpuConfiguration",
       "normalize/acl",
       "normalize/ixVolume"
     ],
-    "human_version": "1.27.0_1.0.28",
-    "version": "1.0.28",
+    "human_version": "1.27.0_1.0.27",
+    "version": "1.0.27",
     "chart_metadata": {
       "name": "mtphotos",
       "description": "MT Photos照片管理系统",
@@ -19,7 +19,7 @@
         "title": "MT Photos"
       },
       "type": "application",
-      "version": "1.0.28",
+      "version": "1.0.27",
       "apiVersion": "v2",
       "appVersion": "1.27.0",
       "kubeVersion": ">=1.16.0-0",
@@ -63,10 +63,6 @@
           "description": "Networking Configuration for mtphotos"
         },
         {
-          "name": "Ingress",
-          "description": "Configuration Ingress"
-        },
-        {
           "name": "Advanced DNS Settings",
           "description": "Configure DNS settings"
         },
@@ -78,17 +74,15 @@
       "portals": {
         "web_portal": {
           "protocols": [
-            "$kubernetes-resource_configmap_portal_protocol"
+            "http"
           ],
           "host": [
-            "$kubernetes-resource_configmap_portal_host"
+            "$node_ip"
           ],
           "ports": [
-            "$kubernetes-resource_configmap_portal_port"
+            "$variable-web_port"
           ],
-          "path": [
-            "$kubernetes-resource_configmap_portal_path"
-          ]
+          "path": "/"
         }
       },
       "questions": [
@@ -113,64 +107,6 @@
             "type": "int",
             "default": 8063,
             "required": true
-          }
-        },
-        {
-          "variable": "ingress",
-          "group": "Ingress",
-          "schema": {
-            "type": "dict",
-            "attrs": [
-              {
-                "variable": "enabled",
-                "label": "Enable Ingress",
-                "description": "config ingress, you must install traefik first",
-                "schema": {
-                  "type": "boolean",
-                  "default": false,
-                  "show_subquestions_if": true,
-                  "subquestions": [
-                    {
-                      "variable": "certificate",
-                      "label": "Certificate Configuration",
-                      "schema": {
-                        "type": "int",
-                        "$ref": [
-                          "definitions/certificate"
-                        ]
-                      }
-                    },
-                    {
-                      "variable": "host",
-                      "label": "HostName",
-                      "schema": {
-                        "type": "string",
-                        "default": "test.test.org",
-                        "required": true
-                      }
-                    },
-                    {
-                      "variable": "path",
-                      "label": "Path",
-                      "schema": {
-                        "type": "string",
-                        "required": true,
-                        "default": "/"
-                      }
-                    },
-                    {
-                      "variable": "pathType",
-                      "label": "Path Type",
-                      "schema": {
-                        "type": "string",
-                        "required": true,
-                        "default": "Prefix"
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
           }
         },
         {
