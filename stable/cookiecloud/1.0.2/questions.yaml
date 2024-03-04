@@ -2,7 +2,7 @@ groups:
   - name: "Networking"
     description: "Networking Configuration for cookiecloud"
   - name: Ingress
-    description: Configuration Ingress using Traefik
+    description: Configuration Ingress
   - name: "Resource Limits"
     description: "Set CPU/memory limits for Kubernetes Pod"
 
@@ -15,7 +15,8 @@ portals:
       - "$kubernetes-resource_configmap_portal_host"
     ports:
       - "$kubernetes-resource_configmap_portal_port"
-    path: "$kubernetes-resource_configmap_portal_path"
+    path: 
+      - "$kubernetes-resource_configmap_portal_path"
     
 questions:
   - variable: tcp_port
