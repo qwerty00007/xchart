@@ -1,0 +1,7 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: easychen/cookiecloud
+  tag: latest
+
+tcp_port: 8088
+
