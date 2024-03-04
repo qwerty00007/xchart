@@ -54,6 +54,10 @@
           "description": "Networking Configuration for cookiecloud"
         },
         {
+          "name": "Ingress",
+          "description": "Configuration Ingress using Traefik"
+        },
+        {
           "name": "Resource Limits",
           "description": "Set CPU/memory limits for Kubernetes Pod"
         }
@@ -61,15 +65,15 @@
       "portals": {
         "web_portal": {
           "protocols": [
-            "http"
+            "$kubernetes-resource_configmap_portal_protocol"
           ],
           "host": [
-            "$node_ip"
+            "$kubernetes-resource_configmap_portal_host"
           ],
           "ports": [
-            "$variable-tcp_port"
+            "$kubernetes-resource_configmap_portal_port"
           ],
-          "path": "/"
+          "path": "$kubernetes-resource_configmap_portal_path"
         }
       },
       "questions": [
@@ -83,6 +87,64 @@
             "max": 65535,
             "default": 38088,
             "required": true
+          }
+        },
+        {
+          "variable": "ingress",
+          "group": "Ingress",
+          "schema": {
+            "type": "dict",
+            "attrs": [
+              {
+                "variable": "enabled",
+                "label": "Enable Ingress",
+                "description": "config ingress, you must install traefik first",
+                "schema": {
+                  "type": "boolean",
+                  "default": false,
+                  "show_subquestions_if": true,
+                  "subquestions": [
+                    {
+                      "variable": "certificate",
+                      "label": "Certificate Configuration",
+                      "schema": {
+                        "type": "int",
+                        "$ref": [
+                          "definitions/certificate"
+                        ]
+                      }
+                    },
+                    {
+                      "variable": "host",
+                      "label": "HostName",
+                      "schema": {
+                        "type": "string",
+                        "default": "test.test.org",
+                        "required": true
+                      }
+                    },
+                    {
+                      "variable": "path",
+                      "label": "Path",
+                      "schema": {
+                        "type": "string",
+                        "required": true,
+                        "default": "/"
+                      }
+                    },
+                    {
+                      "variable": "pathType",
+                      "label": "Path Type",
+                      "schema": {
+                        "type": "string",
+                        "required": true,
+                        "default": "Prefix"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
           }
         },
         {
