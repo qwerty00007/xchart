@@ -3,11 +3,11 @@ kind: ConfigMap
 metadata:
   name: portal
 data:
-  {{ if .Values.ingress.enabled }}
+  {{ if .Values.ingressEnabled }}
   protocol: "https"
   port: "443"
-  host: {{ .Values.ingress.host }}
-  path: {{ .Values.ingress.path }}
+  host: {{ .Values.host }}
+  path: {{ .Values.path }}
   {{ else }}
   protocol: "http"
   port: {{ .Values.tcp_port | quote }}

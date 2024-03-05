@@ -90,7 +90,7 @@
           }
         },
         {
-          "variable": "enabled",
+          "variable": "ingressEnabled",
           "group": "Ingress",
           "label": "Enable Ingress",
           "description": "config ingress, you must install traefik first",

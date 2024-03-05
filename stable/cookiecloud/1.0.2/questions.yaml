@@ -27,7 +27,7 @@ questions:
       max: 65535
       default: 38088
       required: true
-  - variable: enabled
+  - variable: ingressEnabled
     group: Ingress
     label: Enable Ingress
     description: "config ingress, you must install traefik first"

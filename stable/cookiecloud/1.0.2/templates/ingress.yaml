@@ -1,4 +1,4 @@
-{{ if .Values.ingress.enabled }}
+{{ if .Values.ingressEnabled }}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -8,11 +8,11 @@ spec:
   {{ if eq (include "cert_helper.certAvailable" .) "true" }}
   tls:
   - hosts:
-    - {{ .Values.ingress.host }}
+    - {{ .Values.host }}
     secretName: {{ template "cert_helper.secretName" . }}
   {{ end }}
   rules:
-  - host: {{ .Values.ingress.host }}
+  - host: {{ .Values.host }}
     http:
       paths:
       - backend:
@@ -20,6 +20,6 @@ spec:
             name: {{ template "common.names.fullname" . }}
             port:
               number: {{ .Values.tcp_port }}
-        path: {{ .Values.ingress.path }}
-        pathType: {{ .Values.ingress.pathType }}
+        path: {{ .Values.path }}
+        pathType: {{ .Values.pathType }}
 {{ end }}
