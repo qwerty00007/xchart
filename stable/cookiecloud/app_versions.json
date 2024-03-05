@@ -91,6 +91,7 @@
         },
         {
           "variable": "ingress",
+          "label": "config ingress",
           "group": "Ingress",
           "schema": {
             "type": "dict",
