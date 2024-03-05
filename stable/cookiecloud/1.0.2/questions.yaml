@@ -29,6 +29,7 @@ questions:
       required: true
 
   - variable: ingress
+    label: config ingress
     group: Ingress
     schema:
       type: dict
