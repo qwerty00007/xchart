@@ -55,7 +55,7 @@
         },
         {
           "name": "Ingress",
-          "description": "Configuration Ingress using Traefik"
+          "description": "Configuration Ingress"
         },
         {
           "name": "Resource Limits",
@@ -90,59 +90,50 @@
           }
         },
         {
-          "variable": "ingress",
-          "label": "config ingress",
+          "variable": "enabled",
           "group": "Ingress",
+          "label": "Enable Ingress",
+          "description": "config ingress, you must install traefik first",
           "schema": {
-            "type": "dict",
-            "attrs": [
+            "type": "boolean",
+            "default": false,
+            "show_subquestions_if": true,
+            "subquestions": [
               {
-                "variable": "enabled",
-                "label": "Enable Ingress",
-                "description": "config ingress, you must install traefik first",
+                "variable": "certificate",
+                "label": "Certificate Configuration",
                 "schema": {
-                  "type": "boolean",
-                  "default": false,
-                  "show_subquestions_if": true,
-                  "subquestions": [
-                    {
-                      "variable": "certificate",
-                      "label": "Certificate Configuration",
-                      "schema": {
-                        "type": "int",
-                        "$ref": [
-                          "definitions/certificate"
-                        ]
-                      }
-                    },
-                    {
-                      "variable": "host",
-                      "label": "HostName",
-                      "schema": {
-                        "type": "string",
-                        "default": "test.test.org",
-                        "required": true
-                      }
-                    },
-                    {
-                      "variable": "path",
-                      "label": "Path",
-                      "schema": {
-                        "type": "string",
-                        "required": true,
-                        "default": "/"
-                      }
-                    },
-                    {
-                      "variable": "pathType",
-                      "label": "Path Type",
-                      "schema": {
-                        "type": "string",
-                        "required": true,
-                        "default": "Prefix"
-                      }
-                    }
+                  "type": "int",
+                  "$ref": [
+                    "definitions/certificate"
                   ]
+                }
+              },
+              {
+                "variable": "host",
+                "label": "HostName",
+                "schema": {
+                  "type": "string",
+                  "default": "test.test.org",
+                  "required": true
+                }
+              },
+              {
+                "variable": "path",
+                "label": "Path",
+                "schema": {
+                  "type": "string",
+                  "required": true,
+                  "default": "/"
+                }
+              },
+              {
+                "variable": "pathType",
+                "label": "Path Type",
+                "schema": {
+                  "type": "string",
+                  "required": true,
+                  "default": "Prefix"
                 }
               }
             ]
