@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: test
+  namespace: default
+spec:
+  rules:
+  - host: truenas.bugscale.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: out-svc
+            port:
+              number: 81
+        path: /
+        pathType: Prefix
