@@ -2,7 +2,7 @@ groups:
   - name: "Networking"
     description: "Networking Configuration for cookiecloud"
   - name: Ingress
-    description: Configuration Ingress
+    description: Ingress Configuration
   - name: "Resource Limits"
     description: "Set CPU/memory limits for Kubernetes Pod"
 

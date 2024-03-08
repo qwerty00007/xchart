@@ -6,7 +6,7 @@ groups:
   - name: "Networking"
     description: "Networking Configuration for mtphotos"
   - name: Ingress
-    description: Configuration Ingress
+    description: Ingress Configuration
   - name: "Advanced DNS Settings"
     description: "Configure DNS settings"
   - name: "Resource Limits"

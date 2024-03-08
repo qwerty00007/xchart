@@ -1,5 +1,36 @@
 {
   "stable": {
+    "external-service": {
+      "app_readme": "<h1>external-service</h1>\n<p>自动化搞定限定条件下中文字幕下载。</p>",
+      "categories": [
+        "media"
+      ],
+      "description": "external-service",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://github.com/external-service/external-service",
+      "location": "/__w/xhcart/xchart/stable/external-service",
+      "latest_version": "1.0.0",
+      "latest_app_version": "1.0.0",
+      "latest_human_version": "1.0.0_1.0.0",
+      "last_update": "2023-11-01 13:33:23",
+      "name": "external-service",
+      "recommended": false,
+      "title": "external-service",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/external-service/external-service"
+      ],
+      "icon_url": "https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/external-service.png"
+    },
     "chinesesubfinder": {
       "app_readme": "<h1>chinesesubfinder</h1>\n<p>自动化搞定限定条件下中文字幕下载。</p>",
       "categories": [
@@ -61,7 +92,7 @@
         "https://github.com/easychen/CookieCloud"
       ],
       "icon_url": "https://raw.githubusercontent.com/easychen/CookieCloud/master/extension/assets/icon.png"
-    }, 
+    },
     "jellyfin": {
       "app_readme": "<h1>jellyfin</h1>\n<p>使用 nyanmisaka/jellyfin 镜像 增加配置 /etc/hosts</p>",
       "categories": [
