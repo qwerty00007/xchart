@@ -1,14 +1,14 @@
 {
   "stable": {
     "external-service": {
-      "app_readme": "<h1>external-service</h1>\n<p>自动化搞定限定条件下中文字幕下载。</p>",
+      "app_readme": "<h1>external-service</h1>\n<p>代理集群外的服务</p>",
       "categories": [
         "media"
       ],
       "description": "external-service",
       "healthy": true,
       "healthy_error": null,
-      "home": "https://github.com/external-service/external-service",
+      "home": "https://gitee.com/qwerty0007/projects",
       "location": "/__w/xhcart/xchart/stable/external-service",
       "latest_version": "1.0.0",
       "latest_app_version": "1.0.0",
@@ -27,9 +27,9 @@
       "tags": [],
       "screenshots": [],
       "sources": [
-        "https://github.com/external-service/external-service"
+        "https://gitee.com/qwerty0007/projects"
       ],
-      "icon_url": "https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/external-service.png"
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/external-service.png"
     },
     "chinesesubfinder": {
       "app_readme": "<h1>chinesesubfinder</h1>\n<p>自动化搞定限定条件下中文字幕下载。</p>",

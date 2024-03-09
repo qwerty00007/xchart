@@ -6,7 +6,7 @@
     "location": "/__w/xhcart/xchart/stable/cookiecloud/1.0.2",
     "last_update": "2024-03-04 10:52:07",
     "required_features": [
-      "definitions/gpuConfiguration",
+      "definitions/certificate",
       "normalize/acl",
       "normalize/ixVolume"
     ],
