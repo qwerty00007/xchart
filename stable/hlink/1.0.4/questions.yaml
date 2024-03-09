@@ -5,6 +5,8 @@ groups:
     description: "Configure storage for hlink"
   - name: "Networking"
     description: "Networking Configuration for hlink"
+  - name: Ingress
+    description: Ingress Configuration
   - name: "Advanced DNS Settings"
     description: "Configure DNS settings"
   - name: "Resource Limits"
@@ -13,12 +15,12 @@ groups:
 portals:
   web_portal:
     protocols:
-      - "http"
+      - "$kubernetes-resource_configmap_portal_protocol"
     host:
-      - "$node_ip"
+      - "$kubernetes-resource_configmap_portal_host"
     ports:
-      - "$variable-web_port"
-    path: "/"
+      - "$kubernetes-resource_configmap_portal_port"
+    path: "$kubernetes-resource_configmap_portal_path"
 
 questions:
   - variable: web_port
@@ -30,7 +32,39 @@ questions:
       max: 65535
       default: 9090
       required: true
-            
+  - variable: ingressEnabled
+    group: Ingress
+    label: Enable Ingress
+    description: "config ingress, you must install traefik first"
+    schema:
+      type: boolean
+      default: false
+      show_subquestions_if: true
+      subquestions:
+        - variable: certificate
+          label: Certificate Configuration
+          schema:
+            type: int
+            $ref:
+              - "definitions/certificate" 
+        - variable: host
+          label: HostName
+          schema:
+            type: string
+            default: "test.test.org"
+            required: true
+        - variable: path
+          label: Path
+          schema:
+            type: string
+            required: true
+            default: "/"
+        - variable: pathType
+          label: Path Type
+          schema:
+            type: string
+            required: true
+            default: Prefix       
   - variable: dnsConfig
     label: "DNS Configuration"
     group: "Advanced DNS Settings"

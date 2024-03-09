@@ -3,6 +3,8 @@ groups:
     description: "Configure Jellyfin Server"
   - name: "Networking"
     description: "Configure networking for container"
+  - name: Ingress
+    description: Ingress Configuration
   - name: "Storage"
     description: "Persist and share data that is separate from the lifecycle of the container"
   - name: "Workload Details"
@@ -19,12 +21,12 @@ groups:
 portals:
   web_portal:
     protocols:
-      - "http"
+      - "$kubernetes-resource_configmap_portal_protocol"
     host:
-      - "$node_ip"
+      - "$kubernetes-resource_configmap_portal_host"
     ports:
-      - "$variable-jellyfinServerHttp.port"
-    path: "/"
+      - "$kubernetes-resource_configmap_portal_port"
+    path: "$kubernetes-resource_configmap_portal_path"
 
 questions:
   - variable: hostNetwork
@@ -91,7 +93,39 @@ questions:
             min: 9000
             max: 65535
             default: 9096
-            
+  - variable: ingressEnabled
+    group: Ingress
+    label: Enable Ingress
+    description: "config ingress, you must install traefik first"
+    schema:
+      type: boolean
+      default: false
+      show_subquestions_if: true
+      subquestions:
+        - variable: certificate
+          label: Certificate Configuration
+          schema:
+            type: int
+            $ref:
+              - "definitions/certificate" 
+        - variable: host
+          label: HostName
+          schema:
+            type: string
+            default: "test.test.org"
+            required: true
+        - variable: path
+          label: Path
+          schema:
+            type: string
+            required: true
+            default: "/"
+        - variable: pathType
+          label: Path Type
+          schema:
+            type: string
+            required: true
+            default: Prefix       
   # extra Hosts configuration
   - variable: extraHosts
     label: "Extra Hosts"
