@@ -10,7 +10,7 @@ data:
   path: {{ .Values.path }}
   {{ else }}
   protocol: "http"
-  port: {{ .Values.tcp_port | quote }}
+  port: {{ .Values.web_port | quote }}
   host: {{ "$node_ip" }}
   path: "/"
   {{ end }} 
