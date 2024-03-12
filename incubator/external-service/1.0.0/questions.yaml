@@ -1,0 +1,65 @@
+groups:
+  - name: Networking and Services
+    description: Configure Network and Services for Container
+  - name: Ingress
+    description: Ingress Configuration
+
+portals:
+  web_portal:
+    protocols:
+      - "$kubernetes-resource_configmap_portal_protocol"
+    host:
+      - "$kubernetes-resource_configmap_portal_host"
+    ports:
+      - "$kubernetes-resource_configmap_portal_port"
+    path: "$kubernetes-resource_configmap_portal_path"
+
+questions:
+  - variable: ip
+    label: "ip"
+    group: Networking and Services
+    schema:
+      type: string
+      required: true
+  - variable: port
+    label: "external service port"
+    group: Networking and Services
+    schema:
+      type: int
+      default: 81
+      required: true
+  - variable: ingressEnabled
+    group: Ingress
+    label: Enable Ingress
+    description: "config ingress, you must install traefik first"
+    schema:
+      type: boolean
+      default: false
+      show_subquestions_if: true
+      subquestions:
+        - variable: certificate
+          label: Certificate Configuration
+          schema:
+            type: int
+            $ref:
+              - "definitions/certificate" 
+        - variable: host
+          label: HostName
+          schema:
+            type: string
+            default: "test.test.org"
+            required: true
+        - variable: path
+          label: Path
+          schema:
+            type: string
+            required: true
+            default: "/"
+        - variable: pathType
+          label: Path Type
+          schema:
+            type: string
+            required: true
+            default: Prefix
+
+

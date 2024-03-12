@@ -1,17 +1,17 @@
 {
-  "1.0.7": {
+  "1.0.8": {
     "healthy": true,
     "supported": false,
     "healthy_error": null,
-    "location": "/__w/xhcart/xchart/stable/moviepilot/1.0.7",
+    "location": "/__w/xhcart/xchart/stable/moviepilot/1.0.8",
     "last_update": "2024-02-24 21:52:07",
     "required_features": [
       "definitions/certificate",
       "normalize/acl",
       "normalize/ixVolume"
     ],
-    "human_version": "1.4.8_1.0.1",
-    "version": "1.0.7",
+    "human_version": "1.7.1_1.0.8",
+    "version": "1.0.8",
     "chart_metadata": {
       "name": "moviepilot",
       "description": "🗂️ 一个支持多种存储的文件列表程序，使用 Gin 和 Solidjs。",
@@ -19,9 +19,9 @@
         "title": "moviepilot"
       },
       "type": "application",
-      "version": "1.0.7",
+      "version": "1.0.8",
       "apiVersion": "v2",
-      "appVersion": "1.4.8",
+      "appVersion": "1.7.1",
       "kubeVersion": ">=1.16.0-0",
       "maintainers": [
         {
