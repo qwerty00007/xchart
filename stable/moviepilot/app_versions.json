@@ -149,7 +149,7 @@
                 "schema": {
                   "type": "string",
                   "required": true,
-                  "default": "/"
+                  "default": "/dashboard#"
                 }
               },
               {
