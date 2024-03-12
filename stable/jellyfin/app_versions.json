@@ -1,17 +1,17 @@
 {
-  "1.0.25": {
+  "1.0.26": {
     "healthy": true,
     "supported": false,
     "healthy_error": null,
-    "location": "/__w/xhcart/xchart/stable/jellyfin/1.0.25",
+    "location": "/__w/xhcart/xchart/stable/jellyfin/1.0.26",
     "last_update": "2024-02-26 14:30:07",
     "required_features": [
       "definitions/gpuConfiguration",
       "normalize/acl",
       "normalize/ixVolume"
     ],
-    "human_version": "10.8.13_1.0.25",
-    "version": "1.0.25",
+    "human_version": "10.8.13_1.0.26",
+    "version": "1.0.26",
     "chart_metadata": {
       "name": "jellyfin",
       "description": "Jellyfin Server is a personal media server with apps on just about every device",
@@ -19,7 +19,7 @@
         "title": "jellyfin"
       },
       "type": "application",
-      "version": "1.0.25",
+      "version": "1.0.26",
       "apiVersion": "v2",
       "appVersion": "10.8.13",
       "kubeVersion": ">=1.16.0-0",
