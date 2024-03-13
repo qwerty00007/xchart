@@ -1,0 +1,25 @@
+{{ if .Values.ingressEnabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ template "cert_helper.secretName" . }}
+  namespace: ix-{{ template "common.names.fullname" . }}
+spec:
+  {{ if eq (include "cert_helper.certAvailable" .) "true" }}
+  tls:
+  - hosts:
+    - {{ .Values.host }}
+    secretName: {{ template "cert_helper.secretName" . }}
+  {{ end }}
+  rules:
+  - host: {{ .Values.host }}
+    http:
+      paths:
+      - backend:
+          service:
+            name: {{ template "common.names.fullname" . }}-tcp
+            port:
+              number: {{ .Values.xunleiServerHttp.port }}
+        path: {{ .Values.path }}
+        pathType: {{ .Values.pathType }}
+{{ end }}

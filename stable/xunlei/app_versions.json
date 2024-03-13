@@ -1,17 +1,17 @@
 {
-  "1.0.25": {
+  "1.0.26": {
     "healthy": true,
     "supported": false,
     "healthy_error": null,
-    "location": "/__w/xhcart/xchart/stable/xunlei/1.0.25",
+    "location": "/__w/xhcart/xchart/stable/xunlei/1.0.26",
     "last_update": "2024-02-26 11:03:23",
     "required_features": [
       "definitions/gpuConfiguration",
       "normalize/acl",
       "normalize/ixVolume"
     ],
-    "human_version": "3.7.1_1.0.25",
-    "version": "1.0.25",
+    "human_version": "3.7.1_1.0.26",
+    "version": "1.0.26",
     "chart_metadata": {
       "name": "xunlei",
       "description": "迅雷 docker 版下载工具",
@@ -19,7 +19,7 @@
         "title": "xunlei"
       },
       "type": "application",
-      "version": "1.0.25",
+      "version": "1.0.26",
       "apiVersion": "v2",
       "appVersion": "3.7.1",
       "kubeVersion": ">=1.16.0-0",
