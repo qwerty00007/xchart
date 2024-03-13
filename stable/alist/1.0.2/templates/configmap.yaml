@@ -1,6 +1,6 @@
 {{- $port := .Values.webPort -}}
 {{- if .Values.hostNetwork -}}
-  {{- $port = 8096 -}}
+  {{- $port = 5244 -}}
 {{- end }}
 ---
 apiVersion: v1
