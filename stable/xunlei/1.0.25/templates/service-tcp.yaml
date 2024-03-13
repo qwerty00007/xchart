@@ -1,6 +1,6 @@
 {{ $svc := .Values.xunleiServerHttp }}
 {{ $ports := list }}
-{{ $ports = mustAppend $ports (dict "name" "xunlei" "port" $svc.port "nodePort" $svc.port "targetPort" "xunlei") }}
+{{ $ports = mustAppend $ports (dict "name" "xunlei" "port" $svc.port "nodePort" $svc.port "targetPort" 2345) }}
 {{ $params := . }}
 {{ $_ := set $params "commonService" (dict "ports" $ports ) }}
 {{ if .Values.hostNetwork }}
