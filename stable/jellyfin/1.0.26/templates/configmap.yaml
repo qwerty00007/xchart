@@ -1,3 +1,8 @@
+{{- $port := .Values.jellyfinServerHttp.port -}}
+{{- if .Values.hostNetwork -}}
+  {{- $port = 8096 -}}
+{{- end }}
+---
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -10,7 +15,7 @@ data:
   path: {{ .Values.path }}
   {{ else }}
   protocol: "http"
-  port: {{ .Values.jellyfinServerHttp.port | quote }}
+  port: {{ $port | quote }}
   host: {{ "$node_ip" }}
   path: "/"
   {{ end }} 

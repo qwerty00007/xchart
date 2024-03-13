@@ -41,7 +41,7 @@ spec: {{ include "common.deployment.common_spec" . | nindent 2 }}
             protocol: TCP
             containerPort: 8096
           {{- if .Values.hostNetwork }}
-            hostPort: {{ .Values.jellyfinServerHttp.port }}
+            hostPort: 8096
           {{- end }}
           - name: jellyfin-dlna
             protocol: UDP
