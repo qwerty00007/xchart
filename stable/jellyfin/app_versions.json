@@ -38,7 +38,7 @@
         }
       ],
       "home": "https://jellyfin.org/",
-      "icon": "https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/jellyfin.png",
+      "icon": "https://jellyfin.org/images/logo.svg",
       "sources": [
         "https://hub.docker.com/r/nyanmisaka/jellyfin"
       ],
