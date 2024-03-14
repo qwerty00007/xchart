@@ -38,3 +38,5 @@ Retrieve private key of cert_helper certificate
 {{- $_ := set $values "commonCertOptions" (dict "certKeyName" $values.Values.certificate) -}}
 {{ include "common.resources.cert" $values }}
 {{- end -}}
+
+
