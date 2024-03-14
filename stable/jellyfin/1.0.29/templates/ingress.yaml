@@ -24,7 +24,7 @@ spec:
           service:
             name: {{ template "common.names.fullname" . }}-tcp
             port:
-              number: {{ $port }}
+              number: {{ (include "port_helper.port" .) }}
         path: {{ .Values.path }}
         pathType: {{ .Values.pathType }}
 {{ end }}

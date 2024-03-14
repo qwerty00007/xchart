@@ -40,3 +40,13 @@ Retrieve private key of cert_helper certificate
 {{- end -}}
 
 
+{{/*
+返回端口号
+*/}}
+{{- define "port_helper.port" -}}
+{{- if not .Values.hostNetwork -}}
+{{- .Values.jellyfinServerHttp.port -}}
+{{- else -}}
+{{- 8096 -}}
+{{- end -}}
+{{- end -}}
