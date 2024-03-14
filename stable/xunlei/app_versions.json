@@ -111,6 +111,33 @@
           }
         },
         {
+          "variable": "xunleiServerHttp",
+          "label": "Configure Xunlei HTTP Service",
+          "group": "Networking",
+          "schema": {
+            "show_if": [
+              [
+                "hostNetwork",
+                "!=",
+                true
+              ]
+            ],
+            "type": "dict",
+            "attrs": [
+              {
+                "variable": "port",
+                "label": "Port to expose for Xunlei UI",
+                "schema": {
+                  "type": "int",
+                  "min": 9000,
+                  "max": 65535,
+                  "default": 12345
+                }
+              }
+            ]
+          }
+        },
+        {
           "variable": "ownerUID",
           "label": "UID",
           "group": "Xunlei Configuration",
@@ -182,26 +209,6 @@
               {
                 "value": "Recreate",
                 "description": "Kill existing pods before creating new ones"
-              }
-            ]
-          }
-        },
-        {
-          "variable": "xunleiServerHttp",
-          "label": "Configure Xunlei HTTP Service",
-          "group": "Networking",
-          "schema": {
-            "type": "dict",
-            "attrs": [
-              {
-                "variable": "port",
-                "label": "Port to expose for Xunlei UI",
-                "schema": {
-                  "type": "int",
-                  "min": 9000,
-                  "max": 65535,
-                  "default": 12345
-                }
               }
             ]
           }

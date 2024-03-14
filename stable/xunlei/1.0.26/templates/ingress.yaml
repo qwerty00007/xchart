@@ -1,4 +1,9 @@
 {{ if .Values.ingressEnabled }}
+{{- $port := 2345 -}}
+{{- if not .Values.hostNetwork -}}
+  {{- $port = .Values.xunleiServerHttp.port -}}
+{{- end }}
+---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -19,7 +24,7 @@ spec:
           service:
             name: {{ template "common.names.fullname" . }}-tcp
             port:
-              number: {{ .Values.xunleiServerHttp.port }}
+              number: {{ $port }}
         path: {{ .Values.path }}
         pathType: {{ .Values.pathType }}
 {{ end }}
