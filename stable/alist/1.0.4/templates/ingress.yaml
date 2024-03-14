@@ -1,8 +1,4 @@
 {{ if .Values.ingressEnabled }}
-{{- $port := 5244 -}}
-{{- if not .Values.hostNetwork -}}
-  {{- $port = .Values.web_port.port -}}
-{{- end }}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -23,7 +19,7 @@ spec:
           service:
             name: {{ template "common.names.fullname" . }}
             port:
-              number: {{ $port }}
+              number: {{ (include "port_helper.port" .) }}
         path: {{ .Values.path }}
         pathType: {{ .Values.pathType }}
 {{ end }}

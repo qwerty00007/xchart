@@ -38,3 +38,15 @@ Retrieve private key of cert_helper certificate
 {{- $_ := set $values "commonCertOptions" (dict "certKeyName" $values.Values.certificate) -}}
 {{ include "common.resources.cert" $values }}
 {{- end -}}
+
+
+{{/*
+返回端口号
+*/}}
+{{- define "port_helper.port" -}}
+{{- if not .Values.hostNetwork -}}
+{{- .Values.web_port.port -}}
+{{- else -}}
+{{- 5244 -}}
+{{- end -}}
+{{- end -}}
