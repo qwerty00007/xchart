@@ -3,5 +3,5 @@
 {{- if .Values.hostNetwork }}
 http://$node_ip:8096/
 {{ else }}
-http://$node_ip:{{ .Values.embyServerHttp.port }}/
+http://$node_ip:{{ .Values.jellyfinServerHttp.port }}/
 {{ end }}
