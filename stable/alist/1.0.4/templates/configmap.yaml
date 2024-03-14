@@ -1,0 +1,22 @@
+{{- $port := 5244 -}}
+{{- if not .Values.hostNetwork -}}
+  {{- $port = .Values.webPort.port -}}
+{{- end }}
+---
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: portal
+data:
+  {{ if .Values.ingressEnabled }}
+  protocol: "https"
+  port: "443"
+  host: {{ .Values.host }}
+  path: {{ .Values.path }}
+  {{ else }}
+  protocol: "http"
+  port: {{ $port | quote }}
+  host: {{ "$node_ip" }}
+  path: "/"
+  {{ end }} 

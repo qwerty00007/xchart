@@ -1,17 +1,17 @@
 {
-  "1.0.3": {
+  "1.0.4": {
     "healthy": true,
     "supported": false,
     "healthy_error": null,
-    "location": "/__w/xhcart/xchart/stable/alist/1.0.3",
-    "last_update": "2024-02-24 21:52:07",
+    "location": "/__w/xhcart/xchart/stable/alist/1.0.4",
+    "last_update": "2024-03-14 12:30:07",
     "required_features": [
       "definitions/gpuConfiguration",
       "normalize/acl",
       "normalize/ixVolume"
     ],
-    "human_version": "3.32.0_1.0.3",
-    "version": "1.0.3",
+    "human_version": "3.32.0_1.0.4",
+    "version": "1.0.4",
     "chart_metadata": {
       "name": "alist",
       "description": "🗂️ 一个支持多种存储的文件列表程序，使用 Gin 和 Solidjs。",
@@ -19,7 +19,7 @@
         "title": "alist"
       },
       "type": "application",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "apiVersion": "v2",
       "appVersion": "3.32.0",
       "kubeVersion": ">=1.16.0-0",
