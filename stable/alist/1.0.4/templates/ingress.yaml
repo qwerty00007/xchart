@@ -1,7 +1,7 @@
 {{ if .Values.ingressEnabled }}
 {{- $port := 5244 -}}
 {{- if not .Values.hostNetwork -}}
-  {{- $port = .Values.webPort.port -}}
+  {{- $port = .Values.web_port.port -}}
 {{- end }}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
