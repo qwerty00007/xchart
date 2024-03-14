@@ -1,6 +1,6 @@
 {{- $port := 5244 -}}
 {{- if not .Values.hostNetwork -}}
-  {{- $port = .Values.web_Port.port -}}
+  {{- $port = .Values.web_port.port -}}
 {{- end }}
 ---
 ---
