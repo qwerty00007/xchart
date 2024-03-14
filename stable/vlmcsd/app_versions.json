@@ -65,9 +65,7 @@
           "group": "Networking",
           "schema": {
             "type": "int",
-            "min": 8000,
-            "max": 65535,
-            "default": 11688,
+            "default": 1688,
             "required": true
           }
         },
