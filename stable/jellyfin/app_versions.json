@@ -112,6 +112,33 @@
           }
         },
         {
+          "variable": "jellyfinServerHttp",
+          "label": "Configure Jellyfin Server HTTP Service",
+          "group": "Networking",
+          "schema": {
+            "show_if": [
+              [
+                "hostNetwork",
+                "!=",
+                true
+              ]
+            ],
+            "type": "dict",
+            "attrs": [
+              {
+                "variable": "port",
+                "label": "Port to expose for Jellyfin Server UI",
+                "schema": {
+                  "type": "int",
+                  "min": 9000,
+                  "max": 65535,
+                  "default": 9096
+                }
+              }
+            ]
+          }
+        },
+        {
           "variable": "timezone",
           "label": "Timezone",
           "group": "Jellyfin Server Configuration",
@@ -172,26 +199,6 @@
               {
                 "value": "Recreate",
                 "description": "Kill existing pods before creating new ones"
-              }
-            ]
-          }
-        },
-        {
-          "variable": "jellyfinServerHttp",
-          "label": "Configure Jellyfin Server HTTP Service",
-          "group": "Networking",
-          "schema": {
-            "type": "dict",
-            "attrs": [
-              {
-                "variable": "port",
-                "label": "Port to expose for Jellyfin Server UI",
-                "schema": {
-                  "type": "int",
-                  "min": 9000,
-                  "max": 65535,
-                  "default": 9096
-                }
               }
             ]
           }
