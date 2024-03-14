@@ -15,7 +15,6 @@
 - **qbittorrent** bt 下载工具，支持 host 网络模式
 - **transmission** bt 下载工具，支持 host 网络模式
 - **alist** 挂载网盘，支持 host 网络模式
-~~ -  **external-service** 代理集群外的服务 ~~
 
 ## 增加第三方应用库
 
