@@ -23,22 +23,27 @@ portals:
     path: "$kubernetes-resource_configmap_portal_path"
 
 questions:
-  - variable: web_port
-    label: "Web Port for alist"
-    group: Networking
-    schema:
-      type: int
-      min: 8000
-      max: 65535
-      default: 15244
-      required: true
-      
   - variable: hostNetwork
     label: "Configure Host Network"
     group: "Networking"
     schema:
       type: boolean
       default: false
+  # Port configuration
+  - variable: web_port
+    label: "Web Port for alist"
+    group: "Networking"
+    schema:
+      show_if: [[ "hostNetwork", "!=", true]]
+      type: dict
+      attrs:
+        - variable: port
+          label: "Port to expose for alist"
+          schema:
+            type: int
+            min: 9000
+            max: 65535
+            default: 15244
   - variable: ingressEnabled
     group: Ingress
     label: Enable Ingress

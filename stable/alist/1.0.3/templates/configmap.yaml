@@ -1,7 +1,8 @@
-{{- $port := .Values.webPort -}}
-{{- if .Values.hostNetwork -}}
-  {{- $port = 5244 -}}
+{{- $port := 5244 -}}
+{{- if not .Values.hostNetwork -}}
+  {{- $port = .Values.webPort.port -}}
 {{- end }}
+---
 ---
 apiVersion: v1
 kind: ConfigMap

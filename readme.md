@@ -4,17 +4,17 @@
 
 > 应用部署请参考各个应用下的 readme.md
 
-- **jellyfin** 使用 [nyanmisaka/jellyfin](https://hub.docker.com/r/nyanmisaka/jellyfin) docker 镜像，增加配置 `/etc/hosts`
+- **jellyfin** 使用 [nyanmisaka/jellyfin](https://hub.docker.com/r/nyanmisaka/jellyfin) docker 镜像，增加配置 `/etc/hosts`,支持 host 网络模式
 - **vlmcsd** 运行在 docker 里的 kms 激活服务器
 - **ChineseSubFinder** 自动下载字幕
 - **MT Photos** 照片备份 APP, 收费软件，[官方网站](https://mtmt.tech/)
-- **xunlei** 迅雷 docker 版本，邀请码：迅雷牛通
+- **xunlei** 迅雷 docker 版本，邀请码：迅雷牛通，支持 host 网络模式
 - **moviepilot** 追剧，媒体整理
 - **cookiecloud** 同步 cookie
 - **hlink** 硬链接工具
 - **qbittorrent** bt 下载工具，支持 host 网络模式
 - **transmission** bt 下载工具，支持 host 网络模式
-- **alist** 挂载网盘
+- **alist** 挂载网盘，支持 host 网络模式
 - **external-service** 代理集群外的服务
 
 ## 增加第三方应用库

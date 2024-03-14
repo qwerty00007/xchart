@@ -1,8 +1,10 @@
-{{ $selectors := list }}
-{{ $selectors = mustAppend $selectors (dict "key" "app" "value" (include "common.names.name" .) ) }}
-{{ $selectors = mustAppend $selectors (dict "key" "release" "value" .Release.Name ) }}
+{{ $svc := .Values.web_port }}
 {{ $ports := list }}
-{{ $ports = mustAppend $ports (dict "name" "web" "port" .Values.web_port "nodePort" .Values.web_port "targetPort" 5244) }}
+{{ if .Values.hostNetwork }}
+{{ $ports = mustAppend $ports (dict "name" "http" "port" 5244 "targetPort" 5244) }}
+{{ else }}
+{{ $ports = mustAppend $ports (dict "name" "http" "port" $svc.port "nodePort" $svc.port "targetPort" 5244) }}
+{{ end }}
 {{ $params := . }}
 {{ $_ := set $params "commonService" (dict "ports" $ports ) }}
 {{ if .Values.hostNetwork }}

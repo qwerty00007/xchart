@@ -43,8 +43,8 @@ spec:
           ports:
             - name: web
               containerPort: 5244
-            {{- if .Values.hostNetwork }}
-              hostPort: 5244
+            {{- if not .Values.hostNetwork }}
+              hostPort: null
             {{- end }}
           env:
             {{ $envList := (default list .Values.environmentVariables) }}
