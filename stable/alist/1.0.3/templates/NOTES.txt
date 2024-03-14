@@ -1,7 +1,0 @@
-1. Get the application URL by running these commands:
-
-{{- if .Values.hostNetwork }}
-http://$node_ip:5244/
-{{ else }}
-http://$node_ip:{{ .Values.web_port.port }}/
-{{ end }}
