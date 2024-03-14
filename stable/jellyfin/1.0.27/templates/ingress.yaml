@@ -1,9 +1,9 @@
+{{ if .Values.ingressEnabled }}
 {{- $port := .Values.jellyfinServerHttp.port -}}
 {{- if .Values.hostNetwork -}}
   {{- $port = 8096 -}}
 {{- end }}
 ---
-{{ if .Values.ingressEnabled }}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
