@@ -1,6 +1,6 @@
-{{- $port := .Values.jellyfinServerHttp.port -}}
-{{- if .Values.hostNetwork -}}
-  {{- $port = 8096 -}}
+{{- $port := 8096 -}}
+{{- if not .Values.hostNetwork -}}
+  {{- $port = .Values.jellyfinServerHttp.port -}}
 {{- end }}
 ---
 apiVersion: v1
