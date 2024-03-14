@@ -40,15 +40,21 @@ spec: {{ include "common.deployment.common_spec" . | nindent 2 }}
           - name: jellyfin
             protocol: TCP
             containerPort: 8096
-          {{- if .Values.hostNetwork }}
-            hostPort: 8096
+          {{- if not .Values.hostNetwork }}
+            hostPort: null
           {{- end }}
           - name: jellyfin-dlna
             protocol: UDP
             containerPort: 1900
+          {{- if not .Values.hostNetwork }}
+            hostPort: null
+          {{- end }}
           - name: jellyfin-lnd
             protocol: UDP
             containerPort: 7359
+          {{- if not .Values.hostNetwork }}
+            hostPort: null
+          {{- end }}
           env:
             - name: KUBE_NAMESPACE
               valueFrom:
