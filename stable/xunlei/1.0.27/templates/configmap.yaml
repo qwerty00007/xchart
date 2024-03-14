@@ -1,8 +1,4 @@
-{{- $port := 2345 -}}
-{{- if not .Values.hostNetwork -}}
-  {{- $port = .Values.xunleiServerHttp.port -}}
-{{- end }}
----
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -15,7 +11,7 @@ data:
   path: {{ .Values.path }}
   {{ else }}
   protocol: "http"
-  port: {{ $port | quote }}
+  port: {{ (include "port_helper.port" .) | quote }}
   host: {{ "$node_ip" }}
   path: "/"
   {{ end }} 
