@@ -61,7 +61,13 @@ questions:
           schema:
             type: string
             required: true
-            default: changeme  
+            default: changeme
+        - variable: dbHost
+          label: Maria DB Host Name
+          schema:
+            type: string
+            required: true
+            default: nextlcoud-mariadb
         - variable: additionalEnvs
           label: Additional Environment Variables
           description: Configure additional environment variables for Nextcloud.

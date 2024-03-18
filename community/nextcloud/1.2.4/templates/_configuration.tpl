@@ -2,7 +2,7 @@
 
   {{- $fullname := (include "ix.v1.common.lib.chart.names.fullname" $) -}}
 
-  {{- $dbHost := (printf "%s-mariadb" $fullname) -}}
+  {{- $dbHost := .Values.nextcloudConfig.dbHost -}}
   {{- $dbUser := .Values.nextcloudConfig.dbUser -}}
   {{- $dbName := .Values.nextcloudConfig.dbName -}}
 

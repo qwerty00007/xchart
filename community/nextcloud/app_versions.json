@@ -149,6 +149,15 @@
                                 }
                             },
                             {
+                                "variable": "dbHost",
+                                "label": "Maria DB  Host Name",
+                                "schema": {
+                                    "type": "string",
+                                    "required": true,
+                                    "default": "nextcloud-mariadb"
+                                }
+                            },
+                            {
                                 "variable": "additionalEnvs",
                                 "label": "Additional Environment Variables",
                                 "description": "Configure additional environment variables for Nextcloud.",
