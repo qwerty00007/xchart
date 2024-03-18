@@ -24,8 +24,8 @@ workload:
                 - SETGID
                 - SETUID
           fixedEnv:
-            PUID: 1000
-            PGID: 1000
+            PUID: .Values.nextcloudConfig.ownerUID
+            PGID: .Values.nextcloudConfig.ownerGID
           {{ with .Values.nextcloudConfig.additionalEnvs }}
           envList:
             {{ range $env := . }}

@@ -22,10 +22,4 @@ secret:
       MARIADB_PASSWORD: {{ $dbPass }}
       MARIADB_ROOT_PASSWORD: {{ $dbRootPass }}
       MARIADB_HOST: {{ $dbHost }}
-configmap:
-  nextcloud-config:
-    enabled: true
-    data:
-      PUID: {{ .Values.nextcloudConfig.ownerUID | quote }}
-      PGID: {{ .Values.nextcloudConfig.ownerGID | quote }}
 {{- end -}}
