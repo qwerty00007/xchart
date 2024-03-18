@@ -1,0 +1,10 @@
+nextcloudStorage:
+  data:
+    type: pvc
+  mariadbData:
+    type: pvc
+  mariadbBackup:
+    type: emptyDir
+    emptyDirConfig:
+      medium: ""
+      size: ""

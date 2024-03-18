@@ -1,0 +1,1113 @@
+{
+    "1.2.4": {
+        "healthy": true,
+        "supported": false,
+        "healthy_error": null,
+        "location": "/__w/charts/charts/community/nextcloud/1.2.4",
+        "last_update": "2024-03-11 12:18:44",
+        "required_features": [
+            "normalize/acl",
+            "normalize/ixVolume"
+        ],
+        "human_version": "28.0.3_1.2.4",
+        "version": "1.2.4",
+        "chart_metadata": {
+            "name": "nextcloud",
+            "description": "A file sharing server that puts the control and security of your own data back into your hands.",
+            "annotations": {
+                "title": "Nextcloud"
+            },
+            "type": "application",
+            "version": "1.2.4",
+            "apiVersion": "v2",
+            "appVersion": "28.0.3",
+            "kubeVersion": ">=1.16.0-0",
+            "maintainers": [
+                {
+                    "name": "qwerty007",
+                    "url": "https://gitee.com/qwerty0007",
+                    "email": "1165505953@qq.com"
+                }
+            ],
+            "dependencies": [
+                {
+                    "name": "common",
+                    "repository": "file://../../../common",
+                    "version": "1.2.9"
+                }
+            ],
+            "home": "https://nextcloud.com/",
+            "icon": "https://media.sys.truenas.net/apps/nextcloud/icons/icon.svg",
+            "sources": [
+                "https://hub.docker.com/_/nextcloud",
+                "https://github.com/truenas/charts/tree/master/community/nextcloud"
+            ],
+            "keywords": [
+                "nextcloud",
+                "storage",
+                "http",
+                "web",
+                "php"
+            ]
+        },
+        "app_metadata": null,
+        "schema": {
+            "groups": [
+                {
+                    "name": "Nextcloud Configuration",
+                    "description": "Configure Nextcloud"
+                },
+                {
+                    "name": "Network Configuration",
+                    "description": "Configure Network for Nextcloud"
+                },
+                {
+                    "name": "Storage Configuration",
+                    "description": "Configure Storage for Nextcloud"
+                },
+                {
+                    "name": "Resources Configuration",
+                    "description": "Configure Resources for Nextcloud"
+                }
+            ],
+            "portals": {
+                "web_portal": {
+                    "protocols": [
+                        "$kubernetes-resource_configmap_portal_protocol"
+                    ],
+                    "host": [
+                        "$kubernetes-resource_configmap_portal_host"
+                    ],
+                    "ports": [
+                        "$kubernetes-resource_configmap_portal_port"
+                    ],
+                    "path": "$kubernetes-resource_configmap_portal_path"
+                }
+            },
+            "questions": [
+                {
+                    "variable": "nextcloudConfig",
+                    "label": "",
+                    "group": "Nextcloud Configuration",
+                    "schema": {
+                        "type": "dict",
+                        "attrs": [
+                            {
+                                "variable": "ownerUID",
+                                "label": "PUID",
+                                "schema": {
+                                    "type": "int",
+                                    "default": 1000,
+                                    "min": 1,
+                                    "max": 65535
+                                }
+                            },
+                            {
+                                "variable": "ownerGID",
+                                "label": "PGID",
+                                "schema": {
+                                    "type": "int",
+                                    "default": 1000,
+                                    "min": 1,
+                                    "max": 65535
+                                }
+                            },
+                            {
+                                "variable": "dbUser",
+                                "label": "Maria DB User",
+                                "schema": {
+                                    "type": "string",
+                                    "required": true,
+                                    "default": "nextcloud"
+                                }
+                            },
+                            {
+                                "variable": "dbName",
+                                "label": "Maria DB Name",
+                                "schema": {
+                                    "type": "string",
+                                    "required": true,
+                                    "default": "nextcloud"
+                                }
+                            },
+                            {
+                                "variable": "dbPass",
+                                "label": "Maria DB User Pass",
+                                "schema": {
+                                    "type": "string",
+                                    "required": true,
+                                    "default": "changeme"
+                                }
+                            },
+                            {
+                                "variable": "dbRootPass",
+                                "label": "Maria DB Root Pass",
+                                "schema": {
+                                    "type": "string",
+                                    "required": true,
+                                    "default": "changeme"
+                                }
+                            },
+                            {
+                                "variable": "additionalEnvs",
+                                "label": "Additional Environment Variables",
+                                "description": "Configure additional environment variables for Nextcloud.",
+                                "schema": {
+                                    "type": "list",
+                                    "default": [],
+                                    "items": [
+                                        {
+                                            "variable": "env",
+                                            "label": "Environment Variable",
+                                            "schema": {
+                                                "type": "dict",
+                                                "attrs": [
+                                                    {
+                                                        "variable": "name",
+                                                        "label": "Name",
+                                                        "schema": {
+                                                            "type": "string",
+                                                            "required": true
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "value",
+                                                        "label": "Value",
+                                                        "schema": {
+                                                            "type": "string",
+                                                            "required": true
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "variable": "nextcloudNetwork",
+                    "label": "",
+                    "group": "Network Configuration",
+                    "schema": {
+                        "type": "dict",
+                        "attrs": [
+                            {
+                                "variable": "webPort",
+                                "label": "Web Port",
+                                "description": "The port for the Nextcloud WebUI.",
+                                "schema": {
+                                    "type": "int",
+                                    "default": 18080,
+                                    "min": 9000,
+                                    "max": 65535,
+                                    "required": true
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "variable": "nextcloudStorage",
+                    "label": "",
+                    "group": "Storage Configuration",
+                    "schema": {
+                        "type": "dict",
+                        "attrs": [
+                            {
+                                "variable": "config",
+                                "label": "Nextcloud Config Storage",
+                                "description": "The path to store Nextcloud configuration.",
+                                "schema": {
+                                    "type": "dict",
+                                    "attrs": [
+                                        {
+                                            "variable": "type",
+                                            "label": "Type",
+                                            "description": "ixVolume: Is dataset created automatically by the system.</br>\nHost Path: Is a path that already exists on the system.\n",
+                                            "schema": {
+                                                "type": "string",
+                                                "required": true,
+                                                "immutable": true,
+                                                "default": "ixVolume",
+                                                "enum": [
+                                                    {
+                                                        "value": "hostPath",
+                                                        "description": "Host Path (Path that already exists on the system)"
+                                                    },
+                                                    {
+                                                        "value": "ixVolume",
+                                                        "description": "ixVolume (Dataset created automatically by the system)"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "variable": "ixVolumeConfig",
+                                            "label": "ixVolume Configuration",
+                                            "description": "The configuration for the ixVolume dataset.",
+                                            "schema": {
+                                                "type": "dict",
+                                                "show_if": [
+                                                    [
+                                                        "type",
+                                                        "=",
+                                                        "ixVolume"
+                                                    ]
+                                                ],
+                                                "$ref": [
+                                                    "normalize/ixVolume"
+                                                ],
+                                                "attrs": [
+                                                    {
+                                                        "variable": "aclEnable",
+                                                        "label": "Enable ACL",
+                                                        "description": "Enable ACL for the dataset.",
+                                                        "schema": {
+                                                            "type": "boolean",
+                                                            "default": false
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "datasetName",
+                                                        "label": "Dataset Name",
+                                                        "description": "The name of the dataset to use for storage.",
+                                                        "schema": {
+                                                            "type": "string",
+                                                            "required": true,
+                                                            "immutable": true,
+                                                            "hidden": true,
+                                                            "default": "data"
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "aclEntries",
+                                                        "label": "ACL Configuration",
+                                                        "schema": {
+                                                            "type": "dict",
+                                                            "show_if": [
+                                                                [
+                                                                    "aclEnable",
+                                                                    "=",
+                                                                    true
+                                                                ]
+                                                            ],
+                                                            "attrs": []
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "variable": "hostPathConfig",
+                                            "label": "Host Path Configuration",
+                                            "schema": {
+                                                "type": "dict",
+                                                "show_if": [
+                                                    [
+                                                        "type",
+                                                        "=",
+                                                        "hostPath"
+                                                    ]
+                                                ],
+                                                "attrs": [
+                                                    {
+                                                        "variable": "aclEnable",
+                                                        "label": "Enable ACL",
+                                                        "description": "Enable ACL for the dataset.",
+                                                        "schema": {
+                                                            "type": "boolean",
+                                                            "default": false
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "acl",
+                                                        "label": "ACL Configuration",
+                                                        "schema": {
+                                                            "type": "dict",
+                                                            "show_if": [
+                                                                [
+                                                                    "aclEnable",
+                                                                    "=",
+                                                                    true
+                                                                ]
+                                                            ],
+                                                            "attrs": [],
+                                                            "$ref": [
+                                                                "normalize/acl"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "hostPath",
+                                                        "label": "Host Path",
+                                                        "description": "The host path to use for storage.",
+                                                        "schema": {
+                                                            "type": "hostpath",
+                                                            "show_if": [
+                                                                [
+                                                                    "aclEnable",
+                                                                    "=",
+                                                                    false
+                                                                ]
+                                                            ],
+                                                            "required": true
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "variable": "data",
+                                "label": "Nextcloud Data Storage",
+                                "description": "The path to store Nextcloud data.",
+                                "schema": {
+                                    "type": "dict",
+                                    "attrs": [
+                                        {
+                                            "variable": "type",
+                                            "label": "Type",
+                                            "description": "ixVolume: Is dataset created automatically by the system.</br>\nHost Path: Is a path that already exists on the system.\n",
+                                            "schema": {
+                                                "type": "string",
+                                                "required": true,
+                                                "immutable": true,
+                                                "default": "ixVolume",
+                                                "enum": [
+                                                    {
+                                                        "value": "hostPath",
+                                                        "description": "Host Path (Path that already exists on the system)"
+                                                    },
+                                                    {
+                                                        "value": "ixVolume",
+                                                        "description": "ixVolume (Dataset created automatically by the system)"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "variable": "ixVolumeConfig",
+                                            "label": "ixVolume Configuration",
+                                            "description": "The configuration for the ixVolume dataset.",
+                                            "schema": {
+                                                "type": "dict",
+                                                "show_if": [
+                                                    [
+                                                        "type",
+                                                        "=",
+                                                        "ixVolume"
+                                                    ]
+                                                ],
+                                                "$ref": [
+                                                    "normalize/ixVolume"
+                                                ],
+                                                "attrs": [
+                                                    {
+                                                        "variable": "aclEnable",
+                                                        "label": "Enable ACL",
+                                                        "description": "Enable ACL for the dataset.",
+                                                        "schema": {
+                                                            "type": "boolean",
+                                                            "default": false
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "datasetName",
+                                                        "label": "Dataset Name",
+                                                        "description": "The name of the dataset to use for storage.",
+                                                        "schema": {
+                                                            "type": "string",
+                                                            "required": true,
+                                                            "immutable": true,
+                                                            "hidden": true,
+                                                            "default": "data"
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "aclEntries",
+                                                        "label": "ACL Configuration",
+                                                        "schema": {
+                                                            "type": "dict",
+                                                            "show_if": [
+                                                                [
+                                                                    "aclEnable",
+                                                                    "=",
+                                                                    true
+                                                                ]
+                                                            ],
+                                                            "attrs": []
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "variable": "hostPathConfig",
+                                            "label": "Host Path Configuration",
+                                            "schema": {
+                                                "type": "dict",
+                                                "show_if": [
+                                                    [
+                                                        "type",
+                                                        "=",
+                                                        "hostPath"
+                                                    ]
+                                                ],
+                                                "attrs": [
+                                                    {
+                                                        "variable": "aclEnable",
+                                                        "label": "Enable ACL",
+                                                        "description": "Enable ACL for the dataset.",
+                                                        "schema": {
+                                                            "type": "boolean",
+                                                            "default": false
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "acl",
+                                                        "label": "ACL Configuration",
+                                                        "schema": {
+                                                            "type": "dict",
+                                                            "show_if": [
+                                                                [
+                                                                    "aclEnable",
+                                                                    "=",
+                                                                    true
+                                                                ]
+                                                            ],
+                                                            "attrs": [],
+                                                            "$ref": [
+                                                                "normalize/acl"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "hostPath",
+                                                        "label": "Host Path",
+                                                        "description": "The host path to use for storage.",
+                                                        "schema": {
+                                                            "type": "hostpath",
+                                                            "show_if": [
+                                                                [
+                                                                    "aclEnable",
+                                                                    "=",
+                                                                    false
+                                                                ]
+                                                            ],
+                                                            "required": true
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "variable": "mariadbData",
+                                "label": "Nextcloud MariaDB Data Storage",
+                                "description": "The path to store Nextcloud MariaDB Data.",
+                                "schema": {
+                                    "type": "dict",
+                                    "attrs": [
+                                        {
+                                            "variable": "type",
+                                            "label": "Type",
+                                            "description": "ixVolume: Is dataset created automatically by the system.</br>\nHost Path: Is a path that already exists on the system.\n",
+                                            "schema": {
+                                                "type": "string",
+                                                "required": true,
+                                                "immutable": true,
+                                                "default": "ixVolume",
+                                                "enum": [
+                                                    {
+                                                        "value": "hostPath",
+                                                        "description": "Host Path (Path that already exists on the system)"
+                                                    },
+                                                    {
+                                                        "value": "ixVolume",
+                                                        "description": "ixVolume (Dataset created automatically by the system)"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "variable": "ixVolumeConfig",
+                                            "label": "ixVolume Configuration",
+                                            "description": "The configuration for the ixVolume dataset.",
+                                            "schema": {
+                                                "type": "dict",
+                                                "hidden": true,
+                                                "show_if": [
+                                                    [
+                                                        "type",
+                                                        "=",
+                                                        "ixVolume"
+                                                    ]
+                                                ],
+                                                "$ref": [
+                                                    "normalize/ixVolume"
+                                                ],
+                                                "attrs": [
+                                                    {
+                                                        "variable": "aclEnable",
+                                                        "label": "Enable ACL",
+                                                        "description": "Enable ACL for the dataset.",
+                                                        "schema": {
+                                                            "type": "boolean",
+                                                            "hidden": true,
+                                                            "default": false
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "datasetName",
+                                                        "label": "Dataset Name",
+                                                        "description": "The name of the dataset to use for storage.",
+                                                        "schema": {
+                                                            "type": "string",
+                                                            "required": true,
+                                                            "immutable": true,
+                                                            "hidden": true,
+                                                            "default": "mariadbData"
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "aclEntries",
+                                                        "label": "ACL Configuration",
+                                                        "schema": {
+                                                            "type": "dict",
+                                                            "show_if": [
+                                                                [
+                                                                    "aclEnable",
+                                                                    "=",
+                                                                    true
+                                                                ]
+                                                            ],
+                                                            "attrs": []
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "variable": "hostPathConfig",
+                                            "label": "Host Path Configuration",
+                                            "schema": {
+                                                "type": "dict",
+                                                "show_if": [
+                                                    [
+                                                        "type",
+                                                        "=",
+                                                        "hostPath"
+                                                    ]
+                                                ],
+                                                "attrs": [
+                                                    {
+                                                        "variable": "aclEnable",
+                                                        "label": "Enable ACL",
+                                                        "description": "Enable ACL for the dataset.",
+                                                        "schema": {
+                                                            "type": "boolean",
+                                                            "hidden": true,
+                                                            "default": false
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "acl",
+                                                        "label": "ACL Configuration",
+                                                        "schema": {
+                                                            "type": "dict",
+                                                            "show_if": [
+                                                                [
+                                                                    "aclEnable",
+                                                                    "=",
+                                                                    true
+                                                                ]
+                                                            ],
+                                                            "attrs": [],
+                                                            "$ref": [
+                                                                "normalize/acl"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "hostPath",
+                                                        "label": "Host Path",
+                                                        "description": "The host path to use for storage.",
+                                                        "schema": {
+                                                            "type": "hostpath",
+                                                            "show_if": [
+                                                                [
+                                                                    "aclEnable",
+                                                                    "=",
+                                                                    false
+                                                                ]
+                                                            ],
+                                                            "required": true
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "variable": "mariadbBackup",
+                                "label": "Nextcloud MariaDB Backup Storage",
+                                "description": "The path to store Nextcloud MariaDB Backup.",
+                                "schema": {
+                                    "type": "dict",
+                                    "attrs": [
+                                        {
+                                            "variable": "type",
+                                            "label": "Type",
+                                            "description": "ixVolume: Is dataset created automatically by the system.</br>\nHost Path: Is a path that already exists on the system.\n",
+                                            "schema": {
+                                                "type": "string",
+                                                "required": true,
+                                                "immutable": true,
+                                                "default": "ixVolume",
+                                                "enum": [
+                                                    {
+                                                        "value": "hostPath",
+                                                        "description": "Host Path (Path that already exists on the system)"
+                                                    },
+                                                    {
+                                                        "value": "ixVolume",
+                                                        "description": "ixVolume (Dataset created automatically by the system)"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "variable": "ixVolumeConfig",
+                                            "label": "ixVolume Configuration",
+                                            "description": "The configuration for the ixVolume dataset.",
+                                            "schema": {
+                                                "type": "dict",
+                                                "hidden": true,
+                                                "show_if": [
+                                                    [
+                                                        "type",
+                                                        "=",
+                                                        "ixVolume"
+                                                    ]
+                                                ],
+                                                "$ref": [
+                                                    "normalize/ixVolume"
+                                                ],
+                                                "attrs": [
+                                                    {
+                                                        "variable": "aclEnable",
+                                                        "label": "Enable ACL",
+                                                        "description": "Enable ACL for the dataset.",
+                                                        "schema": {
+                                                            "type": "boolean",
+                                                            "hidden": true,
+                                                            "default": false
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "datasetName",
+                                                        "label": "Dataset Name",
+                                                        "description": "The name of the dataset to use for storage.",
+                                                        "schema": {
+                                                            "type": "string",
+                                                            "required": true,
+                                                            "immutable": true,
+                                                            "hidden": true,
+                                                            "default": "mariadbBackup"
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "aclEntries",
+                                                        "label": "ACL Configuration",
+                                                        "schema": {
+                                                            "type": "dict",
+                                                            "show_if": [
+                                                                [
+                                                                    "aclEnable",
+                                                                    "=",
+                                                                    true
+                                                                ]
+                                                            ],
+                                                            "attrs": []
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "variable": "hostPathConfig",
+                                            "label": "Host Path Configuration",
+                                            "schema": {
+                                                "type": "dict",
+                                                "show_if": [
+                                                    [
+                                                        "type",
+                                                        "=",
+                                                        "hostPath"
+                                                    ]
+                                                ],
+                                                "attrs": [
+                                                    {
+                                                        "variable": "aclEnable",
+                                                        "label": "Enable ACL",
+                                                        "description": "Enable ACL for the dataset.",
+                                                        "schema": {
+                                                            "type": "boolean",
+                                                            "hidden": true,
+                                                            "default": false
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "acl",
+                                                        "label": "ACL Configuration",
+                                                        "schema": {
+                                                            "type": "dict",
+                                                            "show_if": [
+                                                                [
+                                                                    "aclEnable",
+                                                                    "=",
+                                                                    true
+                                                                ]
+                                                            ],
+                                                            "attrs": [],
+                                                            "$ref": [
+                                                                "normalize/acl"
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "hostPath",
+                                                        "label": "Host Path",
+                                                        "description": "The host path to use for storage.",
+                                                        "schema": {
+                                                            "type": "hostpath",
+                                                            "show_if": [
+                                                                [
+                                                                    "aclEnable",
+                                                                    "=",
+                                                                    false
+                                                                ]
+                                                            ],
+                                                            "required": true
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "variable": "additionalStorages",
+                                "label": "Additional Storage",
+                                "description": "Additional storage for Nextcloud.",
+                                "schema": {
+                                    "type": "list",
+                                    "default": [],
+                                    "items": [
+                                        {
+                                            "variable": "storageEntry",
+                                            "label": "Storage Entry",
+                                            "schema": {
+                                                "type": "dict",
+                                                "attrs": [
+                                                    {
+                                                        "variable": "type",
+                                                        "label": "Type",
+                                                        "description": "ixVolume: Is dataset created automatically by the system.</br>\nHost Path: Is a path that already exists on the system.</br>\nSMB Share: Is a SMB share that is mounted to a persistent volume claim.\n",
+                                                        "schema": {
+                                                            "type": "string",
+                                                            "required": true,
+                                                            "default": "ixVolume",
+                                                            "immutable": true,
+                                                            "enum": [
+                                                                {
+                                                                    "value": "hostPath",
+                                                                    "description": "Host Path (Path that already exists on the system)"
+                                                                },
+                                                                {
+                                                                    "value": "ixVolume",
+                                                                    "description": "ixVolume (Dataset created automatically by the system)"
+                                                                },
+                                                                {
+                                                                    "value": "smb-pv-pvc",
+                                                                    "description": "SMB Share (Mounts a persistent volume claim to a SMB share)"
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "readOnly",
+                                                        "label": "Read Only",
+                                                        "description": "Mount the volume as read only.",
+                                                        "schema": {
+                                                            "type": "boolean",
+                                                            "default": false
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "mountPath",
+                                                        "label": "Mount Path",
+                                                        "description": "The path inside the container to mount the storage.",
+                                                        "schema": {
+                                                            "type": "path",
+                                                            "required": true
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "hostPathConfig",
+                                                        "label": "Host Path Configuration",
+                                                        "schema": {
+                                                            "type": "dict",
+                                                            "show_if": [
+                                                                [
+                                                                    "type",
+                                                                    "=",
+                                                                    "hostPath"
+                                                                ]
+                                                            ],
+                                                            "attrs": [
+                                                                {
+                                                                    "variable": "aclEnable",
+                                                                    "label": "Enable ACL",
+                                                                    "description": "Enable ACL for the dataset.",
+                                                                    "schema": {
+                                                                        "type": "boolean",
+                                                                        "default": false
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "variable": "acl",
+                                                                    "label": "ACL Configuration",
+                                                                    "schema": {
+                                                                        "type": "dict",
+                                                                        "show_if": [
+                                                                            [
+                                                                                "aclEnable",
+                                                                                "=",
+                                                                                true
+                                                                            ]
+                                                                        ],
+                                                                        "attrs": [],
+                                                                        "$ref": [
+                                                                            "normalize/acl"
+                                                                        ]
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "variable": "hostPath",
+                                                                    "label": "Host Path",
+                                                                    "description": "The host path to use for storage.",
+                                                                    "schema": {
+                                                                        "type": "hostpath",
+                                                                        "show_if": [
+                                                                            [
+                                                                                "aclEnable",
+                                                                                "=",
+                                                                                false
+                                                                            ]
+                                                                        ],
+                                                                        "required": true
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "ixVolumeConfig",
+                                                        "label": "ixVolume Configuration",
+                                                        "description": "The configuration for the ixVolume dataset.",
+                                                        "schema": {
+                                                            "type": "dict",
+                                                            "show_if": [
+                                                                [
+                                                                    "type",
+                                                                    "=",
+                                                                    "ixVolume"
+                                                                ]
+                                                            ],
+                                                            "$ref": [
+                                                                "normalize/ixVolume"
+                                                            ],
+                                                            "attrs": [
+                                                                {
+                                                                    "variable": "aclEnable",
+                                                                    "label": "Enable ACL",
+                                                                    "description": "Enable ACL for the dataset.",
+                                                                    "schema": {
+                                                                        "type": "boolean",
+                                                                        "default": false
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "variable": "datasetName",
+                                                                    "label": "Dataset Name",
+                                                                    "description": "The name of the dataset to use for storage.",
+                                                                    "schema": {
+                                                                        "type": "string",
+                                                                        "required": true,
+                                                                        "immutable": true,
+                                                                        "default": "storage_entry"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "variable": "aclEntries",
+                                                                    "label": "ACL Configuration",
+                                                                    "schema": {
+                                                                        "type": "dict",
+                                                                        "show_if": [
+                                                                            [
+                                                                                "aclEnable",
+                                                                                "=",
+                                                                                true
+                                                                            ]
+                                                                        ],
+                                                                        "attrs": []
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "smbConfig",
+                                                        "label": "SMB Share Configuration",
+                                                        "description": "The configuration for the SMB Share.",
+                                                        "schema": {
+                                                            "type": "dict",
+                                                            "show_if": [
+                                                                [
+                                                                    "type",
+                                                                    "=",
+                                                                    "smb-pv-pvc"
+                                                                ]
+                                                            ],
+                                                            "attrs": [
+                                                                {
+                                                                    "variable": "server",
+                                                                    "label": "Server",
+                                                                    "description": "The server for the SMB share.",
+                                                                    "schema": {
+                                                                        "type": "string",
+                                                                        "required": true
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "variable": "share",
+                                                                    "label": "Share",
+                                                                    "description": "The share name for the SMB share.",
+                                                                    "schema": {
+                                                                        "type": "string",
+                                                                        "required": true
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "variable": "domain",
+                                                                    "label": "Domain (Optional)",
+                                                                    "description": "The domain for the SMB share.",
+                                                                    "schema": {
+                                                                        "type": "string"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "variable": "username",
+                                                                    "label": "Username",
+                                                                    "description": "The username for the SMB share.",
+                                                                    "schema": {
+                                                                        "type": "string",
+                                                                        "required": true
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "variable": "password",
+                                                                    "label": "Password",
+                                                                    "description": "The password for the SMB share.",
+                                                                    "schema": {
+                                                                        "type": "string",
+                                                                        "required": true,
+                                                                        "private": true
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "variable": "size",
+                                                                    "label": "Size (in Gi)",
+                                                                    "description": "The size of the volume quota.",
+                                                                    "schema": {
+                                                                        "type": "int",
+                                                                        "required": true,
+                                                                        "min": 1,
+                                                                        "default": 1
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "variable": "resources",
+                    "label": "",
+                    "group": "Resources Configuration",
+                    "schema": {
+                        "type": "dict",
+                        "attrs": [
+                            {
+                                "variable": "limits",
+                                "label": "Limits",
+                                "schema": {
+                                    "type": "dict",
+                                    "attrs": [
+                                        {
+                                            "variable": "cpu",
+                                            "label": "CPU",
+                                            "description": "CPU limit for Nextcloud.",
+                                            "schema": {
+                                                "type": "string",
+                                                "max_length": 6,
+                                                "valid_chars": "^(0\\.[1-9]|[1-9][0-9]*)(\\.[0-9]|m?)$",
+                                                "valid_chars_error": "Valid CPU limit formats are</br>\n- Plain Integer - eg. 1</br>\n- Float - eg. 0.5</br>\n- Milicpu - eg. 500m\n",
+                                                "default": "4000m",
+                                                "required": true
+                                            }
+                                        },
+                                        {
+                                            "variable": "memory",
+                                            "label": "Memory",
+                                            "description": "Memory limit for Nextcloud.",
+                                            "schema": {
+                                                "type": "string",
+                                                "max_length": 12,
+                                                "valid_chars": "^[1-9][0-9]*([EPTGMK]i?|e[0-9]+)?$",
+                                                "valid_chars_error": "Valid Memory limit formats are</br>\n- Suffixed with E/P/T/G/M/K - eg. 1G</br>\n- Suffixed with Ei/Pi/Ti/Gi/Mi/Ki - eg. 1Gi</br>\n- Plain Integer in bytes - eg. 1024</br>\n- Exponent - eg. 134e6\n",
+                                                "default": "8Gi",
+                                                "required": true
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "app_readme": "<h1>nextcloud</h1>\n<p><a href=\"https://nextcloud.com/\">nextcloud</a> is a file sharing server that puts the control and security of your own data back into your hands.</p>",
+        "detailed_readme": "<h1>nextcloud</h1>\n<p><a href=\"https://nextcloud.com/\">nextcloud</a> is a file sharing server that puts the control and security of your own data back into your hands.</p>\n<h2>Introduction</h2>\n<p>This chart bootstraps an <a href=\"https://hub.docker.com/_/nextcloud/\">nextcloud</a> deployment on a <a href=\"http://kubernetes.io\">Kubernetes</a> cluster using the <a href=\"https://helm.sh\">Helm</a> package manager.</p>\n<h2>Configuration</h2>\n<p>Please refer to questions.yaml for a detailed overview on supported configurable values.</p>",
+        "changelog": null
+    }
+}

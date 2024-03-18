@@ -1,0 +1,4 @@
+image:
+  repository: linuxserver/nextcloud
+  pullPolicy: IfNotPresent
+  tag: latest                                                                                           

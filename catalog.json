@@ -350,5 +350,48 @@
       ],
       "icon_url": "https://alist.nn.ci/logo.svg"
     }
+  },
+  "community": {
+    "nextcloud": {
+      "app_readme": "<h1>nextcloud</h1>\n<p><a href=\"https://nextcloud.com/\">nextcloud</a> is a file sharing server that puts the control and security of your own data back into your hands.</p>",
+      "categories": [
+        "productivity"
+      ],
+      "description": "A file sharing server that puts the control and security of your own data back into your hands.",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://nextcloud.com/",
+      "location": "/__w/charts/charts/community/nextcloud",
+      "latest_version": "1.2.4",
+      "latest_app_version": "28.0.3",
+      "latest_human_version": "28.0.3_1.2.4",
+      "last_update": "2024-03-11 12:18:44",
+      "name": "nextcloud",
+      "recommended": false,
+      "title": "Nextcloud",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [
+        "nextcloud",
+        "storage",
+        "sync"
+      ],
+      "screenshots": [
+        "https://media.sys.truenas.net/apps/nextcloud/screenshots/screenshot1.png",
+        "https://media.sys.truenas.net/apps/nextcloud/screenshots/screenshot2.png",
+        "https://media.sys.truenas.net/apps/nextcloud/screenshots/screenshot3.png"
+      ],
+      "sources": [
+        "https://github.com/nextcloud/docker",
+        "https://github.com/nextcloud/helm",
+        "https://github.com/truenas/charts/tree/master/charts/nextcloud"
+      ],
+      "icon_url": "https://media.sys.truenas.net/apps/nextcloud/icons/icon.svg"
+    }
   }
 }

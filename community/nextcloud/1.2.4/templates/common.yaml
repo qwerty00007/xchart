@@ -1,0 +1,12 @@
+{{- include "ix.v1.common.loader.init" . -}}
+
+{{/* Merge the templates with Values */}}
+{{- $_ := mustMergeOverwrite .Values (include "nextcloud.configuration" $ | fromYaml) -}}
+{{- $_ := mustMergeOverwrite .Values (include "nextcloud.persistence" $ | fromYaml) -}}
+{{- $_ := mustMergeOverwrite .Values (include "nextcloud.service" $ | fromYaml) -}}
+{{- $_ := mustMergeOverwrite .Values (include "nextcloud.workload" $ | fromYaml) -}}
+{{- $_ := mustMergeOverwrite .Values (include "nextcloud.mariadb.workload" $ | fromYaml) -}}
+
+{{/* Create the configmap for portal manually*/}}
+{{- include "nextcloud.portal" $ -}}
+{{- include "ix.v1.common.loader.apply" . -}}
