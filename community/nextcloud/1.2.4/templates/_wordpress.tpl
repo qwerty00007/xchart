@@ -35,11 +35,20 @@ workload:
           {{ end }}
           probes:
             liveness:
-              enabled: false
+              enabled: true
+              type: http
+              port: 80
+              path: /status.php
             readiness:
-              enabled: false
+              enabled: true
+              type: http
+              port: 80
+              path: /status.php
             startup:
-              enabled: false
+              enabled: true
+              type: http
+              port: 80
+              path: /status.php
       initContainers:
       {{- include "ix.v1.common.app.permissions" (dict "containerName" "01-permissions"
                                                         "UID" .Values.nextcloudConfig.ownerUID
