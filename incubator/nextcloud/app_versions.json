@@ -1,0 +1,625 @@
+{
+    "1.6.58": {
+        "healthy": true,
+        "supported": true,
+        "healthy_error": null,
+        "location": "/__w/charts/charts/charts/nextcloud/1.6.58",
+        "last_update": "2024-03-18 11:31:26",
+        "required_features": [
+            "normalize/ixVolume",
+            "definitions/nodeIP",
+            "definitions/certificate"
+        ],
+        "human_version": "28.0.3_1.6.58",
+        "version": "1.6.58",
+        "chart_metadata": {
+            "name": "nextcloud",
+            "description": "A file sharing server that puts the control and security of your own data back into your hands.",
+            "annotations": {
+                "title": "Nextcloud"
+            },
+            "type": "application",
+            "version": "1.6.58",
+            "apiVersion": "v2",
+            "appVersion": "28.0.3",
+            "kubeVersion": ">=1.16.0-0",
+            "maintainers": [
+                {
+                    "name": "truenas",
+                    "url": "https://www.truenas.com/",
+                    "email": "dev@ixsystems.com"
+                }
+            ],
+            "dependencies": [
+                {
+                    "name": "common",
+                    "repository": "file://../../../common/2304.0.1",
+                    "version": "2304.0.1"
+                }
+            ],
+            "home": "https://nextcloud.com/",
+            "icon": "https://media.sys.truenas.net/apps/nextcloud/icons/icon.svg",
+            "sources": [
+                "https://github.com/nextcloud/docker",
+                "https://github.com/nextcloud/helm",
+                "https://github.com/truenas/charts/tree/master/charts/nextcloud"
+            ],
+            "keywords": [
+                "nextcloud",
+                "storage",
+                "http",
+                "web",
+                "php"
+            ]
+        },
+        "app_metadata": null,
+        "schema": {
+            "groups": [
+                {
+                    "name": "Nextcloud Configuration",
+                    "description": "Configuration details for Nextcloud workload"
+                },
+                {
+                    "name": "UID/GID configuration",
+                    "description": "Configure UID/GID for nextcloud and mariadb"
+                },
+                {
+                    "name": "Storage",
+                    "description": "Configure Storage for Nextcloud and Mariadb"
+                },
+                {
+                    "name": "Mariadb Configuration",
+                    "description": "Configure Mariadb for nextcloud"
+                },
+                {
+                    "name": "Ingress",
+                    "description": "Ingress Configuration for Nextcloud"
+                },
+                {
+                    "name": "Scaling/Upgrade Policy",
+                    "description": "Configure how pods are replaced when configuration is upgraded"
+                },
+                {
+                    "name": "Advanced DNS Settings",
+                    "description": "Configure DNS settings"
+                },
+                {
+                    "name": "Resource Limits",
+                    "description": "Set CPU/memory limits for Kubernetes Pod"
+                }
+            ],
+            "portals": {
+                "web_portal": {
+                    "protocols": [
+                        "$kubernetes-resource_configmap_portal_protocol"
+                    ],
+                    "host": [
+                        "$kubernetes-resource_configmap_portal_host"
+                    ],
+                    "ports": [
+                        "$kubernetes-resource_configmap_portal_port"
+                    ],
+                    "path": "$kubernetes-resource_configmap_portal_path"
+                }
+            },
+            "questions": [
+                {
+                    "variable": "ownerUID",
+                    "label": "Owner User ID",
+                    "group": "UID/GID configuration",
+                    "schema": {
+                        "type": "int",
+                        "default": 1000,
+                        "min": 1,
+                        "max": 65535
+                    }
+                },
+                {
+                    "variable": "ownerGID",
+                    "label": "Owner Group ID",
+                    "group": "UID/GID configuration",
+                    "schema": {
+                        "type": "int",
+                        "default": 1000,
+                        "min": 1,
+                        "max": 65535
+                    }
+                },
+                {
+                    "variable": "dbUser",
+                    "label": "Maria DB User",
+                    "group": "Mariadb Configuration",
+                    "schema": {
+                        "type": "string",
+                        "required": true,
+                        "default": "nextcloud"
+                    }
+                },
+                {
+                    "variable": "dbName",
+                    "label": "Maria DB Name",
+                    "group": "Mariadb Configuration",
+                    "schema": {
+                        "type": "string",
+                        "required": true,
+                        "default": "nextcloud"
+                    }
+                },
+                {
+                    "variable": "dbPass",
+                    "label": "Maria DB User Pass",
+                    "group": "Mariadb Configuration",
+                    "schema": {
+                        "type": "string",
+                        "required": true,
+                        "default": "changeme"
+                    }
+                },
+                {
+                    "variable": "dbRootPass",
+                    "label": "Maria DB Root Pass",
+                    "group": "Mariadb Configuration",
+                    "schema": {
+                        "type": "string",
+                        "required": true,
+                        "default": "changeme"
+                    }
+                },
+                {
+                    "variable": "ingressEnabled",
+                    "group": "Ingress",
+                    "label": "Enable Ingress",
+                    "description": "config ingress, you must install traefik first",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "show_subquestions_if": true,
+                        "subquestions": [
+                            {
+                                "variable": "certificate",
+                                "label": "Certificate Configuration",
+                                "schema": {
+                                    "type": "int",
+                                    "$ref": [
+                                        "definitions/certificate"
+                                    ]
+                                }
+                            },
+                            {
+                                "variable": "host",
+                                "label": "HostName",
+                                "schema": {
+                                    "type": "string",
+                                    "default": "test.test.org",
+                                    "required": true
+                                }
+                            },
+                            {
+                                "variable": "path",
+                                "label": "Path",
+                                "schema": {
+                                    "type": "string",
+                                    "required": true,
+                                    "default": "/"
+                                }
+                            },
+                            {
+                                "variable": "pathType",
+                                "label": "Path Type",
+                                "schema": {
+                                    "type": "string",
+                                    "required": true,
+                                    "default": "Prefix"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "variable": "updateStrategy",
+                    "description": "Upgrade Policy",
+                    "label": "Update Strategy",
+                    "group": "Scaling/Upgrade Policy",
+                    "schema": {
+                        "type": "string",
+                        "default": "Recreate",
+                        "enum": [
+                            {
+                                "value": "RollingUpdate",
+                                "description": "Create new pods and then kill old ones"
+                            },
+                            {
+                                "value": "Recreate",
+                                "description": "Kill existing pods before creating new ones"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "variable": "service",
+                    "description": "Nextcloud Service Configuration",
+                    "label": "Nextcloud Service Configuration",
+                    "group": "Nextcloud Configuration",
+                    "schema": {
+                        "type": "dict",
+                        "required": true,
+                        "attrs": [
+                            {
+                                "variable": "nodePort",
+                                "label": "Node Port to use for Nextcloud",
+                                "schema": {
+                                    "type": "int",
+                                    "min": 9000,
+                                    "max": 65535,
+                                    "default": 9001,
+                                    "required": true
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "variable": "appVolumeMounts",
+                    "label": "Nextcloud Storage",
+                    "group": "Storage",
+                    "schema": {
+                        "type": "dict",
+                        "attrs": [
+                            {
+                                "variable": "nextcloud-data",
+                                "label": "Nextcloud Data Volume",
+                                "schema": {
+                                    "type": "dict",
+                                    "attrs": [
+                                        {
+                                            "variable": "datasetName",
+                                            "label": "Nextcloud Data Volume Name",
+                                            "schema": {
+                                                "type": "string",
+                                                "hidden": true,
+                                                "$ref": [
+                                                    "normalize/ixVolume"
+                                                ],
+                                                "show_if": [
+                                                    [
+                                                        "hostPathEnabled",
+                                                        "=",
+                                                        false
+                                                    ]
+                                                ],
+                                                "default": "ix-nextcloud_data",
+                                                "editable": false
+                                            }
+                                        },
+                                        {
+                                            "variable": "mountPath",
+                                            "label": "Nextcloud Data Mount Path",
+                                            "description": "Path where the volume will be mounted inside the pod",
+                                            "schema": {
+                                                "type": "path",
+                                                "hidden": true,
+                                                "editable": false,
+                                                "default": "/data"
+                                            }
+                                        },
+                                        {
+                                            "variable": "hostPathEnabled",
+                                            "label": "Enable Host Path for Nextcloud Data Volume",
+                                            "schema": {
+                                                "type": "boolean",
+                                                "default": false,
+                                                "show_subquestions_if": true,
+                                                "subquestions": [
+                                                    {
+                                                        "variable": "hostPath",
+                                                        "label": "Host Path for Nextcloud Data Volume",
+                                                        "schema": {
+                                                            "type": "hostpath",
+                                                            "required": true
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "variable": "nextcloud-config",
+                                "label": "Nextcloud Config Volume",
+                                "schema": {
+                                    "type": "dict",
+                                    "attrs": [
+                                        {
+                                            "variable": "datasetName",
+                                            "label": "Nextcloud Config Volume Name",
+                                            "schema": {
+                                                "type": "string",
+                                                "hidden": true,
+                                                "$ref": [
+                                                    "normalize/ixVolume"
+                                                ],
+                                                "show_if": [
+                                                    [
+                                                        "hostPathEnabled",
+                                                        "=",
+                                                        false
+                                                    ]
+                                                ],
+                                                "default": "ix-nextcloud_config",
+                                                "editable": false
+                                            }
+                                        },
+                                        {
+                                            "variable": "mountPath",
+                                            "label": "Nextcloud Config Mount Path",
+                                            "description": "Path where the volume will be mounted inside the pod",
+                                            "schema": {
+                                                "type": "path",
+                                                "hidden": true,
+                                                "editable": false,
+                                                "default": "/config"
+                                            }
+                                        },
+                                        {
+                                            "variable": "hostPathEnabled",
+                                            "label": "Enable Host Path for Nextcloud Config Volume",
+                                            "schema": {
+                                                "type": "boolean",
+                                                "default": false,
+                                                "show_subquestions_if": true,
+                                                "subquestions": [
+                                                    {
+                                                        "variable": "hostPath",
+                                                        "label": "Host Path for Nextcloud Config Volume",
+                                                        "schema": {
+                                                            "type": "hostpath",
+                                                            "required": true
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "variable": "extraAppVolumeMounts",
+                    "label": "Nextcloud Extra Host Path Volumes",
+                    "group": "Storage",
+                    "schema": {
+                        "type": "list",
+                        "items": [
+                            {
+                                "variable": "extraAppVolume",
+                                "label": "Nextcloud Host Path Volume",
+                                "description": "Add an extra host path volume for nextcloud application",
+                                "schema": {
+                                    "type": "dict",
+                                    "attrs": [
+                                        {
+                                            "variable": "mountPath",
+                                            "label": "Mount Path in Pod",
+                                            "description": "Path where the volume will be mounted inside the pod",
+                                            "schema": {
+                                                "type": "path",
+                                                "required": true
+                                            }
+                                        },
+                                        {
+                                            "variable": "hostPath",
+                                            "label": "Host Path",
+                                            "description": "Host path",
+                                            "schema": {
+                                                "type": "hostpath",
+                                                "required": true
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "variable": "mariadbAppVolumeMounts",
+                    "label": "Mariadb Storage",
+                    "group": "Storage",
+                    "schema": {
+                        "type": "dict",
+                        "attrs": [
+                            {
+                                "variable": "mariadb-config",
+                                "label": "Mariadb Config Volume",
+                                "schema": {
+                                    "type": "dict",
+                                    "attrs": [
+                                        {
+                                            "variable": "datasetName",
+                                            "label": "Mariadb Config Volume Name",
+                                            "schema": {
+                                                "type": "string",
+                                                "hidden": true,
+                                                "$ref": [
+                                                    "normalize/ixVolume"
+                                                ],
+                                                "default": "ix-mariadb_config",
+                                                "show_if": [
+                                                    [
+                                                        "hostPathEnabled",
+                                                        "=",
+                                                        false
+                                                    ]
+                                                ],
+                                                "editable": false
+                                            }
+                                        },
+                                        {
+                                            "variable": "mountPath",
+                                            "label": "Mariadb Backup Mount Path",
+                                            "description": "Path where the volume will be mounted inside the pod",
+                                            "schema": {
+                                                "type": "path",
+                                                "hidden": true,
+                                                "editable": false,
+                                                "default": "/config"
+                                            }
+                                        },
+                                        {
+                                            "variable": "hostPathEnabled",
+                                            "label": "Enable Host Path for Mariadb Backup Volume",
+                                            "schema": {
+                                                "type": "boolean",
+                                                "default": false,
+                                                "show_subquestions_if": true,
+                                                "subquestions": [
+                                                    {
+                                                        "variable": "hostPath",
+                                                        "label": "Host Path for Mariadb Config Volume",
+                                                        "schema": {
+                                                            "type": "hostpath",
+                                                            "required": true
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "variable": "environmentVariables",
+                    "label": "Nextcloud environment",
+                    "group": "Nextcloud Configuration",
+                    "schema": {
+                        "type": "list",
+                        "default": [],
+                        "items": [
+                            {
+                                "variable": "environmentVariable",
+                                "label": "Environment Variable",
+                                "schema": {
+                                    "type": "dict",
+                                    "attrs": [
+                                        {
+                                            "variable": "name",
+                                            "label": "Name",
+                                            "schema": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        {
+                                            "variable": "value",
+                                            "label": "Value",
+                                            "schema": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "variable": "dnsConfig",
+                    "label": "DNS Configuration",
+                    "group": "Advanced DNS Settings",
+                    "schema": {
+                        "type": "dict",
+                        "attrs": [
+                            {
+                                "variable": "options",
+                                "label": "DNS Options",
+                                "schema": {
+                                    "type": "list",
+                                    "items": [
+                                        {
+                                            "variable": "optionsEntry",
+                                            "label": "Option Entry Configuration",
+                                            "schema": {
+                                                "type": "dict",
+                                                "attrs": [
+                                                    {
+                                                        "variable": "name",
+                                                        "label": "Option Name",
+                                                        "schema": {
+                                                            "type": "string",
+                                                            "required": true
+                                                        }
+                                                    },
+                                                    {
+                                                        "variable": "value",
+                                                        "label": "Option Value",
+                                                        "schema": {
+                                                            "type": "string",
+                                                            "required": true
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "variable": "enableResourceLimits",
+                    "label": "Enable Pod resource limits",
+                    "group": "Resource Limits",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false
+                    }
+                },
+                {
+                    "variable": "cpuLimit",
+                    "label": "CPU Limit",
+                    "description": "CPU resource limit allow  plain integer values with suffix m(milli) e.g 1000m, 100.",
+                    "group": "Resource Limits",
+                    "schema": {
+                        "type": "string",
+                        "show_if": [
+                            [
+                                "enableResourceLimits",
+                                "=",
+                                true
+                            ]
+                        ],
+                        "valid_chars": "^\\d+(?:\\.\\d+(?!.*m$)|m?$)",
+                        "default": "4000m"
+                    }
+                },
+                {
+                    "variable": "memLimit",
+                    "label": "Memory Limit",
+                    "group": "Resource Limits",
+                    "description": "Memory limits is specified by number of bytes. Followed by quantity suffix like E,P,T,G,M,k and Ei,Pi,Ti,Mi,Gi,Ki can also be used. e.g 129e6, 129M,  128974848000m, 123Mi",
+                    "schema": {
+                        "type": "string",
+                        "show_if": [
+                            [
+                                "enableResourceLimits",
+                                "=",
+                                true
+                            ]
+                        ],
+                        "valid_chars": "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$",
+                        "default": "8Gi"
+                    }
+                }
+            ]
+        },
+        "app_readme": "<h1>nextcloud</h1>\n<p><a href=\"https://nextcloud.com/\">nextcloud</a> is a file sharing server that puts the control and security of your own data back into your hands.</p>",
+        "detailed_readme": "<h1>nextcloud</h1>\n<p><a href=\"https://nextcloud.com/\">nextcloud</a> is a file sharing server that puts the control and security of your own data back into your hands.</p>\n<h2>Introduction</h2>\n<p>This chart bootstraps an <a href=\"https://hub.docker.com/_/nextcloud/\">nextcloud</a> deployment on a <a href=\"http://kubernetes.io\">Kubernetes</a> cluster using the <a href=\"https://helm.sh\">Helm</a> package manager.</p>\n<h2>Configuration</h2>\n<p>Please refer to questions.yaml for a detailed overview on supported configurable values.</p>",
+        "changelog": null
+    }
+}
