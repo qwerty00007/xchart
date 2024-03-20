@@ -43,7 +43,7 @@ spec:
               mountPath: {{ $hostPathConfiguration.mountPath }}
           {{ end }}
           ports:
-            - name: web
+            - name: http
               containerPort: 80
           livenessProbe:
             httpGet:
