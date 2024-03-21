@@ -1,6 +1,8 @@
 groups:
   - name: "Storage"
     description: "Configure Storage for Lucky"
+  - name: "Certificate"
+    description: "Configure Certificate for Lucky"
   - name: "Resource Limits"
     description: "Set CPU/memory limits for Kubernetes Pod"
 
@@ -56,6 +58,12 @@ questions:
                       schema:
                         type: hostpath
                         required: true
+  - variable: certificate
+    label: Certificate Configuration
+    schema:
+      type: int
+      $ref:
+        - "definitions/certificate" 
   - variable: enableResourceLimits
     label: "Enable Pod resource limits"
     group: "Resource Limits"

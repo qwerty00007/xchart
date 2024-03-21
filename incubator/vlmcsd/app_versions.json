@@ -54,6 +54,10 @@
           "description": "Configure Storage for Lucky"
         },
         {
+          "name": "Certificate",
+          "description": "Configure Certificate for Lucky"
+        },
+        {
           "name": "Resource Limits",
           "description": "Set CPU/memory limits for Kubernetes Pod"
         }
@@ -139,6 +143,16 @@
                   ]
                 }
               }
+            ]
+          }
+        },
+        {
+          "variable": "certificate",
+          "label": "Certificate Configuration",
+          "schema": {
+            "type": "int",
+            "$ref": [
+              "definitions/certificate"
             ]
           }
         },

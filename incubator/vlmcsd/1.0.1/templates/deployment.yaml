@@ -33,7 +33,9 @@ spec:
           {{ include "common.resources.limitation" . | nindent 10 }}
           {{ include "common.containers.imageConfig" .Values.image | nindent 10 }}
           volumeMounts: {{ include "common.storage.configureAppVolumeMountsInContainer" .Values | nindent 12 }}
+          {{- include "lucky.tlsKeysVolumeMount" . | nindent 12 }}
           ports:
             - name: web
               containerPort: 16601
       volumes: {{ include "common.storage.configureAppVolumes" .Values | nindent 8 }}
+      {{- include "lucky.tlsKeysVolume" . | nindent 8 }}
