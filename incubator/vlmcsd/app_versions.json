@@ -149,6 +149,7 @@
         {
           "variable": "certificate",
           "label": "Certificate Configuration",
+          "group": "Certificate",
           "schema": {
             "type": "int",
             "$ref": [
