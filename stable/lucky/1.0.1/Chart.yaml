@@ -1,0 +1,13 @@
+apiVersion: v2
+appVersion: 2.8.0
+dependencies:
+- name: common
+  repository: file://../../../library/common/2304.0.1
+  version: 2304.0.1
+description: 家用软硬路由公网利器
+home: https://lucky666.cn/
+icon: https://lucky666.cn/img/logo.svg
+keywords:
+- tools
+name: lucky
+version: 1.0.1

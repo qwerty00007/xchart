@@ -60,6 +60,7 @@ questions:
                         required: true
   - variable: certificate
     label: Certificate Configuration
+    description: "mount path: cert: /etc/lucky/certs/public.crt, key: /etc/lucky/certs/private.key"
     group: "Certificate"
     schema:
       type: int
