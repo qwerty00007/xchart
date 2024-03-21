@@ -349,6 +349,39 @@
         "https://github.com/alist-org/alist"
       ],
       "icon_url": "https://alist.nn.ci/logo.svg"
+    },
+    "lucky": {
+      "app_readme": "<h1>lucky</h1>\n<p>家用软硬路由公网利器</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "lucky",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "cn",
+      "location": "/__w/xhcart/xchart/stable/lucky",
+      "latest_version": "1.0.1",
+      "latest_app_version": "2.8.0",
+      "latest_human_version": "2.8.0_1.0.1",
+      "last_update": "2024-03-21 21:52:07",
+      "name": "lucky",
+      "recommended": false,
+      "title": "lucky",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://lucky666.cn",
+        "https://github.com/gdy666/lucky"
+      ],
+      "icon_url": "https://lucky666.cn/img/logo.svg"
     }
   },
   "community": {
@@ -392,39 +425,6 @@
         "https://github.com/truenas/charts/tree/master/charts/nextcloud"
       ],
       "icon_url": "https://media.sys.truenas.net/apps/nextcloud/icons/icon.svg"
-    },
-    "lucky": {
-      "app_readme": "<h1>lucky</h1>\n<p>家用软硬路由公网利器</p>",
-      "categories": [
-        "networking",
-        "Tools-Utilities"
-      ],
-      "description": "lucky",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "cn",
-      "location": "/__w/xhcart/xchart/stable/lucky",
-      "latest_version": "1.0.1",
-      "latest_app_version": "2.8.0",
-      "latest_human_version": "2.8.0_1.0.1",
-      "last_update": "2024-03-21 21:52:07",
-      "name": "lucky",
-      "recommended": false,
-      "title": "lucky",
-      "maintainers": [
-        {
-          "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://lucky666.cn",
-        "https://github.com/gdy666/lucky"
-      ],
-      "icon_url": "https://lucky666.cn/img/logo.svg"
     }
   },
   "incubator": {
