@@ -435,6 +435,38 @@
         "https://github.com/truenas/charts/tree/master/charts/nextcloud"
       ],
       "icon_url": "https://media.sys.truenas.net/apps/nextcloud/icons/icon.svg"
+    },
+    "vlmcsd": {
+      "app_readme": "<h1>vlmcsd</h1>\n<p>KMS server</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "vlmcsd",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://hub.docker.com/r/mogeko/vlmcsd",
+      "location": "/__w/xhcart/xchart/stable/vlmcsd",
+      "latest_version": "1.0.1",
+      "latest_app_version": "2022.01.16",
+      "latest_human_version": "2022.01.16_1.0.1",
+      "last_update": "2023-08-25 13:33:23",
+      "name": "vlmcsd",
+      "recommended": false,
+      "title": "vlmcsd",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/Wind4/vlmcsd"
+      ],
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/vlmcsd-kms-server.png"
     }
   }
 }

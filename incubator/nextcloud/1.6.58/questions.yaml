@@ -136,7 +136,7 @@ questions:
             type: int
             min: 9000
             max: 65535
-            default: 9001
+            default: 16601
             required: true
 
   - variable: appVolumeMounts

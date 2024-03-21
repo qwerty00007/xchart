@@ -1,0 +1,82 @@
+groups:
+  - name: "Storage"
+    description: "Configure Storage for Lucky"
+  - name: "Resource Limits"
+    description: "Set CPU/memory limits for Kubernetes Pod"
+
+portals:
+  web_portal:
+    protocols:
+      - "$kubernetes-resource_configmap_portal_protocol"
+    host:
+      - "$kubernetes-resource_configmap_portal_host"
+    ports:
+      - "$kubernetes-resource_configmap_portal_port"
+    path: "$kubernetes-resource_configmap_portal_path"
+
+questions:
+  - variable: appVolumeMounts
+    label: "Lucky Storage"
+    group: "Storage"
+    schema:
+      type: dict
+      attrs:
+        - variable: lucky-data
+          label: "Lucky Data Volume"
+          schema:
+            type: dict
+            attrs:
+              - variable: datasetName
+                label: "Lucky Data Volume Name"
+                schema:
+                  type: string
+                  hidden: true
+                  $ref:
+                    - "normalize/ixVolume"
+                  show_if: [["hostPathEnabled", "=", false]]
+                  default: "ix-lucky_data"
+                  editable: false
+              - variable: mountPath
+                label: "Lucky Data Mount Path"
+                description: "Path where the volume will be mounted inside the pod"
+                schema:
+                  type: path
+                  hidden: true
+                  editable: false
+                  default: "/goodluck"
+              - variable: hostPathEnabled
+                label: "Enable Host Path for Lucky Data Volume"
+                schema:
+                  type: boolean
+                  default: false
+                  show_subquestions_if: true
+                  subquestions:
+                    - variable: hostPath
+                      label: "Host Path for Lucky Data Volume"
+                      schema:
+                        type: hostpath
+                        required: true
+  - variable: enableResourceLimits
+    label: "Enable Pod resource limits"
+    group: "Resource Limits"
+    schema:
+      type: boolean
+      default: false
+  - variable: cpuLimit
+    label: "CPU Limresource limitsit"
+    description: "CPU resource limit allow  plain integer values with suffix m(milli) e.g 1000m, 100."
+    group: "Resource Limits"
+    schema:
+      type: string
+      show_if: [["enableResourceLimits", "=", true]]
+      valid_chars: "^\\d+(?:\\.\\d+(?!.*m$)|m?$)"
+      default: "4000m"
+  - variable: memLimit
+    label: "Memory Limit"
+    group: "Resource Limits"
+    description: "Memory limits is specified by number of bytes. Followed by quantity suffix like E,P,T,G,M,k and Ei,Pi,Ti,Mi,Gi,Ki can also be used. e.g 129e6, 129M,  128974848000m, 123Mi"
+    schema:
+      type: string
+      show_if: [["enableResourceLimits", "=", true]]
+      valid_chars: "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$"
+      default: "8Gi"

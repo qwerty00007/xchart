@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: portal
+data:
+  protocol: "http"
+  port: "16601"
+  host: {{ "$node_ip" }}
+  path: "/"
