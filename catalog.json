@@ -394,7 +394,7 @@
       "icon_url": "https://media.sys.truenas.net/apps/nextcloud/icons/icon.svg"
     },
     "lucky": {
-      "app_readme": "<h1>lucky</h1>\n<p>https://lucky666.cn</p>",
+      "app_readme": "<h1>lucky</h1>\n<p>家用软硬路由公网利器</p>",
       "categories": [
         "networking",
         "Tools-Utilities"
