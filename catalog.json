@@ -382,6 +382,39 @@
         "https://github.com/gdy666/lucky"
       ],
       "icon_url": "https://lucky666.cn/img/logo.svg"
+    },
+    "stripcharts": {
+      "app_readme": "<h1>stripcharts</h1>\n<p>筛选 truecharts 中自己需要的应用，重新生成 catalog，减少添加应用库同步的时间</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "stripcharts",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://github.com/qwerty00007/StripCharts",
+      "location": "/__w/xhcart/xchart/stable/stripcharts",
+      "latest_version": "1.0.4",
+      "latest_app_version": "1.0.1",
+      "latest_human_version": "1.0.1_1.0.4",
+      "last_update": "2024-03-21 21:52:07",
+      "name": "stripcharts",
+      "recommended": false,
+      "title": "stripcharts",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/qwerty00007/StripCharts.git",
+        "https://hub.docker.com/r/qwerty00007/stripcharts"
+      ],
+      "icon_url": "https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/stripcharts.jpg"
     }
   },
   "community": {
@@ -468,39 +501,6 @@
         "https://github.com/truenas/charts/tree/master/charts/nextcloud"
       ],
       "icon_url": "https://media.sys.truenas.net/apps/nextcloud/icons/icon.svg"
-    },
-    "stripcharts-gitea": {
-      "app_readme": "<h1>stripcharts-gitea</h1>\n<p>https://stripcharts-gitea666.cn</p>",
-      "categories": [
-        "networking",
-        "Tools-Utilities"
-      ],
-      "description": "stripcharts-gitea",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "cn",
-      "location": "/__w/xhcart/xchart/stable/stripcharts-gitea",
-      "latest_version": "1.0.4",
-      "latest_app_version": "1.0.1",
-      "latest_human_version": "1.0.1_1.0.4",
-      "last_update": "2024-03-21 21:52:07",
-      "name": "stripcharts-gitea",
-      "recommended": false,
-      "title": "stripcharts-gitea",
-      "maintainers": [
-        {
-          "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://stripcharts-gitea666.cn/",
-        "https://github.com/gdy666/stripcharts-gitea"
-      ],
-      "icon_url": "https://stripcharts-gitea666.cn/img/logo.svg"
     }
   }
 }

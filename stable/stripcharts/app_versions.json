@@ -3,7 +3,7 @@
     "healthy": true,
     "supported": false,
     "healthy_error": null,
-    "location": "/__w/xhcart/xchart/incubator/stripcharts-gitea/1.0.4",
+    "location": "/__w/xhcart/xchart/stable/stripcharts/1.0.4",
     "last_update": "2024-03-14 12:30:07",
     "required_features": [
       "definitions/gpuConfiguration",
@@ -37,14 +37,13 @@
           "version": "2207.0.0"
         }
       ],
-      "home": "https://stripcharts.org/",
-      "icon": "https://stripcharts.org/images/logo.svg",
+      "home": "https://github.com/qwerty00007/StripCharts",
+      "icon": "https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/stripcharts.jpg",
       "sources": [
-        "https://hub.docker.com/r/nyanmisaka/stripcharts"
+        "https://hub.docker.com/r/qwerty00007/stripcharts"
       ],
       "keywords": [
-        "stripcharts",
-        "media"
+        "stripcharts"
       ]
     },
     "app_metadata": null,

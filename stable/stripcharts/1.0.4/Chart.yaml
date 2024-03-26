@@ -5,9 +5,9 @@ dependencies:
   repository: file://../../../library/common/2207.0.0
   version: 2207.0.0
 description: 筛选自己需要的应用,重新生成catalog
-home: https://github.com/tuky/StripCharts 
-icon: https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/stripcharts.jpg
+home: https://github.com/qwerty00007/StripCharts 
+icon: https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/stripcharts.jpg
 keywords:
 - media
-name: stripcharts-gitea
+name: stripcharts
 version: 1.0.4
