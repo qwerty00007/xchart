@@ -35,13 +35,7 @@ spec:
           env:
             {{ $envList := (default list .Values.environmentVariables) }}
             {{ $envList = mustAppend $envList (dict "name" "STRIP_STABLE" "value" .Values.STRIP_STABLE) }}
-            {{ $envList = mustAppend $envList (dict "name" "STRIP_SYSTEM" "value" .Values.STRIP_SYSTEM) }}
-            {{ $envList = mustAppend $envList (dict "name" "STRIP_ENTERPRISE" "value" .Values.STRIP_ENTERPRISE) }}
-            {{ $envList = mustAppend $envList (dict "name" "STRIP_OPERATORS" "value" .Values.STRIP_OPERATORS) }}
-            {{ $envList = mustAppend $envList (dict "name" "STRIP_DEPENDENCY" "value" .Values.STRIP_DEPENDENCY) }}
-            {{ $envList = mustAppend $envList (dict "name" "STRIP_PREMIUM" "value" .Values.STRIP_PREMIUM) }}
+            {{ $envList = mustAppend $envList (dict "name" "STRIP_INCUBATOR" "value" .Values.STRIP_INCUBATOR) }}
             {{ $envList = mustAppend $envList (dict "name" "STRIP_REPO" "value" .Values.STRIP_REPO) }}
-            {{ $envList = mustAppend $envList (dict "name" "CATALOG_REPO" "value" .Values.CATALOG_REPO) }} 
-            {{ $envList = mustAppend $envList (dict "name" "USER_EMAIL" "value" .Values.USER_EMAIL) }}
-            {{ $envList = mustAppend $envList (dict "name" "USER_NAME" "value" .Values.USER_NAME) }}            
+            {{ $envList = mustAppend $envList (dict "name" "CATALOG_REPO" "value" .Values.CATALOG_REPO) }}            
             {{ include "common.containers.environmentVariables" (dict "environmentVariables" $envList) | nindent 12 }}
