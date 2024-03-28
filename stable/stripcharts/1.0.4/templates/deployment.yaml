@@ -36,9 +36,6 @@ spec:
             {{ $envList := (default list .Values.environmentVariables) }}
             {{ $envList = mustAppend $envList (dict "name" "STRIP_STABLE" "value" .Values.STRIP_STABLE) }}
             {{ $envList = mustAppend $envList (dict "name" "STRIP_SYSTEM" "value" .Values.STRIP_SYSTEM) }}
-            {{ $envList = mustAppend $envList (dict "name" "STRIP_ENTERPRISE" "value" .Values.STRIP_ENTERPRISE) }}
-            {{ $envList = mustAppend $envList (dict "name" "STRIP_OPERATORS" "value" .Values.STRIP_OPERATORS) }}
-            {{ $envList = mustAppend $envList (dict "name" "STRIP_DEPENDENCY" "value" .Values.STRIP_DEPENDENCY) }}
             {{ $envList = mustAppend $envList (dict "name" "STRIP_PREMIUM" "value" .Values.STRIP_PREMIUM) }}
             {{ $envList = mustAppend $envList (dict "name" "STRIP_REPO" "value" .Values.STRIP_REPO) }}
             {{ $envList = mustAppend $envList (dict "name" "CATALOG_REPO" "value" .Values.CATALOG_REPO) }} 
