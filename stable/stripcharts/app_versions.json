@@ -107,7 +107,7 @@
           "group": "Configuration",
           "schema": {
             "type": "string",
-            "default": "http://nas_ip:port/user/catalog.git"
+            "default": "http://gitea.ix-gitea.svc.cluster.local:30008/user/catalog.git"
           }
         },
         {
@@ -117,7 +117,7 @@
           "group": "Configuration",
           "schema": {
             "type": "string",
-            "default": "http://user:password@nas_ip:port/user/my_striped_charts.git"
+            "default": "http://user:password@gitea.ix-gitea.svc.cluster.local:30008/user/stripecharts.git"
           }
         },
         {
