@@ -66,7 +66,7 @@
           "group": "Configuration",
           "schema": {
             "type": "string",
-            "default": "nextcloud|plex|traefik|cloudflareddns|vaultwarden"
+            "default": "plex|cloudflared|ariang|aria2"
           }
         },
         {
@@ -76,37 +76,7 @@
           "group": "Configuration",
           "schema": {
             "type": "string",
-            "default": "actualserver|breitbandmessung-de"
-          }
-        },
-        {
-          "variable": "STRIP_ENTERPRISE",
-          "label": "ENTERPRISE APPS",
-          "description": "to specify the enterprise apps to grab, e.g. app1|app2|app3",
-          "group": "Configuration",
-          "schema": {
-            "type": "string",
-            "default": "traefix"
-          }
-        },
-        {
-          "variable": "STRIP_DEPENDENCY",
-          "label": "DEPENDENCY APPS",
-          "description": "to specify the dependency apps to grab, e.g. app1|app2|app3",
-          "group": "Configuration",
-          "schema": {
-            "type": "string",
-            "default": ""
-          }
-        },
-        {
-          "variable": "STRIP_OPERATORS",
-          "label": "OPERATORS APPS",
-          "description": "to specify the operators apps to grab, e.g. app1|app2|app3",
-          "group": "Configuration",
-          "schema": {
-            "type": "string",
-            "default": ""
+            "default": "traefik|clusterissuer "
           }
         },
         {
@@ -116,7 +86,7 @@
           "group": "Configuration",
           "schema": {
             "type": "string",
-            "default": ""
+            "default": "kubeapps"
           }
         },
         {
@@ -126,7 +96,7 @@
           "group": "Configuration",
           "schema": {
             "type": "string",
-            "default": "http://nas_ip:10037/user/catalog/archive/main.zip"
+            "default": "http://nas_ip:port/user/catalog.git"
           }
         },
         {
@@ -136,7 +106,7 @@
           "group": "Configuration",
           "schema": {
             "type": "string",
-            "default": "http://user:password@nas_ip:10037/user/my_striped_charts.git"
+            "default": "http://user:password@nas_ip:port/user/my_striped_charts.git"
           }
         },
         {
