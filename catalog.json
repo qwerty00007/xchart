@@ -461,6 +461,39 @@
     }
   },
   "incubator": {
+    "it-tools": {
+      "app_readme": "<h1>it-tools</h1>\n<p>Useful tools for developer and people working in IT</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "it-tools",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://it-tools.tech/",
+      "location": "/__w/xhcart/xchart/incubator/it-tools",
+      "latest_version": "1.0.1",
+      "latest_app_version": "2.8.0",
+      "latest_human_version": "2.8.0_1.0.1",
+      "last_update": "2024-03-21 21:52:07",
+      "name": "it-tools",
+      "recommended": false,
+      "title": "it-tools",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://hub.docker.com/r/corentinth/it-tools",
+        "https://github.com/CorentinTh/it-tools"
+      ],
+      "icon_url": "https://raw.githubusercontent.com/CorentinTh/it-tools/main/public/android-chrome-512x512.png"
+    },
     "nextcloud": {
       "app_readme": "<h1>nextcloud</h1>\n<p><a href=\"https://nextcloud.com/\">nextcloud</a> is a file sharing server that puts the control and security of your own data back into your hands.</p>",
       "categories": [
