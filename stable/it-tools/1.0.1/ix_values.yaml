@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: corentinth/it-tools
+  tag: latest

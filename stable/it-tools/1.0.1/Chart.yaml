@@ -1,0 +1,13 @@
+apiVersion: v2
+appVersion: 2.8.0
+dependencies:
+- name: common
+  repository: file://../../../library/common/2304.0.1
+  version: 2304.0.1
+description: Useful tools for developer and people working in IT
+home: https://it-tools.tech/
+icon: https://raw.githubusercontent.com/CorentinTh/it-tools/main/public/android-chrome-512x512.png
+keywords:
+- tools
+name: it-tools
+version: 1.0.1
