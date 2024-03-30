@@ -128,9 +128,13 @@
               ]
             ],
             "valid_chars": "^([+-]?[0-9.]+)([eEinumkKMGTP]*[-+]?[0-9]*)$",
-            "default": "8Gi",
-            "app_readme": "<h1>it-tools</h1>\n<p>家用软硬路由公网利器</p>",
-            "detailed_readme": "",
-            "changelog": null
+            "default": "8Gi"
           }
         }
+      ]
+    },
+    "app_readme": "<h1>it-tools</h1>\n<p>Useful tools for developer and people working in IT</p>",
+    "detailed_readme": "",
+    "changelog": null
+  }
+}
