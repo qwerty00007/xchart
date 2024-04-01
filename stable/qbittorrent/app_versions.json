@@ -1,17 +1,17 @@
 {
-  "1.0.9": {
+  "1.0.10": {
     "healthy": true,
     "supported": false,
     "healthy_error": null,
-    "location": "/__w/xhcart/xchart/stable/qbittorrent/1.0.9",
-    "last_update": "2024-02-24 21:52:07",
+    "location": "/__w/xhcart/xchart/stable/qbittorrent/1.0.10",
+    "last_update": "2024-04-01 12:20:23",
     "required_features": [
       "definitions/gpuConfiguration",
       "normalize/acl",
       "normalize/ixVolume"
     ],
-    "human_version": "4.5.5_1.0.1",
-    "version": "1.0.9",
+    "human_version": "4.6.4_1.0.1",
+    "version": "1.0.10",
     "chart_metadata": {
       "name": "qbittorrent",
       "description": "a utorrent downloading client.",
@@ -19,9 +19,9 @@
         "title": "qbittorrent"
       },
       "type": "application",
-      "version": "1.0.9",
+      "version": "1.0.10",
       "apiVersion": "v2",
-      "appVersion": "4.5.5",
+      "appVersion": "4.6.4",
       "kubeVersion": ">=1.16.0-0",
       "maintainers": [
         {
