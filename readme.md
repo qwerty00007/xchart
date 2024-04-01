@@ -15,6 +15,11 @@
 - **qbittorrent** bt 下载工具，支持 host 网络模式
 - **transmission** bt 下载工具，支持 host 网络模式
 - **alist** 挂载网盘，支持 host 网络模式
+- **IT tools** Useful tools for developer and people working in IT
+- **lucky** 家用软硬路由公网利器
+- **stripcharts** 筛选你需要的应用推送到自建 gitea 服务器, gitee 或者 github
+
+
 
 ## 增加第三方应用库
 
