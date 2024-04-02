@@ -352,6 +352,38 @@
       ],
       "icon_url": "https://hlink.likun.me/logo.svg"
     },
+    "kube-explorer": {
+      "app_readme": "<h1>kube-explorer</h1>\n<p>kube-explorer is a portable explorer for Kubernetes without any dependency.</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "kube-explorer",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://github.com/cnrancher/kube-explorer",
+      "location": "/__w/xhcart/xchart/test/kube-explorer",
+      "latest_version": "1.0.1",
+      "latest_app_version": "2.8.0",
+      "latest_human_version": "2.8.0_1.0.1",
+      "last_update": "2024-03-21 21:52:07",
+      "name": "kube-explorer",
+      "recommended": false,
+      "title": "kube-explorer",
+      "maintainers": [
+        {
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart",
+          "email": "1165505953@qq.com"
+        }
+      ],
+      "tags": [],
+      "screenshots": [],
+      "sources": [
+        "https://github.com/cnrancher/kube-explorer"
+      ],
+      "icon_url": "https://www.rancher.cn/imgs/rancher-logo-only-color.svg"
+    },
     "alist": {
       "app_readme": "<h1>alist</h1>\n<p>🗂️ 一个支持多种存储的文件列表程序，使用 Gin 和 Solidjs。</p>",
       "categories": [

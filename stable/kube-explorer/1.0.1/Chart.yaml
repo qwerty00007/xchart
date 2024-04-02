@@ -1,0 +1,13 @@
+apiVersion: v2
+appVersion: 2.8.0
+dependencies:
+- name: common
+  repository: file://../../../library/common/2304.0.1
+  version: 2304.0.1
+description: kube-explorer is a portable explorer for Kubernetes without any dependency.
+home: https://github.com/cnrancher/kube-explorer
+icon: https://www.rancher.cn/imgs/rancher-logo-only-color.svg
+keywords:
+- tools
+name: kube-explorer
+version: 1.0.1
