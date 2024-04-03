@@ -526,23 +526,23 @@
     }
   },
   "incubator": {
-    "nextcloud": {
-      "app_readme": "<h1>nextcloud</h1>\n<p><a href=\"https://nextcloud.com/\">nextcloud</a> is a file sharing server that puts the control and security of your own data back into your hands.</p>",
+    "external-service": {
+      "app_readme": "<h1>external-service</h1>\n<p><a href=\"https://external-service.com/\">external-service</a> is a file sharing server that puts the control and security of your own data back into your hands.</p>",
       "categories": [
         "productivity"
       ],
       "description": "A file sharing server that puts the control and security of your own data back into your hands.",
       "healthy": true,
       "healthy_error": null,
-      "home": "https://nextcloud.com/",
-      "location": "/__w/charts/charts/charts/nextcloud",
-      "latest_version": "1.6.58",
-      "latest_app_version": "28.0.3",
-      "latest_human_version": "28.0.3_1.6.58",
+      "home": "https://external-service.com/",
+      "location": "/__w/xhcart/xchart/incubator/external-service",
+      "latest_version": "1.0.0",
+      "latest_app_version": "1.0.0",
+      "latest_human_version": "1.0.0_1.0.0",
       "last_update": "2024-03-18 11:31:26",
-      "name": "nextcloud",
+      "name": "external-service",
       "recommended": false,
-      "title": "Nextcloud",
+      "title": "external-service",
       "maintainers": [
         {
           "name": "truenas",
@@ -551,7 +551,7 @@
         }
       ],
       "tags": [
-        "nextcloud",
+        "external-service",
         "storage",
         "sync"
       ],
