@@ -1,18 +1,18 @@
 {
-  "1.0.28": {
+  "1.0.29": {
     "healthy": true,
     "supported": false,
     "healthy_error": null,
-    "location": "/__w/xhcart/xchart/stable/mtphotos/1.0.28",
-    "last_update": "2024-02-24 21:52:07",
+    "location": "/__w/xhcart/xchart/stable/mtphotos/1.0.29",
+    "last_update": "2024-04-04 21:52:07",
     "required_features": [
       "definitions/certificate",
       "definitions/gpuConfiguration",
       "normalize/acl",
       "normalize/ixVolume"
     ],
-    "human_version": "1.27.0_1.0.28",
-    "version": "1.0.28",
+    "human_version": "1.28.0_1.0.29",
+    "version": "1.0.29",
     "chart_metadata": {
       "name": "mtphotos",
       "description": "MT Photos照片管理系统",
@@ -20,9 +20,9 @@
         "title": "MT Photos"
       },
       "type": "application",
-      "version": "1.0.28",
+      "version": "1.0.29",
       "apiVersion": "v2",
-      "appVersion": "1.27.0",
+      "appVersion": "1.28.0",
       "kubeVersion": ">=1.16.0-0",
       "maintainers": [
         {
