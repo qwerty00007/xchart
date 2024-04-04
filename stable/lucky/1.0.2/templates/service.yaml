@@ -1,0 +1,6 @@
+{{ $ports := list }}
+{{ $ports = mustAppend $ports (dict "name" "http" "port" 16601 "targetPort" 16601) }}
+{{ $params := . }}
+{{ $_ := set $params "commonService" (dict "ports" $ports ) }}
+{{ $_1 := set $params.commonService "type" "ClusterIP" }}
+{{ include "common.classes.service" $params }}

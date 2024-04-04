@@ -55,8 +55,8 @@
           "description": "Configure Storage for Lucky"
         },
         {
-          "name": "Certificate",
-          "description": "Configure Certificate for Lucky"
+          "name": "Ingress",
+          "description": "Ingress Configuration"
         },
         {
           "name": "Resource Limits",
@@ -148,14 +148,52 @@
           }
         },
         {
-          "variable": "certificate",
-          "label": "Certificate Configuration",
-          "description": "mount path: cert: /etc/lucky/certs/public.crt, key: /etc/lucky/certs/private.key",
-          "group": "Certificate",
+          "variable": "ingressEnabled",
+          "group": "Ingress",
+          "label": "Enable Ingress",
+          "description": "config ingress, you must install traefik first",
           "schema": {
-            "type": "int",
-            "$ref": [
-              "definitions/certificate"
+            "type": "boolean",
+            "default": false,
+            "show_subquestions_if": true,
+            "subquestions": [
+              {
+                "variable": "certificate",
+                "label": "Certificate Configuration",
+                "schema": {
+                  "type": "int",
+                  "$ref": [
+                    "definitions/certificate"
+                  ]
+                }
+              },
+              {
+                "variable": "host",
+                "label": "HostName",
+                "schema": {
+                  "type": "string",
+                  "default": "test.test.org",
+                  "required": true
+                }
+              },
+              {
+                "variable": "path",
+                "label": "Path",
+                "schema": {
+                  "type": "string",
+                  "required": true,
+                  "default": "/"
+                }
+              },
+              {
+                "variable": "pathType",
+                "label": "Path Type",
+                "schema": {
+                  "type": "string",
+                  "required": true,
+                  "default": "Prefix"
+                }
+              }
             ]
           }
         },
