@@ -1,4 +1,4 @@
 image:
   pullPolicy: IfNotPresent
-  repository: linuxserver/nextcloud
+  repository: kodcloud/kodbox
   tag: latest

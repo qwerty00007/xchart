@@ -3,7 +3,7 @@
         "healthy": true,
         "supported": true,
         "healthy_error": null,
-        "location": "/__w/charts/charts/charts/nextcloud/1.6.58",
+        "location": "/__w/charts/charts/charts/kodbox/1.6.58",
         "last_update": "2024-03-18 11:31:26",
         "required_features": [
             "normalize/ixVolume",
@@ -13,10 +13,10 @@
         "human_version": "28.0.3_1.6.58",
         "version": "1.6.58",
         "chart_metadata": {
-            "name": "nextcloud",
+            "name": "kodbox",
             "description": "A file sharing server that puts the control and security of your own data back into your hands.",
             "annotations": {
-                "title": "Nextcloud"
+                "title": "kodbox"
             },
             "type": "application",
             "version": "1.6.58",
@@ -37,15 +37,15 @@
                     "version": "2304.0.1"
                 }
             ],
-            "home": "https://nextcloud.com/",
-            "icon": "https://media.sys.truenas.net/apps/nextcloud/icons/icon.svg",
+            "home": "https://kodbox.com/",
+            "icon": "https://media.sys.truenas.net/apps/kodbox/icons/icon.svg",
             "sources": [
-                "https://github.com/nextcloud/docker",
-                "https://github.com/nextcloud/helm",
-                "https://github.com/truenas/charts/tree/master/charts/nextcloud"
+                "https://github.com/kodbox/docker",
+                "https://github.com/kodbox/helm",
+                "https://github.com/truenas/charts/tree/master/charts/kodbox"
             ],
             "keywords": [
-                "nextcloud",
+                "kodbox",
                 "storage",
                 "http",
                 "web",
@@ -56,24 +56,24 @@
         "schema": {
             "groups": [
                 {
-                    "name": "Nextcloud Configuration",
-                    "description": "Configuration details for Nextcloud workload"
+                    "name": "kodbox Configuration",
+                    "description": "Configuration details for kodbox workload"
                 },
                 {
                     "name": "UID/GID configuration",
-                    "description": "Configure UID/GID for nextcloud and mariadb"
+                    "description": "Configure UID/GID for kodbox and mariadb"
                 },
                 {
                     "name": "Storage",
-                    "description": "Configure Storage for Nextcloud and Mariadb"
+                    "description": "Configure Storage for kodbox and Mariadb"
                 },
                 {
                     "name": "Mariadb Configuration",
-                    "description": "Configure Mariadb for nextcloud"
+                    "description": "Configure Mariadb for kodbox"
                 },
                 {
                     "name": "Ingress",
-                    "description": "Ingress Configuration for Nextcloud"
+                    "description": "Ingress Configuration for kodbox"
                 },
                 {
                     "name": "Scaling/Upgrade Policy",
@@ -132,7 +132,7 @@
                     "schema": {
                         "type": "string",
                         "required": true,
-                        "default": "nextcloud"
+                        "default": "kodbox"
                     }
                 },
                 {
@@ -142,7 +142,7 @@
                     "schema": {
                         "type": "string",
                         "required": true,
-                        "default": "nextcloud"
+                        "default": "kodbox"
                     }
                 },
                 {
@@ -237,16 +237,16 @@
                 },
                 {
                     "variable": "service",
-                    "description": "Nextcloud Service Configuration",
-                    "label": "Nextcloud Service Configuration",
-                    "group": "Nextcloud Configuration",
+                    "description": "kodbox Service Configuration",
+                    "label": "kodbox Service Configuration",
+                    "group": "kodbox Configuration",
                     "schema": {
                         "type": "dict",
                         "required": true,
                         "attrs": [
                             {
                                 "variable": "nodePort",
-                                "label": "Node Port to use for Nextcloud",
+                                "label": "Node Port to use for kodbox",
                                 "schema": {
                                     "type": "int",
                                     "min": 9000,
@@ -260,20 +260,20 @@
                 },
                 {
                     "variable": "appVolumeMounts",
-                    "label": "Nextcloud Storage",
+                    "label": "kodbox Storage",
                     "group": "Storage",
                     "schema": {
                         "type": "dict",
                         "attrs": [
                             {
-                                "variable": "nextcloud-data",
-                                "label": "Nextcloud Data Volume",
+                                "variable": "kodbox-data",
+                                "label": "kodbox Data Volume",
                                 "schema": {
                                     "type": "dict",
                                     "attrs": [
                                         {
                                             "variable": "datasetName",
-                                            "label": "Nextcloud Data Volume Name",
+                                            "label": "kodbox Data Volume Name",
                                             "schema": {
                                                 "type": "string",
                                                 "hidden": true,
@@ -287,13 +287,13 @@
                                                         false
                                                     ]
                                                 ],
-                                                "default": "ix-nextcloud_data",
+                                                "default": "ix-kodbox_data",
                                                 "editable": false
                                             }
                                         },
                                         {
                                             "variable": "mountPath",
-                                            "label": "Nextcloud Data Mount Path",
+                                            "label": "kodbox Data Mount Path",
                                             "description": "Path where the volume will be mounted inside the pod",
                                             "schema": {
                                                 "type": "path",
@@ -304,7 +304,7 @@
                                         },
                                         {
                                             "variable": "hostPathEnabled",
-                                            "label": "Enable Host Path for Nextcloud Data Volume",
+                                            "label": "Enable Host Path for kodbox Data Volume",
                                             "schema": {
                                                 "type": "boolean",
                                                 "default": false,
@@ -312,7 +312,7 @@
                                                 "subquestions": [
                                                     {
                                                         "variable": "hostPath",
-                                                        "label": "Host Path for Nextcloud Data Volume",
+                                                        "label": "Host Path for kodbox Data Volume",
                                                         "schema": {
                                                             "type": "hostpath",
                                                             "required": true
@@ -325,14 +325,14 @@
                                 }
                             },
                             {
-                                "variable": "nextcloud-config",
-                                "label": "Nextcloud Config Volume",
+                                "variable": "kodbox-config",
+                                "label": "kodbox Config Volume",
                                 "schema": {
                                     "type": "dict",
                                     "attrs": [
                                         {
                                             "variable": "datasetName",
-                                            "label": "Nextcloud Config Volume Name",
+                                            "label": "kodbox Config Volume Name",
                                             "schema": {
                                                 "type": "string",
                                                 "hidden": true,
@@ -346,13 +346,13 @@
                                                         false
                                                     ]
                                                 ],
-                                                "default": "ix-nextcloud_config",
+                                                "default": "ix-kodbox_config",
                                                 "editable": false
                                             }
                                         },
                                         {
                                             "variable": "mountPath",
-                                            "label": "Nextcloud Config Mount Path",
+                                            "label": "kodbox Config Mount Path",
                                             "description": "Path where the volume will be mounted inside the pod",
                                             "schema": {
                                                 "type": "path",
@@ -363,7 +363,7 @@
                                         },
                                         {
                                             "variable": "hostPathEnabled",
-                                            "label": "Enable Host Path for Nextcloud Config Volume",
+                                            "label": "Enable Host Path for kodbox Config Volume",
                                             "schema": {
                                                 "type": "boolean",
                                                 "default": false,
@@ -371,7 +371,7 @@
                                                 "subquestions": [
                                                     {
                                                         "variable": "hostPath",
-                                                        "label": "Host Path for Nextcloud Config Volume",
+                                                        "label": "Host Path for kodbox Config Volume",
                                                         "schema": {
                                                             "type": "hostpath",
                                                             "required": true
@@ -388,15 +388,15 @@
                 },
                 {
                     "variable": "extraAppVolumeMounts",
-                    "label": "Nextcloud Extra Host Path Volumes",
+                    "label": "kodbox Extra Host Path Volumes",
                     "group": "Storage",
                     "schema": {
                         "type": "list",
                         "items": [
                             {
                                 "variable": "extraAppVolume",
-                                "label": "Nextcloud Host Path Volume",
-                                "description": "Add an extra host path volume for nextcloud application",
+                                "label": "kodbox Host Path Volume",
+                                "description": "Add an extra host path volume for kodbox application",
                                 "schema": {
                                     "type": "dict",
                                     "attrs": [
@@ -495,8 +495,8 @@
                 },
                 {
                     "variable": "environmentVariables",
-                    "label": "Nextcloud environment",
-                    "group": "Nextcloud Configuration",
+                    "label": "kodbox environment",
+                    "group": "kodbox Configuration",
                     "schema": {
                         "type": "list",
                         "default": [],
@@ -618,8 +618,8 @@
                 }
             ]
         },
-        "app_readme": "<h1>nextcloud</h1>\n<p><a href=\"https://nextcloud.com/\">nextcloud</a> is a file sharing server that puts the control and security of your own data back into your hands.</p>",
-        "detailed_readme": "<h1>nextcloud</h1>\n<p><a href=\"https://nextcloud.com/\">nextcloud</a> is a file sharing server that puts the control and security of your own data back into your hands.</p>\n<h2>Introduction</h2>\n<p>This chart bootstraps an <a href=\"https://hub.docker.com/_/nextcloud/\">nextcloud</a> deployment on a <a href=\"http://kubernetes.io\">Kubernetes</a> cluster using the <a href=\"https://helm.sh\">Helm</a> package manager.</p>\n<h2>Configuration</h2>\n<p>Please refer to questions.yaml for a detailed overview on supported configurable values.</p>",
+        "app_readme": "<h1>kodbox</h1>\n<p><a href=\"https://kodbox.com/\">kodbox</a> is a file sharing server that puts the control and security of your own data back into your hands.</p>",
+        "detailed_readme": "<h1>kodbox</h1>\n<p><a href=\"https://kodbox.com/\">kodbox</a> is a file sharing server that puts the control and security of your own data back into your hands.</p>\n<h2>Introduction</h2>\n<p>This chart bootstraps an <a href=\"https://hub.docker.com/_/kodbox/\">kodbox</a> deployment on a <a href=\"http://kubernetes.io\">Kubernetes</a> cluster using the <a href=\"https://helm.sh\">Helm</a> package manager.</p>\n<h2>Configuration</h2>\n<p>Please refer to questions.yaml for a detailed overview on supported configurable values.</p>",
         "changelog": null
     }
 }

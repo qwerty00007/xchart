@@ -1,11 +1,3 @@
-{{/*Postgres
-Get Nextloud Mariadb Database Name
-*/}}
-{{- define "mariadb.DatabaseName" -}}
-{{- print "nextcloud" -}}
-{{- end -}}
-
-
 {{- define "mariadb.imageName" -}}
 {{- print "linuxserver/mariadb:10.11.6" -}}
 {{- end -}}

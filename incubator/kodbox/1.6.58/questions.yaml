@@ -51,14 +51,14 @@ questions:
     schema:
       type: string
       required: true
-      default: redis    
+      default: kodbox    
   - variable: dbName
     label: Maria DB Name
     group: "Mariadb Configuration"
     schema:
       type: string
       required: true
-      default: redis 
+      default: kodbox 
   - variable: dbPass
     label: Maria DB User Pass
     group: "Mariadb Configuration"
