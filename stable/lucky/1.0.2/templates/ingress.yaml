@@ -19,7 +19,7 @@ spec:
           service:
             name: {{ template "common.names.fullname" . }}
             port:
-              number: {{ .Values.web_port }}
+              number: 16601
         path: {{ .Values.path }}
         pathType: {{ .Values.pathType }}
 {{ end }}
