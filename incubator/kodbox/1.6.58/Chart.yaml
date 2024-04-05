@@ -17,7 +17,7 @@ dependencies:
     repository: file://../../../common/2304.0.1
     version: 2304.0.1
 home: https://kodbox.com/
-icon: https://media.sys.truenas.net/apps/kodbox/icons/icon.svg
+icon: https://raw.githubusercontent.com/kalcaddle/kodbox/main/static/images/icon/icon_512.png
 sources:
   - https://github.com/kodbox/docker
   - https://github.com/kodbox/helm
