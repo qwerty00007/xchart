@@ -1,0 +1,6 @@
+{{ $ports := list }}
+{{ $ports = mustAppend $ports (dict "name" "redis-tcp" "port" 6379 "targetPort" 6379) }}
+{{ $values := (. | mustDeepCopy) }}
+{{ $_ := set $values "common" (dict "nameSuffix" "redis") }}
+{{ $_1 := set $values "commonService" (dict "type" "ClusterIP" "ports" $ports ) }}
+{{ include "common.classes.service" $values }}

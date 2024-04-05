@@ -1,27 +1,27 @@
 {
-    "1.6.58": {
+    "1.0.0": {
         "healthy": true,
         "supported": true,
         "healthy_error": null,
-        "location": "/__w/charts/charts/charts/kodbox/1.6.58",
+        "location": "/__w/charts/charts/charts/kodbox/1.0.0",
         "last_update": "2024-03-18 11:31:26",
         "required_features": [
             "normalize/ixVolume",
             "definitions/nodeIP",
             "definitions/certificate"
         ],
-        "human_version": "28.0.3_1.6.58",
-        "version": "1.6.58",
+        "human_version": "1.49.10_1.0.0",
+        "version": "1.0.0",
         "chart_metadata": {
             "name": "kodbox",
-            "description": "A file sharing server that puts the control and security of your own data back into your hands.",
+            "description": "kodbox is a file manager for web. It is also a web code editor, which allows you to develop websites directly within the web browser.You can run kodbox either online or locally,on Linux, Windows or Mac based platforms. The only requirement is to have PHP 5 available.",
             "annotations": {
                 "title": "kodbox"
             },
             "type": "application",
-            "version": "1.6.58",
+            "version": "1.0.0",
             "apiVersion": "v2",
-            "appVersion": "28.0.3",
+            "appVersion": "1.49.10",
             "kubeVersion": ">=1.16.0-0",
             "maintainers": [
                 {
@@ -40,9 +40,9 @@
             "home": "https://kodbox.com/",
             "icon": "https://raw.githubusercontent.com/kalcaddle/kodbox/main/static/images/icon/icon_512.png",
             "sources": [
-                "https://github.com/kodbox/docker",
-                "https://github.com/kodbox/helm",
-                "https://github.com/truenas/charts/tree/master/charts/kodbox"
+                "https://hub.docker.com/r/kodcloud/kodbox",
+                "https://hub.docker.com/r/bitnami/redis",
+                "https://hub.docker.com/r/linuxserver/mariadb"
             ],
             "keywords": [
                 "kodbox",

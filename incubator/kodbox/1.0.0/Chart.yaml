@@ -1,0 +1,32 @@
+name: kodbox
+description: 高效，流畅
+云端存储&协同办公新体验
+数千项细节精心优化，带给您Windows般轻松的在线体验。
+随时随地访问，恰如行云流水，如此自由。 
+annotations:
+  title: kodbox
+type: application
+version: 1.0.0
+apiVersion: v2
+appVersion: 1.49.10
+kubeVersion: '>=1.16.0-0'
+maintainers:
+  - name: qwerty007
+    url: https://gitee.com/qwerty0007
+    email: 1165505953@qq.com
+dependencies:
+  - name: common
+    repository: file://../../../common/2304.0.1
+    version: 2304.0.1
+home: https://kodcloud.com/
+icon: https://raw.githubusercontent.com/kalcaddle/kodbox/main/static/images/icon/icon_512.png
+sources:
+  - https://hub.docker.com/r/kodcloud/kodbox
+  - https://hub.docker.com/r/bitnami/redis
+  - https://hub.docker.com/r/linuxserver/mariadb
+keywords:
+  - kodbox
+  - storage
+  - http
+  - web
+  - php
