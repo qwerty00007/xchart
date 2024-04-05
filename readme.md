@@ -85,10 +85,14 @@ date
 
 ```
 mirrors:
-  ”docker.io“:
+  "docker.io":
     endpoint:
-      - ”https://docker.nju.edu.cn/“  ##加速地址，我使用的是南京大学开源镜像站
-      - ”https://registry-1.docker.io“
+      - "https://docker.mirrors.sjtug.sjtu.edu.cn"
+      - "https://mirror.iscas.ac.cn"
+      - "https://mirror.baidubce.com"
+      - "https://docker.m.daocloud.io"
+      - "https://docker.nju.edu.cn/"
+      - "https://registry-1.docker.io"
 ```
 
 然后执行以下命令
