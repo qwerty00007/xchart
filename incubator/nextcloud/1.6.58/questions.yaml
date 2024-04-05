@@ -1,14 +1,14 @@
 groups:
-  - name: "Nextcloud Configuration"
-    description: "Configuration details for Nextcloud workload"
+  - name: "Redis Configuration"
+    description: "Configuration details for Redis workload"
   - name: "UID/GID configuration"
-    description: "Configure UID/GID for nextcloud and mariadb"
+    description: "Configure UID/GID for redis and mariadb"
   - name: "Storage"
-    description: "Configure Storage for Nextcloud and Mariadb"
+    description: "Configure Storage for Redis and Mariadb"
   - name: "Mariadb Configuration"
-    description: "Configure Mariadb for nextcloud"
+    description: "Configure Mariadb for redis"
   - name: Ingress
-    description: Ingress Configuration for Nextcloud
+    description: Ingress Configuration for Redis
   - name: "Scaling/Upgrade Policy"
     description: "Configure how pods are replaced when configuration is upgraded"
   - name: "Advanced DNS Settings"
@@ -51,14 +51,14 @@ questions:
     schema:
       type: string
       required: true
-      default: nextcloud    
+      default: redis    
   - variable: dbName
     label: Maria DB Name
     group: "Mariadb Configuration"
     schema:
       type: string
       required: true
-      default: nextcloud 
+      default: redis 
   - variable: dbPass
     label: Maria DB User Pass
     group: "Mariadb Configuration"
@@ -123,107 +123,72 @@ questions:
           description: "Kill existing pods before creating new ones"
 
   - variable: service
-    description: "Nextcloud Service Configuration"
-    label: "Nextcloud Service Configuration"
-    group: "Nextcloud Configuration"
+    description: "Redis Service Configuration"
+    label: "Redis Service Configuration"
+    group: "Redis Configuration"
     schema:
       type: dict
       required: true
       attrs:
         - variable: nodePort
-          label: "Node Port to use for Nextcloud"
+          label: "Node Port to use for Redis"
           schema:
             type: int
             min: 9000
             max: 65535
-            default: 16601
+            default: 9901
             required: true
 
   - variable: appVolumeMounts
-    label: "Nextcloud Storage"
+    label: "Redis Storage"
     group: "Storage"
     schema:
       type: dict
       attrs:
-        - variable: nextcloud-data
-          label: "Nextcloud Data Volume"
+        - variable: redis-data
+          label: "Redis Html Volume"
           schema:
             type: dict
             attrs:
               - variable: datasetName
-                label: "Nextcloud Data Volume Name"
+                label: "Redis Data Volume Name"
                 schema:
                   type: string
                   hidden: true
                   $ref:
                     - "normalize/ixVolume"
                   show_if: [["hostPathEnabled", "=", false]]
-                  default: "ix-nextcloud_data"
+                  default: "ix-redis_data"
                   editable: false
               - variable: mountPath
-                label: "Nextcloud Data Mount Path"
+                label: "Redis Data Mount Path"
                 description: "Path where the volume will be mounted inside the pod"
                 schema:
                   type: path
                   hidden: true
                   editable: false
-                  default: "/data"
+                  default: "/var/www/html"
               - variable: hostPathEnabled
-                label: "Enable Host Path for Nextcloud Data Volume"
+                label: "Enable Host Path for Redis Data Volume"
                 schema:
                   type: boolean
                   default: false
                   show_subquestions_if: true
                   subquestions:
                     - variable: hostPath
-                      label: "Host Path for Nextcloud Data Volume"
-                      schema:
-                        type: hostpath
-                        required: true
-        - variable: nextcloud-config
-          label: "Nextcloud Config Volume"
-          schema:
-            type: dict
-            attrs:
-              - variable: datasetName
-                label: "Nextcloud Config Volume Name"
-                schema:
-                  type: string
-                  hidden: true
-                  $ref:
-                    - "normalize/ixVolume"
-                  show_if: [["hostPathEnabled", "=", false]]
-                  default: "ix-nextcloud_config"
-                  editable: false
-              - variable: mountPath
-                label: "Nextcloud Config Mount Path"
-                description: "Path where the volume will be mounted inside the pod"
-                schema:
-                  type: path
-                  hidden: true
-                  editable: false
-                  default: "/config"
-              - variable: hostPathEnabled
-                label: "Enable Host Path for Nextcloud Config Volume"
-                schema:
-                  type: boolean
-                  default: false
-                  show_subquestions_if: true
-                  subquestions:
-                    - variable: hostPath
-                      label: "Host Path for Nextcloud Config Volume"
+                      label: "Host Path for Redis Data Volume"
                       schema:
                         type: hostpath
                         required: true
   - variable: extraAppVolumeMounts
-    label: "Nextcloud Extra Host Path Volumes"
+    label: "Redis Extra Host Path Volumes"
     group: "Storage"
     schema:
       type: list
       items:
         - variable: extraAppVolume
-          label: "Nextcloud Host Path Volume"
-          description: "Add an extra host path volume for nextcloud application"
+          label: "Redis Host Path Volume"
+          description: "Add an extra host path volume for redis application"
           schema:
             type: dict
             attrs:
@@ -282,8 +247,8 @@ questions:
                         type: hostpath
                         required: true
   - variable: environmentVariables
-    label: "Nextcloud environment"
-    group: "Nextcloud Configuration"
+    label: "Redis environment"
+    group: "Redis Configuration"
     schema:
       type: list
       default: []
