@@ -51,7 +51,7 @@ spec:
             {{ $envList = mustAppend $envList (dict "name" "PGID" "value" (printf "%d" (.Values.ownerGID | int))) }}
             {{ $envList = mustAppend $envList (dict "name" "MYSQL_DATABASE" "value" .Values.dbName) }}
             {{ $envList = mustAppend $envList (dict "name" "MYSQL_USER" "value" .Values.dbUser) }}         
-            {{ $envList = mustAppend $envList (dict "name" "MYSQL_HOST" "value" kodbox-mariadb) }}         
+            {{ $envList = mustAppend $envList (dict "name" "MYSQL_HOST" "value" "kodbox-mariadb") }}         
             {{ $envList = mustAppend $envList (dict "name" "MYSQL_PASSWORD" "value" .Values.dbPass) }}
             {{ include "common.containers.environmentVariables" (dict "environmentVariables" $envList) | nindent 12 }}
 {{ include "common.networking.dnsConfiguration" .Values | nindent 6 }}
