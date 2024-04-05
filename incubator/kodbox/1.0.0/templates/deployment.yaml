@@ -31,7 +31,11 @@ spec:
         - name: init-mariadb
           image: {{ template "mariadb.imageName" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ['sh', '-c', "until nslookup {{ template "common.names.fullname" . }}-mariadb.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for mydb; sleep 2; done"]
+          command: ['sh', '-c', "until nslookup {{ template "common.names.fullname" . }}-mariadb.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for mariadb; sleep 2; done"]
+        - name: init-redis
+          image: {{ template "redis.imageName" . }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command: ['sh', '-c', "until nslookup {{ template "common.names.fullname" . }}-redis.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for redis; sleep 2; done"]
       hostNetwork: false
       containers:
         - name: {{ .Chart.Name }}
