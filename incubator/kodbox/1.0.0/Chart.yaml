@@ -1,8 +1,5 @@
 name: kodbox
-description: 高效，流畅
-云端存储&协同办公新体验
-数千项细节精心优化，带给您Windows般轻松的在线体验。
-随时随地访问，恰如行云流水，如此自由。 
+description:  kodbox is a file manager for web. It is also a web code editor, which allows you to develop websites directly within the web browser.You can run kodbox either online or locally,on Linux, Windows or Mac based platforms. The only requirement is to have PHP 5 available.
 annotations:
   title: kodbox
 type: application
