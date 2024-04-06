@@ -56,24 +56,24 @@
         "schema": {
             "groups": [
                 {
-                    "name": "Redis Configuration",
-                    "description": "Configuration details for Redis workload"
+                    "name": "Kodbox Configuration",
+                    "description": "Configuration details for Kodbox workload"
                 },
                 {
                     "name": "UID/GID configuration",
-                    "description": "Configure UID/GID for redis and mariadb"
+                    "description": "Configure UID/GID for kodbox and mariadb"
                 },
                 {
                     "name": "Storage",
-                    "description": "Configure Storage for Redis and Mariadb"
+                    "description": "Configure Storage for Kodbox and Mariadb"
                 },
                 {
                     "name": "Mariadb Configuration",
-                    "description": "Configure Mariadb for redis"
+                    "description": "Configure Mariadb for kodbox"
                 },
                 {
                     "name": "Ingress",
-                    "description": "Ingress Configuration for Redis"
+                    "description": "Ingress Configuration for Kodbox"
                 },
                 {
                     "name": "Scaling/Upgrade Policy",
@@ -237,16 +237,16 @@
                 },
                 {
                     "variable": "service",
-                    "description": "Redis Service Configuration",
-                    "label": "Redis Service Configuration",
-                    "group": "Redis Configuration",
+                    "description": "Kodbox Service Configuration",
+                    "label": "Kodbox Service Configuration",
+                    "group": "Kodbox Configuration",
                     "schema": {
                         "type": "dict",
                         "required": true,
                         "attrs": [
                             {
                                 "variable": "nodePort",
-                                "label": "Node Port to use for Redis",
+                                "label": "Node Port to use for Kodbox",
                                 "schema": {
                                     "type": "int",
                                     "min": 9000,
@@ -260,20 +260,20 @@
                 },
                 {
                     "variable": "appVolumeMounts",
-                    "label": "Redis Storage",
+                    "label": "Kodbox Storage",
                     "group": "Storage",
                     "schema": {
                         "type": "dict",
                         "attrs": [
                             {
-                                "variable": "redis-data",
-                                "label": "Redis Html Volume",
+                                "variable": "kodbox-data",
+                                "label": "Kodbox Html Volume",
                                 "schema": {
                                     "type": "dict",
                                     "attrs": [
                                         {
                                             "variable": "datasetName",
-                                            "label": "Redis Data Volume Name",
+                                            "label": "Kodbox Data Volume Name",
                                             "schema": {
                                                 "type": "string",
                                                 "hidden": true,
@@ -287,13 +287,13 @@
                                                         false
                                                     ]
                                                 ],
-                                                "default": "ix-redis_data",
+                                                "default": "ix-kodbox_data",
                                                 "editable": false
                                             }
                                         },
                                         {
                                             "variable": "mountPath",
-                                            "label": "Redis Data Mount Path",
+                                            "label": "Kodbox Data Mount Path",
                                             "description": "Path where the volume will be mounted inside the pod",
                                             "schema": {
                                                 "type": "path",
@@ -304,7 +304,7 @@
                                         },
                                         {
                                             "variable": "hostPathEnabled",
-                                            "label": "Enable Host Path for Redis Data Volume",
+                                            "label": "Enable Host Path for Kodbox Data Volume",
                                             "schema": {
                                                 "type": "boolean",
                                                 "default": false,
@@ -312,7 +312,7 @@
                                                 "subquestions": [
                                                     {
                                                         "variable": "hostPath",
-                                                        "label": "Host Path for Redis Data Volume",
+                                                        "label": "Host Path for Kodbox Data Volume",
                                                         "schema": {
                                                             "type": "hostpath",
                                                             "required": true
@@ -329,15 +329,15 @@
                 },
                 {
                     "variable": "extraAppVolumeMounts",
-                    "label": "Redis Extra Host Path Volumes",
+                    "label": "Kodbox Extra Host Path Volumes",
                     "group": "Storage",
                     "schema": {
                         "type": "list",
                         "items": [
                             {
                                 "variable": "extraAppVolume",
-                                "label": "Redis Host Path Volume",
-                                "description": "Add an extra host path volume for redis application",
+                                "label": "Kodbox Host Path Volume",
+                                "description": "Add an extra host path volume for kodbox application",
                                 "schema": {
                                     "type": "dict",
                                     "attrs": [
@@ -436,8 +436,8 @@
                 },
                 {
                     "variable": "environmentVariables",
-                    "label": "Redis environment",
-                    "group": "Redis Configuration",
+                    "label": "Kodbox environment",
+                    "group": "Kodbox Configuration",
                     "schema": {
                         "type": "list",
                         "default": [],
