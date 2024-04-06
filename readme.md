@@ -82,7 +82,7 @@ date
 
 - docker.io 的加速
   truenas scale 23.10 配置 containerd 镜像加速
-  在`/root/registries.yaml`写入以下内容
+  在`/root/k3s-registries/registries.yaml`写入以下内容
 
 ```
 mirrors:
@@ -96,10 +96,10 @@ mirrors:
       - "https://registry-1.docker.io"
 ```
 
-然后执行以下命令
+然后执行以下命令，24版本 硬链接会提示跨文件系统，改为 cp -f 强制覆盖
 
 ```
-ln /root/registries.yaml /etc/rancher/k3s/registries.yaml
+cp -f /root/k3s-registries/registries.yaml /etc/rancher/k3s/registries.yaml 
 systemctl restart k3s.service ##重启 k3s 服务
 ```
 
@@ -110,7 +110,7 @@ systemctl restart k3s.service ##重启 k3s 服务
 > 升级要重新配置，可以设置开启执行以下命令
 >
 > ```
-> ln /root/registries.yaml /etc/rancher/k3s/registries.yaml
+> cp -f /root/k3s-registries/registries.yaml /etc/rancher/k3s/registries.yaml 
 > ```
 
 - 其他镜像站参考 [南京大学开源镜像站私服仓库](https://doc.nju.edu.cn/books/35f4a)</br>
