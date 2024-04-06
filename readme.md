@@ -18,7 +18,8 @@
 - **IT tools** Useful tools for developer and people working in IT
 - **lucky** 家用软硬路由公网利器
 - **stripcharts** 筛选你需要的应用推送到自建 gitea 服务器, gitee 或者 github
-
+- **kodbox** 可道云
+- **kube-explorer** kube-explorer is a portable explorer for Kubernetes without any dependency
 
 
 ## 增加第三方应用库
