@@ -599,11 +599,11 @@
       "icon_url": "https://raw.githubusercontent.com/kalcaddle/kodbox/main/static/images/icon/icon_512.png"
     },
     "external-service": {
-      "app_readme": "<h1>external-service</h1>\n<p><a href=\"https://external-service.com/\">external-service</a> is a file sharing server that puts the control and security of your own data back into your hands.</p>",
+      "app_readme": "<h1>external-service</h1>\n<p></p>",
       "categories": [
         "productivity"
       ],
-      "description": "A file sharing server that puts the control and security of your own data back into your hands.",
+      "description": "Allow external services to be used like Apps.",
       "healthy": true,
       "healthy_error": null,
       "home": "https://external-service.com/",
@@ -617,9 +617,9 @@
       "title": "external-service",
       "maintainers": [
         {
-          "name": "truenas",
-          "url": "https://www.truenas.com/",
-          "email": "dev@ixsystems.com"
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007",
+          "email": " 1165505953@qq.com"
         }
       ],
       "tags": [
@@ -628,16 +628,10 @@
         "sync"
       ],
       "screenshots": [
-        "https://media.sys.truenas.net/apps/nextcloud/screenshots/screenshot1.png",
-        "https://media.sys.truenas.net/apps/nextcloud/screenshots/screenshot2.png",
-        "https://media.sys.truenas.net/apps/nextcloud/screenshots/screenshot3.png"
-      ],
+             ],
       "sources": [
-        "https://github.com/nextcloud/docker",
-        "https://github.com/nextcloud/helm",
-        "https://github.com/truenas/charts/tree/master/charts/nextcloud"
       ],
-      "icon_url": "https://media.sys.truenas.net/apps/nextcloud/icons/icon.svg"
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/external-service.png"
     }
   }
 }
