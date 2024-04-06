@@ -1,0 +1,29 @@
+name: kodbox
+description:  kodbox is a file manager for web. It is also a web code editor, which allows you to develop websites directly within the web browser.You can run kodbox either online or locally,on Linux, Windows or Mac based platforms. The only requirement is to have PHP 5 available.
+annotations:
+  title: kodbox
+type: application
+version: 1.0.0
+apiVersion: v2
+appVersion: 1.49.10
+kubeVersion: '>=1.16.0-0'
+maintainers:
+  - name: qwerty007
+    url: https://gitee.com/qwerty0007
+    email: 1165505953@qq.com
+dependencies:
+  - name: common
+    repository: file://../../../common/2304.0.1
+    version: 2304.0.1
+home: https://kodcloud.com/
+icon: https://raw.githubusercontent.com/kalcaddle/kodbox/main/static/images/icon/icon_512.png
+sources:
+  - https://hub.docker.com/r/kodcloud/kodbox
+  - https://hub.docker.com/r/bitnami/redis
+  - https://hub.docker.com/r/linuxserver/mariadb
+keywords:
+  - kodbox
+  - storage
+  - http
+  - web
+  - php
