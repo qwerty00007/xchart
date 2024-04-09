@@ -9,7 +9,7 @@ cp /etc/rancher/k3s/k3s.yaml /mnt/path/to/you/pool/
 
 ```
 
-2. 修改 k3s 配置文件的服务器 ip 地址为自己 NAS 的 ip
+2. 修改复制过来的 k3s 配置文件的服务器 ip 地址为自己 NAS 的 ip
 
 ![](https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/kube-explorer-config.png)
 
