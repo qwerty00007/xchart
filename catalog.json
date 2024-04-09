@@ -1,5 +1,148 @@
 {
+  "community": {
+    "nextcloud": {
+      "app_readme": "<h1>nextcloud</h1>\n<p><a href=\"https://nextcloud.com/\">nextcloud</a> is a file sharing server that puts the control and security of your own data back into your hands.</p>",
+      "categories": [
+        "productivity"
+      ],
+      "description": "A file sharing server that puts the control and security of your own data back into your hands.",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://nextcloud.com/",
+      "icon_url": "https://media.sys.truenas.net/apps/nextcloud/icons/icon.svg",
+      "last_update": "2024-03-11 12:18:44",
+      "latest_app_version": "28.0.3",
+      "latest_human_version": "28.0.3_1.2.4",
+      "latest_version": "1.2.4",
+      "location": "/__w/charts/charts/community/nextcloud",
+      "maintainers": [
+        {
+          "email": "1165505953@qq.com",
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007"
+        }
+      ],
+      "name": "nextcloud",
+      "recommended": false,
+      "screenshots": [
+        "https://media.sys.truenas.net/apps/nextcloud/screenshots/screenshot1.png",
+        "https://media.sys.truenas.net/apps/nextcloud/screenshots/screenshot2.png",
+        "https://media.sys.truenas.net/apps/nextcloud/screenshots/screenshot3.png"
+      ],
+      "sources": [
+        "https://github.com/nextcloud/docker",
+        "https://github.com/nextcloud/helm",
+        "https://github.com/truenas/charts/tree/master/charts/nextcloud"
+      ],
+      "tags": [
+        "nextcloud",
+        "storage",
+        "sync"
+      ],
+      "title": "Nextcloud"
+    }
+  },
+  "incubator": {
+    "external-service": {
+      "app_readme": "<h1>external-service</h1>\n<p></p>",
+      "categories": [
+        "productivity"
+      ],
+      "description": "Allow external services to be used like Apps.",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://external-service.com/",
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/external-service.png",
+      "last_update": "2024-03-18 11:31:26",
+      "latest_app_version": "1.0.0",
+      "latest_human_version": "1.0.0_1.0.0",
+      "latest_version": "1.0.0",
+      "location": "/__w/xhcart/xchart/incubator/external-service",
+      "maintainers": [
+        {
+          "email": " 1165505953@qq.com",
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007"
+        }
+      ],
+      "name": "external-service",
+      "recommended": false,
+      "screenshots": [],
+      "sources": [],
+      "tags": [
+        "external-service"
+      ],
+      "title": "external-service"
+    },
+    "kodbox": {
+      "app_readme": "<h1>kodbox</h1>\n<p><a href=\"https://kodbox.com/\">kodbox</a> is a file manager for web. It is also a web code editor, which allows you to develop websites directly within the web browser.You can run kodbox either online or locally,on Linux, Windows or Mac based platforms. The only requirement is to have PHP 5 available.</p>",
+      "categories": [
+        "productivity"
+      ],
+      "description": "kodbox is a file manager for web. It is also a web code editor, which allows you to develop websites directly within the web browser.You can run kodbox either online or locally,on Linux, Windows or Mac based platforms. The only requirement is to have PHP 5 available.",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://kodbox.com/",
+      "icon_url": "https://raw.githubusercontent.com/kalcaddle/kodbox/main/static/images/icon/icon_512.png",
+      "last_update": "2024-03-18 11:31:26",
+      "latest_app_version": "1.49.10",
+      "latest_human_version": "1.49.10_1.0.0",
+      "latest_version": "1.0.0",
+      "location": "/__w/xhcart/xchart/stable/kodbox",
+      "maintainers": [
+        {
+          "email": " 1165505953@qq.com",
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007"
+        }
+      ],
+      "name": "kodbox",
+      "recommended": false,
+      "screenshots": [],
+      "sources": [
+        "https://hub.docker.com/r/kodcloud/kodbox",
+        "https://hub.docker.com/r/bitnami/redis",
+        "https://hub.docker.com/r/linuxserver/mariadb"
+      ],
+      "tags": [
+        "kodbox",
+        "storage"
+      ],
+      "title": "kodbox"
+    }
+  },
   "stable": {
+    "alist": {
+      "app_readme": "<h1>alist</h1>\n<p>🗂️ 一个支持多种存储的文件列表程序，使用 Gin 和 Solidjs。</p>",
+      "categories": [
+        "Tools-Utilities"
+      ],
+      "description": "alist",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://alist.nn.ci/zh/",
+      "icon_url": "https://alist.nn.ci/logo.svg",
+      "last_update": "2024-03-14 12:30:07",
+      "latest_app_version": "3.32.0",
+      "latest_human_version": "3.32.0_1.0.4",
+      "latest_version": "1.0.4",
+      "location": "/__w/xhcart/xchart/stable/alist",
+      "maintainers": [
+        {
+          "email": "1165505953@qq.com",
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart"
+        }
+      ],
+      "name": "alist",
+      "recommended": false,
+      "screenshots": [],
+      "sources": [
+        "https://github.com/alist-org/alist"
+      ],
+      "tags": [],
+      "title": "alist"
+    },
     "chinesesubfinder": {
       "app_readme": "<h1>chinesesubfinder</h1>\n<p>自动化搞定限定条件下中文字幕下载。</p>",
       "categories": [
@@ -9,27 +152,90 @@
       "healthy": true,
       "healthy_error": null,
       "home": "https://github.com/ChineseSubFinder/ChineseSubFinder",
-      "location": "/__w/xhcart/xchart/stable/chinesesubfinder",
-      "latest_version": "1.0.12",
+      "icon_url": "https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/chinesesubfinder.png",
+      "last_update": "2023-11-01 13:33:23",
       "latest_app_version": "0.50.3",
       "latest_human_version": "0.50.3_1.0.12",
-      "last_update": "2023-11-01 13:33:23",
-      "name": "chinesesubfinder",
-      "recommended": false,
-      "title": "chinesesubfinder",
+      "latest_version": "1.0.12",
+      "location": "/__w/xhcart/xchart/stable/chinesesubfinder",
       "maintainers": [
         {
+          "email": "1165505953@qq.com",
           "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
+          "url": "https://gitee.com/qwerty0007/xchart"
         }
       ],
-      "tags": [],
+      "name": "chinesesubfinder",
+      "recommended": false,
       "screenshots": [],
       "sources": [
         "https://github.com/ChineseSubFinder/ChineseSubFinder"
       ],
-      "icon_url": "https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/chinesesubfinder.png"
+      "tags": [],
+      "title": "chinesesubfinder"
+    },
+    "cookiecloud": {
+      "app_readme": "<h1>cookiecloud</h1>\n<p>A rule-based tunnel in GO</p>",
+      "categories": [
+        "networking"
+      ],
+      "description": "cookiecloud",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://github.com/easychen/CookieCloud",
+      "icon_url": "https://raw.githubusercontent.com/easychen/CookieCloud/master/extension/assets/icon.png",
+      "last_update": "2024-03-04 13:00:23",
+      "latest_app_version": "23.01.20",
+      "latest_human_version": "23.01.20_1.0.2",
+      "latest_version": "1.0.2",
+      "location": "/__w/xhcart/xchart/stable/cookiecloud",
+      "maintainers": [
+        {
+          "email": "1165505953@qq.com",
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart"
+        }
+      ],
+      "name": "cookiecloud",
+      "recommended": false,
+      "screenshots": [],
+      "sources": [
+        "https://github.com/easychen/CookieCloud"
+      ],
+      "tags": [],
+      "title": "cookiecloud"
+    },
+    "hlink": {
+      "app_readme": "<h1>hlink</h1>\n<p>批量、快速硬链工具</p>",
+      "categories": [
+        "Tools-Utilities"
+      ],
+      "description": "hlink",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://hlink.likun.me/",
+      "icon_url": "https://hlink.likun.me/logo.svg",
+      "last_update": "2023-11-09 09:53:23",
+      "latest_app_version": "2.0.10",
+      "latest_human_version": "2.0.10_1.0.4",
+      "latest_version": "1.0.4",
+      "location": "/__w/xhcart/xchart/stable/hlink",
+      "maintainers": [
+        {
+          "email": "1165505953@qq.com",
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart"
+        }
+      ],
+      "name": "hlink",
+      "recommended": false,
+      "screenshots": [],
+      "sources": [
+        "https://github.com/likun7981/hlink",
+        "https://hub.docker.com/r/likun7981/hlink"
+      ],
+      "tags": [],
+      "title": "hlink"
     },
     "it-tools": {
       "app_readme": "<h1>it-tools</h1>\n<p>Useful tools for developer and people working in IT</p>",
@@ -41,59 +247,28 @@
       "healthy": true,
       "healthy_error": null,
       "home": "https://it-tools.tech/",
-      "location": "/__w/xhcart/xchart/stable/it-tools",
-      "latest_version": "1.0.1",
+      "icon_url": "https://raw.githubusercontent.com/CorentinTh/it-tools/main/public/android-chrome-512x512.png",
+      "last_update": "2024-03-21 21:52:07",
       "latest_app_version": "2.8.0",
       "latest_human_version": "2.8.0_1.0.1",
-      "last_update": "2024-03-21 21:52:07",
-      "name": "it-tools",
-      "recommended": false,
-      "title": "it-tools",
+      "latest_version": "1.0.1",
+      "location": "/__w/xhcart/xchart/stable/it-tools",
       "maintainers": [
         {
+          "email": "1165505953@qq.com",
           "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
+          "url": "https://gitee.com/qwerty0007/xchart"
         }
       ],
-      "tags": [],
+      "name": "it-tools",
+      "recommended": false,
       "screenshots": [],
       "sources": [
         "https://hub.docker.com/r/corentinth/it-tools",
         "https://github.com/CorentinTh/it-tools"
       ],
-      "icon_url": "https://raw.githubusercontent.com/CorentinTh/it-tools/main/public/android-chrome-512x512.png"
-    },
-    "cookiecloud": {
-      "app_readme": "<h1>cookiecloud</h1>\n<p>A rule-based tunnel in GO</p>",
-      "categories": [
-        "networking"
-      ],
-      "description": "cookiecloud",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://github.com/easychen/CookieCloud",
-      "location": "/__w/xhcart/xchart/stable/cookiecloud",
-      "latest_version": "1.0.2",
-      "latest_app_version": "23.01.20",
-      "latest_human_version": "23.01.20_1.0.2",
-      "last_update": "2024-03-04 13:00:23",
-      "name": "cookiecloud",
-      "recommended": false,
-      "title": "cookiecloud",
-      "maintainers": [
-        {
-          "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
-        }
-      ],
       "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://github.com/easychen/CookieCloud"
-      ],
-      "icon_url": "https://raw.githubusercontent.com/easychen/CookieCloud/master/extension/assets/icon.png"
+      "title": "it-tools"
     },
     "jellyfin": {
       "app_readme": "<h1>jellyfin</h1>\n<p>使用 nyanmisaka/jellyfin 镜像 增加配置 /etc/hosts</p>",
@@ -104,22 +279,21 @@
       "healthy": true,
       "healthy_error": null,
       "home": "https://jellyfin.org/",
-      "location": "/__w/xhcart/xchart/stable/jellyfin",
-      "latest_version": "1.0.30",
+      "icon_url": "https://jellyfin.org/images/logo.svg",
+      "last_update": "2024-03-14 12:30:07",
       "latest_app_version": "10.8.13",
       "latest_human_version": "10.8.13_1.0.30",
-      "last_update": "2024-03-14 12:30:07",
-      "name": "jellyfin",
-      "recommended": false,
-      "title": "jellyfin",
+      "latest_version": "1.0.30",
+      "location": "/__w/xhcart/xchart/stable/jellyfin",
       "maintainers": [
         {
+          "email": "1165505953@qq.com",
           "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
+          "url": "https://gitee.com/qwerty0007/xchart"
         }
       ],
-      "tags": [],
+      "name": "jellyfin",
+      "recommended": false,
       "screenshots": [
         "https://jellyfin.org/assets/images/10.8-home-4a73a92bf90d1eeffa5081201ca9c7bb.png",
         "https://jellyfin.org/assets/images/10.8-details-df4f7caaee389ffbaeeaa95b668fa037.png"
@@ -129,228 +303,44 @@
         "https://github.com/truenas/charts/tree/master/community/jellyfin",
         "https://jellyfin.org/"
       ],
-      "icon_url": "https://jellyfin.org/images/logo.svg"
+      "tags": [],
+      "title": "jellyfin"
     },
-    "mtphotos": {
-      "app_readme": "<h1>mtphotos</h1>\n<p>一款为 Nas 玩家准备的照片管理系统</p>",
+    "kodbox": {
+      "app_readme": "<h1>kodbox</h1>\n<p><a href=\"https://kodbox.com/\">kodbox</a> is a file manager for web. It is also a web code editor, which allows you to develop websites directly within the web browser.You can run kodbox either online or locally,on Linux, Windows or Mac based platforms. The only requirement is to have PHP 5 available.</p>",
       "categories": [
-        "media"
+        "productivity"
       ],
-      "description": "mtphotos",
+      "description": "kodbox is a file manager for web. It is also a web code editor, which allows you to develop websites directly within the web browser.You can run kodbox either online or locally,on Linux, Windows or Mac based platforms. The only requirement is to have PHP 5 available.",
       "healthy": true,
       "healthy_error": null,
-      "home": "https://mtmt.tech/",
-      "location": "/__w/xhcart/xchart/stable/mtphotos",
-      "latest_version": "1.0.29",
-      "latest_app_version": "1.28.0",
-      "latest_human_version": "1.28.0_1.0.29",
-      "last_update": "2024-04-04 21:52:07",
-      "name": "mtphotos",
-      "recommended": false,
-      "title": "mtphotos",
+      "home": "https://kodbox.com/",
+      "icon_url": "https://raw.githubusercontent.com/kalcaddle/kodbox/main/static/images/icon/icon_512.png",
+      "last_update": "2024-03-18 11:31:26",
+      "latest_app_version": "1.49.10",
+      "latest_human_version": "1.49.10_1.0.0",
+      "latest_version": "1.0.0",
+      "location": "/__w/xhcart/xchart/stable/kodbox",
       "maintainers": [
         {
+          "email": " 1165505953@qq.com",
           "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
+          "url": "https://gitee.com/qwerty0007"
         }
       ],
-      "tags": [],
+      "name": "kodbox",
+      "recommended": false,
       "screenshots": [],
       "sources": [
-        "https://gitee.com/mt-photos/charts.git"
+        "https://hub.docker.com/r/kodcloud/kodbox",
+        "https://hub.docker.com/r/bitnami/redis",
+        "https://hub.docker.com/r/linuxserver/mariadb"
       ],
-      "icon_url": "https://cdn.mtmt.tech/logo-r.png"
-    },
-    "moviepilot": {
-      "app_readme": "<h1>moviepilot</h1>\n<p>媒体整理， pt 刷流工具</p>",
-      "categories": [
-        "media",
-        "Tools-Utilities"
+      "tags": [
+        "kodbox",
+        "storage"
       ],
-      "description": "moviepilot",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://github.com/jxxghp/MoviePilot",
-      "location": "/__w/xhcart/xchart/stable/moviepilot",
-      "latest_version": "1.0.8",
-      "latest_app_version": "1.7.1",
-      "latest_human_version": "1.7.1_1.0.8",
-      "last_update": "2023-12-02 13:30:23",
-      "name": "moviepilot",
-      "recommended": false,
-      "title": "moviepilot",
-      "maintainers": [
-        {
-          "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://github.com/jxxghp/MoviePilot"
-      ],
-      "icon_url": "https://raw.githubusercontent.com/jxxghp/MoviePilot-Frontend/main/public/logo.png"
-    },
-    "qbittorrent": {
-      "app_readme": "<h1>qbittorrent</h1>\n<p>一个基于 Qt 工具箱和 libtorrent-rasterbar 并用 C++ 编写的高级 BitTorrent 客户端。</p>",
-      "categories": [
-        "networking",
-        "Tools-Utilities"
-      ],
-      "description": "qbittorrent",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://www.qbittorrent.org/",
-      "location": "/__w/xhcart/xchart/stable/qbittorrent",
-      "latest_version": "1.0.10",
-      "latest_app_version": "4.6.4",
-      "latest_human_version": "4.6.4_1.0.10",
-      "last_update": "2024-04-01 12:20:23",
-      "name": "qbittorrent",
-      "recommended": false,
-      "title": "qbittorrent",
-      "maintainers": [
-        {
-          "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/qbittorrent.png"
-    },
-    "transmission": {
-      "app_readme": "<h1>transmission</h1>\n<p>A Fast, Easy and Free Bittorrent Client For macOS, Windows and Linux</p>",
-      "categories": [
-        "networking",
-        "Tools-Utilities"
-      ],
-      "description": "transmission",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://transmissionbt.com/",
-      "location": "/__w/xhcart/xchart/stable/transmission",
-      "latest_version": "1.0.10",
-      "latest_app_version": "4.0.4",
-      "latest_human_version": "4.0.4_1.0.10",
-      "last_update": "2023-10-05 11:47:23",
-      "name": "transmission",
-      "recommended": false,
-      "title": "transmission",
-      "maintainers": [
-        {
-          "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://github.com/transmission/transmission"
-      ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/transmission.png"
-    },
-    "vlmcsd": {
-      "app_readme": "<h1>vlmcsd</h1>\n<p>KMS server</p>",
-      "categories": [
-        "networking",
-        "Tools-Utilities"
-      ],
-      "description": "vlmcsd",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://hub.docker.com/r/mogeko/vlmcsd",
-      "location": "/__w/xhcart/xchart/stable/vlmcsd",
-      "latest_version": "1.0.1",
-      "latest_app_version": "2022.01.16",
-      "latest_human_version": "2022.01.16_1.0.1",
-      "last_update": "2023-08-25 13:33:23",
-      "name": "vlmcsd",
-      "recommended": false,
-      "title": "vlmcsd",
-      "maintainers": [
-        {
-          "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://github.com/Wind4/vlmcsd"
-      ],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/vlmcsd-kms-server.png"
-    },
-    "xunlei": {
-      "app_readme": "<h1>xunlei</h1>\n<p>迅雷下载</p>",
-      "categories": [
-        "networking",
-        "Tools-Utilities"
-      ],
-      "description": "xunlei",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://www.xunlei.com/",
-      "location": "/__w/xhcart/xchart/stable/xunlei",
-      "latest_version": "1.0.27",
-      "latest_app_version": "3.7.1",
-      "latest_human_version": "3.7.1_1.0.27",
-      "last_update": "2024-02-26 11:03:23",
-      "name": "xunlei",
-      "recommended": false,
-      "title": "xunlei",
-      "maintainers": [
-        {
-          "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://hub.docker.com/r/cnk3x/xunlei"
-      ],
-      "icon_url": "https://www.xunlei.com/icons/logo.svg"
-    },
-    "hlink": {
-      "app_readme": "<h1>hlink</h1>\n<p>批量、快速硬链工具</p>",
-      "categories": [
-        "Tools-Utilities"
-      ],
-      "description": "hlink",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://hlink.likun.me/",
-      "location": "/__w/xhcart/xchart/stable/hlink",
-      "latest_version": "1.0.4",
-      "latest_app_version": "2.0.10",
-      "latest_human_version": "2.0.10_1.0.4",
-      "last_update": "2023-11-09 09:53:23",
-      "name": "hlink",
-      "recommended": false,
-      "title": "hlink",
-      "maintainers": [
-        {
-          "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
-        }
-      ],
-      "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://github.com/likun7981/hlink",
-        "https://hub.docker.com/r/likun7981/hlink"
-      ],
-      "icon_url": "https://hlink.likun.me/logo.svg"
+      "title": "kodbox"
     },
     "kube-explorer": {
       "app_readme": "<h1>kube-explorer</h1>\n<p>kube-explorer is a portable explorer for Kubernetes without any dependency.</p>",
@@ -362,58 +352,27 @@
       "healthy": true,
       "healthy_error": null,
       "home": "https://github.com/cnrancher/kube-explorer",
-      "location": "/__w/xhcart/xchart/test/kube-explorer",
-      "latest_version": "1.0.2",
+      "icon_url": "https://www.rancher.cn/imgs/rancher-logo-only-color.svg",
+      "last_update": "2024-03-21 21:52:07",
       "latest_app_version": "2.8.0",
       "latest_human_version": "2.8.0_1.0.2",
-      "last_update": "2024-03-21 21:52:07",
-      "name": "kube-explorer",
-      "recommended": false,
-      "title": "kube-explorer",
+      "latest_version": "1.0.2",
+      "location": "/__w/xhcart/xchart/test/kube-explorer",
       "maintainers": [
         {
+          "email": "1165505953@qq.com",
           "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
+          "url": "https://gitee.com/qwerty0007/xchart"
         }
       ],
-      "tags": [],
+      "name": "kube-explorer",
+      "recommended": false,
       "screenshots": [],
       "sources": [
         "https://github.com/cnrancher/kube-explorer"
       ],
-      "icon_url": "https://www.rancher.cn/imgs/rancher-logo-only-color.svg"
-    },
-    "alist": {
-      "app_readme": "<h1>alist</h1>\n<p>🗂️ 一个支持多种存储的文件列表程序，使用 Gin 和 Solidjs。</p>",
-      "categories": [
-        "Tools-Utilities"
-      ],
-      "description": "alist",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://alist.nn.ci/zh/",
-      "location": "/__w/xhcart/xchart/stable/alist",
-      "latest_version": "1.0.4",
-      "latest_app_version": "3.32.0",
-      "latest_human_version": "3.32.0_1.0.4",
-      "last_update": "2024-03-14 12:30:07",
-      "name": "alist",
-      "recommended": false,
-      "title": "alist",
-      "maintainers": [
-        {
-          "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
-        }
-      ],
       "tags": [],
-      "screenshots": [],
-      "sources": [
-        "https://github.com/alist-org/alist"
-      ],
-      "icon_url": "https://alist.nn.ci/logo.svg"
+      "title": "kube-explorer"
     },
     "lucky": {
       "app_readme": "<h1>lucky</h1>\n<p>家用软硬路由公网利器</p>",
@@ -425,64 +384,121 @@
       "healthy": true,
       "healthy_error": null,
       "home": "https://lucky666.cn",
-      "location": "/__w/xhcart/xchart/stable/lucky",
-      "latest_version": "1.0.2",
+      "icon_url": "https://lucky666.cn/img/logo.svg",
+      "last_update": "2024-03-21 21:52:07",
       "latest_app_version": "2.8.0",
       "latest_human_version": "2.8.0_1.0.2",
-      "last_update": "2024-03-21 21:52:07",
-      "name": "lucky",
-      "recommended": false,
-      "title": "lucky",
+      "latest_version": "1.0.2",
+      "location": "/__w/xhcart/xchart/stable/lucky",
       "maintainers": [
         {
+          "email": "1165505953@qq.com",
           "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
+          "url": "https://gitee.com/qwerty0007/xchart"
         }
       ],
-      "tags": [],
+      "name": "lucky",
+      "recommended": false,
       "screenshots": [],
       "sources": [
         "https://lucky666.cn",
         "https://github.com/gdy666/lucky"
       ],
-      "icon_url": "https://lucky666.cn/img/logo.svg"
+      "tags": [],
+      "title": "lucky"
     },
-    "kodbox": {
-      "app_readme": "<h1>kodbox</h1>\n<p><a href=\"https://kodbox.com/\">kodbox</a> is a file manager for web. It is also a web code editor, which allows you to develop websites directly within the web browser.You can run kodbox either online or locally,on Linux, Windows or Mac based platforms. The only requirement is to have PHP 5 available.</p>",
+    "moviepilot": {
+      "app_readme": "<h1>moviepilot</h1>\n<p>媒体整理， pt 刷流工具</p>",
       "categories": [
-        "productivity"
+        "media",
+        "Tools-Utilities"
       ],
-      "description": "kodbox is a file manager for web. It is also a web code editor, which allows you to develop websites directly within the web browser.You can run kodbox either online or locally,on Linux, Windows or Mac based platforms. The only requirement is to have PHP 5 available.",
+      "description": "moviepilot",
       "healthy": true,
       "healthy_error": null,
-      "home": "https://kodbox.com/",
-      "location": "/__w/xhcart/xchart/stable/kodbox",
-      "latest_version": "1.0.0",
-      "latest_app_version": "1.49.10",
-      "latest_human_version": "1.49.10_1.0.0",
-      "last_update": "2024-03-18 11:31:26",
-      "name": "kodbox",
-      "recommended": false,
-      "title": "kodbox",
+      "home": "https://github.com/jxxghp/MoviePilot",
+      "icon_url": "https://raw.githubusercontent.com/jxxghp/MoviePilot-Frontend/main/public/logo.png",
+      "last_update": "2023-12-02 13:30:23",
+      "latest_app_version": "1.7.1",
+      "latest_human_version": "1.7.1_1.0.8",
+      "latest_version": "1.0.8",
+      "location": "/__w/xhcart/xchart/stable/moviepilot",
       "maintainers": [
         {
+          "email": "1165505953@qq.com",
           "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007",
-          "email": " 1165505953@qq.com"
+          "url": "https://gitee.com/qwerty0007/xchart"
         }
       ],
-      "tags": [
-        "kodbox",
-        "storage"
-      ],
+      "name": "moviepilot",
+      "recommended": false,
       "screenshots": [],
       "sources": [
-        "https://hub.docker.com/r/kodcloud/kodbox",
-        "https://hub.docker.com/r/bitnami/redis",
-        "https://hub.docker.com/r/linuxserver/mariadb"
+        "https://github.com/jxxghp/MoviePilot"
       ],
-      "icon_url": "https://raw.githubusercontent.com/kalcaddle/kodbox/main/static/images/icon/icon_512.png"
+      "tags": [],
+      "title": "moviepilot"
+    },
+    "mtphotos": {
+      "app_readme": "<h1>mtphotos</h1>\n<p>一款为 Nas 玩家准备的照片管理系统</p>",
+      "categories": [
+        "media"
+      ],
+      "description": "mtphotos",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://mtmt.tech/",
+      "icon_url": "https://cdn.mtmt.tech/logo-r.png",
+      "last_update": "2024-04-04 21:52:07",
+      "latest_app_version": "1.28.0",
+      "latest_human_version": "1.28.0_1.0.29",
+      "latest_version": "1.0.29",
+      "location": "/__w/xhcart/xchart/stable/mtphotos",
+      "maintainers": [
+        {
+          "email": "1165505953@qq.com",
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart"
+        }
+      ],
+      "name": "mtphotos",
+      "recommended": false,
+      "screenshots": [],
+      "sources": [
+        "https://gitee.com/mt-photos/charts.git"
+      ],
+      "tags": [],
+      "title": "mtphotos"
+    },
+    "qbittorrent": {
+      "app_readme": "<h1>qbittorrent</h1>\n<p>一个基于 Qt 工具箱和 libtorrent-rasterbar 并用 C++ 编写的高级 BitTorrent 客户端。</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "qbittorrent",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://www.qbittorrent.org/",
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/qbittorrent.png",
+      "last_update": "2024-04-01 12:20:23",
+      "latest_app_version": "4.6.4",
+      "latest_human_version": "4.6.4_1.0.10",
+      "latest_version": "1.0.10",
+      "location": "/__w/xhcart/xchart/stable/qbittorrent",
+      "maintainers": [
+        {
+          "email": "1165505953@qq.com",
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart"
+        }
+      ],
+      "name": "qbittorrent",
+      "recommended": false,
+      "screenshots": [],
+      "sources": [],
+      "tags": [],
+      "title": "qbittorrent"
     },
     "stripcharts": {
       "app_readme": "<h1>stripcharts</h1>\n<p>筛选 truecharts 中自己需要的应用，重新生成 catalog，减少添加应用库同步的时间</p>",
@@ -494,140 +510,124 @@
       "healthy": true,
       "healthy_error": null,
       "home": "https://github.com/qwerty00007/StripCharts",
-      "location": "/__w/xhcart/xchart/stable/stripcharts",
-      "latest_version": "1.0.4",
+      "icon_url": "https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/stripcharts.jpg",
+      "last_update": "2024-03-21 21:52:07",
       "latest_app_version": "1.0.1",
       "latest_human_version": "1.0.1_1.0.4",
-      "last_update": "2024-03-21 21:52:07",
-      "name": "stripcharts",
-      "recommended": false,
-      "title": "stripcharts",
+      "latest_version": "1.0.4",
+      "location": "/__w/xhcart/xchart/stable/stripcharts",
       "maintainers": [
         {
+          "email": "1165505953@qq.com",
           "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart",
-          "email": "1165505953@qq.com"
+          "url": "https://gitee.com/qwerty0007/xchart"
         }
       ],
-      "tags": [],
+      "name": "stripcharts",
+      "recommended": false,
       "screenshots": [],
       "sources": [
         "https://github.com/qwerty00007/StripCharts.git",
         "https://hub.docker.com/r/qwerty00007/stripcharts"
       ],
-      "icon_url": "https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/stripcharts.jpg"
-    }
-  },
-  "community": {
-    "nextcloud": {
-      "app_readme": "<h1>nextcloud</h1>\n<p><a href=\"https://nextcloud.com/\">nextcloud</a> is a file sharing server that puts the control and security of your own data back into your hands.</p>",
-      "categories": [
-        "productivity"
-      ],
-      "description": "A file sharing server that puts the control and security of your own data back into your hands.",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://nextcloud.com/",
-      "location": "/__w/charts/charts/community/nextcloud",
-      "latest_version": "1.2.4",
-      "latest_app_version": "28.0.3",
-      "latest_human_version": "28.0.3_1.2.4",
-      "last_update": "2024-03-11 12:18:44",
-      "name": "nextcloud",
-      "recommended": false,
-      "title": "Nextcloud",
-      "maintainers": [
-        {
-          "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007",
-          "email": "1165505953@qq.com"
-        }
-      ],
-      "tags": [
-        "nextcloud",
-        "storage",
-        "sync"
-      ],
-      "screenshots": [
-        "https://media.sys.truenas.net/apps/nextcloud/screenshots/screenshot1.png",
-        "https://media.sys.truenas.net/apps/nextcloud/screenshots/screenshot2.png",
-        "https://media.sys.truenas.net/apps/nextcloud/screenshots/screenshot3.png"
-      ],
-      "sources": [
-        "https://github.com/nextcloud/docker",
-        "https://github.com/nextcloud/helm",
-        "https://github.com/truenas/charts/tree/master/charts/nextcloud"
-      ],
-      "icon_url": "https://media.sys.truenas.net/apps/nextcloud/icons/icon.svg"
-    }
-  },
-  "incubator": {
-    "kodbox": {
-      "app_readme": "<h1>kodbox</h1>\n<p><a href=\"https://kodbox.com/\">kodbox</a> is a file manager for web. It is also a web code editor, which allows you to develop websites directly within the web browser.You can run kodbox either online or locally,on Linux, Windows or Mac based platforms. The only requirement is to have PHP 5 available.</p>",
-      "categories": [
-        "productivity"
-      ],
-      "description": "kodbox is a file manager for web. It is also a web code editor, which allows you to develop websites directly within the web browser.You can run kodbox either online or locally,on Linux, Windows or Mac based platforms. The only requirement is to have PHP 5 available.",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://kodbox.com/",
-      "location": "/__w/xhcart/xchart/stable/kodbox",
-      "latest_version": "1.0.0",
-      "latest_app_version": "1.49.10",
-      "latest_human_version": "1.49.10_1.0.0",
-      "last_update": "2024-03-18 11:31:26",
-      "name": "kodbox",
-      "recommended": false,
-      "title": "kodbox",
-      "maintainers": [
-        {
-          "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007",
-          "email": " 1165505953@qq.com"
-        }
-      ],
-      "tags": [
-        "kodbox",
-        "storage"
-      ],
-      "screenshots": [],
-      "sources": [
-        "https://hub.docker.com/r/kodcloud/kodbox",
-        "https://hub.docker.com/r/bitnami/redis",
-        "https://hub.docker.com/r/linuxserver/mariadb"
-      ],
-      "icon_url": "https://raw.githubusercontent.com/kalcaddle/kodbox/main/static/images/icon/icon_512.png"
+      "tags": [],
+      "title": "stripcharts"
     },
-    "external-service": {
-      "app_readme": "<h1>external-service</h1>\n<p></p>",
+    "transmission": {
+      "app_readme": "<h1>transmission</h1>\n<p>A Fast, Easy and Free Bittorrent Client For macOS, Windows and Linux</p>",
       "categories": [
-        "productivity"
+        "networking",
+        "Tools-Utilities"
       ],
-      "description": "Allow external services to be used like Apps.",
+      "description": "transmission",
       "healthy": true,
       "healthy_error": null,
-      "home": "https://external-service.com/",
-      "location": "/__w/xhcart/xchart/incubator/external-service",
-      "latest_version": "1.0.0",
-      "latest_app_version": "1.0.0",
-      "latest_human_version": "1.0.0_1.0.0",
-      "last_update": "2024-03-18 11:31:26",
-      "name": "external-service",
-      "recommended": false,
-      "title": "external-service",
+      "home": "https://transmissionbt.com/",
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/transmission.png",
+      "last_update": "2023-10-05 11:47:23",
+      "latest_app_version": "4.0.4",
+      "latest_human_version": "4.0.4_1.0.10",
+      "latest_version": "1.0.10",
+      "location": "/__w/xhcart/xchart/stable/transmission",
       "maintainers": [
         {
+          "email": "1165505953@qq.com",
           "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007",
-          "email": " 1165505953@qq.com"
+          "url": "https://gitee.com/qwerty0007/xchart"
         }
       ],
-      "tags": [
-        "external-service"
-      ],
+      "name": "transmission",
+      "recommended": false,
       "screenshots": [],
-      "sources": [],
-      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/external-service.png"
+      "sources": [
+        "https://github.com/transmission/transmission"
+      ],
+      "tags": [],
+      "title": "transmission"
+    },
+    "vlmcsd": {
+      "app_readme": "<h1>vlmcsd</h1>\n<p>KMS server</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "vlmcsd",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://hub.docker.com/r/mogeko/vlmcsd",
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/vlmcsd-kms-server.png",
+      "last_update": "2023-08-25 13:33:23",
+      "latest_app_version": "2022.01.16",
+      "latest_human_version": "2022.01.16_1.0.1",
+      "latest_version": "1.0.1",
+      "location": "/__w/xhcart/xchart/stable/vlmcsd",
+      "maintainers": [
+        {
+          "email": "1165505953@qq.com",
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart"
+        }
+      ],
+      "name": "vlmcsd",
+      "recommended": false,
+      "screenshots": [],
+      "sources": [
+        "https://github.com/Wind4/vlmcsd"
+      ],
+      "tags": [],
+      "title": "vlmcsd"
+    },
+    "xunlei": {
+      "app_readme": "<h1>xunlei</h1>\n<p>迅雷下载</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "xunlei",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://www.xunlei.com/",
+      "icon_url": "https://www.xunlei.com/icons/logo.svg",
+      "last_update": "2024-02-26 11:03:23",
+      "latest_app_version": "3.7.1",
+      "latest_human_version": "3.7.1_1.0.27",
+      "latest_version": "1.0.27",
+      "location": "/__w/xhcart/xchart/stable/xunlei",
+      "maintainers": [
+        {
+          "email": "1165505953@qq.com",
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart"
+        }
+      ],
+      "name": "xunlei",
+      "recommended": false,
+      "screenshots": [],
+      "sources": [
+        "https://hub.docker.com/r/cnk3x/xunlei"
+      ],
+      "tags": [],
+      "title": "xunlei"
     }
   }
 }
