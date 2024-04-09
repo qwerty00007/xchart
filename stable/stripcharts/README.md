@@ -1,5 +1,5 @@
 # StripCharts
-筛选你需要的应用推送到自建 gitea 服务器, gitee 或者 github。gitee 和 github 就使用 token 推送。
+筛选 truecharts 中你需要的应用推送到自建 gitea 服务器, gitee 或者 github。gitee 和 github 就使用 token 推送。
 环境变量说明
 * `STRIP_STABLE` 筛选在仓库里 **stable** 的 apps 例如：`nextcloud|plex|traefik|cloudflareddns|vaultwarden`，注意用 `|` 分隔
 * `STRIP_PREMIUM` 筛选在仓库里 **premium** 的 apps 例如：`actualserver|breitbandmessung-de`，注意用 `|` 分隔
@@ -12,4 +12,4 @@
 
 ## 参考配置
 
-![](https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/stripcharts_gitea_readme.jpg)
+![](https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/stripcharts_gitea_readme.png)
