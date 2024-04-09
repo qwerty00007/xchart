@@ -307,7 +307,7 @@
       "title": "jellyfin"
     },
     "kodbox": {
-      "app_readme": "<h1>kodbox</h1>\n<p><a href=\"https://kodbox.com/\">kodbox</a> is a file manager for web. It is also a web code editor, which allows you to develop websites directly within the web browser.You can run kodbox either online or locally,on Linux, Windows or Mac based platforms. The only requirement is to have PHP 5 available.</p>",
+      "app_readme": "<h1>kodbox</h1>\n<p><a href=\"https://kodbox.com/\">kodbox</a> is a file manager for web. It is also a web code editor, which allows you to develop websites directly within the web browser.You can run kodbox either online or locally,on Linux, Windows or Mac based platforms. The only requirement is to have PHP 5 available. <a href=\"https://gitee.com/qwerty0007/xchart/tree/main/stable/kodbox\">安装参考</a></p>",
       "categories": [
         "productivity"
       ],
@@ -343,7 +343,7 @@
       "title": "kodbox"
     },
     "kube-explorer": {
-      "app_readme": "<h1>kube-explorer</h1>\n<p>kube-explorer is a portable explorer for Kubernetes without any dependency.</p>",
+      "app_readme": "<h1>kube-explorer</h1>\n<p>kube-explorer is a portable explorer for Kubernetes without any dependency. <a href=\"https://gitee.com/qwerty0007/xchart/tree/main/stable/kube-explorer\">安装参考</a></p>",
       "categories": [
         "networking",
         "Tools-Utilities"
