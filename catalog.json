@@ -623,14 +623,10 @@
         }
       ],
       "tags": [
-        "external-service",
-        "storage",
-        "sync"
+        "external-service"
       ],
-      "screenshots": [
-             ],
-      "sources": [
-      ],
+      "screenshots": [],
+      "sources": [],
       "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/external-service.png"
     }
   }
