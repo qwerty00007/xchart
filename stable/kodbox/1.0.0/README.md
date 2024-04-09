@@ -7,4 +7,5 @@ kodbox is a file manager for web. It is also a web code editor, which allows you
 这里将 $appName 替换为 kodbox。
 
 ![](https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/appName.png)
+
 ![](https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/kodbox-db-config.png)
