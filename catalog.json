@@ -177,7 +177,7 @@
     "clash": {
       "app_readme": "<h1>clash</h1>\n<p>clash core and ui</p>",
       "categories": [
-        "media"
+        "Tools-Utilities"
       ],
       "description": "clash",
       "healthy": true,
