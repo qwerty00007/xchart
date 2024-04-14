@@ -57,7 +57,7 @@ spec:
             {{ end }}          
           ports:
             - name: externalcontrol
-              containerPort: {{ .Values.externalcontrol_port }}
+              containerPort: 9090
             - name: mixed
               containerPort: {{ .Values.mixed_port }}
               protocol: TCP
