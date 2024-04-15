@@ -35,23 +35,46 @@ questions:
       required: true
 
   - variable: externalcontrol_port
-    label: "External Control Port for clash-core, must match your config file"
+    label: "External Control Port for clash-core"
     group: Networking
     schema:
-      type: int
-      min: 8000
-      max: 65535
-      default: 9090
-      required: true
+      type: dict
+      attrs:
+        - variable: containerPort
+          label: "Container Port, must match your config file"
+          schema:
+            type: int
+            required: true
+            default: 9090
+        - variable: nodePort
+          label: "Node Port"
+          schema:
+            type: int
+            required: true
+            min: 9000
+            max: 65535
+            default: 19090
+
   - variable: mixed_port
-    label: "Mixed Port for clash-core, must match your config file"
+    label: "Mixed Port for clash-core"
     group: Networking
     schema:
-      type: int
-      min: 8000
-      max: 65535
-      default: 17893
-      required: true
+      type: dict
+      attrs:
+        - variable: containerPort
+          label: "Container Port, must match your config file"
+          schema:
+            type: int
+            required: true
+            default: 7893
+        - variable: nodePort
+          label: "Node Port"
+          schema:
+            type: int
+            required: true
+            min: 9000
+            max: 65535
+            default: 17893
 
   - variable: dnsConfig
     label: "DNS Configuration"

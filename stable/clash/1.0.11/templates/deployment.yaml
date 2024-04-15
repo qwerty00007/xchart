@@ -50,9 +50,9 @@ spec:
             {{ end }}          
           ports:
             - name: externalcontrol
-              containerPort: 9090
+              containerPort: {{ .Values.externalcontrol_port.containerPort }}
             - name: mixed
-              containerPort: {{ .Values.mixed_port }}
+              containerPort: {{ .Values.mixed_port.containerPort }}
               protocol: TCP
           env:
             {{ $envList := (default list .Values.environmentVariables) }}
