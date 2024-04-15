@@ -9,6 +9,6 @@ spec: {{ include "common.deployment.common_spec" $values | nindent 2 }}
         image: {{ template "ui.imageName" . }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
-        - name: ui-tcp
+        - name: ui-web
           containerPort: 80
           protocol: TCP

@@ -1,5 +1,5 @@
 {{ $ports := list }}
-{{ $ports = mustAppend $ports (dict "name" "tcp" "port" .Values.tcp_port "nodePort" .Values.tcp_port "targetPort" 80) }}
+{{ $ports = mustAppend $ports (dict "name" "web" "port" .Values.web_port "nodePort" .Values.web_port "targetPort" 80) }}
 {{ $values := (. | mustDeepCopy) }}
 {{ $_ := set $values "common" (dict "nameSuffix" "ui") }}
 {{ $_1 := set $values "commonService" (dict "type" "NodePort" "ports" $ports ) }}

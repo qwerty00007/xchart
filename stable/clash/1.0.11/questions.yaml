@@ -19,13 +19,13 @@ portals:
     host:
       - "$node_ip"
     ports:
-      - "$variable-tcp_port"
+      - "$variable-web_port"
     path: "/"
 
 questions:
 
-  - variable: tcp_port
-    label: "tcp Port for clash-ui"
+  - variable: web_port
+    label: "web Port for clash-ui"
     group: Networking
     schema:
       type: int
@@ -34,47 +34,27 @@ questions:
       default: 28080
       required: true
 
-  - variable: externalcontrol_port
-    label: "External Control Port for clash-core"
+  - variable: http_port
+    label: "http Port for clash"
     group: Networking
     schema:
-      type: dict
-      attrs:
-        - variable: containerPort
-          label: "Container Port, must match your config file"
-          schema:
-            type: int
-            required: true
-            default: 9090
-        - variable: nodePort
-          label: "Node Port"
-          schema:
-            type: int
-            required: true
-            min: 9000
-            max: 65535
-            default: 19090
-
+      type: int
+      default: 7891
+      required: true
+  - variable: socks5_port
+    label: "socks5 Port for clash"
+    group: Networking
+    schema:
+      type: int
+      default: 7892
+      required: true
   - variable: mixed_port
-    label: "Mixed Port for clash-core"
+    label: "mixed Port for clash"
     group: Networking
     schema:
-      type: dict
-      attrs:
-        - variable: containerPort
-          label: "Container Port, must match your config file"
-          schema:
-            type: int
-            required: true
-            default: 7893
-        - variable: nodePort
-          label: "Node Port"
-          schema:
-            type: int
-            required: true
-            min: 9000
-            max: 65535
-            default: 17893
+      type: int
+      default: 7893
+      required: true
 
   - variable: dnsConfig
     label: "DNS Configuration"
