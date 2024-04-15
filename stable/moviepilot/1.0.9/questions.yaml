@@ -41,6 +41,23 @@ questions:
       max: 65535
       default: 23001
       required: true
+
+  - variable: proxyEnabled
+    group: Networking
+    label: Enable Http Proxy
+    description: "config http proxy"
+    schema:
+      type: boolean
+      default: false
+      show_subquestions_if: true
+      subquestions:
+        - variable: proxyHost
+          label: Http Proxy
+          schema:
+            type: string
+            default: "http://clash.ix-clash.svc.cluster.local:7893"
+            required: true
+
   - variable: ingressEnabled
     group: Ingress
     label: Enable Ingress

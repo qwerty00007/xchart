@@ -58,7 +58,9 @@ spec:
             {{ $envList = mustAppend $envList (dict "name" "COOKIECLOUD_PASSWORD" "value" .Values.cookieCloud_password) }}              
             {{ $envList = mustAppend $envList (dict "name" "COOKIECLOUD_INTERVAL" "value" .Values.cookieCloud_interval) }}              
             {{ $envList = mustAppend $envList (dict "name" "TRANSFER_TYPE" "value" .Values.transfer_type) }}              
-          
+            {{ if .Values.ingressEnabled }}
+            {{ $envList = mustAppend $envList (dict "name" "PROXY_HOST" "value" .Values.proxyHost) }}           
+            {{ end }}
             {{- range $key, $val := .Values.auth_env }}
             {{ $envList = mustAppend $envList (dict "name" $key "value" $val) }}              
             {{ end -}}
