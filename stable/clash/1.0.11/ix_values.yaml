@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: dreamacro/clash
+  tag: v1.16.0

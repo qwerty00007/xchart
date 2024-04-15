@@ -174,6 +174,38 @@
       "tags": [],
       "title": "chinesesubfinder"
     },
+    "clash": {
+      "app_readme": "<h1>clash</h1>\n<p>clash core and ui</p>",
+      "categories": [
+        "Tools-Utilities"
+      ],
+      "description": "clash",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://hub.docker.com/r/dreamacro/clash",
+      "icon_url": "https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/clash.png",
+      "last_update": "2024-03-14 12:30:07",
+      "latest_app_version": "1.16.0",
+      "latest_human_version": "1.16.0_1.0.11",
+      "latest_version": "1.0.11",
+      "location": "/__w/xhcart/xchart/stable/clash",
+      "maintainers": [
+        {
+          "email": "1165505953@qq.com",
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart"
+        }
+      ],
+      "name": "clash",
+      "recommended": false,
+      "screenshots": [],
+      "sources": [
+        "https://hub.docker.com/r/dreamacro/clash",
+        "https://hub.docker.com/r/haishanh/yacd"
+      ],
+      "tags": [],
+      "title": "clash"
+    },
     "cookiecloud": {
       "app_readme": "<h1>cookiecloud</h1>\n<p>A rule-based tunnel in GO</p>",
       "categories": [
