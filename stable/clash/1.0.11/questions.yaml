@@ -33,7 +33,7 @@ questions:
       max: 65535
       default: 28080
       required: true
-  - variable: external_controller_port
+  - variable: ctler_port
     label: "external controller Port for clash"
     group: Networking
     schema:

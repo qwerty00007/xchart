@@ -51,7 +51,7 @@ spec:
             {{ end }}          
           ports:
             - name: ctler
-              containerPort: {{ .Values.external_controller_port }}
+              containerPort: {{ .Values.ctler_port }}
               protocol: TCP
             - name: http
               containerPort: {{ .Values.http_port }}
