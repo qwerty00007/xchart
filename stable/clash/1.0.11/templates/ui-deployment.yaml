@@ -6,8 +6,8 @@ spec: {{ include "common.deployment.common_spec" $values | nindent 2 }}
     spec:
       containers:
       - name: {{ .Chart.Name }}-ui
-        {{ include "common.resources.limitation" . | nindent 10 }}
-        {{ include "common.containers.imageConfig" .Values.uiImage.image | nindent 10 }}
+        image: {{ template "ui.imageName" . }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
         - name: ui-tcp
           containerPort: 80
