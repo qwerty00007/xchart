@@ -50,6 +50,9 @@ spec:
               add: {{ toYaml .Values.securityContext.capabilities | nindent 8 }}
             {{ end }}          
           ports:
+            - name: external_controller
+              containerPort: {{ .Values.external_controller_port }}
+              protocol: TCP
             - name: http
               containerPort: {{ .Values.http_port }}
               protocol: TCP

@@ -102,6 +102,18 @@
           }
         },
         {
+          "variable": "external_controller_port",
+          "label": "external controller Port for clash",
+          "group": "Networking",
+          "schema": {
+            "type": "int",
+            "min": 8000,
+            "max": 65535,
+            "default": 9090,
+            "required": true
+          }
+        },
+        {
           "variable": "http_port",
           "label": "http Port for clash",
           "group": "Networking",
