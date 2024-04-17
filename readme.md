@@ -20,7 +20,7 @@
 - **stripcharts** 筛选你需要的应用推送到自建 gitea 服务器, gitee 或者 github
 - **kodbox** 可道云
 - **kube-explorer** kube-explorer is a portable explorer for Kubernetes without any dependency
-- **clash** 同时部署了 core 和 ui， core，强制使用了host网络
+- **小🐱咪** 同时部署了 core 和 ui， core，强制使用了host网络
 
 
 ## 增加第三方应用库
