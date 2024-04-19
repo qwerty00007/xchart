@@ -14,8 +14,7 @@
     "version": "1.0.9",
     "chart_metadata": {
       "name": "code-server",
-      "description":"Run VS code-server on any machine anywhere and access it in the browser.",
-
+      "description": "Run VS code-server on any machine anywhere and access it in the browser.",
       "annotations": {
         "title": "code-server"
       },
@@ -53,15 +52,15 @@
       "groups": [
         {
           "name": "Configuration",
-          "description": "code-server application configuration"
+          "description": "Code-Server application configuration"
         },
         {
           "name": "Storage",
-          "description": "Configure storage for code-server"
+          "description": "Configure storage for Code-Server"
         },
         {
           "name": "Networking",
-          "description": "Networking Configuration for code-server"
+          "description": "Networking Configuration for Code-Server"
         },
         {
           "name": "Ingress",
@@ -93,7 +92,7 @@
       "questions": [
         {
           "variable": "web_port",
-          "label": "Web Port for Code",
+          "label": "Web Port for Code-Server",
           "group": "Networking",
           "schema": {
             "type": "int",
@@ -243,7 +242,7 @@
         },
         {
           "variable": "environmentVariables",
-          "label": "Code environment",
+          "label": "Code-Server environment",
           "group": "Configuration",
           "schema": {
             "type": "list",
@@ -277,7 +276,7 @@
         },
         {
           "variable": "appVolumeMounts",
-          "label": "Code Storage",
+          "label": "Code-Server Storage",
           "group": "Storage",
           "schema": {
             "type": "dict",
@@ -304,7 +303,7 @@
                             false
                           ]
                         ],
-                        "default": "ix-code_config",
+                        "default": "ix-code-server_config",
                         "editable": false
                       }
                     },
@@ -321,7 +320,7 @@
                     },
                     {
                       "variable": "hostPathEnabled",
-                      "label": "Enable Custom Host Path for Code Configuration Volume",
+                      "label": "Enable Custom Host Path for Code-Server Configuration Volume",
                       "schema": {
                         "type": "boolean",
                         "default": false,
@@ -329,7 +328,7 @@
                         "subquestions": [
                           {
                             "variable": "hostPath",
-                            "label": "Host Path for Code Configuration Volume",
+                            "label": "Host Path for Code-Server Configuration Volume",
                             "schema": {
                               "type": "hostpath",
                               "required": true
@@ -354,7 +353,7 @@
               {
                 "variable": "extraAppVolume",
                 "label": "Host Path Volume",
-                "description": "Add an extra host path volume for Code application",
+                "description": "Add an extra host path volume for Code-Server application",
                 "schema": {
                   "type": "dict",
                   "attrs": [

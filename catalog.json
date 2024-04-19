@@ -238,13 +238,13 @@
       "tags": [],
       "title": "clash"
     },
-    "code": {
-      "app_readme": "<h1>code</h1>\n<p>Run VS Code on any machine anywhere and access it in the browser.</p>",
+    "code-server": {
+      "app_readme": "<h1>code-server</h1>\n<p>Run VS Code on any machine anywhere and access it in the browser.</p>",
       "categories": [
         "media",
         "Tools-Utilities"
       ],
-      "description": "code",
+      "description": "code-server",
       "healthy": true,
       "healthy_error": null,
       "home": "https://github.com/linuxserver/docker-code-server",
@@ -253,7 +253,7 @@
       "latest_app_version": "4.23.1",
       "latest_human_version": "4.23.1_1.0.9",
       "latest_version": "1.0.9",
-      "location": "/__w/xhcart/xchart/stable/code",
+      "location": "/__w/xhcart/xchart/stable/code-server",
       "maintainers": [
         {
           "email": "1165505953@qq.com",
@@ -261,14 +261,14 @@
           "url": "https://gitee.com/qwerty0007/xchart"
         }
       ],
-      "name": "code",
+      "name": "code-server",
       "recommended": false,
       "screenshots": [],
       "sources": [
         "https://github.com/linuxserver/docker-code-server"
       ],
       "tags": [],
-      "title": "code"
+      "title": "code-server"
     },
     "cookiecloud": {
       "app_readme": "<h1>cookiecloud</h1>\n<p>A rule-based tunnel in GO</p>",
