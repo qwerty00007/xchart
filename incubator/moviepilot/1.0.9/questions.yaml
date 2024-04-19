@@ -1,10 +1,12 @@
 groups:
   - name: "Configuration"
-    description: "Moviepilot application configuration"
+    description: "Code application configuration"
   - name: "Storage"
-    description: "Configure storage for Moviepilot"
+    description: "Configure storage for Code"
   - name: "Networking"
-    description: "Networking Configuration for Moviepilot"
+    description: "Networking Configuration for Code"
+  - name: Ingress
+    description: Ingress Configuration
   - name: "Advanced DNS Settings"
     description: "Configure DNS settings"
   - name: "Resource Limits"
@@ -13,49 +15,57 @@ groups:
 portals:
   web_portal:
     protocols:
-      - "http"
+      - "$kubernetes-resource_configmap_portal_protocol"
     host:
-      - "$node_ip"
+      - "$kubernetes-resource_configmap_portal_host"
     ports:
-      - "$variable-web_port"
-    path: "/"
+      - "$kubernetes-resource_configmap_portal_port"
+    path: "$kubernetes-resource_configmap_portal_path"
 
 questions:
   - variable: web_port
-    label: "Web Port for Moviepilot"
+    label: "Web Port for Code"
     group: Networking
     schema:
       type: int
       min: 8000
       max: 65535
-      default: 23000
+      default: 39080
       required: true
-
-  - variable: extraHosts
-    label: "Extra Hosts"
-    group: "Networking"
+  - variable: ingressEnabled
+    group: Ingress
+    label: Enable Ingress
+    description: "config ingress, you must install traefik first"
     schema:
-      type: list
-      items:
-        - variable: extraHost
-          label: "Extra Host"
-          description: "Add an extra host for Moviepilot application"
+      type: boolean
+      default: false
+      show_subquestions_if: true
+      subquestions:
+        - variable: certificate
+          label: Certificate Configuration
           schema:
-            type: dict
-            attrs:
-              - variable: ip
-                label: "ip"
-                description: "hostname ip"
-                schema:
-                  type: string
-                  required: true
-              - variable: hostname
-                label: "Host Name"
-                description: "Host Name"
-                schema:
-                  type: string
-                  required: true
-  
+            type: int
+            $ref:
+              - "definitions/certificate" 
+        - variable: host
+          label: HostName
+          schema:
+            type: string
+            default: "test.test.org"
+            required: true
+        - variable: path
+          label: Path
+          schema:
+            type: string
+            required: true
+            default: "/"
+        - variable: pathType
+          label: Path Type
+          schema:
+            type: string
+            required: true
+            default: Prefix
+
   - variable: dnsConfig
     label: "DNS Configuration"
     group: "Advanced DNS Settings"
@@ -82,6 +92,21 @@ questions:
                       schema:
                         type: string
                         required: true
+  - variable: timezone
+    label: "Timezone"
+    group: "Configuration"
+    schema:
+      type: string
+      $ref:
+        - "definitions/timezone"
+  - variable: password
+    label: "Login Password"
+    group: Configuration
+    schema:
+      type: string
+      required: true
+      private: true
+      default: "password"
 
   - variable: ownerUID
     label: "Owner User ID"
@@ -101,13 +126,12 @@ questions:
       min: 1
       max: 65535
 
-
   - variable: environmentVariables
-    label: "Moviepilot environment"
+    label: "Code environment"
     group: "Configuration"
     schema:
       type: list
-      default: [ ]
+      default: []
       items:
         - variable: environmentVariable
           label: "Environment Variable"
@@ -124,7 +148,7 @@ questions:
                   type: string
 
   - variable: appVolumeMounts
-    label: "Moviepilot Storage"
+    label: "Code Storage"
     group: "Storage"
     schema:
       type: dict
@@ -142,7 +166,7 @@ questions:
                   $ref:
                     - "normalize/ixVolume"
                   show_if: [["hostPathEnabled", "=", false]]
-                  default: "ix-nastools_config"
+                  default: "ix-code_config"
                   editable: false
               - variable: mountPath
                 label: "Configuration Mount Path"
@@ -153,53 +177,18 @@ questions:
                   editable: true
                   default: "/config"
               - variable: hostPathEnabled
-                label: "Enable Custom Host Path for Moviepilot Configuration Volume"
+                label: "Enable Custom Host Path for Code Configuration Volume"
                 schema:
                   type: boolean
                   default: false
                   show_subquestions_if: true
                   subquestions:
                     - variable: hostPath
-                      label: "Host Path for Moviepilot Configuration Volume"
+                      label: "Host Path for Code Configuration Volume"
                       schema:
                         type: hostpath
                         required: true
-        - variable: data
-          label: "Media Data Volume"
-          schema:
-            type: dict
-            attrs:
-              - variable: datasetName
-                label: "Media Data Volume Dataset Name"
-                schema:
-                  type: string
-                  hidden: true
-                  $ref:
-                    - "normalize/ixVolume"
-                  show_if: [["hostPathEnabled", "=", false]]
-                  default: "ix-nastools_data"
-                  editable: false
-              - variable: mountPath
-                label: "Media Data Mount Path"
-                description: "Path where the volume will be mounted inside the pod"
-                schema:
-                  type: path
-                  hidden: true
-                  editable: true
-                  default: "/data"
-              - variable: hostPathEnabled
-                label: "Enable Custom Host Path for Moviepilot Media Volume"
-                schema:
-                  type: boolean
-                  default: false
-                  show_subquestions_if: true
-                  subquestions:
-                    - variable: hostPath
-                      label: "Host Path for Moviepilot Media Data Volume"
-                      schema:
-                        type: hostpath
-                        required: true
-
+                       
   - variable: extraAppVolumeMounts
     label: "Extra Host Path Volumes"
     group: "Storage"
@@ -208,7 +197,7 @@ questions:
       items:
         - variable: extraAppVolume
           label: "Host Path Volume"
-          description: "Add an extra host path volume for Moviepilot application"
+          description: "Add an extra host path volume for Code application"
           schema:
             type: dict
             attrs:

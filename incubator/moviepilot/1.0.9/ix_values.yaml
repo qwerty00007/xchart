@@ -1,4 +1,4 @@
 image:
   pullPolicy: IfNotPresent
-  repository: jxxghp/moviepilot
+  repository: linuxserver/code-server
   tag: latest
