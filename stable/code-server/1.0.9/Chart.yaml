@@ -9,5 +9,5 @@ home: https://github.com/linuxserver/docker-code-server
 icon: https://truecharts.org/img/hotlink-ok/chart-icons/code-server.png
 keywords:
 - media
-name: code
+name: code-server
 version: 1.0.9
