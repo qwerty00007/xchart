@@ -14,7 +14,7 @@
     "version": "1.0.9",
     "chart_metadata": {
       "name": "moviepilot",
-      "description": "🗂️ 一个支持多种存储的文件列表程序，使用 Gin 和 Solidjs。",
+      "description": "自动追剧，整理",
       "annotations": {
         "title": "moviepilot"
       },

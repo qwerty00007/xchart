@@ -43,22 +43,22 @@
     }
   },
   "incubator": {
-    "moviepilot": {
-      "app_readme": "<h1>moviepilot</h1>\n<p>媒体整理， pt 刷流工具</p>",
+    "code": {
+      "app_readme": "<h1>code</h1>\n<p>Run VS Code on any machine anywhere and access it in the browser.</p>",
       "categories": [
         "media",
         "Tools-Utilities"
       ],
-      "description": "moviepilot",
+      "description": "code",
       "healthy": true,
       "healthy_error": null,
-      "home": "https://github.com/jxxghp/MoviePilot",
-      "icon_url": "https://raw.githubusercontent.com/jxxghp/MoviePilot-Frontend/main/public/logo.png",
+      "home": "https://github.com/linuxserver/docker-code-server",
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/code-server.png",
       "last_update": "2024-04-15 21:30:07",
       "latest_app_version": "1.8.1",
       "latest_human_version": "1.8.1_1.0.9",
       "latest_version": "1.0.9",
-      "location": "/__w/xhcart/xchart/incubator/moviepilot",
+      "location": "/__w/xhcart/xchart/incubator/code",
       "maintainers": [
         {
           "email": "1165505953@qq.com",
@@ -66,14 +66,14 @@
           "url": "https://gitee.com/qwerty0007/xchart"
         }
       ],
-      "name": "moviepilot",
+      "name": "code",
       "recommended": false,
       "screenshots": [],
       "sources": [
-        "https://github.com/jxxghp/MoviePilot"
+        "https://github.com/linuxserver/docker-code-server"
       ],
       "tags": [],
-      "title": "moviepilot"
+      "title": "code"
     },
     "external-service": {
       "app_readme": "<h1>external-service</h1>\n<p></p>",

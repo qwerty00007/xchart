@@ -3,8 +3,8 @@
     "healthy": true,
     "supported": false,
     "healthy_error": null,
-    "location": "/__w/xhcart/xchart/stable/moviepilot/1.0.9",
-    "last_update": "2024-04-15 21:30:07",
+    "location": "/__w/xhcart/xchart/stable/code/1.0.9",
+    "last_update": "2024-04-19 21:30:07",
     "required_features": [
       "definitions/certificate",
       "normalize/acl",
@@ -13,10 +13,11 @@
     "human_version": "1.8.1_1.0.9",
     "version": "1.0.9",
     "chart_metadata": {
-      "name": "moviepilot",
-      "description": "🗂️ 一个支持多种存储的文件列表程序，使用 Gin 和 Solidjs。",
+      "name": "code",
+      "description":"Run VS Code on any machine anywhere and access it in the browser.",
+
       "annotations": {
-        "title": "moviepilot"
+        "title": "code"
       },
       "type": "application",
       "version": "1.0.9",
@@ -37,13 +38,13 @@
           "version": "2207.0.0"
         }
       ],
-      "home": "https://github.com/jxxghp/moviepilot",
-      "icon": "https://raw.githubusercontent.com/jxxghp/MoviePilot-Frontend/main/public/logo.png",
+      "home": "https://github.com/linuxserver/docker-code-server",
+      "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/code-server.png",
       "sources": [
-        "https://github.com/jxxghp/moviepilot"
+        "https://github.com/linuxserver/docker-code-server"
       ],
       "keywords": [
-        "moviepilot",
+        "code",
         "media"
       ]
     },
@@ -428,7 +429,7 @@
         }
       ]
     },
-    "app_readme": "<h1>moviepilot</h1>\n<p>NAS媒体库资源归集、整理自动化工具</p>",
+    "app_readme": "<h1>code</h1>\n<p>Run VS Code on any machine anywhere and access it in the browser.</p>",
     "detailed_readme": "",
     "changelog": null
   }
