@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: linuxserver/code-server
+  tag: latest
