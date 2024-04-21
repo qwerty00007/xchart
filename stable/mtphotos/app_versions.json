@@ -65,7 +65,7 @@
         },
         {
           "name": "Ingress",
-          "description": "Configuration Ingress"
+          "description": "Ingress Configuration"
         },
         {
           "name": "Advanced DNS Settings",
@@ -259,6 +259,28 @@
                       }
                     }
                   ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "variable": "aiEnabled",
+          "group": "Configuration",
+          "label": "Enable AI",
+          "description": "Enable AI",
+          "schema": {
+            "type": "boolean",
+            "default": false,
+            "show_subquestions_if": true,
+            "subquestions": [
+              {
+                "variable": "ai_api",
+                "label": "API",
+                "schema": {
+                  "type": "string",
+                  "default": "mt_photos_ai_extra_secret",
+                  "required": true
                 }
               }
             ]
