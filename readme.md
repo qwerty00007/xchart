@@ -33,7 +33,7 @@
 
 ![增加第三方应用库](https://gitee.com/qwerty0007/xchart/raw/main/assets/add.png)
 
-## 使用集群内的内部域名，应用内互访
+## 使用集群内的域名，应用互访
 
 1. 查看所有 pod 的信息，获得应用的 NAMESPACE<br>
 
