@@ -287,6 +287,28 @@
           }
         },
         {
+          "variable": "dfEnabled",
+          "group": "Configuration",
+          "label": "Enable DF",
+          "description": "Enable DF(bate)",
+          "schema": {
+            "type": "boolean",
+            "default": false,
+            "show_subquestions_if": true,
+            "subquestions": [
+              {
+                "variable": "df_api",
+                "label": "API",
+                "schema": {
+                  "type": "string",
+                  "default": "mt_photos_ai_extra_secret",
+                  "required": true
+                }
+              }
+            ]
+          }
+        },
+        {
           "variable": "appVolumeMounts",
           "label": "MT Photos Config Storage",
           "group": "Storage",

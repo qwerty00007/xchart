@@ -28,10 +28,18 @@ spec:
       annotations: {{ include "common.annotations" . | nindent 8 }}
     spec:
       initContainers:
+      {{ if .Values.aiEnabled }}
         - name: init-ai
           image: busybox:1.36.1
           imagePullPolicy: IfNotPresent
           command: ['sh', '-c', "until nslookup {{ template "common.names.fullname" . }}-ai.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for ai; sleep 2; done"]
+      {{ end }}
+      {{ if .Values.dfEnabled }}
+        - name: init-df
+          image: busybox:1.36.1
+          imagePullPolicy: IfNotPresent
+          command: ['sh', '-c', "until nslookup {{ template "common.names.fullname" . }}-df.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for df; sleep 2; done"]
+      {{ end }}
       hostNetwork: false
       containers:
         - name: {{ .Chart.Name }}
