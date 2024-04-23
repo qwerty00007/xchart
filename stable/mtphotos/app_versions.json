@@ -104,17 +104,6 @@
           }
         },
         {
-          "variable": "targetPort",
-          "label": "Target Port",
-          "group": "Networking",
-          "description": "The internal(!) port on the container the Application runs on",
-          "schema": {
-            "type": "int",
-            "default": 8063,
-            "required": true
-          }
-        },
-        {
           "variable": "ingressEnabled",
           "group": "Ingress",
           "label": "Enable Ingress",
@@ -303,6 +292,170 @@
                   "type": "string",
                   "default": "mt_photos_ai_extra_secret",
                   "required": true
+                }
+              },
+              {
+                "variable": "detector_backend",
+                "label": "DETECTOR BACKEND",
+                "schema": {
+                  "type": "string",
+                  "default": "retinaface",
+                  "enum": [
+                    {
+                      "value": "opencv",
+                      "description": "opencv"
+                    },
+                    {
+                      "value": "ssd",
+                      "description": "ssd"
+                    },
+                    {
+                      "value": "dlib",
+                      "description": "dlib"
+                    },
+                    {
+                      "value": "mtcnn",
+                      "description": "mtcnn"
+                    },
+                    {
+                      "value": "retinaface",
+                      "description": "retinaface"
+                    },
+                    {
+                      "value": "mediapipe",
+                      "description": "mediapipe"
+                    },
+                    {
+                      "value": "yolov8",
+                      "description": "yolov8"
+                    },
+                    {
+                      "value": "yunet",
+                      "description": "yunet"
+                    },
+                    {
+                      "value": "fastmtcnn",
+                      "description": "fastmtcnn"
+                    }
+                  ]
+                }
+              },
+              {
+                "variable": "recognition_model",
+                "label": "RECOGNITION MODEL",
+                "schema": {
+                  "type": "string",
+                  "default": "Facenet512",
+                  "enum": [
+                    {
+                      "value": "VGG-Face",
+                      "description": "VGG-Face"
+                    },
+                    {
+                      "value": "Facenet",
+                      "description": "Facenet"
+                    },
+                    {
+                      "value": "Facenet512",
+                      "description": "Facenet512"
+                    },
+                    {
+                      "value": "OpenFace",
+                      "description": "OpenFace"
+                    },
+                    {
+                      "value": "DeepFace",
+                      "description": "DeepFace"
+                    },
+                    {
+                      "value": "DeepID",
+                      "description": "DeepID"
+                    },
+                    {
+                      "value": "ArcFace",
+                      "description": "ArcFace"
+                    },
+                    {
+                      "value": "Dlib",
+                      "description": "Dlib"
+                    },
+                    {
+                      "value": "SFace",
+                      "description": "SFace"
+                    },
+                    {
+                      "value": "GhostFaceNet",
+                      "description": "GhostFaceNet"
+                    }
+                  ]
+                }
+              },
+              {
+                "variable": "dfAppVolumeMounts",
+                "label": "DF Storage",
+                "schema": {
+                  "type": "dict",
+                  "attrs": [
+                    {
+                      "variable": "df-models",
+                      "label": "df models Volume",
+                      "schema": {
+                        "type": "dict",
+                        "attrs": [
+                          {
+                            "variable": "datasetName",
+                            "label": "df models Volume Name",
+                            "schema": {
+                              "type": "string",
+                              "hidden": true,
+                              "$ref": [
+                                "normalize/ixVolume"
+                              ],
+                              "default": "ix-df_models",
+                              "show_if": [
+                                [
+                                  "hostPathEnabled",
+                                  "=",
+                                  false
+                                ]
+                              ],
+                              "editable": false
+                            }
+                          },
+                          {
+                            "variable": "mountPath",
+                            "label": "df models Mount Path",
+                            "description": "Path where the volume will be mounted inside the pod",
+                            "schema": {
+                              "type": "path",
+                              "hidden": true,
+                              "editable": false,
+                              "default": "/models"
+                            }
+                          },
+                          {
+                            "variable": "hostPathEnabled",
+                            "label": "Enable Host Path for df models Volume",
+                            "schema": {
+                              "type": "boolean",
+                              "default": false,
+                              "show_subquestions_if": true,
+                              "subquestions": [
+                                {
+                                  "variable": "hostPath",
+                                  "label": "Host Path for df models Volume",
+                                  "schema": {
+                                    "type": "hostpath",
+                                    "required": true
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
                 }
               }
             ]

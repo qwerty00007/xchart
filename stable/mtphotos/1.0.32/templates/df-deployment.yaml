@@ -10,8 +10,10 @@ spec: {{ include "common.deployment.common_spec" $values | nindent 2 }}
         image: {{ template "df.imageName" . }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env: {{ include "df.envVariableConfiguration" $values | nindent 10 }}
+        volumeMounts: {{ include "df.volumeMountsConfiguration" $values | nindent 10 }}
         ports:
         - name: df-tcp
-          containerPort: 8000
+          containerPort: 8066
           protocol: TCP
+      volumes: {{ include "df.volumeConfiguration" $values | nindent 8 }}
 {{ end }}
