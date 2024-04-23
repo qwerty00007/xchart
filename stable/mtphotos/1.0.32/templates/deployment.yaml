@@ -52,7 +52,7 @@ spec:
           {{ end }}
           ports:
             - name: web
-              containerPort: {{ .Values.targetPort }}
+              containerPort: 8063
           env:
             {{ $envList := (default list .Values.environmentVariables) }}
             {{ $envList = mustAppend $envList (dict "name" "PUID" "value" (printf "%d" (.Values.ownerUID | int))) }}
