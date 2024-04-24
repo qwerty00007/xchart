@@ -56,7 +56,7 @@
                 },
                 {
                     "name": "Storage",
-                    "description": "Configure storage for Siyuan"
+                    "description": "Configure workspace storage for Siyuan"
                 },
                 {
                     "name": "Networking",
