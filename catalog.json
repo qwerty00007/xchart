@@ -596,6 +596,39 @@
       "tags": [],
       "title": "qbittorrent"
     },
+    "siyuan": {
+      "app_readme": "<h1>siyuan</h1>\n<p>思源笔记是一款隐私优先的个人知识管理系统，支持完全离线使用，同时也支持端到端加密同步。</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "siyuan",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://b3log.org/siyuan/",
+      "icon_url": "https://b3log.org/images/brand/siyuan-512.png",
+      "last_update": "2024-04-01 12:20:23",
+      "latest_app_version": "3.0.11",
+      "latest_human_version": "3.0.11_1.0.9",
+      "latest_version": "1.0.9",
+      "location": "/__w/xhcart/xchart/stable/siyuan",
+      "maintainers": [
+        {
+          "email": "1165505953@qq.com",
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart"
+        }
+      ],
+      "name": "siyuan",
+      "recommended": false,
+      "screenshots": [
+        "https://b3log.org/siyuan/static/feature0.png",
+        "https://b3log.org/siyuan/static/feature1-1.png"
+      ],
+      "sources": [],
+      "tags": [],
+      "title": "siyuan"
+    },
     "stripcharts": {
       "app_readme": "<h1>stripcharts</h1>\n<p>筛选 truecharts 中自己需要的应用，重新生成 catalog，减少添加应用库同步的时间</p>\n<p>参考配置 <a href=\"https://gitee.com/qwerty0007/xchart/tree/main/stable/stripcharts\">https://gitee.com/qwerty0007/xchart/tree/main/stable/stripcharts</a></p>",
       "categories": [

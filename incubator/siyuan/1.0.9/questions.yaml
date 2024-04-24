@@ -1,10 +1,10 @@
 groups:
   - name: "Configuration"
-    description: "Code application configuration"
+    description: "Siyuan application configuration"
   - name: "Storage"
-    description: "Configure storage for Code"
+    description: "Configure storage for Siyuan"
   - name: "Networking"
-    description: "Networking Configuration for Code"
+    description: "Networking Configuration for Siyuan"
   - name: Ingress
     description: Ingress Configuration
   - name: "Advanced DNS Settings"
@@ -24,13 +24,13 @@ portals:
 
 questions:
   - variable: web_port
-    label: "Web Port for Code"
+    label: "Web Port for Siyuan"
     group: Networking
     schema:
       type: int
       min: 8000
       max: 65535
-      default: 39080
+      default: 16806
       required: true
   - variable: ingressEnabled
     group: Ingress
@@ -100,7 +100,7 @@ questions:
       $ref:
         - "definitions/timezone"
   - variable: password
-    label: "Login Password"
+    label: "accessAuthCode"
     group: Configuration
     schema:
       type: string
@@ -127,7 +127,7 @@ questions:
       max: 65535
 
   - variable: environmentVariables
-    label: "Code environment"
+    label: "Siyuan environment"
     group: "Configuration"
     schema:
       type: list
@@ -148,12 +148,12 @@ questions:
                   type: string
 
   - variable: appVolumeMounts
-    label: "Code Storage"
+    label: "Siyuan Workspace Storage"
     group: "Storage"
     schema:
       type: dict
       attrs:
-        - variable: config
+        - variable: workspace
           label: "Configuration Volume"
           schema:
             type: dict
@@ -166,7 +166,7 @@ questions:
                   $ref:
                     - "normalize/ixVolume"
                   show_if: [["hostPathEnabled", "=", false]]
-                  default: "ix-code_config"
+                  default: "ix-Siyuan_workspace"
                   editable: false
               - variable: mountPath
                 label: "Configuration Mount Path"
@@ -175,16 +175,16 @@ questions:
                   type: path
                   hidden: true
                   editable: true
-                  default: "/config"
+                  default: "/siyuan/workspace"
               - variable: hostPathEnabled
-                label: "Enable Custom Host Path for Code Configuration Volume"
+                label: "Enable Custom Host Path for Siyuan workspace Volume"
                 schema:
                   type: boolean
                   default: false
                   show_subquestions_if: true
                   subquestions:
                     - variable: hostPath
-                      label: "Host Path for Code Configuration Volume"
+                      label: "Host Path for Siyuan workspace Volume"
                       schema:
                         type: hostpath
                         required: true
@@ -197,7 +197,7 @@ questions:
       items:
         - variable: extraAppVolume
           label: "Host Path Volume"
-          description: "Add an extra host path volume for Code application"
+          description: "Add an extra host path volume for Siyuan application"
           schema:
             type: dict
             attrs:

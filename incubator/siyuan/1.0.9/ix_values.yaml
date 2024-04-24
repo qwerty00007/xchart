@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: b3log/siyuan
+  tag: v3.0.11
