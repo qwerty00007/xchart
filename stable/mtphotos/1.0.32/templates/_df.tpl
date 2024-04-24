@@ -1,5 +1,5 @@
 {{- define "df.imageName" -}}
-{{- print "mtphotos/mt-photos-deepface:1.0.1" -}}
+{{- print "mtphotos/mt-photos-deepface:1.0.2" -}}
 {{- end -}}
 
 {{/*
