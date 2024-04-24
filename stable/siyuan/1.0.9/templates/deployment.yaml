@@ -47,8 +47,7 @@ spec:
           - "--workspace=/siyuan/workspace/"
           - "--accessAuthCode={{ .Values.password }}"
           env:
-            {{ $envList := (default list .Values.environmentVariables) }}          
-            {{ $envList = mustAppend $envList (dict "name" "PASSWORD" "value" .Values.password) }}    
+            {{ $envList := (default list .Values.environmentVariables) }}           
             {{ $envList = mustAppend $envList (dict "name" "TZ" "value" .Values.timezone) }}     
             {{ include "common.containers.environmentVariables" (dict "environmentVariables" $envList) | nindent 12 }}
 {{ include "common.networking.dnsConfiguration" .Values | nindent 6 }}
