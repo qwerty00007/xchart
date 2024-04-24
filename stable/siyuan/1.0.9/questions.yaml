@@ -65,6 +65,13 @@ questions:
             type: string
             required: true
             default: Prefix
+            enum:
+              - value: Prefix
+                description: "Prefix"
+              - value: Exact
+                description: "Exact"
+              - value: ImplementationSpecific
+                description: "ImplementationSpecific"
 
   - variable: dnsConfig
     label: "DNS Configuration"
