@@ -35,7 +35,7 @@
         {
           "name": "common",
           "repository": "file://../../../common",
-          "version": "2207.0.0"
+          "version": "2304.0.1"
         }
       ],
       "home": "https://cdn.mtmt.tech/",
