@@ -7,6 +7,7 @@ spec: {{ include "common.deployment.common_spec" $values | nindent 2 }}
     spec:
       containers:
       - name: {{ .Chart.Name }}-df
+        {{ include "common.resources.limitation" . | nindent 8 }}
         image: {{ template "df.imageName" . }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env: {{ include "df.envVariableConfiguration" $values | nindent 10 }}
