@@ -1,17 +1,17 @@
 {
-  "1.0.9": {
+  "1.0.10": {
     "healthy": true,
     "supported": false,
     "healthy_error": null,
-    "location": "/__w/xhcart/xchart/stable/code-server/1.0.9",
+    "location": "/__w/xhcart/xchart/stable/code-server/1.0.10",
     "last_update": "2024-04-19 21:30:07",
     "required_features": [
       "definitions/certificate",
       "normalize/acl",
       "normalize/ixVolume"
     ],
-    "human_version": "4.23.1_1.0.9",
-    "version": "1.0.9",
+    "human_version": "4.23.1_1.0.10",
+    "version": "1.0.10",
     "chart_metadata": {
       "name": "code-server",
       "description": "Run VS code-server on any machine anywhere and access it in the browser.",
@@ -19,7 +19,7 @@
         "title": "code-server"
       },
       "type": "application",
-      "version": "1.0.9",
+      "version": "1.0.10",
       "apiVersion": "v2",
       "appVersion": "4.23.1",
       "kubeVersion": ">=1.16.0-0",
