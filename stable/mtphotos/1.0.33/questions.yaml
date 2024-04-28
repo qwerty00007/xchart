@@ -211,18 +211,28 @@ questions:
                 description: "SFace"
               - value: GhostFaceNet
                 description: "GhostFaceNet"
-        - variable: mountModelsVolume
-          label: "mount df models Volume"
+        - variable: dfAppVolumeMounts
+          label: "DF Storage"
           schema:
-            type: boolean
-            default: false
-            show_subquestions_if: true
-            subquestions:
-              - variable: dfModelsHostPath
-                label: "Host Path for df models Volume"
+            type: dict
+            attrs:
+              - variable: df-models
+                label: "df models Volume"
                 schema:
-                  type: hostpath
-                  required: true
+                  type: dict
+                  attrs:
+                    - variable: hostPathEnabled
+                      label: "Enable Host Path for df models Volume"
+                      schema:
+                        type: boolean
+                        default: false
+                        show_subquestions_if: true
+                        subquestions:
+                          - variable: hostPath
+                            label: "Host Path for df models Volume"
+                            schema:
+                              type: hostpath
+                              required: true
   - variable: appVolumeMounts
     label: "MT Photos Config Storage"
     group: "Storage"

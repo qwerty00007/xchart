@@ -391,19 +391,37 @@
                 }
               },
               {
-                "variable": "mountModelsVolume",
-                "label": "mount df models Volume",
+                "variable": "dfAppVolumeMounts",
+                "label": "DF Storage",
                 "schema": {
-                  "type": "boolean",
-                  "default": false,
-                  "show_subquestions_if": true,
-                  "subquestions": [
+                  "type": "dict",
+                  "attrs": [
                     {
-                      "variable": "dfModelsHostPath",
-                      "label": "Host Path for df models Volume",
+                      "variable": "df-models",
+                      "label": "df models Volume",
                       "schema": {
-                        "type": "hostpath",
-                        "required": true
+                        "type": "dict",
+                        "attrs": [
+                          {
+                            "variable": "hostPathEnabled",
+                            "label": "Enable Host Path for df models Volume",
+                            "schema": {
+                              "type": "boolean",
+                              "default": false,
+                              "show_subquestions_if": true,
+                              "subquestions": [
+                                {
+                                  "variable": "hostPath",
+                                  "label": "Host Path for df models Volume",
+                                  "schema": {
+                                    "type": "hostpath",
+                                    "required": true
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        ]
                       }
                     }
                   ]
