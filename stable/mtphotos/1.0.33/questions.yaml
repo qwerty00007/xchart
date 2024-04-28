@@ -216,7 +216,7 @@ questions:
           schema:
             type: dict
             attrs:
-              - variable: df-models
+              - variable: dfModels
                 label: "df models Volume"
                 schema:
                   type: dict

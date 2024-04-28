@@ -14,13 +14,13 @@ spec: {{ include "common.deployment.common_spec" $values | nindent 2 }}
         - name: df-tcp
           containerPort: 8066
           protocol: TCP
-      {{ if .Values.dfAppVolumeMounts.df-models.hostPathEnabled }}
+      {{ if .Values.dfAppVolumeMounts.dfModels.hostPathEnabled }}
         volumeMounts: 
         - mountPath: /models
           name: models-volume
       volumes: 
       - name: models-volume
         hostPath:
-          path: {{ .Values.dfAppVolumeMounts.df-models.hostPath  }}
+          path: {{ .Values.dfAppVolumeMounts.dfModels.hostPath  }}
       {{ end }}
 {{ end }}
