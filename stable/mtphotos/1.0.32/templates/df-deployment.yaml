@@ -21,6 +21,6 @@ spec: {{ include "common.deployment.common_spec" $values | nindent 2 }}
       volumes: 
       - name: models-volume
         hostPath:
-          path: {{ .Values.dfModelsHostPath  }}
+          path: {{ required "hostPath not set" .Values.dfModelsHostPath }}
         {{ end }}
 {{ end }}
