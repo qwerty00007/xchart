@@ -1,6 +1,6 @@
 # MT Photos
 
-[MT Photos](https://mtmt.tech/) 照片备份应用，详细配置参考官网文档。
+[MT Photos](https://mtmt.tech/) A photo management system for Nas users
 
 # AI API
 在 mtphotos 安装时，增加部署 ai 的选项。
@@ -14,7 +14,3 @@ ai 容器使用 cluster ip，因此在 mtphotos webui 里增加 api 时要使用
 
 # DF API
 同理， 接口地址为 http://mtphotos-df:8066
-
-## 参考配置
-
-![](https://ghproxy.com/https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/mtphotos_readme.jpg)
