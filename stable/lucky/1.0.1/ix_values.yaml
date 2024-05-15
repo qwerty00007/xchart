@@ -1,4 +1,0 @@
-image:
-  pullPolicy: IfNotPresent
-  repository: gdy666/lucky
-  tag: latest
