@@ -1,0 +1,13 @@
+apiVersion: v2
+appVersion: 3.0.14
+dependencies:
+- name: common
+  repository: file://../../../library/common/2207.0.0
+  version: 2207.0.0
+description: 思源笔记是一款隐私优先的个人知识管理系统，支持完全离线使用，同时也支持端到端加密同步。
+home: https://b3log.org/siyuan/ 
+icon: https://b3log.org/images/brand/siyuan-512.png
+keywords:
+- media
+name: siyuan
+version: 1.0.10
