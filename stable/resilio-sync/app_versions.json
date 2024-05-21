@@ -131,7 +131,7 @@
                   "type": "int",
                   "min": 9000,
                   "max": 65535,
-                  "default": 8888
+                  "default": 9888
                 }
               },
               {
