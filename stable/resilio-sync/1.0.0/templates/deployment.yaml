@@ -20,13 +20,13 @@ spec: {{ include "common.deployment.common_spec" . | nindent 2 }}
               {{ end }}
             {{ end }}
           ports:
-          - name: web_port
+          - name: web
             protocol: TCP
             containerPort: 8888
           {{- if .Values.hostNetwork }}
             hostPort: 8888
           {{- end }}
-          - name: sync_port
+          - name: sync
             protocol: TCP
             containerPort: 55555
           {{- if .Values.hostNetwork }}
