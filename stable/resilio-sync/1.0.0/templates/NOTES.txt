@@ -1,7 +1,7 @@
 1. Get the application URL by running these commands:
 
 {{- if .Values.hostNetwork }}
-http://$node_ip:2345/
+http://$node_ip:8888/
 {{ else }}
-http://$node_ip:{{ .Values.xunleiServerHttp.port }}/
+http://$node_ip:{{ .Values..Values.resilio_sync_port.web_port }}/
 {{ end }}
