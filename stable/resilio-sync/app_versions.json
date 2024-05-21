@@ -443,7 +443,7 @@
                         "type": "path",
                         "hidden": true,
                         "editable": true,
-                        "default": "/ sync"
+                        "default": "/sync"
                       }
                     },
                     {
