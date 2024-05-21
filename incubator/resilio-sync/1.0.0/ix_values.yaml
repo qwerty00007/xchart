@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: linuxserver/resilio-sync
+  tag: latest

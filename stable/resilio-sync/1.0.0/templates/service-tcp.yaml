@@ -1,0 +1,17 @@
+{{ $svc := .Values.resilio_sync_port }}
+{{ $ports := list }}
+{{ $params := . }}
+{{ if .Values.hostNetwork }}
+{{ $ports = mustAppend $ports (dict "name" "http" "port" 8888 "targetPort" 8888) }}
+{{ $ports = mustAppend $ports (dict "name" "sync" "port" 55555 "targetPort" 55555) }}
+{{ $_ := set $params "commonService" (dict "ports" $ports ) }}
+{{ $_ := set $params.commonService "nameSuffix" "tcp" }}
+{{ $_1 := set $params.commonService "type" "ClusterIP" }}
+{{ else }}
+{{ $ports = mustAppend $ports (dict "name" "http" "port" $svc.web_port "nodePort" $svc.web_port "targetPort" 8888) }}
+{{ $ports = mustAppend $ports (dict "name" "sync" "port" $svc.sync_port "nodePort" $svc.sync_port "targetPort" 55555) }}
+{{ $_ := set $params "commonService" (dict "ports" $ports ) }}
+{{ $_ := set $params.commonService "nameSuffix" "tcp" }}
+{{ $_1 := set $params.commonService "type" "NodePort" }}
+{{ end }}
+{{ include "common.classes.service" $params }}
