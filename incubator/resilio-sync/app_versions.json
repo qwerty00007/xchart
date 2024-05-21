@@ -1,27 +1,27 @@
 {
-  "1.0.27": {
+  "1.0.0": {
     "healthy": true,
     "supported": false,
     "healthy_error": null,
-    "location": "/__w/xhcart/xchart/stable/xunlei/1.0.27",
+    "location": "/__w/xhcart/xchart/stable/resilio-sync/1.0.0",
     "last_update": "2024-03-14 12:30:07",
     "required_features": [
       "definitions/gpuConfiguration",
       "normalize/acl",
       "normalize/ixVolume"
     ],
-    "human_version": "3.7.1_1.0.27",
-    "version": "1.0.27",
+    "human_version": "2.8.0_1.0.0",
+    "version": "1.0.0",
     "chart_metadata": {
-      "name": "xunlei",
-      "description": "迅雷 docker 版下载工具",
+      "name": "resilio-sync",
+      "description": "Resilio-sync (formerly BitTorrent Sync) uses the BitTorrent protocol to sync files and folders between all of your devices. There are both free and paid versions, this container supports both. There is an official sync image but we created this one as it supports user mapping to simplify permissions for volumes.",
       "annotations": {
-        "title": "xunlei"
+        "title": "resilio-sync"
       },
       "type": "application",
-      "version": "1.0.27",
+      "version": "1.0.0",
       "apiVersion": "v2",
-      "appVersion": "3.7.1",
+      "appVersion": "2.8.0",
       "kubeVersion": ">=1.16.0-0",
       "maintainers": [
         {
@@ -37,13 +37,13 @@
           "version": "2207.0.0"
         }
       ],
-      "home": "https://www.xunlei.com/",
+      "home": "https://www.resilio.com/",
       "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/resilio-sync.webp",
       "sources": [
-        "https://hub.docker.com/r/cnk3x/xunlei"
+        "https://hub.docker.com/r/linuxserver/resilio-sync/"
       ],
       "keywords": [
-        "xunlei"
+        "resilio-sync"
       ]
     },
     "app_metadata": null,
@@ -111,7 +111,7 @@
           }
         },
         {
-          "variable": "xunleiServerHttp",
+          "variable": "resilio-syncServerHttp",
           "label": "Configure Xunlei HTTP Service",
           "group": "Networking",
           "schema": {
@@ -292,7 +292,7 @@
                             false
                           ]
                         ],
-                        "default": "ix-xunlei_config",
+                        "default": "ix-resilio-sync_config",
                         "editable": false
                       }
                     },
@@ -304,7 +304,7 @@
                         "type": "path",
                         "hidden": true,
                         "editable": true,
-                        "default": "/xunlei/data"
+                        "default": "/resilio-sync/data"
                       }
                     },
                     {
@@ -351,7 +351,7 @@
                             false
                           ]
                         ],
-                        "default": "ix-xunlei_data",
+                        "default": "ix-resilio-sync_data",
                         "editable": false
                       }
                     },
@@ -363,7 +363,7 @@
                         "type": "path",
                         "hidden": true,
                         "editable": true,
-                        "default": "/xunlei/downloads"
+                        "default": "/resilio-sync/downloads"
                       }
                     },
                     {
@@ -401,7 +401,7 @@
               {
                 "variable": "extraAppVolume",
                 "label": "Xunlei Host Path Volume",
-                "description": "Add an extra host path volume for xunlei application",
+                "description": "Add an extra host path volume for resilio-sync application",
                 "schema": {
                   "type": "dict",
                   "attrs": [
@@ -504,7 +504,7 @@
         }
       ]
     },
-    "app_readme": "<h1>xunlei</h1>\n<p>迅雷 docker 版下载工具</p>",
+    "app_readme": "<h1>resilio-sync</h1>\n<p>迅雷 docker 版下载工具</p>",
     "detailed_readme": "",
     "changelog": null
   }

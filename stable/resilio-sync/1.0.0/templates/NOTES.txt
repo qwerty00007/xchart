@@ -1,0 +1,7 @@
+1. Get the application URL by running these commands:
+
+{{- if .Values.hostNetwork }}
+http://$node_ip:2345/
+{{ else }}
+http://$node_ip:{{ .Values.xunleiServerHttp.port }}/
+{{ end }}

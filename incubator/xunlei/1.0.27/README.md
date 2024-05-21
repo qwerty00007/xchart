@@ -1,1 +1,0 @@
-# resilio-sync
