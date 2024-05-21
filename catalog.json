@@ -596,6 +596,36 @@
       "tags": [],
       "title": "qbittorrent"
     },
+    "resilio-sync": {
+      "app_readme": "<h1>resilio-sync</h1>\n<p>Resilio Sync is a fast, reliable, and simple file sync and share solution, powered by P2P technology</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "resilio-sync",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://www.resilio.com/",
+      "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/resilio-sync.webp",
+      "last_update": "2024-04-01 12:20:23",
+      "latest_app_version": "2.8.0",
+      "latest_human_version": "2.8.0_1.0.0",
+      "latest_version": "1.0.0",
+      "location": "/__w/xhcart/xchart/stable/resilio-sync",
+      "maintainers": [
+        {
+          "email": "1165505953@qq.com",
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart"
+        }
+      ],
+      "name": "resilio-sync",
+      "recommended": false,
+      "screenshots": [],
+      "sources": [],
+      "tags": [],
+      "title": "resilio-sync"
+    },
     "siyuan": {
       "app_readme": "<h1>siyuan</h1>\n<p>思源笔记是一款隐私优先的个人知识管理系统，支持完全离线使用，同时也支持端到端加密同步。</p>",
       "categories": [

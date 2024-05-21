@@ -1,0 +1,15 @@
+apiVersion: v2
+appVersion: 2.8.0
+dependencies:
+- name: common
+  repository: file://../../../library/common/2207.0.0
+  version: 2207.0.0
+description: Resilio Sync is a fast, reliable, and simple file sync and share solution, powered by P2P technology
+home: https://www.resilio.com/
+icon: https://truecharts.org/img/hotlink-ok/chart-icons/resilio-sync.webp
+keywords:
+- media
+name: resilio-sync
+sources:
+- https://hub.docker.com/r/cnk3x/xunlei
+version: 1.0.0
