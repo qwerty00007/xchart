@@ -248,7 +248,7 @@ questions:
                   type: path
                   hidden: true
                   editable: true
-                  default: "/ sync"
+                  default: "/sync"
               - variable: hostPathEnabled
                 label: "Enable Custom Host Path for Resilio-sync Sync Volume"
                 schema:
