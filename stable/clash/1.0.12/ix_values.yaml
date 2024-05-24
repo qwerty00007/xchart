@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: dreamacro/clash-premium
+  tag: 2023.08.17
