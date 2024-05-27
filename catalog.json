@@ -250,9 +250,9 @@
       "home": "https://github.com/linuxserver/docker-code-server",
       "icon_url": "https://truecharts.org/img/hotlink-ok/chart-icons/code-server.png",
       "last_update": "2024-04-15 21:30:07",
-      "latest_app_version": "4.23.1",
-      "latest_human_version": "4.23.1_1.0.10",
-      "latest_version": "1.0.10",
+      "latest_app_version": "4.89.1",
+      "latest_human_version": "4.89.1_1.0.11",
+      "latest_version": "1.0.11",
       "location": "/__w/xhcart/xchart/stable/code-server",
       "maintainers": [
         {
