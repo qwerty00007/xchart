@@ -21,7 +21,7 @@
 - **kodbox** 可道云
 - **kube-explorer** kube-explorer is a portable explorer for Kubernetes without any dependency
 - **小🐱咪** 同时部署了 core 和 ui， core，强制使用了host网络
-
+- **resilio-sync** bt 同步 app
 
 ## 增加第三方应用库
 
