@@ -1,0 +1,13 @@
+apiVersion: v2
+appVersion: 4.89.1
+dependencies:
+- name: common
+  repository: file://../../../library/common/2207.0.0
+  version: 2207.0.0
+description: Run VS Code on any machine anywhere and access it in the browser.
+home: https://github.com/linuxserver/docker-code-server 
+icon: https://truecharts.org/img/hotlink-ok/chart-icons/code-server.webp
+keywords:
+- media
+name: code-server
+version: 1.0.12
