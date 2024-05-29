@@ -1,17 +1,17 @@
 {
-  "1.0.10": {
+  "1.0.11": {
     "healthy": true,
     "supported": false,
     "healthy_error": null,
-    "location": "/__w/xhcart/xchart/stable/qbittorrent/1.0.10",
+    "location": "/__w/xhcart/xchart/stable/qbittorrent/1.0.11",
     "last_update": "2024-04-01 12:20:23",
     "required_features": [
       "definitions/gpuConfiguration",
       "normalize/acl",
       "normalize/ixVolume"
     ],
-    "human_version": "4.6.4_1.0.1",
-    "version": "1.0.10",
+    "human_version": "4.6.4_1.0.11",
+    "version": "1.0.11",
     "chart_metadata": {
       "name": "qbittorrent",
       "description": "a utorrent downloading client.",
@@ -19,7 +19,7 @@
         "title": "qbittorrent"
       },
       "type": "application",
-      "version": "1.0.10",
+      "version": "1.0.11",
       "apiVersion": "v2",
       "appVersion": "4.6.4",
       "kubeVersion": ">=1.16.0-0",
@@ -38,7 +38,7 @@
         }
       ],
       "home": "https://www.qbittorrent.org/",
-      "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/qbittorrent.png",
+      "icon": "https://truecharts.org/img/hotlink-ok/chart-icons/qbittorrent.webp",
       "sources": [
         "https://www.qbittorrent.org/"
       ],
