@@ -72,6 +72,10 @@
           "description": "Configure DNS settings"
         },
         {
+          "name": "Resource Reservation",
+          "description": "Specify resources to be allocated to workload"
+        },
+        {
           "name": "Resource Limits",
           "description": "Set CPU/memory limits for Kubernetes Pod"
         }
@@ -594,6 +598,18 @@
                 }
               }
             ]
+          }
+        },
+        {
+          "variable": "gpuConfiguration",
+          "label": "GPU Configuration",
+          "group": "Resource Reservation",
+          "schema": {
+            "type": "dict",
+            "$ref": [
+              "definitions/gpuConfiguration"
+            ],
+            "attrs": []
           }
         },
         {
