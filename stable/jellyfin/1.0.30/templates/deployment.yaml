@@ -19,7 +19,9 @@ spec: {{ include "common.deployment.common_spec" . | nindent 2 }}
           {{ include "common.resources.limitation" . | nindent 10 }}
           {{ include "common.containers.imageConfig" .Values.image | nindent 10 }}
           securityContext:
-            privileged: {{ .Values.securityContext.privileged }}
+            {{ if .Values.gpuConfiguration }}
+            privileged: true
+            {{ end }}
             {{ if .Values.securityContext.enableRunAsUser }}
             runAsUser: {{ .Values.securityContext.runAsUser }}
             runAsGroup: {{ .Values.securityContext.runAsGroup }}
