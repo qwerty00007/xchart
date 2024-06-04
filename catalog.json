@@ -82,7 +82,7 @@
         "https://jellyfin.org/"
       ],
       "icon_url": "https://media.sys.truenas.net/apps/jellyfin/icons/icon.svg"
-    },
+    }
   },
   "incubator": {
     "code": {
