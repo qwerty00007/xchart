@@ -41,6 +41,13 @@ spec:
           command: ['sh', '-c', "until nslookup {{ template "common.names.fullname" . }}-df.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for df; sleep 2; done"]
       {{ end }}
       hostNetwork: false
+      {{- if hasKey .Values "global" }}
+        {{- if hasKey .Values.global "ixChartContext" }}
+          {{- if .Values.global.ixChartContext.addNvidiaRuntimeClass }}
+      runtimeClassName: {{ .Values.global.ixChartContext.nvidiaRuntimeClassName }}
+          {{- end }}
+        {{- end }}
+      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           {{ include "common.resources.limitation" . | nindent 10 }}
