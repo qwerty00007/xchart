@@ -14,6 +14,13 @@ spec: {{ include "common.deployment.common_spec" . | nindent 2 }}
         hostnames: 
         - {{ $extraHostsConfiguration.hostname }}
       {{ end }}
+      {{- if hasKey .Values "global" }}
+        {{- if hasKey .Values.global "ixChartContext" }}
+          {{- if .Values.global.ixChartContext.addNvidiaRuntimeClass }}
+      runtimeClassName: {{ .Values.global.ixChartContext.nvidiaRuntimeClassName }}
+          {{- end }}
+        {{- end }}
+      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           {{ include "common.resources.limitation" . | nindent 10 }}
