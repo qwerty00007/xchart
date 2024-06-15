@@ -432,36 +432,42 @@ questions:
             type: string
             private: true
             default: ""
+            
+  - variable: cookiecloud
+    group: Configuration
+    label: config cookiecloud
+    description: "config config cookiecloud"
+    schema:
+      type: boolean
+      default: false
+      show_subquestions_if: true
+      subquestions:
+        - variable: cookieCloud_host
+          label: "CookieCloud host"
+          schema:
+            type: string
+            required: true
+            default: "http://cookiecloud.ix-cookiecloud.svc.cluster.local:38088"
+        - variable: cookieCloud_key
+          label: "CookieCloud Key"
+          schema:
+            type: string
+            required: true
+            default: ""
+        - variable: cookieCloud_password
+          label: "CookieCloud Password"
+          schema:
+            type: string
+            required: true
+            private: true
+            default: "password"
+        - variable: cookieCloud_interval
+          label: "CookieCloud INTERVAL (min)"
+          schema:
+            type: int
+            required: true
+            default: 1440
 
-  - variable: cookieCloud_host
-    label: "CookieCloud host"
-    group: Configuration
-    schema:
-      type: string
-      required: true
-      default: "http://cookiecloud.ix-cookiecloud.svc.cluster.local:38088"
-  - variable: cookieCloud_key
-    label: "CookieCloud Key"
-    group: Configuration
-    schema:
-      type: string
-      required: true
-      default: ""
-  - variable: cookieCloud_password
-    label: "CookieCloud Password"
-    group: Configuration
-    schema:
-      type: string
-      required: true
-      private: true
-      default: "password"
-  - variable: cookieCloud_interval
-    label: "CookieCloud INTERVAL (min)"
-    group: Configuration
-    schema:
-      type: int
-      required: true
-      default: 1440
 
 
   - variable: downloader_env
