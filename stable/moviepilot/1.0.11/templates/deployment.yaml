@@ -51,9 +51,8 @@ spec:
             {{ $envList = mustAppend $envList (dict "name" "TZ" "value" (printf "%s" .Values.timezone)) }}
             {{ $envList = mustAppend $envList (dict "name" "PUID" "value" (printf "%d" (.Values.ownerUID | int))) }}
             {{ $envList = mustAppend $envList (dict "name" "PGID" "value" (printf "%d" (.Values.ownerGID | int))) }}
-            {{ $envList = mustAppend $envList (dict "name" "MOVIEPILOT_AUTO_UPDATE" "value" .Values.autoupdate.enabled) }}    
+            {{ $envList = mustAppend $envList (dict "name" "MOVIEPILOT_AUTO_UPDATE" "value" "false") }}    
             {{ $envList = mustAppend $envList (dict "name" "SUPERUSER" "value" .Values.superUser) }}              
-            {{ $envList = mustAppend $envList (dict "name" "SUPERUSER_PASSWORD" "value" .Values.superUser_password) }}              
             {{ $envList = mustAppend $envList (dict "name" "COOKIECLOUD_HOST" "value" .Values.cookieCloud_host) }}              
             {{ $envList = mustAppend $envList (dict "name" "COOKIECLOUD_KEY" "value" .Values.cookieCloud_key) }}              
             {{ $envList = mustAppend $envList (dict "name" "COOKIECLOUD_PASSWORD" "value" .Values.cookieCloud_password) }}              

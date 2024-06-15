@@ -156,14 +156,6 @@ questions:
       type: string
       required: true
       default: "admin"
-  - variable: superUser_password
-    label: "Super User Password"
-    group: Configuration
-    schema:
-      type: string
-      required: true
-      private: true
-      default: "password"
 
   - variable: ownerUID
     label: "Owner User ID"
@@ -416,18 +408,7 @@ questions:
             type: string
             private: true
             default: ""
-  - variable: autoupdate
-    label: "autoupdate"
-    group: "Configuration"
-    schema:
-      type: dict
-      attrs:
-        - variable: enabled
-          label: "enable autoupdate"
-          description: "enable autoupdate"
-          schema:
-            type: boolean
-            default: false
+
   - variable: environmentVariables
     label: "Moviepilot environment"
     group: "Configuration"

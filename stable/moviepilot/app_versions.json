@@ -290,17 +290,6 @@
           }
         },
         {
-          "variable": "superUser_password",
-          "label": "Super User Password",
-          "group": "Configuration",
-          "schema": {
-            "type": "string",
-            "required": true,
-            "private": true,
-            "default": "password"
-          }
-        },
-        {
           "variable": "ownerUID",
           "label": "Owner User ID",
           "group": "Configuration",
@@ -815,25 +804,6 @@
                   "type": "string",
                   "private": true,
                   "default": ""
-                }
-              }
-            ]
-          }
-        },
-        {
-          "variable": "autoupdate",
-          "label": "autoupdate",
-          "group": "Configuration",
-          "schema": {
-            "type": "dict",
-            "attrs": [
-              {
-                "variable": "enabled",
-                "label": "enable autoupdate",
-                "description": "enable autoupdate",
-                "schema": {
-                  "type": "boolean",
-                  "default": false
                 }
               }
             ]
