@@ -269,6 +269,17 @@
           }
         },
         {
+          "variable": "timezone",
+          "label": "Timezone",
+          "group": "Configuration",
+          "schema": {
+            "type": "string",
+            "$ref": [
+              "definitions/timezone"
+            ]
+          }
+        },
+        {
           "variable": "superUser",
           "label": "Super User",
           "group": "Configuration",
@@ -312,45 +323,9 @@
           }
         },
         {
-          "variable": "transfer_type",
-          "label": "transfer type",
-          "group": "Configuration",
-          "description": "Select Transfer Type",
-          "schema": {
-            "type": "string",
-            "default": "link",
-            "enum": [
-              {
-                "value": "link",
-                "description": "link"
-              },
-              {
-                "value": "copy",
-                "description": "copy"
-              },
-              {
-                "value": "move",
-                "description": "move"
-              },
-              {
-                "value": "softlink",
-                "description": "softlink"
-              },
-              {
-                "value": "rclone_copy",
-                "description": "rclone copy"
-              },
-              {
-                "value": "rclone_move",
-                "description": "rclone move"
-              }
-            ]
-          }
-        },
-        {
           "variable": "auth_env",
-          "label": "auth env",
-          "description": "auth env",
+          "label": "AUTH ENV",
+          "description": "AUTH ENV",
           "group": "Configuration",
           "schema": {
             "additional_attrs": true,
@@ -839,208 +814,6 @@
                   ],
                   "type": "string",
                   "private": true,
-                  "default": ""
-                }
-              }
-            ]
-          }
-        },
-        {
-          "variable": "cookiecloud",
-          "group": "Configuration",
-          "label": "config cookiecloud",
-          "description": "config config cookiecloud",
-          "schema": {
-            "type": "boolean",
-            "default": false,
-            "show_subquestions_if": true,
-            "subquestions": [
-              {
-                "variable": "cookieCloud_host",
-                "label": "CookieCloud host",
-                "schema": {
-                  "type": "string",
-                  "required": true,
-                  "default": "http://cookiecloud.ix-cookiecloud.svc.cluster.local:38088"
-                }
-              },
-              {
-                "variable": "cookieCloud_key",
-                "label": "CookieCloud Key",
-                "schema": {
-                  "type": "string",
-                  "required": true,
-                  "default": ""
-                }
-              },
-              {
-                "variable": "cookieCloud_password",
-                "label": "CookieCloud Password",
-                "schema": {
-                  "type": "string",
-                  "required": true,
-                  "private": true,
-                  "default": "password"
-                }
-              },
-              {
-                "variable": "cookieCloud_interval",
-                "label": "CookieCloud INTERVAL (min)",
-                "schema": {
-                  "type": "int",
-                  "required": true,
-                  "default": 1440
-                }
-              }
-            ]
-          }
-        },
-        {
-          "variable": "downloader_env",
-          "label": "Downloader",
-          "description": "Downloader",
-          "group": "Configuration",
-          "schema": {
-            "additional_attrs": true,
-            "type": "dict",
-            "attrs": [
-              {
-                "variable": "DOWNLOADER",
-                "label": "select downloader",
-                "schema": {
-                  "type": "string",
-                  "default": "qbittorrent",
-                  "enum": [
-                    {
-                      "value": "qbittorrent",
-                      "description": "qbittorrent"
-                    },
-                    {
-                      "value": "transmission",
-                      "description": "transmission"
-                    }
-                  ]
-                }
-              },
-              {
-                "variable": "QB_HOST",
-                "label": "QB HOST",
-                "schema": {
-                  "show_if": [
-                    [
-                      "DOWNLOADER",
-                      "=",
-                      "qbittorrent"
-                    ]
-                  ],
-                  "type": "string",
-                  "default": "qbittorrent-tcp.ix-qbittorrent.svc.cluster.local:20909"
-                }
-              },
-              {
-                "variable": "QB_USER",
-                "label": "QB USER",
-                "schema": {
-                  "show_if": [
-                    [
-                      "DOWNLOADER",
-                      "=",
-                      "qbittorrent"
-                    ]
-                  ],
-                  "type": "string",
-                  "default": "admin"
-                }
-              },
-              {
-                "variable": "QB_PASSWORD",
-                "label": "QB PASSWORD",
-                "schema": {
-                  "show_if": [
-                    [
-                      "DOWNLOADER",
-                      "=",
-                      "qbittorrent"
-                    ]
-                  ],
-                  "type": "string",
-                  "private": true,
-                  "default": "adminadmin"
-                }
-              },
-              {
-                "variable": "QB_CATEGORY",
-                "label": "QB CATEGORY",
-                "schema": {
-                  "show_if": [
-                    [
-                      "DOWNLOADER",
-                      "=",
-                      "qbittorrent"
-                    ]
-                  ],
-                  "type": "boolean",
-                  "default": false
-                }
-              },
-              {
-                "variable": "TR_HOST",
-                "label": "TR HOST",
-                "schema": {
-                  "show_if": [
-                    [
-                      "DOWNLOADER",
-                      "=",
-                      "transmission"
-                    ]
-                  ],
-                  "type": "string",
-                  "default": "transmission-tcp.ix-transmission.svc.cluster.local:9091"
-                }
-              },
-              {
-                "variable": "TR_USER",
-                "label": "QB USER",
-                "schema": {
-                  "show_if": [
-                    [
-                      "DOWNLOADER",
-                      "=",
-                      "transmission"
-                    ]
-                  ],
-                  "type": "string",
-                  "default": "admin"
-                }
-              },
-              {
-                "variable": "TR_PASSWORD",
-                "label": "TR PASSWORD",
-                "schema": {
-                  "show_if": [
-                    [
-                      "DOWNLOADER",
-                      "=",
-                      "transmission"
-                    ]
-                  ],
-                  "type": "string",
-                  "private": true,
-                  "default": "adminadmin"
-                }
-              },
-              {
-                "variable": "TORRENT_TAG",
-                "label": "TORRENT_TAG",
-                "schema": {
-                  "show_if": [
-                    [
-                      "DOWNLOADER",
-                      "=",
-                      "transmission"
-                    ]
-                  ],
-                  "type": "string",
                   "default": ""
                 }
               }
