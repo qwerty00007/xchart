@@ -41,10 +41,21 @@ spec:
           command: ['sh', '-c', "until nslookup {{ template "common.names.fullname" . }}-df.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for df; sleep 2; done"]
       {{ end }}
       hostNetwork: false
+      {{- if hasKey .Values "global" }}
+        {{- if hasKey .Values.global "ixChartContext" }}
+          {{- if .Values.global.ixChartContext.addNvidiaRuntimeClass }}
+      runtimeClassName: {{ .Values.global.ixChartContext.nvidiaRuntimeClassName }}
+          {{- end }}
+        {{- end }}
+      {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           {{ include "common.resources.limitation" . | nindent 10 }}
           {{ include "common.containers.imageConfig" .Values.image | nindent 10 }}
+          {{ if .Values.gpuConfiguration }}
+          securityContext:
+            privileged: true
+          {{ end }}
           volumeMounts: {{ include "common.storage.configureAppVolumeMountsInContainer" .Values | nindent 12 }}
           {{ range $index, $hostPathConfiguration := .Values.extraAppVolumeMounts }}
             - name: extrappvolume-{{ $index }}
@@ -57,8 +68,15 @@ spec:
             {{ $envList := (default list .Values.environmentVariables) }}
             {{ $envList = mustAppend $envList (dict "name" "PUID" "value" (printf "%d" (.Values.ownerUID | int))) }}
             {{ $envList = mustAppend $envList (dict "name" "PGID" "value" (printf "%d" (.Values.ownerGID | int))) }}
+            {{ if and .Values.gpuConfiguration (hasKey .Values.gpuConfiguration "nvidia.com/gpu") (gt (get .Values.gpuConfiguration "nvidia.com/gpu" | toDecimal) 0) }}
+            {{ $envList = mustAppend $envList (dict "name" "NVIDIA_DRIVER_CAPABILITIES" "value" "all") }}
+            {{ end }}
             {{ include "common.containers.environmentVariables" (dict "environmentVariables" $envList) | nindent 12 }}
 {{ include "common.networking.dnsConfiguration" .Values | nindent 6 }}
+      securityContext:
+        supplementalGroups:
+        - 44
+        - 107
       volumes: {{ include "common.storage.configureAppVolumes" .Values | nindent 8 }}
       {{ range $index, $hostPathConfiguration := .Values.extraAppVolumeMounts }}
         - name: extrappvolume-{{ $index }}
