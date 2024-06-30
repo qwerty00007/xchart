@@ -68,9 +68,7 @@ spec:
           - "/bin/sh"
           args:
           - "-c"
-          - "groupadd -g 107 rendergroup"
-          - "usermod -aG 44,107 postgres"
-          - "sh /usr/src/app/entrypoint.sh"
+          - "groupadd -g 107 rendergroup;usermod -aG 44,107 postgres;sh /usr/src/app/entrypoint.sh"
           env:
             {{ $envList := (default list .Values.environmentVariables) }}
             {{ $envList = mustAppend $envList (dict "name" "PUID" "value" (printf "%d" (.Values.ownerUID | int))) }}
