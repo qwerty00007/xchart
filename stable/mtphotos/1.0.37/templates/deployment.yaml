@@ -64,7 +64,8 @@ spec:
           ports:
             - name: web
               containerPort: 8063
-          command: ["/bin/sh"]
+          command: 
+          - "/bin/sh"
           args:
           - "-c"
           - "groupadd -g 107 rendergroup"
