@@ -1,17 +1,17 @@
 {
-  "0.0.1": {
+  "1.0.38": {
     "healthy": true,
     "supported": false,
     "healthy_error": null,
-    "location": "/__w/xhcart/xchart/stable/hexo/0.0.1",
+    "location": "/__w/xhcart/xchart/stable/hexo/1.0.38",
     "last_update": "2024-04-04 21:52:07",
     "required_features": [
       "definitions/certificate",
       "normalize/acl",
       "normalize/ixVolume"
     ],
-    "human_version": "1.31.1_0.0.1",
-    "version": "0.0.1",
+    "human_version": "0.0.1_1.0.38",
+    "version": "1.0.38",
     "chart_metadata": {
       "name": "hexo",
       "description": "hexo 快速、简洁且高效的博客框架",
@@ -19,9 +19,9 @@
         "title": "hexo"
       },
       "type": "application",
-      "version": "0.0.1",
+      "version": "1.0.38",
       "apiVersion": "v2",
-      "appVersion": "1.31.1",
+      "appVersion": "0.0.1",
       "kubeVersion": ">=1.16.0-0",
       "maintainers": [
         {
