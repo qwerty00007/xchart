@@ -44,6 +44,8 @@ spec:
             {{ $envList := (default list .Values.environmentVariables) }}
             {{ $envList = mustAppend $envList (dict "name" "PUID" "value" (printf "%d" (.Values.ownerUID | int))) }}
             {{ $envList = mustAppend $envList (dict "name" "PGID" "value" (printf "%d" (.Values.ownerGID | int))) }}
+            {{ $envList = mustAppend $envList (dict "name" "GIT_USER" "value" .Values.gitUser) }} 
+            {{ $envList = mustAppend $envList (dict "name" "GIT_EMAIL" "value" .Values.gitEmail) }}             
             {{ if .Values.addhexoPlugins }}
             {{ $envList = mustAppend $envList (dict "name" "HEXO_PLUGINS" "value" .Values.plugins) }}           
             {{ end }}        

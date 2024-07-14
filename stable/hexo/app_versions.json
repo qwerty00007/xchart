@@ -219,6 +219,26 @@
           }
         },
         {
+          "variable": "gitUser",
+          "label": "Git User",
+          "group": "Configuration",
+          "schema": {
+            "type": "string",
+            "required": true,
+            "default": "hexo"
+          }
+        },
+        {
+          "variable": "gitEmail",
+          "label": "Git Email",
+          "group": "Configuration",
+          "schema": {
+            "type": "string",
+            "required": true,
+            "default": "hexo@hexo.io"
+          }
+        },
+        {
           "variable": "environmentVariables",
           "label": "hexo environment",
           "group": "Configuration",
