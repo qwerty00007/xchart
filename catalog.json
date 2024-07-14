@@ -343,6 +343,37 @@
       "tags": [],
       "title": "cookiecloud"
     },
+    "hexo": {
+      "app_readme": "<h1>hexo</h1>\n<p>快速、简洁且高效的博客框架</p>",
+      "categories": [
+        "web"
+      ],
+      "description": "hexo",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://hexo.io/zh-cn/",
+      "icon_url": "https://hexo.io/logo.svg",
+      "last_update": "2024-03-04 13:00:23",
+      "latest_app_version": "0.0.1",
+      "latest_human_version": "0.0.1_1.0.2",
+      "latest_version": "1.0.38",
+      "location": "/__w/xhcart/xchart/stable/hexo",
+      "maintainers": [
+        {
+          "email": "1165505953@qq.com",
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart"
+        }
+      ],
+      "name": "hexo",
+      "recommended": false,
+      "screenshots": [],
+      "sources": [
+        "https://hexo.io/zh-cn/"
+      ],
+      "tags": [],
+      "title": "hexo"
+    },
     "hlink": {
       "app_readme": "<h1>hlink</h1>\n<p>批量、快速硬链工具</p>",
       "categories": [
