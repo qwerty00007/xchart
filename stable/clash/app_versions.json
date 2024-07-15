@@ -37,7 +37,7 @@
         }
       ],
       "home": "https://hub.docker.com/r/dreamacro/clash",
-      "icon": "https://raw.githubusercontent.com/CorentinTh/clash/main/public/android-chrome-512x512.png",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Clash_Logo.png",
       "sources": [
         "https://hub.docker.com/r/dreamacro/clash",
         "https://hub.docker.com/r/haishanh/yacd"

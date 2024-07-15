@@ -6,7 +6,7 @@ dependencies:
   version: 2207.0.0
 description: clash-premium core and ui
 home: https://hub.docker.com/r/dreamacro/clash-premium
-icon: https://raw.githubusercontent.com/qwerty00007/xchart/main/assets/clash.png
+icon: https://upload.wikimedia.org/wikipedia/commons/0/0b/Clash_Logo.png
 keywords:
 - tools
 name: clash
