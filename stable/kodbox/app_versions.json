@@ -38,7 +38,7 @@
                 }
             ],
             "home": "https://kodbox.com/",
-            "icon": "https://raw.githubusercontent.com/kalcaddle/kodbox/main/static/images/icon/icon_512.png",
+            "icon": "https://s2.loli.net/2024/07/15/51SnfA2s6qhXzJa.png",
             "sources": [
                 "https://hub.docker.com/r/kodcloud/kodbox",
                 "https://hub.docker.com/r/bitnami/redis",
