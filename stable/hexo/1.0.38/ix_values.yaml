@@ -1,0 +1,4 @@
+image:
+  repository: dockerproxy.cn/qwerty00007/hexo-dev-docker
+  tag: dev
+  pullPolicy: IfNotPresent

@@ -1,26 +1,27 @@
 {
-  "1.0.12": {
+  "1.0.38": {
     "healthy": true,
     "supported": false,
     "healthy_error": null,
-    "location": "/__w/xhcart/xchart/stable/clash/1.0.12",
-    "last_update": "2024-03-21 21:52:07",
+    "location": "/__w/xhcart/xchart/stable/hexo/1.0.38",
+    "last_update": "2024-04-04 21:52:07",
     "required_features": [
+      "definitions/certificate",
       "normalize/acl",
       "normalize/ixVolume"
     ],
-    "human_version": "1.16.0_1.0.12",
-    "version": "1.0.12",
+    "human_version": "0.0.1_1.0.38",
+    "version": "1.0.38",
     "chart_metadata": {
-      "name": "clash",
-      "description": "clash-premium core and ui",
+      "name": "hexo",
+      "description": "hexo 快速、简洁且高效的博客框架",
       "annotations": {
-        "title": "clash"
+        "title": "hexo"
       },
       "type": "application",
-      "version": "1.0.12",
+      "version": "1.0.38",
       "apiVersion": "v2",
-      "appVersion": "1.16.0",
+      "appVersion": "0.0.1",
       "kubeVersion": ">=1.16.0-0",
       "maintainers": [
         {
@@ -33,17 +34,17 @@
         {
           "name": "common",
           "repository": "file://../../../common",
-          "version": "2304.0.1"
+          "version": "2207.0.0"
         }
       ],
-      "home": "https://hub.docker.com/r/dreamacro/clash",
-      "icon": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Clash_Logo.png",
+      "home": "https://hexo.io/zh-cn/",
+      "icon": "https://hexo.io/logo.svg",
       "sources": [
-        "https://hub.docker.com/r/dreamacro/clash",
-        "https://hub.docker.com/r/haishanh/yacd"
+        "https://hexo.io/zh-cn/"
       ],
       "keywords": [
-        "clash"
+        "hexo",
+        "media"
       ]
     },
     "app_metadata": null,
@@ -51,23 +52,23 @@
       "groups": [
         {
           "name": "Configuration",
-          "description": "clash-core application configuration"
+          "description": "hexo application configuration"
         },
         {
           "name": "Storage",
-          "description": "Configure storage for clash-core"
+          "description": "Configure storage for hexo"
         },
         {
           "name": "Networking",
-          "description": "Networking Configuration for clash-core"
+          "description": "Networking Configuration for hexo"
+        },
+        {
+          "name": "Ingress",
+          "description": "Ingress Configuration"
         },
         {
           "name": "Advanced DNS Settings",
           "description": "Configure DNS settings"
-        },
-        {
-          "name": "Workload Details",
-          "description": "Configure how workload should be deployed"
         },
         {
           "name": "Resource Limits",
@@ -77,70 +78,78 @@
       "portals": {
         "web_portal": {
           "protocols": [
-            "http"
+            "$kubernetes-resource_configmap_portal_protocol"
           ],
           "host": [
-            "$node_ip"
+            "$kubernetes-resource_configmap_portal_host"
           ],
           "ports": [
-            "$variable-web_port"
+            "$kubernetes-resource_configmap_portal_port"
           ],
-          "path": "/"
+          "path": "$kubernetes-resource_configmap_portal_path"
         }
       },
       "questions": [
         {
           "variable": "web_port",
-          "label": "web Port for clash-ui",
+          "label": "Web Port for hexo",
           "group": "Networking",
           "schema": {
             "type": "int",
             "min": 8000,
             "max": 65535,
-            "default": 28080,
+            "default": 18890,
             "required": true
           }
         },
         {
-          "variable": "ctler_port",
-          "label": "external controller Port for clash",
-          "group": "Networking",
+          "variable": "ingressEnabled",
+          "group": "Ingress",
+          "label": "Enable Ingress",
+          "description": "config ingress, you must install traefik first",
           "schema": {
-            "type": "int",
-            "min": 8000,
-            "max": 65535,
-            "default": 9090,
-            "required": true
-          }
-        },
-        {
-          "variable": "http_port",
-          "label": "http Port for clash",
-          "group": "Networking",
-          "schema": {
-            "type": "int",
-            "default": 7891,
-            "required": true
-          }
-        },
-        {
-          "variable": "socks5_port",
-          "label": "socks5 Port for clash",
-          "group": "Networking",
-          "schema": {
-            "type": "int",
-            "default": 7892,
-            "required": true
-          }
-        },
-        {
-          "variable": "mixed_port",
-          "label": "mixed Port for clash",
-          "group": "Networking",
-          "schema": {
-            "type": "int",
-            "default": 7893,
-            "required": true
+            "type": "boolean",
+            "default": false,
+            "show_subquestions_if": true,
+            "subquestions": [
+              {
+                "variable": "certificate",
+                "label": "Certificate Configuration",
+                "schema": {
+                  "type": "int",
+                  "$ref": [
+                    "definitions/certificate"
+                  ]
+                }
+              },
+              {
+                "variable": "host",
+                "label": "HostName",
+                "schema": {
+                  "type": "string",
+                  "default": "test.test.org",
+                  "required": true
+                }
+              },
+              {
+                "variable": "path",
+                "label": "Path",
+                "schema": {
+                  "type": "string",
+                  "required": true,
+                  "default": "/"
+                }
+              },
+              {
+                "variable": "pathType",
+                "label": "Path Type",
+                "schema": {
+                  "type": "string",
+                  "required": true,
+                  "default": "Prefix"
+                }
+              }
+            ]
           }
         },
         {
@@ -188,19 +197,50 @@
           }
         },
         {
-          "variable": "timezone",
-          "label": "Timezone",
+          "variable": "ownerUID",
+          "label": "Owner User ID, PUID changed at the same time",
+          "group": "Configuration",
+          "schema": {
+            "type": "int",
+            "default": 1000,
+            "min": 1,
+            "max": 65535
+          }
+        },
+        {
+          "variable": "ownerGID",
+          "label": "Owner Group ID, PGID changed at the same time",
+          "group": "Configuration",
+          "schema": {
+            "type": "int",
+            "default": 1000,
+            "min": 1,
+            "max": 65535
+          }
+        },
+        {
+          "variable": "gitUser",
+          "label": "Git User",
           "group": "Configuration",
           "schema": {
             "type": "string",
-            "$ref": [
-              "definitions/timezone"
-            ]
+            "required": true,
+            "default": "hexo"
+          }
+        },
+        {
+          "variable": "gitEmail",
+          "label": "Git Email",
+          "group": "Configuration",
+          "schema": {
+            "type": "string",
+            "required": true,
+            "default": "hexo@hexo.io"
           }
         },
         {
           "variable": "environmentVariables",
-          "label": "clash-core environment",
+          "label": "hexo environment",
           "group": "Configuration",
           "schema": {
             "type": "list",
@@ -233,21 +273,43 @@
           }
         },
         {
+          "variable": "addhexoPlugins",
+          "group": "Configuration",
+          "label": "Add Hexo Plugins",
+          "description": "Add Hexo Plugins",
+          "schema": {
+            "type": "boolean",
+            "default": false,
+            "show_subquestions_if": true,
+            "subquestions": [
+              {
+                "variable": "plugins",
+                "label": "plugins",
+                "schema": {
+                  "type": "string",
+                  "default": "hexo-deployer-netlify",
+                  "required": true
+                }
+              }
+            ]
+          }
+        },
+        {
           "variable": "appVolumeMounts",
-          "label": "clash-core Config File",
+          "label": "hexo Config Storage",
           "group": "Storage",
           "schema": {
             "type": "dict",
             "attrs": [
               {
                 "variable": "config",
-                "label": "Configuration File",
+                "label": "/config Volume",
                 "schema": {
                   "type": "dict",
                   "attrs": [
                     {
                       "variable": "datasetName",
-                      "label": "Configuration File Name",
+                      "label": "Configuration Volume Dataset Name",
                       "schema": {
                         "type": "string",
                         "hidden": true,
@@ -261,7 +323,7 @@
                             false
                           ]
                         ],
-                        "default": "ix-clash-core_config",
+                        "default": "ix-hexo_config",
                         "editable": false
                       }
                     },
@@ -273,12 +335,12 @@
                         "type": "path",
                         "hidden": true,
                         "editable": true,
-                        "default": "/root/.config/clash/config.yaml"
+                        "default": "/config"
                       }
                     },
                     {
                       "variable": "hostPathEnabled",
-                      "label": "Enable Custom Host Path for clash-core Configuration File",
+                      "label": "Enable Custom Host Path for hexo Configuration Volume",
                       "schema": {
                         "type": "boolean",
                         "default": false,
@@ -286,7 +348,66 @@
                         "subquestions": [
                           {
                             "variable": "hostPath",
-                            "label": "Host Path for clash-core Configuration File",
+                            "label": "Host Path for hexo Configuration Volume",
+                            "schema": {
+                              "type": "hostpath",
+                              "required": true
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "variable": "hexo",
+                "label": "/hexo Volume",
+                "schema": {
+                  "type": "dict",
+                  "attrs": [
+                    {
+                      "variable": "datasetName",
+                      "label": "hexo Volume Dataset Name",
+                      "schema": {
+                        "type": "string",
+                        "hidden": true,
+                        "$ref": [
+                          "normalize/ixVolume"
+                        ],
+                        "show_if": [
+                          [
+                            "hostPathEnabled",
+                            "=",
+                            false
+                          ]
+                        ],
+                        "default": "ix-hexo_data",
+                        "editable": false
+                      }
+                    },
+                    {
+                      "variable": "mountPath",
+                      "label": "hexo Mount Path",
+                      "description": "Path where the volume will be mounted inside the pod",
+                      "schema": {
+                        "type": "path",
+                        "hidden": true,
+                        "editable": true,
+                        "default": "/hexo"
+                      }
+                    },
+                    {
+                      "variable": "hostPathEnabled",
+                      "label": "Enable Custom Host Path for hexo hexo Volume",
+                      "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "show_subquestions_if": true,
+                        "subquestions": [
+                          {
+                            "variable": "hostPath",
+                            "label": "Host Path for hexo hexo Volume",
                             "schema": {
                               "type": "hostpath",
                               "required": true
@@ -311,7 +432,7 @@
               {
                 "variable": "extraAppVolume",
                 "label": "Host Path Volume",
-                "description": "Add an extra host path volume for clash-core application",
+                "description": "Add an extra host path volume for hexo application",
                 "schema": {
                   "type": "dict",
                   "attrs": [
@@ -331,73 +452,6 @@
                       "schema": {
                         "type": "hostpath",
                         "required": true
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        },
-        {
-          "variable": "securityContext",
-          "label": "Security Context",
-          "group": "Workload Details",
-          "schema": {
-            "type": "dict",
-            "attrs": [
-              {
-                "variable": "privileged",
-                "label": "Privileged Mode",
-                "description": "Determines if any container in a pod can enable privileged mode. By default a container is not allowed to access any devices on the host, but a 'privileged' container is given access to all devices on the host. This allows the container nearly all the same access as processes running on the host.",
-                "schema": {
-                  "type": "boolean",
-                  "default": false
-                }
-              },
-              {
-                "variable": "capabilities",
-                "label": "Capabilities",
-                "description": "With Linux capabilities, you can grant certain privileges to a process without granting all the privileges of the root user.",
-                "schema": {
-                  "type": "list",
-                  "items": [
-                    {
-                      "variable": "capability",
-                      "description": "Add Capability",
-                      "label": "Add Capability",
-                      "schema": {
-                        "type": "string"
-                      }
-                    }
-                  ]
-                }
-              },
-              {
-                "variable": "enableRunAsUser",
-                "label": "Configure Container User and Group ID",
-                "description": "Configure security context runAsUser and runAsGroup variables",
-                "schema": {
-                  "type": "boolean",
-                  "default": false,
-                  "show_subquestions_if": true,
-                  "subquestions": [
-                    {
-                      "variable": "runAsUser",
-                      "label": "Run Container As User",
-                      "description": "Configure user id for container.",
-                      "schema": {
-                        "type": "int",
-                        "default": 0
-                      }
-                    },
-                    {
-                      "variable": "runAsGroup",
-                      "label": "Run Container As Group",
-                      "description": "Configure group id for container.",
-                      "schema": {
-                        "type": "int",
-                        "default": 0
                       }
                     }
                   ]
@@ -453,7 +507,7 @@
         }
       ]
     },
-    "app_readme": "<h1>clash</h1>\n<p>clash-premium core and ui</p>",
+    "app_readme": "<h1>hexo</h1>\n<p><a href=\"https://hexo.io/zh-cn/\">hexo 快速、简洁且高效的博客框架</a></p>",
     "detailed_readme": "",
     "changelog": null
   }
