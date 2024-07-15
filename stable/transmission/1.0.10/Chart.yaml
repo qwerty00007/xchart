@@ -6,7 +6,7 @@ dependencies:
   version: 2207.0.0
 description: Download data from transmission.
 home: https://transmissionbt.com/
-icon: https://truecharts.org/img/hotlink-ok/chart-icons/transmission.png
+icon: https://media.sys.truenas.net/apps/transmission/icons/icon.png
 keywords:
 - storage
 - torrent
