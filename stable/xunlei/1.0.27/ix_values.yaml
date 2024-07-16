@@ -1,4 +1,4 @@
 image:
   pullPolicy: IfNotPresent
-  repository: cnk3x/xunlei
-  tag: 3.7.1@sha256:d7500214e11a87f10dcfdfc0e19f54bcb3c9b02d90089505b17ad5bb4a36a5bc
+  repository: registry.cn-shenzhen.aliyuncs.com/cnk3x/xunlei
+  tag: latest
