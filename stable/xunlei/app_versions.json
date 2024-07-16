@@ -10,7 +10,7 @@
       "normalize/acl",
       "normalize/ixVolume"
     ],
-    "human_version": "3.7.1_1.0.27",
+    "human_version": "latest_1.0.27",
     "version": "1.0.27",
     "chart_metadata": {
       "name": "xunlei",
@@ -21,7 +21,7 @@
       "type": "application",
       "version": "1.0.27",
       "apiVersion": "v2",
-      "appVersion": "3.7.1",
+      "appVersion": "latest",
       "kubeVersion": ">=1.16.0-0",
       "maintainers": [
         {
