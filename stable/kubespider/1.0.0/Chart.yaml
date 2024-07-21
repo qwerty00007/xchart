@@ -1,0 +1,13 @@
+apiVersion: v2
+appVersion: latest
+dependencies:
+- name: common
+  repository: file://../../../library/common/2207.0.0
+  version: 2207.0.0
+description: 💥 一款全局资源编排下载系统
+home: https://kubespider.netlify.app/ 
+icon: https://kubespider.netlify.app/images/logo.png
+keywords:
+- tools
+name: kubespider
+version: 1.0.0

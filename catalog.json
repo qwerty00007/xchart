@@ -543,6 +543,38 @@
       "tags": [],
       "title": "kube-explorer"
     },
+    "kubespider": {
+      "app_readme": "<h1>kubespider</h1>\n<p>💥 一款全局资源编排下载系统</p>",
+      "categories": [
+        "networking",
+        "Tools-Utilities"
+      ],
+      "description": "kubespider",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://kubespider.netlify.app/",
+      "icon_url": "https://kubespider.netlify.app/images/logo.png",
+      "last_update": "2024-03-21 21:52:07",
+      "latest_app_version": "latest",
+      "latest_human_version": "latest_1.0.0",
+      "latest_version": "1.0.0",
+      "location": "/__w/xhcart/xchart/test/kubespider",
+      "maintainers": [
+        {
+          "email": "1165505953@qq.com",
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart"
+        }
+      ],
+      "name": "kubespider",
+      "recommended": false,
+      "screenshots": [],
+      "sources": [
+        "https://kubespider.netlify.app/"
+      ],
+      "tags": [],
+      "title": "kubespider"
+    },
     "lucky": {
       "app_readme": "<h1>lucky</h1>\n<p>家用软硬路由公网利器</p>",
       "categories": [

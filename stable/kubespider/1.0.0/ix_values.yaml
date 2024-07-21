@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: cesign/kubespider
+  tag: latest
