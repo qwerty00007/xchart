@@ -256,7 +256,7 @@
       "description": "clash-meta",
       "healthy": true,
       "healthy_error": null,
-      "home": "https://wiki.metacubex.one/",
+      "home": "https://wiki.metacubex.one",
       "icon_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/clash_Logo.png",
       "last_update": "2024-03-14 12:30:07",
       "latest_app_version": "latest",
