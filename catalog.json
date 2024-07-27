@@ -259,9 +259,9 @@
       "home": "https://hub.docker.com/r/dreamacro/clash",
       "icon_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Clash_Logo.png",
       "last_update": "2024-03-14 12:30:07",
-      "latest_app_version": "1.16.0",
-      "latest_human_version": "1.16.0_1.0.12",
-      "latest_version": "1.0.12",
+      "latest_app_version": "latest",
+      "latest_human_version": "latest_1.0.13",
+      "latest_version": "1.0.13",
       "location": "/__w/xhcart/xchart/stable/clash",
       "maintainers": [
         {

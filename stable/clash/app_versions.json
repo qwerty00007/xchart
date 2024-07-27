@@ -1,16 +1,16 @@
 {
-  "1.0.12": {
+  "1.0.13": {
     "healthy": true,
     "supported": false,
     "healthy_error": null,
-    "location": "/__w/xhcart/xchart/stable/clash/1.0.12",
+    "location": "/__w/xhcart/xchart/stable/clash/1.0.13",
     "last_update": "2024-03-21 21:52:07",
     "required_features": [
       "normalize/acl",
       "normalize/ixVolume"
     ],
-    "human_version": "1.16.0_1.0.12",
-    "version": "1.0.12",
+    "human_version": "latest_1.0.13",
+    "version": "1.0.13",
     "chart_metadata": {
       "name": "clash",
       "description": "clash-premium core and ui",
@@ -18,9 +18,9 @@
         "title": "clash"
       },
       "type": "application",
-      "version": "1.0.12",
+      "version": "1.0.13",
       "apiVersion": "v2",
-      "appVersion": "1.16.0",
+      "appVersion": "latest",
       "kubeVersion": ">=1.16.0-0",
       "maintainers": [
         {
@@ -102,7 +102,7 @@
           }
         },
         {
-          "variable": "ctler_port",
+          "variable": "ctl_port",
           "label": "external controller Port for clash",
           "group": "Networking",
           "schema": {
@@ -110,26 +110,6 @@
             "min": 8000,
             "max": 65535,
             "default": 9090,
-            "required": true
-          }
-        },
-        {
-          "variable": "http_port",
-          "label": "http Port for clash",
-          "group": "Networking",
-          "schema": {
-            "type": "int",
-            "default": 7891,
-            "required": true
-          }
-        },
-        {
-          "variable": "socks5_port",
-          "label": "socks5 Port for clash",
-          "group": "Networking",
-          "schema": {
-            "type": "int",
-            "default": 7892,
             "required": true
           }
         },
@@ -234,20 +214,20 @@
         },
         {
           "variable": "appVolumeMounts",
-          "label": "clash-core Config File",
+          "label": "clash-core Config",
           "group": "Storage",
           "schema": {
             "type": "dict",
             "attrs": [
               {
                 "variable": "config",
-                "label": "Configuration File",
+                "label": "Configuration",
                 "schema": {
                   "type": "dict",
                   "attrs": [
                     {
                       "variable": "datasetName",
-                      "label": "Configuration File Name",
+                      "label": "Configuration Name",
                       "schema": {
                         "type": "string",
                         "hidden": true,
@@ -273,12 +253,12 @@
                         "type": "path",
                         "hidden": true,
                         "editable": true,
-                        "default": "/root/.config/clash/config.yaml"
+                        "default": "/root/.config/mihomo"
                       }
                     },
                     {
                       "variable": "hostPathEnabled",
-                      "label": "Enable Custom Host Path for clash-core Configuration File",
+                      "label": "Enable Custom Host Path for clash-core Configuration",
                       "schema": {
                         "type": "boolean",
                         "default": false,
@@ -286,7 +266,7 @@
                         "subquestions": [
                           {
                             "variable": "hostPath",
-                            "label": "Host Path for clash-core Configuration File",
+                            "label": "Host Path for clash-core Configuration ",
                             "schema": {
                               "type": "hostpath",
                               "required": true

@@ -1,0 +1,10 @@
+{{ $selectors := list }}
+{{ $selectors = mustAppend $selectors (dict "key" "app" "value" (include "common.names.name" .) ) }}
+{{ $selectors = mustAppend $selectors (dict "key" "release" "value" .Release.Name ) }}
+{{ $ports := list }}
+{{ $ports = mustAppend $ports (dict "name" "ctler" "port" .Values.ctl_port "nodePort" .Values.ctl_port "targetPort" .Values.ctl_port) }}
+{{ $ports = mustAppend $ports (dict "name" "mixed" "port" .Values.mixed_port "nodePort" .Values.mixed_port "targetPort" .Values.mixed_port) }}
+{{ $params := . }}
+{{ $_ := set $params "commonService" (dict "ports" $ports ) }}
+{{ $_1 := set $params.commonService "type" "ClusterIP" }}
+{{ include "common.classes.service" $params }}
