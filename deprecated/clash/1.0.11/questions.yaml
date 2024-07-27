@@ -19,23 +19,22 @@ portals:
     host:
       - "$node_ip"
     ports:
-      - "$variable-tcp_port"
+      - "$variable-web_port"
     path: "/"
 
 questions:
 
-  - variable: tcp_port
-    label: "tcp Port for clash-ui"
+  - variable: web_port
+    label: "web Port for clash-ui"
     group: Networking
     schema:
       type: int
       min: 8000
       max: 65535
-      default: 18080
+      default: 28080
       required: true
-
-  - variable: externalcontrol_port
-    label: "External Control Port for clash-core, must match your config file"
+  - variable: ctler_port
+    label: "external controller Port for clash"
     group: Networking
     schema:
       type: int
@@ -43,14 +42,26 @@ questions:
       max: 65535
       default: 9090
       required: true
-  - variable: mixed_port
-    label: "Mixed Port for clash-core, must match your config file"
+  - variable: http_port
+    label: "http Port for clash"
     group: Networking
     schema:
       type: int
-      min: 8000
-      max: 65535
-      default: 17893
+      default: 7891
+      required: true
+  - variable: socks5_port
+    label: "socks5 Port for clash"
+    group: Networking
+    schema:
+      type: int
+      default: 7892
+      required: true
+  - variable: mixed_port
+    label: "mixed Port for clash"
+    group: Networking
+    schema:
+      type: int
+      default: 7893
       required: true
 
   - variable: dnsConfig

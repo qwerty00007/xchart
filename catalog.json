@@ -248,38 +248,6 @@
       "tags": [],
       "title": "chinesesubfinder"
     },
-    "clash": {
-      "app_readme": "<h1>clash</h1>\n<p>clash-premium core and ui</p>",
-      "categories": [
-        "Tools-Utilities"
-      ],
-      "description": "clash",
-      "healthy": true,
-      "healthy_error": null,
-      "home": "https://hub.docker.com/r/dreamacro/clash",
-      "icon_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Clash_Logo.png",
-      "last_update": "2024-03-14 12:30:07",
-      "latest_app_version": "latest",
-      "latest_human_version": "latest_1.0.12",
-      "latest_version": "1.0.12",
-      "location": "/__w/xhcart/xchart/stable/clash",
-      "maintainers": [
-        {
-          "email": "1165505953@qq.com",
-          "name": "qwerty007",
-          "url": "https://gitee.com/qwerty0007/xchart"
-        }
-      ],
-      "name": "clash",
-      "recommended": false,
-      "screenshots": [],
-      "sources": [
-        "https://hub.docker.com/r/dreamacro/clash",
-        "https://hub.docker.com/r/haishanh/yacd"
-      ],
-      "tags": [],
-      "title": "clash"
-    },
     "clash-meta": {
       "app_readme": "<h1>clash-meta</h1>\n<p>clash-meta core and ui</p>",
       "categories": [
