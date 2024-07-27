@@ -55,7 +55,7 @@ questions:
           label: Http Proxy
           schema:
             type: string
-            default: "http://clash.ix-clash.svc.cluster.local:7893"
+            default: "http://clash-meta.ix-clash-meta.svc.cluster.local:7893"
             required: true
 
   - variable: ingressEnabled

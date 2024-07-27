@@ -1,17 +1,17 @@
 {
-  "1.0.12": {
+  "1.0.13": {
     "healthy": true,
     "supported": false,
     "healthy_error": null,
-    "location": "/__w/xhcart/xchart/stable/moviepilot/1.0.12",
+    "location": "/__w/xhcart/xchart/stable/moviepilot/1.0.13",
     "last_update": "2024-04-15 21:30:07",
     "required_features": [
       "definitions/certificate",
       "normalize/acl",
       "normalize/ixVolume"
     ],
-    "human_version": "1.9.11_1.0.12",
-    "version": "1.0.12",
+    "human_version": "1.9.12_1.0.13",
+    "version": "1.0.13",
     "chart_metadata": {
       "name": "moviepilot",
       "description": "自动追剧，整理",
@@ -19,9 +19,9 @@
         "title": "moviepilot"
       },
       "type": "application",
-      "version": "1.0.12",
+      "version": "1.0.13",
       "apiVersion": "v2",
-      "appVersion": "1.9.11",
+      "appVersion": "1.9.12",
       "kubeVersion": ">=1.16.0-0",
       "maintainers": [
         {
