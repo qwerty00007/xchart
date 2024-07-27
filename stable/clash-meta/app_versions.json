@@ -1,24 +1,24 @@
 {
-  "1.0.12": {
+  "1.0.13": {
     "healthy": true,
     "supported": false,
     "healthy_error": null,
-    "location": "/__w/xhcart/xchart/stable/clash/1.0.12",
+    "location": "/__w/xhcart/xchart/stable/clash-meta/1.0.13",
     "last_update": "2024-03-21 21:52:07",
     "required_features": [
       "normalize/acl",
       "normalize/ixVolume"
     ],
-    "human_version": "latest_1.0.12",
-    "version": "1.0.12",
+    "human_version": "latest_1.0.13",
+    "version": "1.0.13",
     "chart_metadata": {
-      "name": "clash",
-      "description": "clash-premium core and ui",
+      "name": "clash-meta",
+      "description": "clash-meta core and ui",
       "annotations": {
-        "title": "clash"
+        "title": "clash-meta"
       },
       "type": "application",
-      "version": "1.0.12",
+      "version": "1.0.13",
       "apiVersion": "v2",
       "appVersion": "latest",
       "kubeVersion": ">=1.16.0-0",
@@ -36,14 +36,14 @@
           "version": "2304.0.1"
         }
       ],
-      "home": "https://hub.docker.com/r/dreamacro/clash",
+      "home": "https://wiki.metacubex.one/",
       "icon": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Clash_Logo.png",
       "sources": [
-        "https://hub.docker.com/r/dreamacro/clash",
-        "https://hub.docker.com/r/haishanh/yacd"
+        "https://github.com/MetaCubeX/mihomo",
+        "https://github.com/MetaCubeX/metacubexd"
       ],
       "keywords": [
-        "clash"
+        "clash-meta"
       ]
     },
     "app_metadata": null,
@@ -51,15 +51,15 @@
       "groups": [
         {
           "name": "Configuration",
-          "description": "clash-core application configuration"
+          "description": "clash-meta application configuration"
         },
         {
           "name": "Storage",
-          "description": "Configure storage for clash-core"
+          "description": "Configure storage for clash-meta"
         },
         {
           "name": "Networking",
-          "description": "Networking Configuration for clash-core"
+          "description": "Networking Configuration for clash-meta"
         },
         {
           "name": "Advanced DNS Settings",
@@ -168,19 +168,8 @@
           }
         },
         {
-          "variable": "timezone",
-          "label": "Timezone",
-          "group": "Configuration",
-          "schema": {
-            "type": "string",
-            "$ref": [
-              "definitions/timezone"
-            ]
-          }
-        },
-        {
           "variable": "environmentVariables",
-          "label": "clash-core environment",
+          "label": "clash-meta environment",
           "group": "Configuration",
           "schema": {
             "type": "list",
@@ -214,7 +203,7 @@
         },
         {
           "variable": "appVolumeMounts",
-          "label": "clash-core Config",
+          "label": "clash-meta Config",
           "group": "Storage",
           "schema": {
             "type": "dict",
@@ -241,7 +230,7 @@
                             false
                           ]
                         ],
-                        "default": "ix-clash-core_config",
+                        "default": "ix-clash-meta_config",
                         "editable": false
                       }
                     },
@@ -258,7 +247,7 @@
                     },
                     {
                       "variable": "hostPathEnabled",
-                      "label": "Enable Custom Host Path for clash-core Configuration",
+                      "label": "Enable Custom Host Path for clash-meta Configuration",
                       "schema": {
                         "type": "boolean",
                         "default": false,
@@ -266,7 +255,7 @@
                         "subquestions": [
                           {
                             "variable": "hostPath",
-                            "label": "Host Path for clash-core Configuration ",
+                            "label": "Host Path for clash-meta Configuration ",
                             "schema": {
                               "type": "hostpath",
                               "required": true
@@ -291,7 +280,7 @@
               {
                 "variable": "extraAppVolume",
                 "label": "Host Path Volume",
-                "description": "Add an extra host path volume for clash-core application",
+                "description": "Add an extra host path volume for clash-meta application",
                 "schema": {
                   "type": "dict",
                   "attrs": [
@@ -311,73 +300,6 @@
                       "schema": {
                         "type": "hostpath",
                         "required": true
-                      }
-                    }
-                  ]
-                }
-              }
-            ]
-          }
-        },
-        {
-          "variable": "securityContext",
-          "label": "Security Context",
-          "group": "Workload Details",
-          "schema": {
-            "type": "dict",
-            "attrs": [
-              {
-                "variable": "privileged",
-                "label": "Privileged Mode",
-                "description": "Determines if any container in a pod can enable privileged mode. By default a container is not allowed to access any devices on the host, but a 'privileged' container is given access to all devices on the host. This allows the container nearly all the same access as processes running on the host.",
-                "schema": {
-                  "type": "boolean",
-                  "default": false
-                }
-              },
-              {
-                "variable": "capabilities",
-                "label": "Capabilities",
-                "description": "With Linux capabilities, you can grant certain privileges to a process without granting all the privileges of the root user.",
-                "schema": {
-                  "type": "list",
-                  "items": [
-                    {
-                      "variable": "capability",
-                      "description": "Add Capability",
-                      "label": "Add Capability",
-                      "schema": {
-                        "type": "string"
-                      }
-                    }
-                  ]
-                }
-              },
-              {
-                "variable": "enableRunAsUser",
-                "label": "Configure Container User and Group ID",
-                "description": "Configure security context runAsUser and runAsGroup variables",
-                "schema": {
-                  "type": "boolean",
-                  "default": false,
-                  "show_subquestions_if": true,
-                  "subquestions": [
-                    {
-                      "variable": "runAsUser",
-                      "label": "Run Container As User",
-                      "description": "Configure user id for container.",
-                      "schema": {
-                        "type": "int",
-                        "default": 0
-                      }
-                    },
-                    {
-                      "variable": "runAsGroup",
-                      "label": "Run Container As Group",
-                      "description": "Configure group id for container.",
-                      "schema": {
-                        "type": "int",
-                        "default": 0
                       }
                     }
                   ]
@@ -433,7 +355,7 @@
         }
       ]
     },
-    "app_readme": "<h1>clash</h1>\n<p>clash-premium core and ui</p>",
+    "app_readme": "<h1>clash-meta</h1>\n<p>clash-meta-premium core and ui</p>",
     "detailed_readme": "",
     "changelog": null
   }

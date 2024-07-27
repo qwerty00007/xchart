@@ -259,8 +259,8 @@
       "home": "https://hub.docker.com/r/dreamacro/clash",
       "icon_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Clash_Logo.png",
       "last_update": "2024-03-14 12:30:07",
-      "latest_app_version": "1.16.0",
-      "latest_human_version": "1.16.0_1.0.12",
+      "latest_app_version": "latest",
+      "latest_human_version": "latest_1.0.12",
       "latest_version": "1.0.12",
       "location": "/__w/xhcart/xchart/stable/clash",
       "maintainers": [
@@ -279,6 +279,38 @@
       ],
       "tags": [],
       "title": "clash"
+    },
+    "clash-meta": {
+      "app_readme": "<h1>clash-meta</h1>\n<p>clash-meta core and ui</p>",
+      "categories": [
+        "Tools-Utilities"
+      ],
+      "description": "clash-meta",
+      "healthy": true,
+      "healthy_error": null,
+      "home": "https://wiki.metacubex.one/",
+      "icon_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/clash_Logo.png",
+      "last_update": "2024-03-14 12:30:07",
+      "latest_app_version": "latest",
+      "latest_human_version": "latest_1.0.13",
+      "latest_version": "1.0.13",
+      "location": "/__w/xhcart/xchart/stable/clash-meta",
+      "maintainers": [
+        {
+          "email": "1165505953@qq.com",
+          "name": "qwerty007",
+          "url": "https://gitee.com/qwerty0007/xchart"
+        }
+      ],
+      "name": "clash-meta",
+      "recommended": false,
+      "screenshots": [],
+      "sources": [
+        "https://github.com/MetaCubeX/mihomo",
+        "https://github.com/MetaCubeX/metacubexd"
+      ],
+      "tags": [],
+      "title": "clash-meta"
     },
     "code-server": {
       "app_readme": "<h1>code-server</h1>\n<p>Run VS Code on any machine anywhere and access it in the browser.</p>",
