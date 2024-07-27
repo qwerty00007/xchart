@@ -1,0 +1,4 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: metacubex/mihomo
+  tag: latest

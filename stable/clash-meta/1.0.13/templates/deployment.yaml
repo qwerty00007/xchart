@@ -40,24 +40,12 @@ spec:
           {{ end }}
 
           securityContext:
-            privileged: {{ .Values.securityContext.privileged }}
-            {{ if .Values.securityContext.enableRunAsUser }}
-            runAsUser: {{ .Values.securityContext.runAsUser }}
-            runAsGroup: {{ .Values.securityContext.runAsGroup }}
-            {{ end }}
-            {{ if .Values.securityContext.capabilities }}
+            privileged: true
             capabilities:
-              add: {{ toYaml .Values.securityContext.capabilities | nindent 8 }}
-            {{ end }}          
+              add: ["ALL"]
           ports:
             - name: ctler
-              containerPort: {{ .Values.ctler_port }}
-              protocol: TCP
-            - name: http
-              containerPort: {{ .Values.http_port }}
-              protocol: TCP
-            - name: socks5
-              containerPort: {{ .Values.socks5_port }}
+              containerPort: {{ .Values.ctl_port }}
               protocol: TCP
             - name: mixed
               containerPort: {{ .Values.mixed_port }}

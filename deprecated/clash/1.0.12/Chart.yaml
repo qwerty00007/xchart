@@ -1,0 +1,13 @@
+apiVersion: v2
+appVersion: latest
+dependencies:
+- name: common
+  repository: file://../../../library/common/2207.0.0
+  version: 2207.0.0
+description: clash-premium core and ui
+home: https://hub.docker.com/r/dreamacro/clash-premium
+icon: https://upload.wikimedia.org/wikipedia/commons/0/0b/Clash_Logo.png
+keywords:
+- tools
+name: clash
+version: 1.0.12
