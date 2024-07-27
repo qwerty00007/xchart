@@ -1,3 +1,3 @@
 {{- define "ui.imageName" -}}
-{{- print "haishanh/yacd:v0.3.8" -}}
+{{- print "ghcr.io/metacubex/metacubexd:latest" -}}
 {{- end -}}
