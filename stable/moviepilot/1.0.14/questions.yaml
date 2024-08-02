@@ -207,18 +207,26 @@ questions:
                 description: "wintersakura"
               - value: leaves
                 description: "leaves"
-              - value: 1ptba
-                description: "1ptba"
+              - value: ptba
+                description: "ptba"
               - value: icc2022
                 description: "icc2022"
-              - value: ptlsp
-                description: "ptlsp"
               - value: xingtan
                 description: "xingtan"
               - value: ptvicomo
                 description: "ptvicomo"
-
-
+              - value: agsvpt
+                description: "agsvpt"
+              - value: hdkyl
+                description: "hdkyl"
+              - value: qingwa
+                description: "qingwa"
+              - value: discfan
+                description: "discfan"
+              - value: haidan
+                description: "haidan"
+              - value: rousi
+                description: "rousi"
         - variable: IYUU_SIGN
           label: IYUU_SIGN
           schema:
@@ -339,16 +347,16 @@ questions:
             private: true
             default: ""
 
-        - variable: 1PTBA_UID
-          label: 1PTBA UID
+        - variable: PTBA_UID
+          label: PTBA UID
           schema:
-            show_if: [["AUTH_SITE", "=", "1ptba"]]
+            show_if: [["AUTH_SITE", "=", "ptba"]]
             type: string
             default: ""
-        - variable: 1PTBA_PASSKEY
-          label: 1PTBA PASSKEY
+        - variable: PTBA_PASSKEY
+          label: PTBA PASSKEY
           schema:
-            show_if: [["AUTH_SITE", "=", "1ptba"]]
+            show_if: [["AUTH_SITE", "=", "ptba"]]
             type: string
             private: true
             default: ""
@@ -366,21 +374,6 @@ questions:
             type: string
             private: true
             default: ""
-
-        - variable: PTLSP_UID
-          label: PTLSP UID
-          schema:
-            show_if: [["AUTH_SITE", "=", "ptlsp"]]
-            type: string
-            default: ""
-        - variable: PTLSP_PASSKEY
-          label: PTLSP PASSKEY
-          schema:
-            show_if: [["AUTH_SITE", "=", "ptlsp"]]
-            type: string
-            private: true
-            default: ""
-
         - variable: XINGTAN_UID
           label: XINGTAN UID
           schema:
@@ -408,7 +401,84 @@ questions:
             type: string
             private: true
             default: ""
-
+        - variable: AGSVPT_UID
+          label: AGSVPT UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "agsvpt"]]
+            type: string
+            default: ""
+        - variable: AGSVPT_PASSKEY
+          label: AGSVPT PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "agsvpt"]]
+            type: string
+            private: true
+            default: ""
+        - variable: HDKYL_UID
+          label: HDKYL UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "hdkyl"]]
+            type: string
+            default: ""
+        - variable: HDKYL_PASSKEY
+          label: HDKYL PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "hdkyl"]]
+            type: string
+            private: true
+            default: ""
+        - variable: QINGWA_UID
+          label: QINGWA UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "qingwa"]]
+            type: string
+            default: ""
+        - variable: QINGWA_PASSKEY
+          label: QINGWA PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "qingwa"]]
+            type: string
+            private: true
+            default: ""
+        - variable: DISCFAN_UID
+          label: DISCFAN UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "discfan"]]
+            type: string
+            default: ""
+        - variable: DISCFAN_PASSKEY
+          label: DISCFAN PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "discfan"]]
+            type: string
+            private: true
+            default: ""
+        - variable: HAIDAN_ID
+          label: HAIDAN ID
+          schema:
+            show_if: [["AUTH_SITE", "=", "haidan"]]
+            type: string
+            default: "" 
+        - variable: HAIDAN_PASSKEY
+          label: HAIDAN PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "haidan"]]
+            type: string
+            private: true
+            default: ""
+        - variable: ROUSI_UID
+          label: ROUSI UID
+          schema:
+            show_if: [["AUTH_SITE", "=", "rousi"]]
+            type: string
+            default: "" 
+        - variable: ROUSI_PASSKEY
+          label: ROUSI PASSKEY
+          schema:
+            show_if: [["AUTH_SITE", "=", "rousi"]]
+            type: string
+            private: true
+            default: ""
   - variable: environmentVariables
     label: "Moviepilot environment"
     group: "Configuration"
