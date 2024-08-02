@@ -636,8 +636,7 @@
       "screenshots": [
         "https://wiki.movie-pilot.org/dashboard_new.png",
         "https://wiki.movie-pilot.org/ranking_new.png",
-        "https://wiki.movie-pilot.org/subscribe_new.png",
-        "https://wiki.movie-pilot.org/plugin_new.png"
+        "https://wiki.movie-pilot.org/subscribe_new.png"
       ],
       "sources": [
         "https://github.com/jxxghp/MoviePilot"
