@@ -620,9 +620,9 @@
       "home": "https://github.com/jxxghp/MoviePilot",
       "icon_url": "https://wiki.movie-pilot.org/assets/logo.svg",
       "last_update": "2024-04-15 21:30:07",
-      "latest_app_version": "1.9.12",
-      "latest_human_version": "1.9.12_1.0.13",
-      "latest_version": "1.0.13",
+      "latest_app_version": "1.9.13",
+      "latest_human_version": "1.9.13_1.0.14",
+      "latest_version": "1.0.14",
       "location": "/__w/xhcart/xchart/stable/moviepilot",
       "maintainers": [
         {
@@ -633,7 +633,12 @@
       ],
       "name": "moviepilot",
       "recommended": false,
-      "screenshots": [],
+      "screenshots": [
+        "https://wiki.movie-pilot.org/dashboard_new.png",
+        "https://wiki.movie-pilot.org/ranking_new.png",
+        "https://wiki.movie-pilot.org/subscribe_new.png",
+        "https://wiki.movie-pilot.org/plugin_new.png"
+      ],
       "sources": [
         "https://github.com/jxxghp/MoviePilot"
       ],
