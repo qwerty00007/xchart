@@ -655,9 +655,9 @@
       "home": "https://mtmt.tech/",
       "icon_url": "https://cdn.mtmt.tech/logo-r.png",
       "last_update": "2024-04-04 21:52:07",
-      "latest_app_version": "1.31.1",
-      "latest_human_version": "1.31.1_1.0.39",
-      "latest_version": "1.0.39",
+      "latest_app_version": "1.32.0",
+      "latest_human_version": "1.32.0_1.0.40",
+      "latest_version": "1.0.40",
       "location": "/__w/xhcart/xchart/stable/mtphotos",
       "maintainers": [
         {
@@ -668,7 +668,9 @@
       ],
       "name": "mtphotos",
       "recommended": false,
-      "screenshots": [],
+      "screenshots": [
+        "https://mtmt.tech/static/792f76163c0a0039b969915c72215fd8/3224e/preview.avif"
+      ],
       "sources": [
         "https://gitee.com/mt-photos/charts.git"
       ],
