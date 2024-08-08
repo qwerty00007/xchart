@@ -1,4 +1,4 @@
 image:
   pullPolicy: IfNotPresent
   repository: cnrancher/kube-explorer
-  tag: latest
+  tag: v0.4.0
