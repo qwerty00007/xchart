@@ -54,7 +54,8 @@ spec:
             {{ $envList = mustAppend $envList (dict "name" "MOVIEPILOT_AUTO_UPDATE" "value" "false") }}    
             {{ $envList = mustAppend $envList (dict "name" "SUPERUSER" "value" .Values.superUser) }}             
             {{ if .Values.proxyEnabled }}
-            {{ $envList = mustAppend $envList (dict "name" "PROXY_HOST" "value" .Values.proxyHost) }}           
+            {{ $envList = mustAppend $envList (dict "name" "PROXY_HOST" "value" .Values.proxyHost) }}
+            {{ $envList = mustAppend $envList (dict "name" "DOH_ENABLE" "value" false) }}                     
             {{ end }}
             {{- range $key, $val := .Values.auth_env }}
             {{ $envList = mustAppend $envList (dict "name" $key "value" $val) }}              
