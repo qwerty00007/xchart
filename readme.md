@@ -89,12 +89,12 @@ date
 mirrors:
   "docker.io":
     endpoint:
-      - "https://docker.mirrors.sjtug.sjtu.edu.cn"
-      - "https://mirror.iscas.ac.cn"
-      - "https://mirror.baidubce.com"
-      - "https://docker.m.daocloud.io"
-      - "https://docker.nju.edu.cn/"
+      - "https://dockerproxy.cn" 
+      - "https://docker.agsv.top"
+      - "https://docker.agsvpt.work"
+      - "https://do.nark.eu.org"
       - "https://registry-1.docker.io"
+
 ```
 
 然后执行以下命令，24版本 硬链接会提示跨文件系统，改为 cp -f 强制覆盖
