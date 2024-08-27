@@ -28,7 +28,7 @@ questions:
     group: Networking
     schema:
       type: int
-      min: 8000
+      min: 100
       max: 65535
       default: 13080
       required: true
