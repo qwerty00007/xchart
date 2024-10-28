@@ -450,9 +450,9 @@
       "home": "https://jellyfin.org/",
       "icon_url": "https://jellyfin.org/images/logo.svg",
       "last_update": "2024-03-14 12:30:07",
-      "latest_app_version": "10.8.13",
-      "latest_human_version": "10.8.13_1.0.31",
-      "latest_version": "1.0.31",
+      "latest_app_version": "10.10.0",
+      "latest_human_version": "10.10.0_1.0.32",
+      "latest_version": "1.0.32",
       "location": "/__w/xhcart/xchart/stable/jellyfin",
       "maintainers": [
         {
