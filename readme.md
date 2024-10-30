@@ -1,4 +1,4 @@
-# truenas scale 个人应用库
+# truenas scale 24.04 个人应用库
 
 ## APP List
 
