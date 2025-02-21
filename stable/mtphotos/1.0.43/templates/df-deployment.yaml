@@ -9,7 +9,6 @@ spec: {{ include "common.deployment.common_spec" $values | nindent 2 }}
       - name: {{ .Chart.Name }}-df
         image: {{ template "df.imageName" . }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
-        env: {{ include "df.envVariableConfiguration" $values | nindent 10 }}
         ports:
         - name: df-tcp
           containerPort: 8066
