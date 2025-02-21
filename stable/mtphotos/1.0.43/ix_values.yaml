@@ -1,4 +1,4 @@
 image:
-  repository: registry.cn-hangzhou.aliyuncs.com/mtphotos/mt-photos:latest
+  repository: registry.cn-hangzhou.aliyuncs.com/mtphotos/mt-photos
   tag: latest
   pullPolicy: IfNotPresent
