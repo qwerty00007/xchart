@@ -16,7 +16,7 @@ spec: {{ include "common.deployment.common_spec" $values | nindent 2 }}
           protocol: TCP
       {{ if .Values.dfAppVolumeMounts.dfModels.hostPathEnabled }}
         volumeMounts: 
-        - mountPath: /models
+        - mountPath: /root/.insightface/models
           name: models-volume
       volumes: 
       - name: models-volume
