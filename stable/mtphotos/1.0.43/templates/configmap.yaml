@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: portal
+data:
+  {{ if .Values.ingressEnabled }}
+  protocol: "https"
+  port: "443"
+  host: {{ .Values.host }}
+  path: {{ .Values.path }}
+  {{ else }}
+  protocol: "http"
+  port: {{ .Values.web_port | quote }}
+  host: {{ "$node_ip" }}
+  path: "/"
+  {{ end }} 

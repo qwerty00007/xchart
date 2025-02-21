@@ -1,5 +1,5 @@
 {
-  "1.0.42": {
+  "1.0.43": {
     "healthy": true,
     "supported": false,
     "healthy_error": null,
@@ -11,7 +11,7 @@
       "normalize/acl",
       "normalize/ixVolume"
     ],
-    "human_version": "1.32.5_1.0.42",
+    "human_version": "latest_1.0.42",
     "version": "1.0.42",
     "chart_metadata": {
       "name": "mtphotos",
@@ -22,7 +22,7 @@
       "type": "application",
       "version": "1.0.42",
       "apiVersion": "v2",
-      "appVersion": "1.32.5",
+      "appVersion": "latest",
       "kubeVersion": ">=1.16.0-0",
       "maintainers": [
         {
