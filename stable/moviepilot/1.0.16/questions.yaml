@@ -564,7 +564,7 @@ questions:
                   type: path
                   hidden: true
                   editable: true
-                  default: "/moviepilot"
+                  default: "/moviepilot/.cache/ms-playwright"
               - variable: hostPathEnabled
                 label: "Enable Custom Host Path for Moviepilot Volume"
                 schema:
