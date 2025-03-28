@@ -1,4 +1,4 @@
 image:
   pullPolicy: IfNotPresent
-  repository: jxxghp/moviepilot-v2
+  repository: docker.1panel.dev/jxxghp/moviepilot-v2:latest
   tag: latest
