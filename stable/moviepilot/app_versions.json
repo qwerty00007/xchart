@@ -943,7 +943,7 @@
                         "type": "path",
                         "hidden": true,
                         "editable": true,
-                        "default": "/moviepilot"
+                        "default": "/moviepilot/.cache/ms-playwright"
                       }
                     },
                     {
